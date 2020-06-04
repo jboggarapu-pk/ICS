@@ -1,0 +1,5055 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+ICS.DataAccess
+</name>
+</assembly>
+<members>
+<member name="M:CooperTire.ICS.DataAccess.Business.GetClientTests(System.Int32,System.Int32,System.String,System.String,CooperTire.ICS.Datasets.ClientRequest@,System.Boolean@)">
+	<summary>
+  Method to Get Client Tests
+ </summary>
+	<returns>TRProductSectionData</returns>
+	<param name="p_intCertType">Certificate Type</param>
+	<param name="p_intTireType">Tire Type</param>
+	<param name="p_strUseSap">Use Sap</param>
+	<param name="p_strUseTracs">Use Tracs</param>
+	<param name="p_oSet">ClientRequest Object</param>
+	<param name="p_blnSuccess">Success Flag</param>
+	<exception cref="T:System.Exception">
+  Logs the exception if any error occurs.
+ </exception>
+	<remarks>
+		<list type="table">
+			<listheader>
+				<term>Author</term>
+				<description>Description</description>
+			</listheader>
+			<item>
+				<term>N/A</term>
+				<description>
+					<para>N/A</para>
+					<para>Original Code.</para>
+				</description>
+			</item>
+			<item>
+				<term>Srinivas S</term>
+				<description>
+					<para>11/28/2019</para>
+					<para>Implemented Coding Standards</para>
+				</description>
+			</item>
+		</list>
+	</remarks>
+</member><member name="M:CooperTire.ICS.DataAccess.Business.GetTRACSData(System.Int32,System.Int32,System.String,System.Int32,System.String,System.String,System.Boolean@)">
+	<summary>
+  Method to Get TRACS Data
+ </summary>
+	<returns>TRProductSectionData</returns>
+	<param name="p_intCertType">intCertType</param>
+	<param name="p_intTireType">intTireType</param>
+	<param name="p_strSKU">strSKU</param>
+	<param name="p_intProdLocNum">intProdLocNum</param>
+	<param name="p_strUseSap">strUseSap</param>
+	<param name="p_strUseTracs">strUseTracs</param>
+	<param name="p_blnSuccess">blnSuccess</param>
+	<exception cref="T:System.Exception">
+  Logs the exception if any error occurs.
+ </exception>
+	<remarks>
+		<list type="table">
+			<listheader>
+				<term>Author</term>
+				<description>Description</description>
+			</listheader>
+			<item>
+				<term>N/A</term>
+				<description>
+					<para>N/A</para>
+					<para>Original Code.</para>
+				</description>
+			</item>
+			<item>
+				<term>Srinivas S</term>
+				<description>
+					<para>11/28/2019</para>
+					<para>Implemented Coding Standards</para>
+				</description>
+			</item>
+		</list>
+	</remarks>
+</member><member name="M:CooperTire.ICS.DataAccess.Business.AddProductDataToTRACSData(System.Data.DataSet,CooperTire.ICS.Datasets.SKUtoICSDataset@)">
+	<summary>
+  Method to add Product data to TRACS
+ </summary>
+	<param name="p_oSet">DataSet Object</param>
+	<param name="p_stSKU">SKUtoICSDataset Object</param>
+	<exception cref="T:System.Exception">
+ Throws the exception if any error occurs.
+ </exception>
+	<remarks>
+		<list type="table">
+			<listheader>
+				<term>Author</term>
+				<description>Description</description>
+			</listheader>
+			<item>
+				<term>N/A</term>
+				<description>
+					<para>N/A</para>
+					<para>Original Code.</para>
+				</description>
+			</item>
+			<item>
+				<term>Srinivas S</term>
+				<description>
+					<para>11/28/2019</para>
+					<para>Implemented Coding Standards</para>
+				</description>
+			</item>
+		</list>
+	</remarks>
+</member><member name="M:CooperTire.ICS.DataAccess.Business.AddSAPHighSpeedToTRACSData(System.Data.DataTable,CooperTire.ICS.Datasets.TRACStoICSDataset@)">
+	<summary>
+  Method to add SAP High Speed To TRACS Data
+ </summary>
+	<param name="p_oTable">DataTable Object</param>
+	<param name="p_stTRACS">TRACStoICSDataset Object</param>
+	<exception cref="T:System.Exception">
+ Throws the exception if any error occurs.
+ </exception>
+	<remarks>
+		<list type="table">
+			<listheader>
+				<term>Author</term>
+				<description>Description</description>
+			</listheader>
+			<item>
+				<term>N/A</term>
+				<description>
+					<para>N/A</para>
+					<para>Original Code.</para>
+				</description>
+			</item>
+			<item>
+				<term>Srinivas S</term>
+				<description>
+					<para>11/28/2019</para>
+					<para>Implemented Coding Standards</para>
+				</description>
+			</item>
+		</list>
+	</remarks>
+</member><member name="M:CooperTire.ICS.DataAccess.Business.AddSAPEnduranceToTRACSData(System.Data.DataTable,CooperTire.ICS.Datasets.TRACStoICSDataset@)">
+	<summary>
+  Method to add SAP Endurance To TRACS Data
+ </summary>
+	<param name="p_oTable">DataTable Object</param>
+	<param name="p_stTRACS">TRACStoICSDataset Object</param>
+	<exception cref="T:System.Exception">
+ Throws the exception if any error occurs.
+ </exception>
+	<remarks>
+		<list type="table">
+			<listheader>
+				<term>Author</term>
+				<description>Description</description>
+			</listheader>
+			<item>
+				<term>N/A</term>
+				<description>
+					<para>N/A</para>
+					<para>Original Code.</para>
+				</description>
+			</item>
+			<item>
+				<term>Srinivas S</term>
+				<description>
+					<para>11/28/2019</para>
+					<para>Implemented Coding Standards</para>
+				</description>
+			</item>
+		</list>
+	</remarks>
+</member><member name="M:CooperTire.ICS.DataAccess.Business.AddSAPMeasureToTRACSData(System.Data.DataTable,CooperTire.ICS.Datasets.TRACStoICSDataset@)">
+	<summary>
+  Method to add SAP Measure To TRACS Data
+ </summary>
+	<param name="p_oTable">DataTable Object</param>
+	<param name="p_stTRACS">TRACStoICSDataset Object</param>
+	<exception cref="T:System.Exception">
+ Throws the exception if any error occurs.
+ </exception>
+	<remarks>
+		<list type="table">
+			<listheader>
+				<term>Author</term>
+				<description>Description</description>
+			</listheader>
+			<item>
+				<term>N/A</term>
+				<description>
+					<para>N/A</para>
+					<para>Original Code.</para>
+				</description>
+			</item>
+			<item>
+				<term>Srinivas S</term>
+				<description>
+					<para>11/28/2019</para>
+					<para>Implemented Coding Standards</para>
+				</description>
+			</item>
+		</list>
+	</remarks>
+</member><member name="M:CooperTire.ICS.DataAccess.Business.AddSAPTreadWearToTRACSData(System.Data.DataTable,CooperTire.ICS.Datasets.TRACStoICSDataset@)">
+	<summary>
+  Method to add SAP Tread Wear To TRACS Data
+ </summary>
+	<param name="p_oTable">DataTable Object</param>
+	<param name="p_stTRACS">TRACStoICSDataset Object</param>
+	<exception cref="T:System.Exception">
+ Throws the exception if any error occurs.
+ </exception>
+	<remarks>
+		<list type="table">
+			<listheader>
+				<term>Author</term>
+				<description>Description</description>
+			</listheader>
+			<item>
+				<term>N/A</term>
+				<description>
+					<para>N/A</para>
+					<para>Original Code.</para>
+				</description>
+			</item>
+			<item>
+				<term>Srinivas S</term>
+				<description>
+					<para>11/28/2019</para>
+					<para>Implemented Coding Standards</para>
+				</description>
+			</item>
+		</list>
+	</remarks>
+</member><member name="M:CooperTire.ICS.DataAccess.Business.AddSAPPlungerToTRACSData(System.Data.DataTable,CooperTire.ICS.Datasets.TRACStoICSDataset@)">
+	<summary>
+  Method to add SAP Plunger To TRACS Data
+ </summary>
+	<param name="p_oTable">DataTable Object</param>
+	<param name="p_stTRACS">TRACStoICSDataset Object</param>
+	<exception cref="T:System.Exception">
+ Throws the exception if any error occurs.
+ </exception>
+	<remarks>
+		<list type="table">
+			<listheader>
+				<term>Author</term>
+				<description>Description</description>
+			</listheader>
+			<item>
+				<term>N/A</term>
+				<description>
+					<para>N/A</para>
+					<para>Original Code.</para>
+				</description>
+			</item>
+			<item>
+				<term>Srinivas S</term>
+				<description>
+					<para>11/28/2019</para>
+					<para>Implemented Coding Standards</para>
+				</description>
+			</item>
+		</list>
+	</remarks>
+</member><member name="M:CooperTire.ICS.DataAccess.Business.AddSAPBeadUnseatToTRACSData(System.Data.DataTable,CooperTire.ICS.Datasets.TRACStoICSDataset@)">
+	<summary>
+  Method to add SAP Bead Unseat To TRACS Data
+ </summary>
+	<param name="p_oTable">DataTable Object</param>
+	<param name="p_stTRACS">TRACStoICSDataset Object</param>
+	<exception cref="T:System.Exception">
+ Throws the exception if any error occurs.
+ </exception>
+	<remarks>
+		<list type="table">
+			<listheader>
+				<term>Author</term>
+				<description>Description</description>
+			</listheader>
+			<item>
+				<term>N/A</term>
+				<description>
+					<para>N/A</para>
+					<para>Original Code.</para>
+				</description>
+			</item>
+			<item>
+				<term>Srinivas S</term>
+				<description>
+					<para>11/28/2019</para>
+					<para>Implemented Coding Standards</para>
+				</description>
+			</item>
+		</list>
+	</remarks>
+</member><member name="M:CooperTire.ICS.DataAccess.Business.ConvertNulls(System.Data.DataTable@)">
+	<summary>
+  Method is used to replaces all nulls in a table with empty strings.
+ </summary>
+	<param name="p_oTable">DataTable Object</param>
+	<exception cref="T:System.Exception">
+ Throws the exception if any error occurs.
+ </exception>
+	<remarks>
+		<list type="table">
+			<listheader>
+				<term>Author</term>
+				<description>Description</description>
+			</listheader>
+			<item>
+				<term>N/A</term>
+				<description>
+					<para>N/A</para>
+					<para>Original Code.</para>
+				</description>
+			</item>
+			<item>
+				<term>Srinivas S</term>
+				<description>
+					<para>11/28/2019</para>
+					<para>Implemented Coding Standards</para>
+				</description>
+			</item>
+		</list>
+	</remarks>
+</member><member name="M:CooperTire.ICS.DataAccess.Business.ConvertToShort(System.String)">
+	<summary>
+  Converts string value to Short
+ </summary>
+	<param name="p_value">String Value</param>
+	<returns>Returns converted value</returns>
+	<exception cref="T:System.Exception">
+ Throws the exception if any error occurs.
+ </exception>
+	<remarks>
+		<list type="table">
+			<listheader>
+				<term>Author</term>
+				<description>Description</description>
+			</listheader>
+			<item>
+				<term>N/A</term>
+				<description>
+					<para>N/A</para>
+					<para>Original Code.</para>
+				</description>
+			</item>
+			<item>
+				<term>Srinivas S</term>
+				<description>
+					<para>11/28/2019</para>
+					<para>Implemented Coding Standards</para>
+				</description>
+			</item>
+		</list>
+	</remarks>
+</member><member name="M:CooperTire.ICS.DataAccess.Business.ConvertToInt(System.String)">
+	<summary>
+  Converts string value to Int
+ </summary>
+	<param name="p_value">String Value</param>
+	<returns>Returns converted integer value</returns>
+	<exception cref="T:System.Exception">
+ Throws the exception if any error occurs.
+ </exception>
+	<remarks>
+		<list type="table">
+			<listheader>
+				<term>Author</term>
+				<description>Description</description>
+			</listheader>
+			<item>
+				<term>N/A</term>
+				<description>
+					<para>N/A</para>
+					<para>Original Code.</para>
+				</description>
+			</item>
+			<item>
+				<term>Srinivas S</term>
+				<description>
+					<para>11/28/2019</para>
+					<para>Implemented Coding Standards</para>
+				</description>
+			</item>
+		</list>
+	</remarks>
+</member><member name="M:CooperTire.ICS.DataAccess.Business.ConvertToLong(System.String)">
+	<summary>
+  Converts string value to Long
+ </summary>
+	<param name="p_value">String Value</param>
+	<returns>Returns converted long value</returns>
+	<exception cref="T:System.Exception">
+ Throws the exception if any error occurs.
+ </exception>
+	<remarks>
+		<list type="table">
+			<listheader>
+				<term>Author</term>
+				<description>Description</description>
+			</listheader>
+			<item>
+				<term>N/A</term>
+				<description>
+					<para>N/A</para>
+					<para>Original Code.</para>
+				</description>
+			</item>
+			<item>
+				<term>Srinivas S</term>
+				<description>
+					<para>11/28/2019</para>
+					<para>Implemented Coding Standards</para>
+				</description>
+			</item>
+		</list>
+	</remarks>
+</member><member name="M:CooperTire.ICS.DataAccess.Business.ConvertToSingle(System.String)">
+	<summary>
+  Converts string value to Single.
+ </summary>
+	<param name="p_value">String Value</param>
+	<returns>Returns converted single value</returns>
+	<exception cref="T:System.Exception">
+ Throws the exception if any error occurs.
+ </exception>
+	<remarks>
+		<list type="table">
+			<listheader>
+				<term>Author</term>
+				<description>Description</description>
+			</listheader>
+			<item>
+				<term>N/A</term>
+				<description>
+					<para>N/A</para>
+					<para>Original Code.</para>
+				</description>
+			</item>
+			<item>
+				<term>Srinivas S</term>
+				<description>
+					<para>11/28/2019</para>
+					<para>Implemented Coding Standards</para>
+				</description>
+			</item>
+		</list>
+	</remarks>
+</member><member name="M:CooperTire.ICS.DataAccess.Business.ConvertToDate(System.String)">
+	<summary>
+  Converts string value to Date.
+ </summary>
+	<param name="p_value">String Value</param>
+	<returns>Returns converted date value</returns>
+	<exception cref="T:System.Exception">
+ Throws the exception if any error occurs.
+ </exception>
+	<remarks>
+		<list type="table">
+			<listheader>
+				<term>Author</term>
+				<description>Description</description>
+			</listheader>
+			<item>
+				<term>N/A</term>
+				<description>
+					<para>N/A</para>
+					<para>Original Code.</para>
+				</description>
+			</item>
+			<item>
+				<term>Srinivas S</term>
+				<description>
+					<para>11/28/2019</para>
+					<para>Implemented Coding Standards</para>
+				</description>
+			</item>
+		</list>
+	</remarks>
+</member><member name="M:CooperTire.ICS.DataAccess.Business.SplitSapAndTracsDataset(CooperTire.ICS.Datasets.ClientRequest@,System.Data.DataSet@)">
+	<summary>
+  Splits into 2 separate datasets for Sap And Tracs
+ </summary>
+	<param name="p_oSet">ClientRequest Object</param>
+	<param name="p_oSap">DataSet Object</param>
+	<exception cref="T:System.Exception">
+ Throws the exception if any error occurs.
+ </exception>
+	<remarks>
+		<list type="table">
+			<listheader>
+				<term>Author</term>
+				<description>Description</description>
+			</listheader>
+			<item>
+				<term>N/A</term>
+				<description>
+					<para>N/A</para>
+					<para>Original Code.</para>
+				</description>
+			</item>
+			<item>
+				<term>Srinivas S</term>
+				<description>
+					<para>11/28/2019</para>
+					<para>Implemented Coding Standards</para>
+				</description>
+			</item>
+		</list>
+	</remarks>
+</member><member name="M:CooperTire.ICS.DataAccess.Business.Finalize">
+	<summary>
+  Finalize the resources
+ </summary>
+	<remarks>
+		<list type="table">
+			<listheader>
+				<term>Author</term>
+				<description>Description</description>
+			</listheader>
+			<item>
+				<term>N/A</term>
+				<description>
+					<para>N/A</para>
+					<para>Original Code.</para>
+				</description>
+			</item>
+			<item>
+				<term>Srinivas S</term>
+				<description>
+					<para>11/28/2019</para>
+					<para>Implemented Coding Standards</para>
+				</description>
+			</item>
+		</list>
+	</remarks>
+</member><member name="T:CooperTire.ICS.DataAccess.Business">
+	<summary>
+ Class contains tire test data operation methods.
+ </summary>
+	<remarks>
+		<list type="table">
+			<listheader>
+				<term>Author</term>
+				<description>Description</description>
+			</listheader>
+			<item>
+				<term>Srinivas.S</term>
+				<description>
+					<para>11/19/2019</para>
+					<para>Original Code.</para>
+				</description>
+			</item>
+		</list>
+	</remarks>
+</member><member name="F:CooperTire.ICS.DataAccess.ReportsDalc.PcCertificate">
+	<summary>
+ Constant to hold string pc_Certificate.
+ </summary>
+	<remarks></remarks>
+</member><member name="F:CooperTire.ICS.DataAccess.ReportsDalc.PcBrand">
+	<summary>
+ Constant to hold string pc_Brand.
+ </summary>
+	<remarks></remarks>
+</member><member name="F:CooperTire.ICS.DataAccess.ReportsDalc.PcProduct">
+	<summary>
+ Constant to hold string pc_Product.
+ </summary>
+	<remarks></remarks>
+</member><member name="F:CooperTire.ICS.DataAccess.ReportsDalc.PcCertificateDfValue">
+	<summary>
+ Constant to hold string pc_CertificateDfValue.
+ </summary>
+	<remarks></remarks>
+</member><member name="F:CooperTire.ICS.DataAccess.ReportsDalc.PcSkuDetailsCount">
+	<summary>
+ Constant to hold string pc_skudetailscount.
+ </summary>
+	<remarks></remarks>
+</member><member name="F:CooperTire.ICS.DataAccess.ReportsDalc.PsCertificateNumber">
+	<summary>
+ Constant to hold string ps_certificateNumber.
+ </summary>
+	<remarks></remarks>
+</member><member name="F:CooperTire.ICS.DataAccess.ReportsDalc.PsExtension">
+	<summary>
+ Constant to hold string ps_extension.
+ </summary>
+	<remarks></remarks>
+</member><member name="F:CooperTire.ICS.DataAccess.ReportsDalc.PiCertificationTypeId">
+	<summary>
+ Constant to hold string pi_certificationTypeID.
+ </summary>
+	<remarks></remarks>
+</member><member name="F:CooperTire.ICS.DataAccess.ReportsDalc.PsOperationId">
+	<summary>
+ Constant to hold string ps_Operatorid.
+ </summary>
+	<remarks></remarks>
+</member><member name="F:CooperTire.ICS.DataAccess.ReportsDalc.IcsDev">
+	<summary>
+ Constant to hold string ICSDEV.
+ </summary>
+	<remarks></remarks>
+</member><member name="F:CooperTire.ICS.DataAccess.ReportsDalc.PiTireTypeId">
+	<summary>
+ Constant to hold string pi_TireTypeID.
+ </summary>
+	<remarks></remarks>
+</member><member name="F:CooperTire.ICS.DataAccess.ReportsDalc.Table">
+	<summary>
+ Constant to hold string Table.
+ </summary>
+	<remarks></remarks>
+</member><member name="F:CooperTire.ICS.DataAccess.ReportsDalc.Table1">
+	<summary>
+ Constant to hold string Table1.
+ </summary>
+	<remarks></remarks>
+</member><member name="F:CooperTire.ICS.DataAccess.ReportsDalc.Table2">
+	<summary>
+ Constant to hold string Table2.
+ </summary>
+	<remarks></remarks>
+</member><member name="F:CooperTire.ICS.DataAccess.ReportsDalc.Table3">
+	<summary>
+ Constant to hold string Table3.
+ </summary>
+	<remarks></remarks>
+</member><member name="F:CooperTire.ICS.DataAccess.ReportsDalc.Table4">
+	<summary>
+ Constant to hold string Table4.
+ </summary>
+	<remarks></remarks>
+</member><member name="F:CooperTire.ICS.DataAccess.ReportsDalc.Table5">
+	<summary>
+ Constant to hold string Table5.
+ </summary>
+	<remarks></remarks>
+</member><member name="F:CooperTire.ICS.DataAccess.ReportsDalc.Table6">
+	<summary>
+ Constant to hold string Table6.
+ </summary>
+	<remarks></remarks>
+</member><member name="F:CooperTire.ICS.DataAccess.ReportsDalc.Table7">
+	<summary>
+ Constant to hold string Table7.
+ </summary>
+	<remarks></remarks>
+</member><member name="F:CooperTire.ICS.DataAccess.ReportsDalc.Table8">
+	<summary>
+ Constant to hold string Table8.
+ </summary>
+	<remarks></remarks>
+</member><member name="F:CooperTire.ICS.DataAccess.ReportsDalc.Table9">
+	<summary>
+ Constant to hold string Table9.
+ </summary>
+	<remarks></remarks>
+</member><member name="F:CooperTire.ICS.DataAccess.ReportsDalc.Table10">
+	<summary>
+ Constant to hold string Table10.
+ </summary>
+	<remarks></remarks>
+</member><member name="F:CooperTire.ICS.DataAccess.ReportsDalc.Table11">
+	<summary>
+ Constant to hold string Table11.
+ </summary>
+	<remarks></remarks>
+</member><member name="F:CooperTire.ICS.DataAccess.ReportsDalc.Table12">
+	<summary>
+ Constant to hold string Table12.
+ </summary>
+	<remarks></remarks>
+</member><member name="F:CooperTire.ICS.DataAccess.ReportsDalc.Table13">
+	<summary>
+ Constant to hold string Table13.
+ </summary>
+	<remarks></remarks>
+</member><member name="F:CooperTire.ICS.DataAccess.ReportsDalc.Table14">
+	<summary>
+ Constant to hold string Table14.
+ </summary>
+	<remarks></remarks>
+</member><member name="F:CooperTire.ICS.DataAccess.ReportsDalc.Table15">
+	<summary>
+ Constant to hold string Table15.
+ </summary>
+	<remarks></remarks>
+</member><member name="F:CooperTire.ICS.DataAccess.ReportsDalc.Table16">
+	<summary>
+ Constant to hold string Table16.
+ </summary>
+	<remarks></remarks>
+</member><member name="F:CooperTire.ICS.DataAccess.ReportsDalc.Certificate">
+	<summary>
+ Constant to hold string CERTIFICATE.
+ </summary>
+	<remarks></remarks>
+</member><member name="F:CooperTire.ICS.DataAccess.ReportsDalc.BrandView">
+	<summary>
+ Constant to hold string BRAND_VIEW.
+ </summary>
+	<remarks></remarks>
+</member><member name="F:CooperTire.ICS.DataAccess.ReportsDalc.ProductionDataReportView">
+	<summary>
+ Constant to hold string PRODUCTDATA_REPORT_VIEW.
+ </summary>
+	<remarks></remarks>
+</member><member name="F:CooperTire.ICS.DataAccess.ReportsDalc.DefaultValuesView">
+	<summary>
+ Constant to hold string DEFAULTVALUES_VIEW.
+ </summary>
+	<remarks></remarks>
+</member><member name="F:CooperTire.ICS.DataAccess.ReportsDalc.SkuDetailsCount">
+	<summary>
+ Constant to hold string SKUDETAILSCOUNT.
+ </summary>
+	<remarks></remarks>
+</member><member name="F:CooperTire.ICS.DataAccess.ReportsDalc.PcSkuList">
+	<summary>
+ Constant to hold string pc_SkuList.
+ </summary>
+	<remarks></remarks>
+</member><member name="F:CooperTire.ICS.DataAccess.ReportsDalc.PcMeasureHdr">
+	<summary>
+ Constant to hold string pc_MeasureHDR.
+ </summary>
+	<remarks></remarks>
+</member><member name="F:CooperTire.ICS.DataAccess.ReportsDalc.PcPlungerHdr">
+	<summary>
+ Constant to hold string pc_PlungerHDR.
+ </summary>
+	<remarks></remarks>
+</member><member name="F:CooperTire.ICS.DataAccess.ReportsDalc.PcBeadUnseathdr">
+	<summary>
+ Constant to hold string pc_beadunseathdr.
+ </summary>
+	<remarks></remarks>
+</member><member name="F:CooperTire.ICS.DataAccess.ReportsDalc.PcTreadWearhdr">
+	<summary>
+ Constant to hold string pc_treadwearhdr.
+ </summary>
+	<remarks></remarks>
+</member><member name="F:CooperTire.ICS.DataAccess.ReportsDalc.PcHighSpeedhdr">
+	<summary>
+ Constant to hold string pc_highspeedhdr.
+ </summary>
+	<remarks></remarks>
+</member><member name="F:CooperTire.ICS.DataAccess.ReportsDalc.SkuListView">
+	<summary>
+ Constant to hold string SKULIST_VIEW.
+ </summary>
+	<remarks></remarks>
+</member><member name="F:CooperTire.ICS.DataAccess.ReportsDalc.MeasureHdr">
+	<summary>
+ Constant to hold string MEASUREHDR.
+ </summary>
+	<remarks></remarks>
+</member><member name="F:CooperTire.ICS.DataAccess.ReportsDalc.PlungerHdr">
+	<summary>
+ Constant to hold string PLUNGERHDR.
+ </summary>
+	<remarks></remarks>
+</member><member name="F:CooperTire.ICS.DataAccess.ReportsDalc.BeadUnseathdr">
+	<summary>
+ Constant to hold string BEADUNSEATHDR.
+ </summary>
+	<remarks></remarks>
+</member><member name="F:CooperTire.ICS.DataAccess.ReportsDalc.TreadwearHdr">
+	<summary>
+ Constant to hold string TREADWEARHDR.
+ </summary>
+	<remarks></remarks>
+</member><member name="F:CooperTire.ICS.DataAccess.ReportsDalc.EnduranceHdr">
+	<summary>
+ Constant to hold string ENDURANCEHDR.
+ </summary>
+	<remarks></remarks>
+</member><member name="F:CooperTire.ICS.DataAccess.ReportsDalc.HighSpeedHdr">
+	<summary>
+ Constant to hold string HIGHSPEEDHDR.
+ </summary>
+	<remarks></remarks>
+</member><member name="F:CooperTire.ICS.DataAccess.ReportsDalc.PcMeasureDtl">
+	<summary>
+ Constant to hold string pc_MeasureDtl.
+ </summary>
+	<remarks></remarks>
+</member><member name="F:CooperTire.ICS.DataAccess.ReportsDalc.PcTreadWearDtl">
+	<summary>
+ Constant to hold string pc_TreadWearDtl.
+ </summary>
+	<remarks></remarks>
+</member><member name="F:CooperTire.ICS.DataAccess.ReportsDalc.PcHighSpeedDtl">
+	<summary>
+ Constant to hold string pc_HighSpeedDtl.
+ </summary>
+	<remarks></remarks>
+</member><member name="F:CooperTire.ICS.DataAccess.ReportsDalc.PsMatlNum">
+	<summary>
+ Constant to hold string ps_Matl_Num.
+ </summary>
+	<remarks></remarks>
+</member><member name="F:CooperTire.ICS.DataAccess.ReportsDalc.MeasureDtl">
+	<summary>
+ Constant to hold string MeasureDtl.
+ </summary>
+	<remarks></remarks>
+</member><member name="F:CooperTire.ICS.DataAccess.ReportsDalc.ThreadWearDtl">
+	<summary>
+ Constant to hold string TreadWearDtl.
+ </summary>
+	<remarks></remarks>
+</member><member name="F:CooperTire.ICS.DataAccess.ReportsDalc.HighSpeedDtl">
+	<summary>
+ Constant to hold string HighSpeedDtl.
+ </summary>
+	<remarks></remarks>
+</member><member name="F:CooperTire.ICS.DataAccess.ReportsDalc.CertificateView">
+	<summary>
+ Constant to hold string CERTIFICATE_VIEW.
+ </summary>
+	<remarks></remarks>
+</member><member name="F:CooperTire.ICS.DataAccess.ReportsDalc.PcCertificateInfo">
+	<summary>
+ Constant to hold string pc_CertificateInfo.
+ </summary>
+	<remarks></remarks>
+</member><member name="F:CooperTire.ICS.DataAccess.ReportsDalc.PcBeadUnseatdtl">
+	<summary>
+ Constant to hold string pc_BEADUNSEATDTL.
+ </summary>
+	<remarks></remarks>
+</member><member name="F:CooperTire.ICS.DataAccess.ReportsDalc.PcPlungerDtl">
+	<summary>
+ Constant to hold string pc_PLUNGERDTL.
+ </summary>
+	<remarks></remarks>
+</member><member name="F:CooperTire.ICS.DataAccess.ReportsDalc.PcEnduranceHdr">
+	<summary>
+ Constant to hold string pc_ENDURANCEHDR.
+ </summary>
+	<remarks></remarks>
+</member><member name="F:CooperTire.ICS.DataAccess.ReportsDalc.PcEnduranceDtl">
+	<summary>
+ Constant to hold string pc_ENDURANCEDTL.
+ </summary>
+	<remarks></remarks>
+</member><member name="F:CooperTire.ICS.DataAccess.ReportsDalc.PcSpeedTestDetail">
+	<summary>
+ Constant to hold string pc_SPEEDTESTDETAIL.
+ </summary>
+	<remarks></remarks>
+</member><member name="F:CooperTire.ICS.DataAccess.ReportsDalc.BeadUnSeatDtl">
+	<summary>
+ Constant to hold string BEADUNSEATDTL.
+ </summary>
+	<remarks></remarks>
+</member><member name="F:CooperTire.ICS.DataAccess.ReportsDalc.PlungerDtl">
+	<summary>
+ Constant to hold string PLUNGERDTL.
+ </summary>
+	<remarks></remarks>
+</member><member name="F:CooperTire.ICS.DataAccess.ReportsDalc.EnduranceDtl">
+	<summary>
+ Constant to hold string ENDURANCEDTL.
+ </summary>
+	<remarks></remarks>
+</member><member name="F:CooperTire.ICS.DataAccess.ReportsDalc.SpeedTestDetail">
+	<summary>
+ Constant to hold string SPEEDTESTDETAIL.
+ </summary>
+	<remarks></remarks>
+</member><member name="M:CooperTire.ICS.DataAccess.ReportsDalc.GetDataForEmarkPassengerReport(System.String,System.Int32,System.String,System.Int32)">
+	<summary>
+ Gets the data for emark passenger report.
+ </summary>
+	<param name="p_strCertificateNumber">The  certificate number.</param>
+	<param name="p_intCertificationTypeId">The  certification type id.</param>
+	<param name="p_strExtension">The  extension.</param>
+	<param name="p_intTireTypeId">Tire type Id.</param>
+	<returns>Data table returned with information about emark passenger report.</returns>
+	<exception cref="T:System.Exception">
+ Logs to windows event and throws the exception if any error occurs.
+ </exception>
+	<remarks>
+		<list type="table">
+			<listheader>
+				<term>Author</term>
+				<description>Description</description>
+			</listheader>
+			<item>
+				<term>NA</term>
+				<description>
+					<para>NA</para>
+					<para>Original Code.</para>
+				</description>
+			</item>
+			<item>
+				<term>Srinivas S</term>
+				<description>
+					<para>09/24/2019</para>
+					<para>Implemented code standarization.</para>
+				</description>
+			</item>
+		</list>
+	</remarks>
+</member><member name="M:CooperTire.ICS.DataAccess.ReportsDalc.GetDataForEmarkE117Report(System.String,System.Int32,System.String,System.Int32)">
+	<summary>
+ Get data for Emark E117 report
+ </summary>
+	<param name="p_strCertificateNumber"></param>
+	<param name="p_intCertificationTypeId"></param>
+	<param name="p_strExtension"></param>
+	<param name="p_intTireTypeId"></param>
+	<returns>Data table returned with information about Emark E117 report.</returns>
+	<exception cref="T:System.Exception">
+ Logs to windows event and throws the exception if any error occurs.
+ </exception>
+	<remarks>
+		<list type="table">
+			<listheader>
+				<term>Author</term>
+				<description>Description</description>
+			</listheader>
+			<item>
+				<term>NA</term>
+				<description>
+					<para>NA</para>
+					<para>Original Code.</para>
+				</description>
+			</item>
+			<item>
+				<term>Srinivas S</term>
+				<description>
+					<para>09/24/2019</para>
+					<para>Implemented code standarization.</para>
+				</description>
+			</item>
+		</list>
+	</remarks>
+</member><member name="M:CooperTire.ICS.DataAccess.ReportsDalc.GetDataForGSOPassengerReport(System.String,System.Int32,System.String,System.Int32)">
+	<summary>
+ Gets the data for GSO passenger report.
+ </summary>
+	<param name="p_strCertificateNumber">The P_STR certificate number.</param>
+	<param name="p_intCertificationTypeId">The p_int certification type id.</param>
+	<param name="p_strExtension">The P_STR extension.</param>
+	<param name="p_intTireTypeId">The tire type id. (ignored for now but kept in place for future use.)</param>
+	<returns>Data table returned with information about  GSO passenger report.</returns>
+	<exception cref="T:System.Exception">
+ Logs to windows event and throws the exception if any error occurs.
+ </exception>
+	<remarks>
+		<list type="table">
+			<listheader>
+				<term>Author</term>
+				<description>Description</description>
+			</listheader>
+			<item>
+				<term>NA</term>
+				<description>
+					<para>NA</para>
+					<para>Original Code.</para>
+				</description>
+			</item>
+			<item>
+				<term>Srinivas S</term>
+				<description>
+					<para>09/24/2019</para>
+					<para>Implemented code standarization.</para>
+				</description>
+			</item>
+		</list>
+	</remarks>
+</member><member name="M:CooperTire.ICS.DataAccess.ReportsDalc.GetDataForGSOConformityReport(System.String,System.Int32,System.Int32)">
+	<summary>
+ Gets the data for GSO Conformity report.
+ </summary>
+	<param name="p_strBatchNumber">The P_STR Batch number.</param>
+	<param name="p_intCertificationTypeId">The p_int certification type id.</param>
+	<param name="p_intTireTypeId">The tire type id. (ignored for now but kept in place for future use.)</param>
+	<returns>Data set returned with information about  GSO Conformity report.</returns>
+	<exception cref="T:System.Exception">
+ Logs to windows event and throws the exception if any error occurs.
+ </exception>
+	<remarks>
+		<list type="table">
+			<listheader>
+				<term>Author</term>
+				<description>Description</description>
+			</listheader>
+			<item>
+				<term>NA</term>
+				<description>
+					<para>NA</para>
+					<para>Original Code.</para>
+				</description>
+			</item>
+			<item>
+				<term>Srinivas S</term>
+				<description>
+					<para>09/24/2019</para>
+					<para>Implemented code standarization.</para>
+				</description>
+			</item>
+		</list>
+	</remarks>
+</member><member name="M:CooperTire.ICS.DataAccess.ReportsDalc.GetDataForCCCReport(System.String,System.Int32,System.String)">
+	<summary>
+ Gets the data for CCC report.
+ </summary>
+	<param name="p_strCertificateNumber">The P_STR Certificate number.</param>
+	<param name="p_intCertificationTypeId">The p_int certification type id.</param>
+	<param name="p_strExtension">The Extention.</param>
+	<returns>Data set returned with information about CCC report.</returns>
+	<exception cref="T:System.Exception">
+ Logs to windows event and throws the exception if any error occurs.
+ </exception>
+	<remarks>
+		<list type="table">
+			<listheader>
+				<term>Author</term>
+				<description>Description</description>
+			</listheader>
+			<item>
+				<term>NA</term>
+				<description>
+					<para>NA</para>
+					<para>Original Code.</para>
+				</description>
+			</item>
+			<item>
+				<term>Srinivas S</term>
+				<description>
+					<para>09/24/2019</para>
+					<para>Implemented code standarization.</para>
+				</description>
+			</item>
+		</list>
+	</remarks>
+</member><member name="M:CooperTire.ICS.DataAccess.ReportsDalc.GetDataForCCCProductDescriptionReport(System.String,System.Int32,System.String)">
+	<summary>
+ Gets the data for CCC Product Description report.
+ </summary>
+	<param name="p_strCertificateNumber">Certificate number.</param>
+	<param name="p_intCertificationTypeId">certification type id.</param>
+	<param name="p_strExtension">Extention.</param>
+	<returns>Data set returned with information about CCC Product Description report.</returns>
+	<exception cref="T:System.Exception">
+ Logs to windows event and throws the exception if any error occurs.
+ </exception>
+	<remarks>
+		<list type="table">
+			<listheader>
+				<term>Author</term>
+				<description>Description</description>
+			</listheader>
+			<item>
+				<term>NA</term>
+				<description>
+					<para>NA</para>
+					<para>Original Code.</para>
+				</description>
+			</item>
+			<item>
+				<term>Srinivas S</term>
+				<description>
+					<para>09/24/2019</para>
+					<para>Implemented code standarization.</para>
+				</description>
+			</item>
+		</list>
+	</remarks>
+</member><member name="M:CooperTire.ICS.DataAccess.ReportsDalc.GetDataForIMARKConformityReport">
+	<summary>
+ Gets the data for IMARK Conformity report.
+ </summary>
+	<returns>Data set returned with information about IMARK Conformity report.</returns>
+	<exception cref="T:System.Exception">
+ Logs to windows event and throws the exception if any error occurs.
+ </exception>
+	<remarks>
+		<list type="table">
+			<listheader>
+				<term>Author</term>
+				<description>Description</description>
+			</listheader>
+			<item>
+				<term>NA</term>
+				<description>
+					<para>NA</para>
+					<para>Original Code.</para>
+				</description>
+			</item>
+			<item>
+				<term>Srinivas S</term>
+				<description>
+					<para>09/24/2019</para>
+					<para>Implemented code standarization.</para>
+				</description>
+			</item>
+		</list>
+	</remarks>
+</member><member name="M:CooperTire.ICS.DataAccess.ReportsDalc.GetDataForImarkSamplingTireTestsReport(System.String)">
+	<summary>
+ Get data for imark sampling tire tests report
+ </summary>
+	<param name="p_str_MatlNum">Material number.</param>
+	<returns>Data set returned with information about imark sampling tire tests report.</returns>
+	<exception cref="T:System.Exception">
+ Logs to windows event and throws the exception if any error occurs.
+ </exception>
+	<remarks>
+		<list type="table">
+			<listheader>
+				<term>Author</term>
+				<description>Description</description>
+			</listheader>
+			<item>
+				<term>NA</term>
+				<description>
+					<para>NA</para>
+					<para>Original Code.</para>
+				</description>
+			</item>
+			<item>
+				<term>Srinivas S</term>
+				<description>
+					<para>09/24/2019</para>
+					<para>Implemented code standarization.</para>
+				</description>
+			</item>
+		</list>
+	</remarks>
+</member><member name="M:CooperTire.ICS.DataAccess.ReportsDalc.GetDataForImarkCertification(System.DateTime)">
+	<summary>
+ Get data for the Imark Certiffication Report
+ </summary>
+	<param name="p_dt_Date">Date.</param>
+	<returns>Data set returned with information about Imark Certiffication report.</returns>
+	<exception cref="T:System.Exception">
+ Logs to windows event and throws the exception if any error occurs.
+ </exception>
+	<remarks>
+		<list type="table">
+			<listheader>
+				<term>Author</term>
+				<description>Description</description>
+			</listheader>
+			<item>
+				<term>NA</term>
+				<description>
+					<para>NA</para>
+					<para>Original Code.</para>
+				</description>
+			</item>
+			<item>
+				<term>Srinivas S</term>
+				<description>
+					<para>09/24/2019</para>
+					<para>Implemented code standarization.</para>
+				</description>
+			</item>
+		</list>
+	</remarks>
+</member><member name="M:CooperTire.ICS.DataAccess.ReportsDalc.GetSKUCertificateReportInfo(System.String,System.String,System.String,System.String)">
+	<summary>
+ Get data for the SKU Certiffication Report
+ </summary>
+	<param name="p_str_MatlNum">Material Number.</param>
+	<param name="p_strBrand">Brand</param>
+	<param name="p_strBrandLine">Brand Line.</param>
+	<param name="p_strCertType">Certificate type.</param>
+	<returns>Data set returned with information about SKU Certiffication report.</returns>
+	<exception cref="T:System.Exception">
+ Logs to windows event and throws the exception if any error occurs.
+ </exception>
+	<remarks>
+		<list type="table">
+			<listheader>
+				<term>Author</term>
+				<description>Description</description>
+			</listheader>
+			<item>
+				<term>NA</term>
+				<description>
+					<para>NA</para>
+					<para>Original Code.</para>
+				</description>
+			</item>
+		</list>
+	</remarks>
+</member><member name="M:CooperTire.ICS.DataAccess.ReportsDalc.GetDataForEmarkCertificationReport(System.String,System.String,System.String)">
+	<summary>
+ Get data for the Emark Certification Report
+ </summary>
+	<param name="p_strCertificationNo">Certification Number.</param>
+	<param name="p_strBrand">Brand</param>
+	<param name="p_strBrandLine">Brand Line.</param>
+	<returns>Data set returned with information about Emark Certification report.</returns>
+	<exception cref="T:System.Exception">
+ Logs to windows event and throws the exception if any error occurs.
+ </exception>
+	<remarks>
+		<list type="table">
+			<listheader>
+				<term>Author</term>
+				<description>Description</description>
+			</listheader>
+			<item>
+				<term>NA</term>
+				<description>
+					<para>NA</para>
+					<para>Original Code.</para>
+				</description>
+			</item>
+			<item>
+				<term>Srinivas S</term>
+				<description>
+					<para>09/24/2019</para>
+					<para>Implemented code standarization.</para>
+				</description>
+			</item>''' 
+ </list>
+	</remarks>
+</member><member name="M:CooperTire.ICS.DataAccess.ReportsDalc.GetDataForEmarkWithTR(System.String,System.Int16)">
+	<summary>
+ Gets the data for emark with TR.
+ </summary>
+	<param name="p_strCertificateNumber">Certification Number.</param>
+	<param name="p_srtTireTypeID">Tire Type Id</param>
+	<returns>Data set returned with information about emark with TR.</returns>
+	<exception cref="T:System.Exception">
+ Logs to windows event and throws the exception if any error occurs.
+ </exception>
+	<remarks>
+		<list type="table">
+			<listheader>
+				<term>Author</term>
+				<description>Description</description>
+			</listheader>
+			<item>
+				<term>NA</term>
+				<description>
+					<para>NA</para>
+					<para>Original Code.</para>
+				</description>
+			</item>
+			<item>
+				<term>Srinivas S</term>
+				<description>
+					<para>09/24/2019</para>
+					<para>Implemented code standarization.</para>
+				</description>
+			</item>
+		</list>
+	</remarks>
+</member><member name="M:CooperTire.ICS.DataAccess.ReportsDalc.GetTraceabilityReportInfo(System.String,System.Int32,System.String)">
+	<summary>
+ Gets the traceability report info.
+ </summary>
+	<param name="p_strCertificateNumber">The certificate number.</param>
+	<param name="p_intCertificationTypeID">The certification type ID.</param>
+	<param name="p_strIncludeArchived">Include Archived certificates.</param>
+	<returns>Data table of type Traceability returned with information about traceability report.</returns>
+	<exception cref="T:System.Exception">
+ Logs to windows event and throws the exception if any error occurs.
+ </exception>
+	<remarks>
+		<list type="table">
+			<listheader>
+				<term>Author</term>
+				<description>Description</description>
+			</listheader>
+			<item>
+				<term>NA</term>
+				<description>
+					<para>NA</para>
+					<para>Original Code.</para>
+				</description>
+			</item>
+			<item>
+				<term>Srinivas S</term>
+				<description>
+					<para>09/24/2019</para>
+					<para>Implemented code standarization.</para>
+				</description>
+			</item>
+		</list>
+	</remarks>
+</member><member name="M:CooperTire.ICS.DataAccess.ReportsDalc.GetExceptionReportInfo">
+	<summary>
+ Gets the exception report info.
+ </summary>
+	<returns>Data table of type ExceptionReport_DataSet returned with information about exception report.</returns>
+	<exception cref="T:System.Exception">
+ Logs to windows event and throws the exception if any error occurs.
+ </exception>
+	<remarks>
+		<list type="table">
+			<listheader>
+				<term>Author</term>
+				<description>Description</description>
+			</listheader>
+			<item>
+				<term>NA</term>
+				<description>
+					<para>NA</para>
+					<para>Original Code.</para>
+				</description>
+			</item>
+			<item>
+				<term>Srinivas S</term>
+				<description>
+					<para>09/24/2019</para>
+					<para>Implemented code standarization.</para>
+				</description>
+			</item>
+		</list>
+	</remarks>
+</member><member name="M:CooperTire.ICS.DataAccess.ReportsDalc.GetEmarkApplication(System.String,System.Int32)">
+	<summary>
+ Gets the Emark Application info
+ </summary>
+	<param name="p_strCertificateNumber">The certificate number.</param>
+	<param name="p_intTireTypeID">The certification type ID.</param>
+	<returns>Data set returned with information about Emark Application.</returns>
+	<exception cref="T:System.Exception">
+ Logs to windows event and throws the exception if any error occurs.
+ </exception>
+	<remarks>
+		<list type="table">
+			<listheader>
+				<term>Author</term>
+				<description>Description</description>
+			</listheader>
+			<item>
+				<term>NA</term>
+				<description>
+					<para>NA</para>
+					<para>Original Code.</para>
+				</description>
+			</item>
+			<item>
+				<term>Srinivas S</term>
+				<description>
+					<para>09/24/2019</para>
+					<para>Implemented code standarization.</para>
+				</description>
+			</item>
+		</list>
+	</remarks>
+</member><member name="M:CooperTire.ICS.DataAccess.ReportsDalc.GetNomCertification(System.String,System.Int32)">
+	<summary>
+ Gets the Nom Application info
+ </summary>
+	<param name="p_strCertificateNumber">The certificate number.</param>
+	<param name="p_intTireTypeID">The certification type ID.</param>
+	<returns>Data set returned with information about Nom Certification.</returns>
+	<exception cref="T:System.Exception">
+ Logs to windows event and throws the exception if any error occurs.
+ </exception>
+	<remarks>
+		<list type="table">
+			<listheader>
+				<term>Author</term>
+				<description>Description</description>
+			</listheader>
+			<item>
+				<term>NA</term>
+				<description>
+					<para>NA</para>
+					<para>Original Code.</para>
+				</description>
+			</item>
+			<item>
+				<term>Srinivas S</term>
+				<description>
+					<para>09/24/2019</para>
+					<para>Implemented code standarization.</para>
+				</description>
+			</item>
+		</list>
+	</remarks>
+</member><member name="M:CooperTire.ICS.DataAccess.ReportsDalc.GetAuthenticityReport">
+	<summary>
+ Gets the Emark Authenticity report
+ </summary>
+	<returns>Data set returned with information about Authenticity report.</returns>
+	<exception cref="T:System.Exception">
+ Logs to windows event and throws the exception if any error occurs.
+ </exception>
+	<remarks>
+		<list type="table">
+			<listheader>
+				<term>Author</term>
+				<description>Description</description>
+			</listheader>
+			<item>
+				<term>NA</term>
+				<description>
+					<para>NA</para>
+					<para>Original Code.</para>
+				</description>
+			</item>
+			<item>
+				<term>Srinivas S</term>
+				<description>
+					<para>09/24/2019</para>
+					<para>Implemented code standarization.</para>
+				</description>
+			</item>
+		</list>
+	</remarks>
+</member><member name="M:CooperTire.ICS.DataAccess.ReportsDalc.GetEmarkSimilarCertificateSearchReport(System.String)">
+	<summary>
+ Gets the EmarkSimilarCertificateSearch Report info
+ </summary>
+	<param name="p_strMatlNum">Material Number.</param>
+	<returns>Data set returned with information abou EmarkSimilarCertificateSearch Report.</returns>
+	<exception cref="T:System.Exception">
+ Logs to windows event and throws the exception if any error occurs.
+ </exception>
+	<remarks>
+		<list type="table">
+			<listheader>
+				<term>Author</term>
+				<description>Description</description>
+			</listheader>
+			<item>
+				<term>NA</term>
+				<description>
+					<para>NA</para>
+					<para>Original Code.</para>
+				</description>
+			</item>
+			<item>
+				<term>Srinivas S</term>
+				<description>
+					<para>09/24/2019</para>
+					<para>Implemented code standarization.</para>
+				</description>
+			</item>
+		</list>
+	</remarks>
+</member><member name="M:CooperTire.ICS.DataAccess.ReportsDalc.GetCertificationRenewal(System.String,System.Int32)">
+	<summary>
+ Gets the Certification Renewal info
+ </summary>
+	<param name="p_strCertificateNumber">Certification Number.</param>
+	<param name="p_intCertificationTypeID">Certification type Id.</param>
+	<returns>Data set returned with information about Certification Renewal.</returns>
+	<exception cref="T:System.Exception">
+ Logs to windows event and throws the exception if any error occurs.
+ </exception>
+	<remarks>
+		<list type="table">
+			<listheader>
+				<term>Author</term>
+				<description>Description</description>
+			</listheader>
+			<item>
+				<term>NA</term>
+				<description>
+					<para>NA</para>
+					<para>Original Code.</para>
+				</description>
+			</item>
+			<item>
+				<term>Srinivas S</term>
+				<description>
+					<para>09/24/2019</para>
+					<para>Implemented code standarization.</para>
+				</description>
+			</item>
+		</list>
+	</remarks>
+</member><member name="T:CooperTire.ICS.DataAccess.ReportsDalc">
+	<summary>
+ Data access layer file to handle the reports data info
+ </summary>
+	<remarks>
+		<list type="table">
+			<listheader>
+				<term>Author</term>
+				<description>Description</description>
+			</listheader>
+			<item>
+				<term>NA</term>
+				<description>
+					<para>NA</para>
+					<para>Original Code.</para>
+				</description>
+			</item>
+			<item>
+				<term>Srinivas S</term>
+				<description>
+					<para>09/24/2019</para>
+					<para>Implemented code standarization.</para>
+				</description>
+			</item>
+		</list>
+	</remarks>
+</member><member name="F:CooperTire.ICS.DataAccess.DefaultValuesDalc.OneNum">
+	<summary>
+ variable to hold the value 1
+ </summary>
+	<remarks></remarks>
+</member><member name="M:CooperTire.ICS.DataAccess.DefaultValuesDalc.CertificateDefaultValueSave(System.Collections.Generic.List{CooperTire.ICS.DomainEntities.CertificationDefaultField},System.String)">
+	<summary>
+ Saves certificate default values
+ </summary>
+	<param name="p_certDeftValues">Certificate default values</param>
+	<param name="p_certificateNo">Certificate number</param>
+	<returns>Returns true or false based on save operation </returns>
+	<exception cref="T:System.Exception">
+ Exception will be logged to ICS Log
+ </exception>
+	<remarks>
+		<list type="table">
+			<listheader>
+				<term>Author</term>
+				<description>Description</description>
+			</listheader>
+			<item>
+				<term>NA</term>
+				<description>
+					<para>08/16/2019</para>
+					<para>Original Code.</para>
+				</description>
+			</item>
+		</list>
+	</remarks>
+</member><member name="M:CooperTire.ICS.DataAccess.DefaultValuesDalc.CertificationTypeDefaultValueSave(System.Collections.Generic.List{CooperTire.ICS.DomainEntities.CertificationDefaultField})">
+	<summary>
+ Saves certification type default values
+ </summary>
+	<param name="p_certDeftValues">Certificate default values</param>
+	<returns>Returns true or false based on save operation </returns>
+	<exception cref="T:System.Exception">
+ Exception will be logged to ICS Log
+ </exception>
+	<remarks>
+		<list type="table">
+			<listheader>
+				<term>Author</term>
+				<description>Description</description>
+			</listheader>
+			<item>
+				<term>NA</term>
+				<description>
+					<para>08/16/2019</para>
+					<para>Original Code.</para>
+				</description>
+			</item>
+		</list>
+	</remarks>
+</member><member name="M:CooperTire.ICS.DataAccess.DefaultValuesDalc.GetDefaultValues(System.String,System.Int32,System.String@)">
+	<summary>
+ Gets certificate or type default values
+ </summary>
+	<param name="p_strCertificateType">Certificate type</param>
+	<param name="p_intCertificateNumberID">Certificate number id</param>
+	<param name="p_strCertificateNumber">Certificate number</param>
+	<returns>Returns default values as data set </returns>
+	<exception cref="T:System.Exception">
+ Exception will be logged to ICS Log
+ </exception>
+	<remarks>
+		<list type="table">
+			<listheader>
+				<term>Author</term>
+				<description>Description</description>
+			</listheader>
+			<item>
+				<term>NA</term>
+				<description>
+					<para>08/16/2019</para>
+					<para>Original Code.</para>
+				</description>
+			</item>
+		</list>
+	</remarks>
+</member><member name="T:CooperTire.ICS.DataAccess.DefaultValuesDalc">
+	<summary>
+ Certificate default values data access methods
+ </summary>
+	<remarks>
+		<list type="table">
+			<listheader>
+				<term>Author</term>
+				<description>Description</description>
+			</listheader>
+			<item>
+				<term>NA</term>
+				<description>
+					<para>08/16/2019</para>
+					<para>Original Code.</para>
+				</description>
+			</item>
+		</list>
+	</remarks>
+</member><member name="M:CooperTire.ICS.DataAccess.ParametersHelper.AddParametersToCommand(System.String,System.Data.ParameterDirection,System.Data.OracleClient.OracleType,System.Object,System.Data.OracleClient.OracleCommand@)">
+	<summary>
+ Adds the parameters to command.
+ </summary>
+	<param name="strParameterName">Name of the STR parameter.</param>
+	<param name="parameterDirection">The parameter direction.</param>
+	<param name="oraType">Type of the ora.</param>
+	<param name="strParameterValue">The STR parameter value.</param>
+	<param name="oCMD">The o CMD.</param>
+	<exception cref="T:System.Exception">
+ Throws the exception if any error occurs.
+ </exception>
+	<remarks>
+		<list type="table">
+			<listheader>
+				<term>Author</term>
+				<description>Description</description>
+			</listheader>
+			<item>
+				<term>NA</term>
+				<description>
+					<para>NA</para>
+					<para>Original Code.</para>
+				</description>
+			</item>
+			<item>
+				<term>Srinivas S</term>
+				<description>
+					<para>09/24/2019</para>
+					<para>Implemented code standardization.</para>
+				</description>
+			</item>
+		</list>
+	</remarks>
+</member><member name="M:CooperTire.ICS.DataAccess.ParametersHelper.AddParametersToCommand(System.String,System.Data.ParameterDirection,System.Data.OracleClient.OracleType,System.Int32,System.Object,System.Data.OracleClient.OracleCommand@)">
+	<summary>
+ Adds the parameters to command.
+ </summary>
+	<param name="strParameterName">Name of the STR parameter.</param>
+	<param name="parameterDirection">The parameter direction.</param>
+	<param name="oraType">Type of the ora.</param>
+	<param name="p_intSize">Size of the the string parameter</param>
+	<param name="strParameterValue">The STR parameter value.</param>
+	<param name="oCMD">The o CMD.</param>
+	<exception cref="T:System.Exception">
+ Throws the exception if any error occurs.
+ </exception>
+	<remarks>
+		<list type="table">
+			<listheader>
+				<term>Author</term>
+				<description>Description</description>
+			</listheader>
+			<item>
+				<term>NA</term>
+				<description>
+					<para>NA</para>
+					<para>Original Code.</para>
+				</description>
+			</item>
+			<item>
+				<term>Srinivas S</term>
+				<description>
+					<para>09/24/2019</para>
+					<para>Implemented code standardization.</para>
+				</description>
+			</item>
+		</list>
+	</remarks>
+</member><member name="T:CooperTire.ICS.DataAccess.ParametersHelper">
+	<summary>
+ ParametersHelper Class having parameter helping method for command object
+ </summary>
+	<remarks>
+		<list type="table">
+			<listheader>
+				<term>Author</term>
+				<description>Description</description>
+			</listheader>
+			<item>
+				<term>NA</term>
+				<description>
+					<para>NA</para>
+					<para>Original Code.</para>
+				</description>
+			</item>
+			<item>
+				<term>Srinivas S</term>
+				<description>
+					<para>09/24/2019</para>
+					<para>Implemented code standardization.</para>
+				</description>
+			</item>
+		</list>
+	</remarks>
+</member><member name="M:CooperTire.ICS.DataAccess.CooperServiceBroker.CsbPublicPI.#ctor">
+	<remarks/>
+</member><member name="E:CooperTire.ICS.DataAccess.CooperServiceBroker.CsbPublicPI.PushPalletLocationCompleted">
+	<remarks/>
+</member><member name="E:CooperTire.ICS.DataAccess.CooperServiceBroker.CsbPublicPI.GetTesDataCompleted">
+	<remarks/>
+</member><member name="E:CooperTire.ICS.DataAccess.CooperServiceBroker.CsbPublicPI.GetClientTestsCompleted">
+	<remarks/>
+</member><member name="E:CooperTire.ICS.DataAccess.CooperServiceBroker.CsbPublicPI.GetProductDataCompleted">
+	<remarks/>
+</member><member name="E:CooperTire.ICS.DataAccess.CooperServiceBroker.CsbPublicPI.GetTestingDataCompleted">
+	<remarks/>
+</member><member name="E:CooperTire.ICS.DataAccess.CooperServiceBroker.CsbPublicPI.GetTireTypeCompleted">
+	<remarks/>
+</member><member name="M:CooperTire.ICS.DataAccess.CooperServiceBroker.CsbPublicPI.PushPalletLocation(System.String,System.String,System.String,System.String)">
+	<remarks/>
+</member><member name="M:CooperTire.ICS.DataAccess.CooperServiceBroker.CsbPublicPI.PushPalletLocationAsync(System.String,System.String,System.String,System.String)">
+	<remarks/>
+</member><member name="M:CooperTire.ICS.DataAccess.CooperServiceBroker.CsbPublicPI.PushPalletLocationAsync(System.String,System.String,System.String,System.String,System.Object)">
+	<remarks/>
+</member><member name="M:CooperTire.ICS.DataAccess.CooperServiceBroker.CsbPublicPI.GetTesData(System.String,System.String,System.String)">
+	<remarks/>
+</member><member name="M:CooperTire.ICS.DataAccess.CooperServiceBroker.CsbPublicPI.GetTesDataAsync(System.String,System.String,System.String)">
+	<remarks/>
+</member><member name="M:CooperTire.ICS.DataAccess.CooperServiceBroker.CsbPublicPI.GetTesDataAsync(System.String,System.String,System.String,System.Object)">
+	<remarks/>
+</member><member name="M:CooperTire.ICS.DataAccess.CooperServiceBroker.CsbPublicPI.GetClientTests(System.String,System.String,System.String,System.Data.DataSet)">
+	<remarks/>
+</member><member name="M:CooperTire.ICS.DataAccess.CooperServiceBroker.CsbPublicPI.GetClientTestsAsync(System.String,System.String,System.String,System.Data.DataSet)">
+	<remarks/>
+</member><member name="M:CooperTire.ICS.DataAccess.CooperServiceBroker.CsbPublicPI.GetClientTestsAsync(System.String,System.String,System.String,System.Data.DataSet,System.Object)">
+	<remarks/>
+</member><member name="M:CooperTire.ICS.DataAccess.CooperServiceBroker.CsbPublicPI.GetProductData(System.String,System.String)">
+	<remarks/>
+</member><member name="M:CooperTire.ICS.DataAccess.CooperServiceBroker.CsbPublicPI.GetProductDataAsync(System.String,System.String)">
+	<remarks/>
+</member><member name="M:CooperTire.ICS.DataAccess.CooperServiceBroker.CsbPublicPI.GetProductDataAsync(System.String,System.String,System.Object)">
+	<remarks/>
+</member><member name="M:CooperTire.ICS.DataAccess.CooperServiceBroker.CsbPublicPI.GetTestingData(System.String,System.String,System.String,System.String)">
+	<remarks/>
+</member><member name="M:CooperTire.ICS.DataAccess.CooperServiceBroker.CsbPublicPI.GetTestingDataAsync(System.String,System.String,System.String,System.String)">
+	<remarks/>
+</member><member name="M:CooperTire.ICS.DataAccess.CooperServiceBroker.CsbPublicPI.GetTestingDataAsync(System.String,System.String,System.String,System.String,System.Object)">
+	<remarks/>
+</member><member name="M:CooperTire.ICS.DataAccess.CooperServiceBroker.CsbPublicPI.GetTireType(System.String,System.String)">
+	<remarks/>
+</member><member name="M:CooperTire.ICS.DataAccess.CooperServiceBroker.CsbPublicPI.GetTireTypeAsync(System.String,System.String)">
+	<remarks/>
+</member><member name="M:CooperTire.ICS.DataAccess.CooperServiceBroker.CsbPublicPI.GetTireTypeAsync(System.String,System.String,System.Object)">
+	<remarks/>
+</member><member name="M:CooperTire.ICS.DataAccess.CooperServiceBroker.CsbPublicPI.CancelAsync(System.Object)">
+	<remarks/>
+</member><member name="T:CooperTire.ICS.DataAccess.CooperServiceBroker.CsbPublicPI">
+	<remarks/>
+</member><member name="T:CooperTire.ICS.DataAccess.CooperServiceBroker.PushPalletLocationCompletedEventHandler">
+	<remarks/>
+</member><member name="P:CooperTire.ICS.DataAccess.CooperServiceBroker.PushPalletLocationCompletedEventArgs.Result">
+	<remarks/>
+</member><member name="T:CooperTire.ICS.DataAccess.CooperServiceBroker.PushPalletLocationCompletedEventArgs">
+	<remarks/>
+</member><member name="T:CooperTire.ICS.DataAccess.CooperServiceBroker.GetTesDataCompletedEventHandler">
+	<remarks/>
+</member><member name="P:CooperTire.ICS.DataAccess.CooperServiceBroker.GetTesDataCompletedEventArgs.Result">
+	<remarks/>
+</member><member name="T:CooperTire.ICS.DataAccess.CooperServiceBroker.GetTesDataCompletedEventArgs">
+	<remarks/>
+</member><member name="T:CooperTire.ICS.DataAccess.CooperServiceBroker.GetClientTestsCompletedEventHandler">
+	<remarks/>
+</member><member name="P:CooperTire.ICS.DataAccess.CooperServiceBroker.GetClientTestsCompletedEventArgs.Result">
+	<remarks/>
+</member><member name="T:CooperTire.ICS.DataAccess.CooperServiceBroker.GetClientTestsCompletedEventArgs">
+	<remarks/>
+</member><member name="T:CooperTire.ICS.DataAccess.CooperServiceBroker.GetProductDataCompletedEventHandler">
+	<remarks/>
+</member><member name="P:CooperTire.ICS.DataAccess.CooperServiceBroker.GetProductDataCompletedEventArgs.Result">
+	<remarks/>
+</member><member name="T:CooperTire.ICS.DataAccess.CooperServiceBroker.GetProductDataCompletedEventArgs">
+	<remarks/>
+</member><member name="T:CooperTire.ICS.DataAccess.CooperServiceBroker.GetTestingDataCompletedEventHandler">
+	<remarks/>
+</member><member name="P:CooperTire.ICS.DataAccess.CooperServiceBroker.GetTestingDataCompletedEventArgs.Result">
+	<remarks/>
+</member><member name="T:CooperTire.ICS.DataAccess.CooperServiceBroker.GetTestingDataCompletedEventArgs">
+	<remarks/>
+</member><member name="T:CooperTire.ICS.DataAccess.CooperServiceBroker.GetTireTypeCompletedEventHandler">
+	<remarks/>
+</member><member name="P:CooperTire.ICS.DataAccess.CooperServiceBroker.GetTireTypeCompletedEventArgs.Result">
+	<remarks/>
+</member><member name="T:CooperTire.ICS.DataAccess.CooperServiceBroker.GetTireTypeCompletedEventArgs">
+	<remarks/>
+</member><member name="F:CooperTire.ICS.DataAccess.CertificationDalc.errCode">
+	<summary>
+ variable to hold the error code from the exception
+ </summary>
+	<remarks></remarks>
+</member><member name="F:CooperTire.ICS.DataAccess.CertificationDalc.errMessage">
+	<summary>
+ variable to hold the error message from the exception
+ </summary>
+	<remarks></remarks>
+</member><member name="F:CooperTire.ICS.DataAccess.CertificationDalc.RetCursor">
+	<summary>
+ variable to hold the RetCursor value
+ </summary>
+	<remarks></remarks>
+</member><member name="F:CooperTire.ICS.DataAccess.CertificationDalc.MatlNum">
+	<summary>
+ variable to hold the Material Number
+ </summary>
+	<remarks></remarks>
+</member><member name="F:CooperTire.ICS.DataAccess.CertificationDalc.YesStr">
+	<summary>
+ variable to hold Yes value
+ </summary>
+	<remarks></remarks>
+</member><member name="F:CooperTire.ICS.DataAccess.CertificationDalc.NoStr">
+	<summary>
+ variable to hold No value
+ </summary>
+	<remarks></remarks>
+</member><member name="M:CooperTire.ICS.DataAccess.CertificationDalc.GetSearchTypeResults">
+	<summary>
+ Gets the search type results.
+ </summary>
+	<returns>Returns search type results as data set </returns>
+	<exception cref="T:System.Exception">
+ Exception will be logged to ICS Log
+ </exception>
+	<remarks>
+		<list type="table">
+			<listheader>
+				<term>Author</term>
+				<description>Description</description>
+			</listheader>
+			<item>
+				<item>
+					<term>NA</term>
+					<description>
+						<para>NA</para>
+						<para>Original Code.</para>
+					</description>
+				</item>
+				<term>Sujitha</term>
+				<description>
+					<para>11/25/2019</para>
+					<para>Implemented code standardization.</para>
+				</description>
+			</item>
+		</list>
+	</remarks>
+</member><member name="M:CooperTire.ICS.DataAccess.CertificationDalc.GetManufacturingLocationsResults(System.String)">
+	<summary>
+ Gets the manufacturing locations results.
+ </summary>
+	<param name="p_strSize">size</param>
+	<returns>Returns manufacturing location results as data set.</returns>
+	<exception cref="T:System.Exception">
+ Exception will be logged to ICS Log
+ </exception>
+	<remarks>
+		<list type="table">
+			<listheader>
+				<term>Author</term>
+				<description>Description</description>
+			</listheader>
+			<item>
+				<item>
+					<term>NA</term>
+					<description>
+						<para>NA</para>
+						<para>Original Code.</para>
+					</description>
+				</item>
+				<term>Sujitha</term>
+				<description>
+					<para>11/25/2019</para>
+					<para>Implemented code standardization.</para>
+				</description>
+			</item>
+		</list>
+	</remarks>
+</member><member name="M:CooperTire.ICS.DataAccess.CertificationDalc.GetQueryControlGridSource">
+	<summary>
+ Gets the grid data source for the Query user control
+ </summary>
+	<returns>Returns the grid data source as data table </returns>
+	<exception cref="T:System.Exception">
+ Exception will be logged to ICS Log
+ </exception>
+	<remarks>
+		<list type="table">
+			<listheader>
+				<term>Author</term>
+				<description>Description</description>
+			</listheader>
+			<item>
+				<item>
+					<term>NA</term>
+					<description>
+						<para>NA</para>
+						<para>Original Code.</para>
+					</description>
+				</item>
+				<term>Sujitha</term>
+				<description>
+					<para>11/25/2019</para>
+					<para>Implemented code standardization.</para>
+				</description>
+			</item>
+		</list>
+	</remarks>
+</member><member name="M:CooperTire.ICS.DataAccess.CertificationDalc.GetCompanyNameList">
+	<summary>
+ Gets the list of company names
+ </summary>
+	<returns>Returns the company names data as data set </returns>
+	<exception cref="T:System.Exception">
+ Exception will be logged to ICS Log
+ </exception>
+	<remarks>
+		<list type="table">
+			<listheader>
+				<term>Author</term>
+				<description>Description</description>
+			</listheader>
+			<item>
+				<item>
+					<term>NA</term>
+					<description>
+						<para>NA</para>
+						<para>Original Code.</para>
+					</description>
+				</item>
+				<term>Sujitha</term>
+				<description>
+					<para>11/25/2019</para>
+					<para>Implemented code standardization.</para>
+				</description>
+			</item>
+		</list>
+	</remarks>
+</member><member name="M:CooperTire.ICS.DataAccess.CertificationDalc.GetCertifications">
+	<summary>
+ Gets all Certification names
+ </summary>
+	<returns>Returns the certification names as data set </returns>
+	<exception cref="T:System.Exception">
+ Exception will be logged to ICS Log
+ </exception>
+	<remarks>
+		<list type="table">
+			<listheader>
+				<term>Author</term>
+				<description>Description</description>
+			</listheader>
+			<item>
+				<item>
+					<term>NA</term>
+					<description>
+						<para>NA</para>
+						<para>Original Code.</para>
+					</description>
+				</item>
+				<term>Sujitha</term>
+				<description>
+					<para>11/25/2019</para>
+					<para>Implemented code standardization.</para>
+				</description>
+			</item>
+		</list>
+	</remarks>
+</member><member name="M:CooperTire.ICS.DataAccess.CertificationDalc.GetAllRegions">
+	<summary>
+ Gets all Regions data
+ </summary>
+	<returns>Returns the Regions data as data set </returns>
+	<exception cref="T:System.Exception">
+ Exception will be logged to ICS Log
+ </exception>
+	<remarks>
+		<list type="table">
+			<listheader>
+				<term>Author</term>
+				<description>Description</description>
+			</listheader>
+			<item>
+				<item>
+					<term>NA</term>
+					<description>
+						<para>NA</para>
+						<para>Original Code.</para>
+					</description>
+				</item>
+				<term>Sujitha</term>
+				<description>
+					<para>11/25/2019</para>
+					<para>Implemented code standardization.</para>
+				</description>
+			</item>
+		</list>
+	</remarks>
+</member><member name="M:CooperTire.ICS.DataAccess.CertificationDalc.GetRegionCertStatus(System.String,System.String)">
+	<summary>
+ Gets the status of region certificate
+ </summary>
+	<param name="p_strBrand">brand</param>
+	<param name="p_strBrandLine">brand line</param>
+	<returns>Returns the region certificate status as data set.</returns>
+	<exception cref="T:System.Exception">
+ Exception will be logged to ICS Log
+ </exception>
+	<remarks>
+		<list type="table">
+			<listheader>
+				<term>Author</term>
+				<description>Description</description>
+			</listheader>
+			<item>
+				<item>
+					<term>NA</term>
+					<description>
+						<para>NA</para>
+						<para>Original Code.</para>
+					</description>
+				</item>
+				<term>Sujitha</term>
+				<description>
+					<para>11/25/2019</para>
+					<para>Implemented code standardization.</para>
+				</description>
+			</item>
+		</list>
+	</remarks>
+</member><member name="M:CooperTire.ICS.DataAccess.CertificationDalc.GetProductCertStatus(System.String,System.String)">
+	<summary>
+ Gets the status of product certificate
+ </summary>
+	<param name="p_strBrand">brand</param>
+	<param name="p_strBrandLine">brand line</param>
+	<returns>Returns the product certificate status as data set.</returns>
+	<exception cref="T:System.Exception">
+ Exception will be logged to ICS Log
+ </exception>
+	<remarks>
+		<list type="table">
+			<listheader>
+				<term>Author</term>
+				<description>Description</description>
+			</listheader>
+			<item>
+				<item>
+					<term>NA</term>
+					<description>
+						<para>NA</para>
+						<para>Original Code.</para>
+					</description>
+				</item>
+				<term>Sujitha</term>
+				<description>
+					<para>11/25/2019</para>
+					<para>Implemented code standardization.</para>
+				</description>
+			</item>
+		</list>
+	</remarks>
+</member><member name="M:CooperTire.ICS.DataAccess.CertificationDalc.SaveCertificationRequest(System.Boolean,System.String,System.Int32,System.Int32)">
+	<summary>
+ Saves the certification request
+ </summary>
+	<param name="p_DeleteMe">if set to <c>true</c> [p_ delete me].</param>
+	<param name="p_strMatlNum">SAP Material</param>
+	<param name="p_intCountryID">The country ID that certification is being requested.</param>
+	<param name="p_intSKUID">The SKU ID that certification is being requested.</param>
+	<returns>Returns true if saved, else returns false</returns>
+	<exception cref="T:System.Exception">
+ Exception will be logged to ICS Log
+ </exception>
+	<remarks>
+		<list type="table">
+			<listheader>
+				<term>Author</term>
+				<description>Description</description>
+			</listheader>
+			<item>
+				<item>
+					<term>NA</term>
+					<description>
+						<para>NA</para>
+						<para>Original Code.</para>
+					</description>
+				</item>
+				<term>Sujitha</term>
+				<description>
+					<para>11/25/2019</para>
+					<para>Implemented code standardization.</para>
+				</description>
+			</item>
+		</list>
+	</remarks>
+</member><member name="M:CooperTire.ICS.DataAccess.CertificationDalc.SaveCertificationGroup(System.Boolean,System.String,System.Int32,System.Int32)">
+	<summary>
+ Saves the certification group countries
+ </summary>
+	<param name="p_DeleteMe">if set to <c>true</c> [p_ delete me].</param>
+	<param name="p_strMatlNum">SAP Material</param>
+	<param name="p_intCertificationID">The country ID that certification is being requested.</param>
+	<param name="p_intSKUID">The SKU ID that certification is being requested.</param>
+	<returns>Returns true if saved, else returns false</returns>
+	<exception cref="T:System.Exception">
+ Exception will be logged to ICS Log
+ </exception>
+	<remarks>
+		<list type="table">
+			<listheader>
+				<term>Author</term>
+				<description>Description</description>
+			</listheader>
+			<item>
+				<item>
+					<term>NA</term>
+					<description>
+						<para>NA</para>
+						<para>Original Code.</para>
+					</description>
+				</item>
+				<term>Sujitha</term>
+				<description>
+					<para>11/25/2019</para>
+					<para>Implemented code standardization.</para>
+				</description>
+			</item>
+		</list>
+	</remarks>
+</member><member name="M:CooperTire.ICS.DataAccess.CertificationDalc.SaveRequestCert(System.Boolean,System.String,System.Int32,System.Int32)">
+	<summary>
+ Saves the certification requests from grid on MarketingNew screen
+ </summary>
+	<param name="p_DeleteMe">if set to <c>true</c> [p_ delete me].</param>
+	<param name="p_strMatlNum">SAP Material</param>
+	<param name="p_intCertificationID">The country ID that certification is being requested.</param>
+	<param name="p_intSKUID">The SKU ID that certification is being requested.</param>
+	<returns>Returns true if saved, else returns false</returns>
+	<exception cref="T:System.Exception">
+ Exception will be logged to ICS Log
+ </exception>
+	<remarks>
+		<list type="table">
+			<listheader>
+				<term>Author</term>
+				<description>Description</description>
+			</listheader>
+			<item>
+				<item>
+					<term>NA</term>
+					<description>
+						<para>NA</para>
+						<para>Original Code.</para>
+					</description>
+				</item>
+				<term>Sujitha</term>
+				<description>
+					<para>11/25/2019</para>
+					<para>Implemented code standardization.</para>
+				</description>
+			</item>
+		</list>
+	</remarks>
+</member><member name="M:CooperTire.ICS.DataAccess.CertificationDalc.GetCountries(System.String)">
+	<summary>
+ Gets the countries names based on provided region name
+ </summary>
+	<param name="p_strRegionName">Region name to get the country data</param>
+	<returns>Returns countries data as data set</returns>
+	<exception cref="T:System.Exception">
+ Exception will be logged to ICS Log
+ </exception>
+	<remarks>
+		<list type="table">
+			<listheader>
+				<term>Author</term>
+				<description>Description</description>
+			</listheader>
+			<item>
+				<item>
+					<term>NA</term>
+					<description>
+						<para>NA</para>
+						<para>Original Code.</para>
+					</description>
+				</item>
+				<term>Sujitha</term>
+				<description>
+					<para>11/25/2019</para>
+					<para>Implemented code standardization.</para>
+				</description>
+			</item>
+		</list>
+	</remarks>
+</member><member name="M:CooperTire.ICS.DataAccess.CertificationDalc.GetImporters">
+	<summary>
+ Gets NOM Importers
+ </summary>
+	<returns>Returns importers data as data set</returns>
+	<exception cref="T:System.Exception">
+ Exception will be logged to ICS Log
+ </exception>
+	<remarks>
+		<list type="table">
+			<listheader>
+				<term>Author</term>
+				<description>Description</description>
+			</listheader>
+			<item>
+				<item>
+					<term>NA</term>
+					<description>
+						<para>NA</para>
+						<para>Original Code.</para>
+					</description>
+				</item>
+				<term>Sujitha</term>
+				<description>
+					<para>11/25/2019</para>
+					<para>Implemented code standardization.</para>
+				</description>
+			</item>
+		</list>
+	</remarks>
+</member><member name="M:CooperTire.ICS.DataAccess.CertificationDalc.GetCustomers">
+	<summary>
+ Gets NOM Customers
+ </summary>
+	<returns>Returns Nom customers data as data set</returns>
+	<exception cref="T:System.Exception">
+ Exception will be logged to ICS Log
+ </exception>
+	<remarks>
+		<list type="table">
+			<listheader>
+				<term>Author</term>
+				<description>Description</description>
+			</listheader>
+			<item>
+				<item>
+					<term>NA</term>
+					<description>
+						<para>NA</para>
+						<para>Original Code.</para>
+					</description>
+				</item>
+				<term>Sujitha</term>
+				<description>
+					<para>11/25/2019</para>
+					<para>Implemented code standardization.</para>
+				</description>
+			</item>
+		</list>
+	</remarks>
+</member><member name="M:CooperTire.ICS.DataAccess.CertificationDalc.GetCertificationSearchResults(System.String,System.String,System.String,System.String,System.String)">
+	<summary>
+ Gets the certification search results
+ </summary>
+	<param name="ps_SearchCriteria">Search criteria</param>
+	<param name="p_SearchType">Search type</param>
+	<param name="p_strExtensionNo">Extension number</param>
+	<param name="p_strImarkFamily">Imark family</param>
+	<param name="ps_BrandLine">Brand line</param>
+	<returns>Returns certification search results as data table</returns>
+	<exception cref="T:System.Exception">
+ Exception will be logged to ICS Log
+ </exception>
+	<remarks>
+		<list type="table">
+			<listheader>
+				<term>Author</term>
+				<description>Description</description>
+			</listheader>
+			<item>
+				<item>
+					<term>NA</term>
+					<description>
+						<para>NA</para>
+						<para>Original Code.</para>
+					</description>
+				</item>
+				<term>Sujitha</term>
+				<description>
+					<para>11/25/2019</para>
+					<para>Implemented code standardization.</para>
+				</description>
+			</item>
+		</list>
+	</remarks>
+</member><member name="M:CooperTire.ICS.DataAccess.CertificationDalc.GetBrands(System.String)">
+	<summary>
+ Gets brands
+ </summary>
+	<param name="p_strBrand">Brand name</param>
+	<returns>Returns brands data as data table</returns>
+	<exception cref="T:System.Exception">
+ Exception will be logged to ICS Log
+ </exception>
+	<remarks>
+		<list type="table">
+			<listheader>
+				<term>Author</term>
+				<description>Description</description>
+			</listheader>
+			<item>
+				<item>
+					<term>NA</term>
+					<description>
+						<para>NA</para>
+						<para>Original Code.</para>
+					</description>
+				</item>
+				<term>Sujitha</term>
+				<description>
+					<para>11/25/2019</para>
+					<para>Implemented code standardization.</para>
+				</description>
+			</item>
+		</list>
+	</remarks>
+</member><member name="M:CooperTire.ICS.DataAccess.CertificationDalc.GetBrandLines(System.String)">
+	<summary>
+ Gets the Brand Line results
+ </summary>
+	<param name="p_strLine">Brand line</param>
+	<returns>Returns brand lines data as data table</returns>
+	<exception cref="T:System.Exception">
+ Exception will be logged to ICS Log
+ </exception>
+	<remarks>
+		<list type="table">
+			<listheader>
+				<term>Author</term>
+				<description>Description</description>
+			</listheader>
+			<item>
+				<item>
+					<term>NA</term>
+					<description>
+						<para>NA</para>
+						<para>Original Code.</para>
+					</description>
+				</item>
+				<term>Sujitha</term>
+				<description>
+					<para>11/25/2019</para>
+					<para>Implemented code standardization.</para>
+				</description>
+			</item>
+		</list>
+	</remarks>
+</member><member name="M:CooperTire.ICS.DataAccess.CertificationDalc.GetMaterialAttribs(System.String)">
+	<summary>
+ Gets the attributes for Material ID List
+ </summary>
+	<param name="p_strMaterialIdList">Material Id list</param>
+	<returns>Returns material attributes as data table</returns>
+	<exception cref="T:System.Exception">
+ Exception will be logged to ICS Log
+ </exception>
+	<remarks>
+		<list type="table">
+			<listheader>
+				<term>Author</term>
+				<description>Description</description>
+			</listheader>
+			<item>
+				<item>
+					<term>NA</term>
+					<description>
+						<para>NA</para>
+						<para>Original Code.</para>
+					</description>
+				</item>
+				<term>Sujitha</term>
+				<description>
+					<para>11/25/2019</para>
+					<para>Implemented code standardization.</para>
+				</description>
+			</item>
+		</list>
+	</remarks>
+</member><member name="M:CooperTire.ICS.DataAccess.CertificationDalc.SaveAuditLogEntry(System.DateTime,System.String,System.String,System.String,System.String,System.String,System.Int32,System.String)">
+	<summary>
+ Saves audit Log entry
+ </summary>
+	<param name="p_dteChangeDateTime">Changed date and time</param>
+	<param name="m_strChangedBy">Changed by</param>
+	<param name="m_strArea">Area</param>
+	<param name="m_strChangedFieldElement">Changed field</param>
+	<param name="m_strOldValue">Old value</param>
+	<param name="m_strNewValue">New value</param>
+	<param name="m_intReasonID">Reason Id</param>
+	<param name="m_strNote">Notes</param>
+	<returns>Returns true if saved, else returns false</returns>
+	<exception cref="T:System.Exception">
+ In case of exception, function returns false
+ </exception>
+	<remarks>
+		<list type="table">
+			<listheader>
+				<term>Author</term>
+				<description>Description</description>
+			</listheader>
+			<item>
+				<item>
+					<term>NA</term>
+					<description>
+						<para>NA</para>
+						<para>Original Code.</para>
+					</description>
+				</item>
+				<term>Sujitha</term>
+				<description>
+					<para>11/25/2019</para>
+					<para>Implemented code standardization.</para>
+				</description>
+			</item>
+		</list>
+	</remarks>
+</member><member name="M:CooperTire.ICS.DataAccess.CertificationDalc.GetCertificate(System.String,System.String,System.Int32,System.Int32,System.Boolean@)">
+	<summary>
+ Gets the certificate info
+ </summary>
+	<param name="ps_CertificationNumber">Certification number</param>
+	<param name="ps_ExtensionNo">Extension number</param>
+	<param name="ps_CertificationTypeID">Certification type id</param>
+	<param name="p_iSKUID">Sku id</param>
+	<param name="p_blnTRsExist">True/False</param>
+	<returns>Returns certificate data as data table</returns>
+	<exception cref="T:System.Exception">
+ Exception will be logged to ICS Log
+ </exception>
+	<remarks>
+		<list type="table">
+			<listheader>
+				<term>Author</term>
+				<description>Description</description>
+			</listheader>
+			<item>
+				<item>
+					<term>NA</term>
+					<description>
+						<para>NA</para>
+						<para>Original Code.</para>
+					</description>
+				</item>
+				<term>Sujitha</term>
+				<description>
+					<para>11/25/2019</para>
+					<para>Implemented code standardization.</para>
+				</description>
+			</item>
+		</list>
+	</remarks>
+</member><member name="M:CooperTire.ICS.DataAccess.CertificationDalc.GetSimilarCertificate(System.Int32,System.String,System.String)">
+	<summary>
+ Gets the similar certificate info
+ </summary>
+	<param name="p_iCertificationTypeID">Certification type id</param>
+	<param name="p_strMatlNum">Material number</param>
+	<param name="p_strCertificationNumber">Certification number</param>
+	<returns>Returns similar certificate information as data table</returns>
+	<exception cref="T:System.Exception">
+ Exception will be logged to ICS Log
+ </exception>
+	<remarks>
+		<list type="table">
+			<listheader>
+				<term>Author</term>
+				<description>Description</description>
+			</listheader>
+			<item>
+				<item>
+					<term>NA</term>
+					<description>
+						<para>NA</para>
+						<para>Original Code.</para>
+					</description>
+				</item>
+				<term>Sujitha</term>
+				<description>
+					<para>11/25/2019</para>
+					<para>Implemented code standardization.</para>
+				</description>
+			</item>
+		</list>
+	</remarks>
+</member><member name="M:CooperTire.ICS.DataAccess.CertificationDalc.SaveCertificate(System.Int32,System.String,System.Boolean,System.String,System.String,System.DateTime,System.DateTime,System.DateTime,System.String,System.DateTime,System.DateTime,System.Char,System.String,System.String,System.String,System.String,System.DateTime,System.String,System.String,System.String,System.Boolean,System.String,System.Int32,System.String,System.String,System.String,System.Boolean,System.Int32,System.String,System.String,System.String,System.String,System.String,System.DateTime,System.DateTime,System.DateTime,System.String,System.String,System.Int32@,System.String,System.Boolean,System.DateTime,System.String)">
+	<summary>
+ Saves certificate info
+ </summary>
+	<param name="p_iSKUId">Sku Id</param>
+	<param name="p_strMatlNum">Material number</param>
+	<param name="p_blnRemoveMatlNum">Remove material number?True/False</param>
+	<param name="p_strCertificationTypeName">Certification type</param>
+	<param name="p_strCERTIFICATENUMBER">Certificate number</param>
+	<param name="p_dteCertDateSubmitted">Certificate submitted date</param>
+	<param name="p_dteCertDateApproved_CEGI">Certificate approved date</param>
+	<param name="p_dteDATESUBMITED">Submitted date</param>
+	<param name="pc_ACTIVESTATUS">Active status</param>
+	<param name="p_dteDATEASSIGNED_EGI">EGI assigned date</param>
+	<param name="p_dteDATEAPROVED_CEGI">CEGI approved date</param>
+	<param name="pc_RENEWALREQUIRED_CGIN">CGIN renewal required</param>
+	<param name="p_strJOBREPORTNUMBER_CEN">CEN job report number</param>
+	<param name="p_strEXTENSION_EN">EN extension</param>
+	<param name="p_strSUPPLEMENTALMOLDSTAMPING_E">Supplemental mold stamping</param>
+	<param name="p_strEMARKREFERENCE_I">Mark reference</param>
+	<param name="p_dteEXPIRYDATE_I">Expiry date</param>
+	<param name="p_strFAMILY_I">Family</param>
+	<param name="p_strPRODUCTLOCATION">Product location</param>
+	<param name="p_strCOUNTRYOFMANUFACTURE_N">Manufacturing country</param>
+	<param name="p_blnAddNewCustomer">Add new customer?True/False</param>
+	<param name="p_strActSigReq">Act Sig Required</param>
+	<param name="p_intCUSTOMERID">Customer Id</param>
+	<param name="p_strCUSTOMER_N">Customer</param>
+	<param name="p_strCUSTOMERADDRESS_N">Customer address</param>
+	<param name="p_strCUSTOMERSPECIFIC_N">Customer specific info</param>
+	<param name="p_blnAddNewImporter">Add new importer?True/False</param>
+	<param name="p_intIMPORTERID">Importer id</param>
+	<param name="p_strIMPORTER_N">Importer</param>
+	<param name="p_strIMPORTERADDRESS_N">Importer address</param>
+	<param name="p_strIMPORTERREPRESENTATIVE_N">Importer representative</param>
+	<param name="p_strCOUNTRYLOCATION_N">Country location</param>
+	<param name="p_strBATCHNUMBER_G">Batch number</param>
+	<param name="p_dteSUPPLEMENTALASSIGNED">Supplemental assigned date</param>
+	<param name="p_dteSUPPLEMENTALSUBMITTED">Supplemental submitted date</param>
+	<param name="p_dteSUPPLEMENTALAPPROVED">Supplemental approved date</param>
+	<param name="p_strCOMPANYNAME">Company name</param>
+	<param name="p_strUserName">User name</param>
+	<param name="p_intCertificateNumberID">Certificate number Id</param>
+	<param name="p_strFamilyDesc">Family description</param>
+	<param name="p_blnMoldChgRequired">Mold change required?True/False</param>
+	<param name="p_dteOperDateApproved">Oper approved date</param>
+	<param name="p_strAddInfo">additional info</param>
+	<returns>Returns saves result as integer value</returns>
+	<exception cref="T:System.Exception">
+ Exception will be logged to ICS Log
+ </exception>
+	<remarks>
+		<list type="table">
+			<listheader>
+				<term>Author</term>
+				<description>Description</description>
+			</listheader>
+			<item>
+				<item>
+					<term>NA</term>
+					<description>
+						<para>NA</para>
+						<para>Original Code.</para>
+					</description>
+				</item>
+				<term>Sujitha</term>
+				<description>
+					<para>11/25/2019</para>
+					<para>Implemented code standardization.</para>
+				</description>
+			</item>
+		</list>
+	</remarks>
+</member><member name="M:CooperTire.ICS.DataAccess.CertificationDalc.BatchNumMassUpdate(System.String,System.String,System.String,System.String)">
+	<summary>
+ Updates Batch Numbers
+ </summary>
+	<param name="p_strCertifName">Certification name</param>
+	<param name="p_strTempBatchNum">Temporary batch number</param>
+	<param name="p_strGSOBatchNum">GSO batch number</param>
+	<param name="p_strUserName">User name</param>
+	<returns>Returns save result status as integer</returns>
+	<exception cref="T:System.Exception">
+ Exception will be logged to ICS Log
+ </exception>
+	<remarks>
+		<list type="table">
+			<listheader>
+				<term>Author</term>
+				<description>Description</description>
+			</listheader>
+			<item>
+				<item>
+					<term>NA</term>
+					<description>
+						<para>NA</para>
+						<para>Original Code.</para>
+					</description>
+				</item>
+				<term>Sujitha</term>
+				<description>
+					<para>11/25/2019</para>
+					<para>Implemented code standardization.</para>
+				</description>
+			</item>
+		</list>
+	</remarks>
+</member><member name="M:CooperTire.ICS.DataAccess.CertificationDalc.CheckSimilarTire(System.Int32,System.String,System.String@,System.Int32@,System.String@,System.String@)">
+	<summary>
+ Checks Similar Tire
+ </summary>
+	<param name="pi_certType">Certificate type</param>
+	<param name="p_strMatlNum">Material number</param>
+	<param name="ps_similarMatlNum">Similar material number</param>
+	<param name="pi_imarkFamily">Imark family</param>
+	<param name="ps_eceReference">Ece reference</param>
+	<param name="ps_errorDesc">Error description</param>
+	<returns>Returns error number as integer</returns>
+	<exception cref="T:System.Exception">
+ Exception will be logged to ICS Log
+ </exception>
+	<remarks>
+		<list type="table">
+			<listheader>
+				<term>Author</term>
+				<description>Description</description>
+			</listheader>
+			<item>
+				<item>
+					<term>NA</term>
+					<description>
+						<para>NA</para>
+						<para>Original Code.</para>
+					</description>
+				</item>
+				<term>Sujitha</term>
+				<description>
+					<para>11/25/2019</para>
+					<para>Implemented code standardization.</para>
+				</description>
+			</item>
+		</list>
+	</remarks>
+</member><member name="M:CooperTire.ICS.DataAccess.CertificationDalc.RenewCertificate(System.Int32,System.Int32@,System.String)">
+	<summary>
+ Renew Imark Certificate
+ </summary>
+	<param name="p_intCertificateID">Certificate id</param>
+	<param name="p_intNewCertificateID">New certificate id</param>
+	<param name="p_strUserName">User name</param>
+	<returns>Returns renewal result as integer</returns>
+	<exception cref="T:System.Exception">
+ Exception will be logged to ICS Log
+ </exception>
+	<remarks>
+		<list type="table">
+			<listheader>
+				<term>Author</term>
+				<description>Description</description>
+			</listheader>
+			<item>
+				<item>
+					<term>NA</term>
+					<description>
+						<para>NA</para>
+						<para>Original Code.</para>
+					</description>
+				</item>
+				<term>Sujitha</term>
+				<description>
+					<para>11/25/2019</para>
+					<para>Implemented code standardization.</para>
+				</description>
+			</item>
+		</list>
+	</remarks>
+</member><member name="M:CooperTire.ICS.DataAccess.CertificationDalc.GetProductData(System.String,System.Int32)">
+	<summary>
+ Gets the product information to be displayed on the product section of test result
+ </summary>
+	<param name="p_strMatlNum">The Material Number.</param>
+	<param name="p_iSKUID">Id</param>
+	<returns>Returns data table containing product info</returns>
+	<exception cref="T:System.Exception">
+ Exception will be logged to ICS Log
+ </exception>
+	<remarks>
+		<list type="table">
+			<listheader>
+				<term>Author</term>
+				<description>Description</description>
+			</listheader>
+			<item>
+				<item>
+					<term>NA</term>
+					<description>
+						<para>NA</para>
+						<para>Original Code.</para>
+					</description>
+				</item>
+				<term>Sujitha</term>
+				<description>
+					<para>11/25/2019</para>
+					<para>Implemented code standardization.</para>
+				</description>
+			</item>
+		</list>
+	</remarks>
+</member><member name="M:CooperTire.ICS.DataAccess.CertificationDalc.GetProductInfo(System.String,System.Boolean@)">
+	<summary>
+ Gets the product information to be displayed on the product section of test result by Material Number
+ </summary>
+	<param name="p_strMatlNum">Material Number</param>
+	<returns>Returns data set containing product info</returns>
+	<exception cref="T:System.Exception">
+ Exception will be logged to ICS Log
+ </exception>
+	<remarks>
+		<list type="table">
+			<listheader>
+				<term>Author</term>
+				<description>Description</description>
+			</listheader>
+			<item>
+				<item>
+					<term>NA</term>
+					<description>
+						<para>NA</para>
+						<para>Original Code.</para>
+					</description>
+				</item>
+				<term>Srinivas S</term>
+				<description>
+					<para>19/11/2019</para>
+					<para>Implemented code standardization.</para>
+				</description>
+			</item>
+		</list>
+	</remarks>
+</member><member name="M:CooperTire.ICS.DataAccess.CertificationDalc.Save_Product(System.Int32,System.String,System.String,System.String,System.Int32,System.String,System.String,System.DateTime,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.Single,System.DateTime,System.String,System.Single,System.String,System.String,System.String,System.DateTime,System.String,System.String,System.DateTime,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String)">
+	<summary>
+ Saves the product
+ </summary>
+	<param name="p_iSKUID">Id</param>
+	<param name="p_strMatlNum">Material number</param>
+	<param name="p_strBrand">Brand string</param>
+	<param name="p_strBrandLine">Brand line </param>
+	<param name="p_iTireTypeId">Tire type Id</param>
+	<param name="ps_PSN">PSN</param>
+	<param name="p_strSizeStamp">Size stamp</param>
+	<param name="p_dteDiscontinuedDate">Date of discontinue</param>
+	<param name="p_strSPECNUMBER">Spec number</param>
+	<param name="p_strSPEEDRATING">Speed rating</param>
+	<param name="p_strSINGLOADINDEX">Single load index</param>
+	<param name="p_strDUALLOADINDEX">Dual load index</param>
+	<param name="p_strBIASBELTEDRADIAL">Bias Belted Radial</param>
+	<param name="p_strTUBElESSYN">Tubeless</param>
+	<param name="p_strREINFORCEDYN">Reinforced</param>
+	<param name="p_strEXTRALOADYN">Extra load</param>
+	<param name="p_strUTQGTREADWEAR">UTQGT Read wear</param>
+	<param name="p_strUTQGTRACTION">UTQGTR Action</param>
+	<param name="p_strUTQGTEMP">UTQG temporary</param>
+	<param name="p_strMUDSNOWYN">Mudsnowyn</param>
+	<param name="p_iRIMDIAMETER">Rim diameter</param>
+	<param name="p_dteSerialDate">Serial date</param>
+	<param name="p_strBrandDesc">Brand description</param>
+	<param name="p_strMeaRimWidth">Rim width</param>
+	<param name="p_strLoadRange">Load range</param>
+	<param name="p_strRegroovableInd">Regroovable ind</param>
+	<param name="p_strPlantProduced">Plant produced</param>
+	<param name="p_dteMostRecentTestDate">Most recent test date</param>
+	<param name="p_strIMark">Imark</param>
+	<param name="p_strInformeNumber">Inform number</param>
+	<param name="p_dteFechaDate">Fetch date</param>
+	<param name="p_strTreadPattern">Tread pattern</param>
+	<param name="p_strSpecialProtectiveBand">Special protective band</param>
+	<param name="p_strNominalTireWidth">Nominal tire width</param>
+	<param name="p_strAspectRadio">Aspect radio</param>
+	<param name="p_strTreadwearIndicators">Tread wear indicators</param>
+	<param name="p_strNameOfManufacturer">Manufacturer name</param>
+	<param name="p_strFamily">Family</param>
+	<param name="p_strDOTSerialNumber">DOT serial number</param>
+	<param name="p_strTPN">TPN</param>
+	<param name="p_strUserName">User name</param>
+	<param name="p_strSEVEREWEATHERIND">Severe weather</param>
+	<param name="p_strMFGWWYY">MFGWWYY</param>
+	<returns>Returns the save result as integer</returns>
+	<exception cref="T:System.Exception">
+ Exception will be logged to ICS Log
+ </exception>
+	<remarks>
+		<list type="table">
+			<listheader>
+				<term>Author</term>
+				<description>Description</description>
+			</listheader>
+			<item>
+				<item>
+					<term>NA</term>
+					<description>
+						<para>NA</para>
+						<para>Original Code.</para>
+					</description>
+				</item>
+				<term>Sujitha</term>
+				<description>
+					<para>11/25/2019</para>
+					<para>Implemented code standardization.</para>
+				</description>
+			</item>
+		</list>
+	</remarks>
+</member><member name="M:CooperTire.ICS.DataAccess.CertificationDalc.GetDistinctRecords(System.Data.DataTable,System.String)">
+	<summary>
+ Returns distinct records on given column
+ </summary>
+	<param name="dtResults">results table to search from</param>
+	<param name="strCriteria">Search criteria</param>
+	<returns>Returns distinct records as data table</returns>
+	<exception cref="T:System.Exception">
+ Exception will be logged to ICS Log
+ </exception>
+	<remarks>
+		<list type="table">
+			<listheader>
+				<term>Author</term>
+				<description>Description</description>
+			</listheader>
+			<item>
+				<item>
+					<term>NA</term>
+					<description>
+						<para>NA</para>
+						<para>Original Code.</para>
+					</description>
+				</item>
+				<term>Sujitha</term>
+				<description>
+					<para>11/25/2019</para>
+					<para>Implemented code standardization.</para>
+				</description>
+			</item>
+		</list>
+	</remarks>
+</member><member name="M:CooperTire.ICS.DataAccess.CertificationDalc.GetCertificatesByType(System.Int32,System.String)">
+	<summary>
+ Gets certificates data based on type
+ </summary>
+	<param name="p_certificationtypeid">Certification type id</param>
+	<param name="p_all">All</param>
+	<returns>Returns certificates data as data table</returns>
+	<exception cref="T:System.Exception">
+ Exception will be logged to ICS Log
+ </exception>
+	<remarks>
+		<list type="table">
+			<listheader>
+				<term>Author</term>
+				<description>Description</description>
+			</listheader>
+			<item>
+				<item>
+					<term>NA</term>
+					<description>
+						<para>NA</para>
+						<para>Original Code.</para>
+					</description>
+				</item>
+				<term>Sujitha</term>
+				<description>
+					<para>11/25/2019</para>
+					<para>Implemented code standardization.</para>
+				</description>
+			</item>
+		</list>
+	</remarks>
+</member><member name="M:CooperTire.ICS.DataAccess.CertificationDalc.GetCertTemplate(System.String)">
+	<summary>
+ Gets the Certificate template for a certification type name
+ </summary>
+	<param name="p_strCertificationTypeName">Certification type name</param>
+	<returns>Returns certificate template as string</returns>
+	<exception cref="T:System.Exception">
+ Exception will be logged to ICS Log
+ </exception>
+	<remarks>
+		<list type="table">
+			<listheader>
+				<term>Author</term>
+				<description>Description</description>
+			</listheader>
+			<item>
+				<item>
+					<term>NA</term>
+					<description>
+						<para>NA</para>
+						<para>Original Code.</para>
+					</description>
+				</item>
+				<term>Sujitha</term>
+				<description>
+					<para>11/25/2019</para>
+					<para>Implemented code standardization.</para>
+				</description>
+			</item>
+		</list>
+	</remarks>
+</member><member name="M:CooperTire.ICS.DataAccess.CertificationDalc.GetCertificationNameByID(System.Int32)">
+	<summary>
+ Gets the Certification name based on certification type id
+ </summary>
+	<param name="p_intCertificationTypeID">Certification type id</param>
+	<returns>Returns certification name as string</returns>
+	<exception cref="T:System.Exception">
+ Exception will be logged to ICS Log
+ </exception>
+	<remarks>
+		<list type="table">
+			<listheader>
+				<term>Author</term>
+				<description>Description</description>
+			</listheader>
+			<item>
+				<item>
+					<term>NA</term>
+					<description>
+						<para>NA</para>
+						<para>Original Code.</para>
+					</description>
+				</item>
+				<term>Sujitha</term>
+				<description>
+					<para>11/25/2019</para>
+					<para>Implemented code standardization.</para>
+				</description>
+			</item>
+		</list>
+	</remarks>
+</member><member name="M:CooperTire.ICS.DataAccess.CertificationDalc.SaveMeasurement(System.String,System.Single,System.String,System.DateTime,System.Single,System.String,System.Single,System.String,System.Single,System.Single,System.Single,System.Single,System.Single,System.DateTime,System.Single,System.Int32,System.Int32,System.String,System.Int32@,System.DateTime,System.DateTime,System.Single,System.Int16,System.Int16,System.String,System.Single,System.Single,System.Single,System.String,System.Single,System.Single,System.Single,System.Single,System.String,System.String,System.Single,System.Single,System.String,System.Single,System.Single,System.Single,System.Single,System.Single,System.Single,System.String,System.Int32,System.String,System.String,System.String,System.String)">
+	<summary>
+ Saves Measurement part of the test.
+ </summary>
+	<param name="p_strPROJECTNUMBER">The  PROJECTNUMBER.</param>
+	<param name="p_sngTIRENUMBER">The  TIRENUMBER.</param>
+	<param name="p_strTESTSPEC">The  TESTSPEC.</param>
+	<param name="p_dteCOMPLETIONDATE">The  COMPLETIONDATE.</param>
+	<param name="p_sngINFLATIONPRESSURE">The  INFLATIONPRESSURE.</param>
+	<param name="p_strMOLDDESIGN">The MOLDDESIGN.</param>
+	<param name="p_sngRIMWIDTH">The  RIMWIDTH.</param>
+	<param name="p_strDOTSERIALNUMBER">The  DOTSERIALNUMBER.</param>
+	<param name="p_sngDIAMETER">The  DIAMETER.</param>
+	<param name="p_sngAVGSECTIONWIDTH">The  AVGSECTIONWIDTH.</param>
+	<param name="p_sngAVGOVERALLWIDTH">The  AVGOVERALLWIDTH.</param>
+	<param name="p_sngMAXOVERALLWIDTH">The  MAXOVERALLWIDTH.</param>
+	<param name="p_sngSIZEFACTOR">The P_SNG SIZEFACTOR.</param>
+	<param name="p_dteMOUNTTIME">The p_dte MOUNTTIME.</param>
+	<param name="p_intSKUID">The p_int SKUID.</param>
+	<param name="p_intCertType">Type of the p_enu cert.</param>
+	<param name="p_strCERTIFICATENUMBER">The P_STR CERTIFICATENUMBER.</param>
+	<param name="p_dteSerialDate">The p_dte serial date.</param>
+	<param name="p_dteEndTime">The p_dte end time.</param>
+	<param name="p_sngActSizeFactor">The P_SNG act size factor.</param>
+	<param name="p_srtSTARTINFLATIONPRESSURE">The P_SRT STARTINFLATIONPRESSURE.</param>
+	<param name="p_srtENDINFLATIONPRESSURE">The P_SRT ENDINFLATIONPRESSURE.</param>
+	<param name="p_strADJUSTMENT">The P_STR ADJUSTMENT.</param>
+	<param name="p_sngCIRCUNFERENCE">The P_SNG CIRCUNFERENCE.</param>
+	<param name="p_sngNOMINALDIAMETER">The P_SNG NOMINALDIAMETER.</param>
+	<param name="p_sngNOMINALWIDTH">The P_SNG NOMINALWIDTH.</param>
+	<param name="p_strNOMINALWIDTHPASSFAIL">The P_STR NOMINALWIDTHPASSFAIL.</param>
+	<param name="p_sngNOMINALWIDTHDIFERENCE">The P_SNG NOMINALWIDTHDIFERENCE.</param>
+	<param name="p_sngNOMINALWIDTHTOLERANCE">The P_SNG NOMINALWIDTHTOLERANCE.</param>
+	<param name="p_sngMAXOVERALLDIAMETER">The P_SNG MAXOVERALLDIAMETER.</param>
+	<param name="p_sngMINOVERALLDIAMETER">The P_SNG MINOVERALLDIAMETER.</param>
+	<param name="p_strOVERALLWIDTHPASSFAIL">The P_STR OVERALLWIDTHPASSFAIL.</param>
+	<param name="p_strOVERALLDIAMETERPASSFAIL">The P_STR OVERALLDIAMETERPASSFAIL.</param>
+	<param name="p_sngDIAMETERDIFERENCE">The P_SNG DIAMETERDIFERENCE.</param>
+	<param name="p_sngDIAMETERTOLERANCE">The P_SNG DIAMETERTOLERANCE.</param>
+	<param name="p_strTEMPRESISTANCEGRADING">The P_SNG TEMPRESISTANCEGRADING.</param>
+	<param name="p_sngTENSILESTRENGHT1">The P_SNG TENSILESTRENGH t1.</param>
+	<param name="p_sngTENSILESTRENGHT2">The P_SNG TENSILESTRENGH t2.</param>
+	<param name="p_sngELONGATION1">The P_SNG ELONGATIO n1.</param>
+	<param name="p_sngELONGATION2">The P_SNG ELONGATIO n2.</param>
+	<param name="p_sngTENSILESTRENGHTAFTERAGE1">The P_SNG TENSILESTRENGHTAFTERAG e1.</param>
+	<param name="p_sngTENSILESTRENGHTAFTERAGE2">The P_SNG TENSILESTRENGHTAFTERAG e2.</param>
+	<param name="p_strOperatorName">Name of the P_STR operator.</param>
+	<param name="p_intCertificateID">Certificate Id.</param>
+	<param name="p_strMatlNum">SAP Material Number.</param>
+	<param name="p_strOperation">Operation number Id.</param>
+	<param name="p_strGTSpecMeasure">GT Spec.</param>
+	<param name="p_strMFGWWYY">MFGWWYY.</param>
+	<returns>Returns save result as integer</returns>
+ ''' <exception cref="T:System.Exception">
+ Exception will be logged to ICS Log
+ </exception>
+	<remarks>
+		<list type="table">
+			<listheader>
+				<term>Author</term>
+				<description>Description</description>
+			</listheader>
+			<item>
+				<item>
+					<term>NA</term>
+					<description>
+						<para>NA</para>
+						<para>Original Code.</para>
+					</description>
+				</item>
+				<term>Sujitha</term>
+				<description>
+					<para>11/25/2019</para>
+					<para>Implemented code standardization.</para>
+				</description>
+			</item>
+		</list>
+	</remarks>
+</member><member name="M:CooperTire.ICS.DataAccess.CertificationDalc.MeasurementDetail_Save(System.Single,System.Single,System.Int32,System.Single,System.String)">
+	<summary>
+ Saves the measurements details
+ </summary>
+	<param name="p_sngSectionWidth">Section width</param>
+	<param name="p_sngOVERALLWIDTH">Overall width</param>
+	<param name="p_iMEASUREID">Measure Id</param>
+	<param name="p_sngITERATION">Iteration value</param>
+	<param name="p_strUserName">User name</param>
+	<returns>Returns save result as integer</returns>
+ ''' <exception cref="T:System.Exception">
+ Exception will be logged to ICS Log
+ </exception>
+	<remarks>
+		<list type="table">
+			<listheader>
+				<term>Author</term>
+				<description>Description</description>
+			</listheader>
+			<item>
+				<item>
+					<term>NA</term>
+					<description>
+						<para>NA</para>
+						<para>Original Code.</para>
+					</description>
+				</item>
+				<term>Sujitha</term>
+				<description>
+					<para>11/25/2019</para>
+					<para>Implemented code standardization.</para>
+				</description>
+			</item>
+		</list>
+	</remarks>
+</member><member name="M:CooperTire.ICS.DataAccess.CertificationDalc.SavePlunger(System.String,System.Single,System.String,System.DateTime,System.String,System.Single,System.String,System.Int32,System.Int32,System.String,System.Int32@,System.DateTime,System.Single,System.String,System.Int32,System.String,System.String,System.String,System.String)">
+	<summary>
+ Saves the plunger part of the test results
+ </summary>
+	<param name="p_strPROJECTNUMBER">Project number</param>
+	<param name="p_sngTIRENUMBER">Tire number</param>
+	<param name="p_strTESTSPEC">Test specification</param>
+	<param name="p_dteCOMPLETIONDATE">Completion date</param>
+	<param name="p_strDOTSERIALNUMBER">Dot serial number</param>
+	<param name="p_sngAVGBREAKINGENERGY">Average breaking energy</param>
+	<param name="p_strPASSYN">Passyn</param>
+	<param name="p_intSKUID">Sku id</param>
+	<param name="p_intCertType">Certificate type</param>
+	<param name="p_strCERTIFICATENUMBER">Certificate number</param>
+	<param name="p_intPLUNGERID">Plunger id</param>
+	<param name="p_dteSerialDate">Serial date</param>
+	<param name="p_sngMinPlunger">Minimum plunger value</param>
+	<param name="p_strUserName">User name</param>
+	<param name="p_intCertificateNumberID">Certificate number id</param>
+	<param name="p_strMatlNum">Material number</param>
+	<param name="p_strOperation">Operation</param>
+	<param name="p_strGTSpecPlunger">GT Specification plunger</param>
+	<param name="p_strMFGWWYY">MFGWWYY.</param>
+	<returns>Returns save result as integer</returns>
+ ''' <exception cref="T:System.Exception">
+ Exception will be logged to ICS Log
+ </exception>
+	<remarks>
+		<list type="table">
+			<listheader>
+				<term>Author</term>
+				<description>Description</description>
+			</listheader>
+			<item>
+				<item>
+					<term>NA</term>
+					<description>
+						<para>NA</para>
+						<para>Original Code.</para>
+					</description>
+				</item>
+				<term>Sujitha</term>
+				<description>
+					<para>11/25/2019</para>
+					<para>Implemented code standardization.</para>
+				</description>
+			</item>
+		</list>
+	</remarks>
+</member><member name="M:CooperTire.ICS.DataAccess.CertificationDalc.SavePlungerDetail(System.Single,System.Int32,System.Single,System.String)">
+	<summary>
+ Saves the plunger details
+ </summary>
+	<param name="p_sngBREAKINGENERGY">Breaking energy</param>
+	<param name="p_intPlungerID">Plunger Id</param>
+	<param name="p_sngIteration">The  iteration.</param>
+	<param name="p_strUserName">Name of the  user</param>
+	<returns>Returns save result as integer</returns>
+ ''' <exception cref="T:System.Exception">
+ Exception will be logged to ICS Log
+ </exception>
+	<remarks>
+		<list type="table">
+			<listheader>
+				<term>Author</term>
+				<description>Description</description>
+			</listheader>
+			<item>
+				<item>
+					<term>NA</term>
+					<description>
+						<para>NA</para>
+						<para>Original Code.</para>
+					</description>
+				</item>
+				<term>Sujitha</term>
+				<description>
+					<para>11/25/2019</para>
+					<para>Implemented code standardization.</para>
+				</description>
+			</item>
+		</list>
+	</remarks>
+</member><member name="M:CooperTire.ICS.DataAccess.CertificationDalc.SaveTreadWear(System.String,System.Single,System.String,System.DateTime,System.String,System.Single,System.String,System.Int32,System.Int32,System.String,System.Int32@,System.DateTime,System.String,System.Single,System.Int32,System.String,System.String,System.String,System.String)">
+	<summary>
+ Saves treadWear header table data
+ </summary>
+	<param name="p_strPROJECTNUMBER">Project number</param>
+	<param name="p_sngTIRENUMBER">Tire number</param>
+	<param name="p_strTESTSPEC">Test specification</param>
+	<param name="p_dteCOMPLETIONDATE">Completion date</param>
+	<param name="p_strDOTSERIALNUMBER">Dot serial number</param>
+	<param name="p_sngLOWESTWEARBAR">Lowest wear bar</param>
+	<param name="p_strPassyn">Passyn string</param>
+	<param name="p_intSKUID">Sku id</param>
+	<param name="p_intCertType">Certificate type</param>
+	<param name="p_strCERTIFICATENUMBER">Certificate number</param>
+	<param name="p_intTREADWEARID">Tread wear id</param>
+	<param name="p_dteSERIALDATE">Serial date</param>
+	<param name="p_strOperatorName">Operator name</param>
+	<param name="p_sngINDICATORSREQUIREMENT">Indicators requirement</param>
+	<param name="p_intCertificateID">Certificate id</param>
+	<param name="p_strMatlNum">Material number</param>
+	<param name="p_strOperation">Operation string</param>
+	<param name="p_strGTSpecTreadWear">GT Spec for tread wear</param>
+	<param name="p_strMFGWWYY">MFGWWYY</param>
+	<returns>Returns save result as integer</returns>
+ ''' <exception cref="T:System.Exception">
+ Exception will be logged to ICS Log
+ </exception>
+	<remarks>
+		<list type="table">
+			<listheader>
+				<term>Author</term>
+				<description>Description</description>
+			</listheader>
+			<item>
+				<item>
+					<term>NA</term>
+					<description>
+						<para>NA</para>
+						<para>Original Code.</para>
+					</description>
+				</item>
+				<term>Sujitha</term>
+				<description>
+					<para>11/25/2019</para>
+					<para>Implemented code standardization.</para>
+				</description>
+			</item>
+		</list>
+	</remarks>
+</member><member name="M:CooperTire.ICS.DataAccess.CertificationDalc.NewSaveTreadWearDetail(System.Collections.Generic.List{CooperTire.ICS.DomainEntities.TreadwearDetail},System.Int32,System.String,System.Int32)">
+	<summary>
+ Saves treadWear details
+ </summary>
+	<param name="details">List of treadwear details</param>
+	<param name="p_intTREADWEARID">Treadwear id</param>
+	<param name="p_strOperatorName">Operator name</param>
+	<param name="p_intITERATION">Iteration value</param>
+	<returns>Returns save result as integer</returns>
+ ''' <exception cref="T:System.Exception">
+ Exception will be logged to ICS Log
+ </exception>
+	<remarks>
+		<list type="table">
+			<listheader>
+				<term>Author</term>
+				<description>Description</description>
+			</listheader>
+			<item>
+				<item>
+					<term>NA</term>
+					<description>
+						<para>NA</para>
+						<para>Original Code.</para>
+					</description>
+				</item>
+				<term>Sujitha</term>
+				<description>
+					<para>11/25/2019</para>
+					<para>Implemented code standardization.</para>
+				</description>
+			</item>
+		</list>
+	</remarks>
+</member><member name="M:CooperTire.ICS.DataAccess.CertificationDalc.SaveTreadWearDetail(System.Single,System.Int32,System.Single,System.String)">
+	<summary>
+ Saves the tread wear details
+ </summary>
+	<param name="p_sngwearbarheight">Wearbar height</param>
+	<param name="p_intTREADWEARID">Treadwear id</param>
+	<param name="p_sngIteration">Iteration value</param>
+	<param name="p_strOperatorName">Name of the operator</param>
+	<returns>Returns save result as integer</returns>
+ ''' <exception cref="T:System.Exception">
+ Exception will be logged to ICS Log
+ </exception>
+	<remarks>
+		<list type="table">
+			<listheader>
+				<term>Author</term>
+				<description>Description</description>
+			</listheader>
+			<item>
+				<item>
+					<term>NA</term>
+					<description>
+						<para>NA</para>
+						<para>Original Code.</para>
+					</description>
+				</item>
+				<term>Sujitha</term>
+				<description>
+					<para>11/25/2019</para>
+					<para>Implemented code standardization.</para>
+				</description>
+			</item>
+		</list>
+	</remarks>
+</member><member name="M:CooperTire.ICS.DataAccess.CertificationDalc.SaveBeadUnseat(System.String,System.Single,System.String,System.DateTime,System.String,System.Single,System.String,System.Int32,System.String,System.Int32@,System.DateTime,System.Single,System.String,System.String,System.Int32,System.String,System.String,System.String,System.String)">
+	<summary>
+ Saves the bead unseat
+ </summary>
+	<param name="p_strPROJECTNUMBER">Project number</param>
+	<param name="p_sngTIRENUMBER">Tire number</param>
+	<param name="p_strTESTSPEC">Test specification</param>
+	<param name="p_dteCOMPLETIONDATE">Completion date</param>
+	<param name="p_strDOTSERIALNUMBER">Dot serial number</param>
+	<param name="p_sngLOWESTUNSEATVALUE">Lowest unseat value</param>
+	<param name="p_strPassyn">Passyn string</param>
+	<param name="p_intCertType">Certificate type</param>
+	<param name="p_strCERTIFICATENUMBER">Certificate number</param>
+	<param name="p_intBeadUnseatID">Bead unseat id</param>
+	<param name="p_dteSerialDate">Serial date</param>
+	<param name="p_sngMINBEADUNSEAT">Minimum bed unseat value</param>
+	<param name="p_strTESTPASSFAIL">Test pass or fail string</param>
+	<param name="p_strOperatorName">Name of the operator</param>
+	<param name="p_intCertificateID">Certificate id</param>
+	<param name="p_strMatlNum">SAP material number</param>
+	<param name="p_strOperation">Operation number</param>
+	<param name="p_strGTSpecBeadUnSeat">Gt Spec for bead unseat</param>
+	<param name="p_strMFGWWYY">MFGWWYY</param>
+	<returns>Returns save result as integer</returns>
+	<exception cref="T:System.Exception">
+ Exception will be logged to ICS Log
+ </exception>
+	<remarks>
+		<list type="table">
+			<listheader>
+				<term>Author</term>
+				<description>Description</description>
+			</listheader>
+			<item>
+				<item>
+					<term>NA</term>
+					<description>
+						<para>NA</para>
+						<para>Original Code.</para>
+					</description>
+				</item>
+				<term>Sujitha</term>
+				<description>
+					<para>11/25/2019</para>
+					<para>Implemented code standardization.</para>
+				</description>
+			</item>
+		</list>
+	</remarks>
+</member><member name="M:CooperTire.ICS.DataAccess.CertificationDalc.SaveBeadUnseatDetail(System.Int32,System.Single,System.Single,System.String)">
+	<summary>
+ Saves the bead unseat details
+ </summary>
+	<param name="p_intBEADUNSEATID">Bead unseat id</param>
+	<param name="p_sngUNSEATFORCE">Unseat force value</param>
+	<param name="p_sngIteration">Iteration value</param>
+	<param name="p_strOperatorName">Name of the operator</param>
+	<returns>Returns save result as integer</returns>
+	<exception cref="T:System.Exception">
+ Exception will be logged to ICS Log
+ </exception>
+	<remarks>
+		<list type="table">
+			<listheader>
+				<term>Author</term>
+				<description>Description</description>
+			</listheader>
+			<item>
+				<item>
+					<term>NA</term>
+					<description>
+						<para>NA</para>
+						<para>Original Code.</para>
+					</description>
+				</item>
+				<term>Sujitha</term>
+				<description>
+					<para>11/25/2019</para>
+					<para>Implemented code standardization.</para>
+				</description>
+			</item>
+		</list>
+	</remarks>
+</member><member name="M:CooperTire.ICS.DataAccess.CertificationDalc.SaveEndurance(System.Int32@,System.String,System.Int32,System.String,System.DateTime,System.String,System.DateTime,System.Single,System.Single,System.Single,System.DateTime,System.Int32,System.Int32,System.Single,System.Single,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.Single,System.Int32,System.DateTime,System.DateTime,System.Int32,System.String,System.Int32,System.String,System.DateTime,System.Single,System.Single,System.Single,System.Single,System.Single,System.Single,System.String,System.Single,System.String,System.Single,System.Single,System.Single,System.String,System.String,System.String,System.String,System.Int32,System.String,System.Single,System.Single,System.Int32,System.String,System.String,System.String)">
+	<summary>
+ Saves the endurance
+ </summary>
+	<param name="p_intENDURANCEID">Endurance id</param>
+	<param name="p_strProjectNumber">Project number</param>
+	<param name="p_intTireNumber">Tire number</param>
+	<param name="p_strTESTSPEC">Test specification</param>
+	<param name="p_dteCOMPLETIONDATE">Completion date</param>
+	<param name="p_strDOTSERIALNUMBER">Dot serial number</param>
+	<param name="p_dtePRECONDSTARTDATE">Pre condition start date</param>
+	<param name="p_sngPRECONDSTARTTEMP">Pre condition start temp</param>
+	<param name="p_sngRIMDIAMETER">Rim diameter</param>
+	<param name="p_sngRIMWIDTH">Rim width</param>
+	<param name="p_dtePRECONDENDDATE">Precond end date</param>
+	<param name="p_intPRECONDENDTEMP">Precond end temp</param>
+	<param name="p_intINFLATIONPRESSURE">Inflation pressure</param>
+	<param name="p_sngBEFOREDIAMETER">Before diameter value</param>
+	<param name="p_sngAFTERDIAMETER">After diameter value</param>
+	<param name="p_intBEFOREINFLATION">Before inflation value</param>
+	<param name="p_intAFTERINFLATION">After inflation value</param>
+	<param name="p_intWHEELPOSITION">Wheel position</param>
+	<param name="p_intWHEELNUMBER">Wheel number</param>
+	<param name="p_intFINALTEMP">Final temp</param>
+	<param name="p_sngFINALDISTANCE">Final distance</param>
+	<param name="p_intFINALINFLATION">Final inflation</param>
+	<param name="p_dtePOSTCONDSTARTDATE">Post condition start date</param>
+	<param name="p_dtePOSTCONDENDDATE">Post condition end date</param>
+	<param name="p_intPOSTCONDENDTEMP">Post condition end temp</param>
+	<param name="p_strPASSYN">Passyn string</param>
+	<param name="p_intCertificationTypeID">Certification type id</param>
+	<param name="p_strCERTIFICATENUMBER">Certificate number</param>
+	<param name="p_dteSerialDate">Serial date</param>
+	<param name="p_sngPostCondTime">Post condition time</param>
+	<param name="p_sngPreCondTime">Pre condition time</param>
+	<param name="p_sngDIAMETERTESTDRUM">Diameter test drum</param>
+	<param name="p_sngPRECONDTEMP">Pre condition temp</param>
+	<param name="p_sngINFLATIONPRESSUREREADJUSTED">Inflation pressure adjusted value</param>
+	<param name="p_sngCIRCUNFERENCEBEFORETEST">Circumference before test</param>
+	<param name="p_strRESULTPASSFAIL">Pass or fail result</param>
+	<param name="p_sngENDURANCEHOURS">Endurance hours</param>
+	<param name="p_strPOSSIBLEFAILURESFOUND">Possible failures found</param>
+	<param name="p_sngCIRCUNFERENCEAFTERTEST">Circumference after test</param>
+	<param name="p_sngOUTERDIAMETERDIFERENCE">Outer diameter difference</param>
+	<param name="p_sngODDIFERENCETOLERANCE">Outer diameter difference tolerance</param>
+	<param name="p_strSERIENOM">SERIENOM</param>
+	<param name="p_strFINALJUDGEMENT">Final judgment</param>
+	<param name="p_strAPPROVER">Approver</param>
+	<param name="p_strOperatorName">Name of the operator</param>
+	<param name="p_intCertificateNumberID">Certificate number id</param>
+	<param name="p_strMatlNum">Material number</param>
+	<param name="p_sngLowInfStartInflation">Low inf start inflation</param>
+	<param name="p_sngLowInfEndInflation">Low inf end inflation</param>
+	<param name="p_intLowInfEndTemp">Low inf end temp</param>
+	<param name="p_strOperation">Operation</param>
+	<param name="p_strGTSpecEndurance">GT spec endurance</param>
+	<param name="p_strMFGWWYY">MFGWWYY</param>
+	<returns>Returns save result as integer</returns>
+	<exception cref="T:System.Exception">
+ Exception will be logged to ICS Log
+ </exception>
+	<remarks>
+		<list type="table">
+			<listheader>
+				<term>Author</term>
+				<description>Description</description>
+			</listheader>
+			<item>
+				<item>
+					<term>NA</term>
+					<description>
+						<para>NA</para>
+						<para>Original Code.</para>
+					</description>
+				</item>
+				<term>Sujitha</term>
+				<description>
+					<para>11/25/2019</para>
+					<para>Implemented code standardization.</para>
+				</description>
+			</item>
+		</list>
+	</remarks>
+</member><member name="M:CooperTire.ICS.DataAccess.CertificationDalc.SaveEnduranceDetail(System.Int32,System.Int32,System.Int32,System.Single,System.Single,System.Single,System.Int32,System.Int32,System.Int32,System.DateTime,System.Int32)">
+	<summary>
+ Saves the endurance details
+ </summary>
+	<param name="p_intTESTSTEP">Test step</param>
+	<param name="p_intTIMEINMIN">Time in minutes</param>
+	<param name="p_intSpeed">Speed</param>
+	<param name="p_sngTOTMILES">Total miles</param>
+	<param name="p_sngtLOAD">Load value</param>
+	<param name="p_sngLOADPERCENT">Load percent</param>
+	<param name="p_intSETINFLATION">Set inflation</param>
+	<param name="p_intAMBTEMP">Amb temp</param>
+	<param name="p_intINFPRESSURE">Inf pressure</param>
+	<param name="p_dteSTEPCOMPLETIONDATE">Step completion date</param>
+	<param name="p_intENDURANCEID">Endurance id</param>
+	<returns>Returns save result as integer</returns>
+	<exception cref="T:System.Exception">
+ Exception will be logged to ICS Log
+ </exception>
+	<remarks>
+		<list type="table">
+			<listheader>
+				<term>Author</term>
+				<description>Description</description>
+			</listheader>
+			<item>
+				<item>
+					<term>NA</term>
+					<description>
+						<para>NA</para>
+						<para>Original Code.</para>
+					</description>
+				</item>
+				<term>Sujitha</term>
+				<description>
+					<para>11/25/2019</para>
+					<para>Implemented code standardization.</para>
+				</description>
+			</item>
+		</list>
+	</remarks>
+</member><member name="M:CooperTire.ICS.DataAccess.CertificationDalc.SaveHighSpeed(System.Int32@,System.String,System.Int32,System.String,System.DateTime,System.String,System.String,System.DateTime,System.Int32,System.Single,System.Single,System.DateTime,System.Int32,System.Int32,System.Single,System.Single,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.Single,System.Int32,System.DateTime,System.DateTime,System.Int32,System.Single,System.Single,System.String,System.DateTime,System.Int32,System.String,System.Single,System.Single,System.Single,System.Single,System.Single,System.Single,System.Single,System.Single,System.Single,System.String,System.String,System.String,System.Single,System.String,System.Single,System.Single,System.Single,System.String,System.Int32,System.String,System.String,System.String)">
+	<summary>
+ Saves high speed header table data
+ </summary>
+	<param name="p_intHighSpeedID">High speed id</param>
+	<param name="p_strPROJECTNUMBER">Project number</param>
+	<param name="p_intTIRENUM">Tire number</param>
+	<param name="p_strTESTSPEC">Test spec</param>
+	<param name="p_dteCOMPETIONDATE">Completion date</param>
+	<param name="p_strDOTSERIALNUMBER">Dot serial number</param>
+	<param name="p_strMFGWWYY">MfgWwyy</param>
+	<param name="p_dtePRECONDSTARTDATE">Pre condition start date</param>
+	<param name="p_intPRECONDSARTTEMP">Pre condition start temp</param>
+	<param name="p_sngRIMDIAMETER">Rim diameter</param>
+	<param name="p_sngRIMWIDTH">Rim width</param>
+	<param name="p_dtePRECONDENDDATE">Pre condition end date</param>
+	<param name="p_intPRECONDENDTEMP">Pre condition end temp</param>
+	<param name="p_intINFLATIONPRESSURE">Inflation pressure</param>
+	<param name="p_sngBEFOREDIAMETER">Before diameter</param>
+	<param name="p_sngAFTERDIAMETER">After diameter</param>
+	<param name="p_intBEFOREINFLATION">Before inflation</param>
+	<param name="p_intAFTERINFLATION">After inflation</param>
+	<param name="p_intWHEELPOSITION">Wheel position</param>
+	<param name="p_intWHEELNUMBER">Wheel number</param>
+	<param name="p_intFINALTEMP">Final temp</param>
+	<param name="p_sngFINALDISTANCE">Final distance</param>
+	<param name="p_intFINALINFLATION">Final inflation</param>
+	<param name="p_dtePOSTCONDSTARTDATE">Post condition start date</param>
+	<param name="p_dtePOSTCONDENDDATE">Post condition end date</param>
+	<param name="p_intPOSTCONDENDTEMP">Post condition end temp</param>
+	<param name="p_sngPRECONDTIME">Pre condition time</param>
+	<param name="p_sngPOSTCONDTIME">Post condition time</param>
+	<param name="p_strPASSYN">Passyn</param>
+	<param name="p_dteSERIALDATE">Serial date</param>
+	<param name="p_intCERTIFICATIONTYPEID">Certification type id</param>
+	<param name="p_strCERTIFICATENUMBER">Certificate number</param>
+	<param name="p_sngDIAMETERTESTDRUM">Diameter test drum</param>
+	<param name="p_sngPRECONDTEMP">Pre condition temp</param>
+	<param name="p_sngINFLATIONPRESSUREREADJUSTED">Inflation pressure readjusted value</param>
+	<param name="p_sngCIRCUNFERENCEBEFORETEST">Circumference before test</param>
+	<param name="p_sngWHEELSPEEDRPM">Wheel speed RPM</param>
+	<param name="p_sngWHEELSPEEDKMH">Wheel speed KMH</param>
+	<param name="p_sngCIRCUNFERENCEAFTERTEST">Circumference after test</param>
+	<param name="p_sngODDIFERENCE">Outer diameter difference</param>
+	<param name="p_sngODDIFERENCETOLERANCE">Outer diameter difference tolerance</param>
+	<param name="p_strSERIENOM">SerieNOM</param>
+	<param name="p_strFINALJUDGEMENT">Final Judgment</param>
+	<param name="p_strAPPROVER">Approver</param>
+	<param name="p_sngPASSATKMH">Pass at KMH</param>
+	<param name="p_strSPEEDTTESTPASSFAIL">Speed test pass or fail</param>
+	<param name="p_sngSPEEDTOTALTIME">Speed total time</param>
+	<param name="p_sngMAXSPEED">Maximum speed</param>
+	<param name="p_sngMAXLOAD">Maximum load</param>
+	<param name="p_strOperatorName">Operator name</param>
+	<param name="p_intCertificateNumberID">Certificate number id</param>
+	<param name="p_strMatlNum">Material number</param>
+	<param name="p_strOperation">Operation</param>
+	<param name="p_strGTSpecHighSpeed">GT spec high speed</param>
+	<returns>Returns save result as integer</returns>
+	<exception cref="T:System.Exception">
+ Exception will be logged to ICS Log
+ </exception>
+	<remarks>
+		<list type="table">
+			<listheader>
+				<term>Author</term>
+				<description>Description</description>
+			</listheader>
+			<item>
+				<item>
+					<term>NA</term>
+					<description>
+						<para>NA</para>
+						<para>Original Code.</para>
+					</description>
+				</item>
+				<term>Sujitha</term>
+				<description>
+					<para>11/25/2019</para>
+					<para>Implemented code standardization.</para>
+				</description>
+			</item>
+		</list>
+	</remarks>
+</member><member name="M:CooperTire.ICS.DataAccess.CertificationDalc.SaveHighSpeedDetail(System.Int32,System.String,System.Int32,System.Int32,System.Single,System.Single,System.Single,System.Single,System.Int32,System.Int32,System.Int32,System.DateTime)">
+	<summary>
+ Saves the high speed details
+ </summary>
+	<param name="p_intHighSpeedID">High speed id</param>
+	<param name="p_strOperatorId">Operator id</param>
+	<param name="p_intTESTSTEP">Test step value</param>
+	<param name="p_intTimeMin">Time in minutes</param>
+	<param name="p_sngSpeed">Speed</param>
+	<param name="p_sngTotMiles">Total miles</param>
+	<param name="p_sngLoad">Load value</param>
+	<param name="p_intLoadPercent">Load percent</param>
+	<param name="p_intSetInflation">Set inflation</param>
+	<param name="p_intAmbTemp">Amb temp</param>
+	<param name="p_intInfPressure">Inf pressure</param>
+	<param name="p_dteStepCompletionDate">Step completion date</param>
+	<returns>Returns save result as integer</returns>
+	<exception cref="T:System.Exception">
+ Exception will be logged to ICS Log
+ </exception>
+	<remarks>
+		<list type="table">
+			<listheader>
+				<term>Author</term>
+				<description>Description</description>
+			</listheader>
+			<item>
+				<item>
+					<term>NA</term>
+					<description>
+						<para>NA</para>
+						<para>Original Code.</para>
+					</description>
+				</item>
+				<term>Sujitha</term>
+				<description>
+					<para>11/25/2019</para>
+					<para>Implemented code standardization.</para>
+				</description>
+			</item>
+		</list>
+	</remarks>
+</member><member name="M:CooperTire.ICS.DataAccess.CertificationDalc.SaveHighSpeed_SpeedTestDetail(System.Int32,System.Int32,System.DateTime,System.Single,System.String)">
+	<summary>
+ Saves High speed speed test detail table 
+ </summary>
+	<param name="p_intHighSpeedID">High speed id</param>
+	<param name="p_intIteration">Iteration value</param>
+	<param name="p_dteTime">Time</param>
+	<param name="p_sngSpeed">Speed</param>
+	<param name="p_strUserName">User name</param>
+	<returns>Returns save result as integer</returns>
+	<exception cref="T:System.Exception">
+ Exception will be logged to ICS Log
+ </exception>
+	<remarks>
+		<list type="table">
+			<listheader>
+				<term>Author</term>
+				<description>Description</description>
+			</listheader>
+			<item>
+				<item>
+					<term>NA</term>
+					<description>
+						<para>NA</para>
+						<para>Original Code.</para>
+					</description>
+				</item>
+				<term>Sujitha</term>
+				<description>
+					<para>11/25/2019</para>
+					<para>Implemented code standardization.</para>
+				</description>
+			</item>
+		</list>
+	</remarks>
+</member><member name="M:CooperTire.ICS.DataAccess.CertificationDalc.SaveSound(System.String,System.Int32@,System.String,System.Int32,System.String,System.String,System.String,System.String,System.String,System.DateTime,System.String,System.String,System.String,System.DateTime,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.Int32,System.String,System.Int32,System.Int32,System.String,System.String,System.String)">
+	<summary>
+ Saves sound header table
+ </summary>
+	<param name="p_strUserId">User id</param>
+	<param name="p_intSoundID">Sound id</param>
+	<param name="p_strPROJECTNUMBER">Project number</param>
+	<param name="p_intTIRENUM">Tire number</param>
+	<param name="p_strTESTSPEC">Test spec</param>
+	<param name="p_strTESTREPORTNUMBER">Test report number</param>
+	<param name="p_strMANUFACTUREANDBRAND">Manufacture and brand</param>
+	<param name="p_strTIRECLASS">Tire class</param>
+	<param name="p_strCATEGORYOFUSE">Category of use</param>
+	<param name="p_dteDATEOFTEST">Date of test</param>
+	<param name="p_strTESTVEHICULE">Test vehicle</param>
+	<param name="p_strTESTVEHICULEWHEELBASE">Test vehicle wheel base</param>
+	<param name="p_strLOCATIONOFTESTTRACK">Location of test track</param>
+	<param name="p_dteDATETRACKCERTIFTOISO">Track certificate date</param>
+	<param name="p_strTIRESIZEDESIGNATION">Tire size designation</param>
+	<param name="p_strTIRESERVICEDESCRIPTION">Tire service description</param>
+	<param name="p_strREFERENCEINFLATIONPRESSURE">Reference inflation pressure</param>
+	<param name="p_strTESTMASS_FRONTL">Test mass Front left</param>
+	<param name="p_strTESTMASS_FRONTR">Test mass front right</param>
+	<param name="p_strTESTMASS_REARL">Test mass rear left</param>
+	<param name="p_strTESTMASS_REARR">Test mass rear right</param>
+	<param name="p_strTIRELOADINDEX_FRONTL">Tire load index front left</param>
+	<param name="p_strTIRELOADINDEX_FRONTR">Tire load index front right</param>
+	<param name="p_strTIRELOADINDEX_REARL">Tire load index rear left</param>
+	<param name="p_strTIRELOADINDEX_REARR">Tire load index rear right</param>
+	<param name="p_strINFLATIONPRESSURECO_FRONTL">Inflation pressure front left</param>
+	<param name="p_strINFLATIONPRESSURECO_FRONTR">Inflation pressure front right</param>
+	<param name="p_strINFLATIONPRESSURECO_REARL">Inflation pressure rear left</param>
+	<param name="p_strINFLATIONPRESSURECO_REARR">Inflation pressure rear right</param>
+	<param name="p_strTESTRIMWIDTHCODE">Test rim width code</param>
+	<param name="p_strTEMPMEASURESENSORTYPE">Temporary measure sensor type</param>
+	<param name="p_intCERTIFICATIONTYPEID">Certification type id</param>
+	<param name="p_strCERTIFICATENUMBER">Certificate number</param>
+	<param name="p_intSKUID">SKU id</param>
+	<param name="p_intCertificateNUmberID">Certificate number id</param>
+	<param name="p_strOperation">Operation</param>
+	<param name="p_strGTSpecSound">GT spec sound</param>
+	<param name="p_strMFGWWYY">MfgWwyy</param>
+	<returns>Returns save result as integer</returns>
+	<exception cref="T:System.Exception">
+ Exception will be logged to ICS Log
+ </exception>
+	<remarks>
+		<list type="table">
+			<listheader>
+				<term>Author</term>
+				<description>Description</description>
+			</listheader>
+			<item>
+				<item>
+					<term>NA</term>
+					<description>
+						<para>NA</para>
+						<para>Original Code.</para>
+					</description>
+				</item>
+				<term>Sujitha</term>
+				<description>
+					<para>11/25/2019</para>
+					<para>Implemented code standardization.</para>
+				</description>
+			</item>
+		</list>
+	</remarks>
+</member><member name="M:CooperTire.ICS.DataAccess.CertificationDalc.SaveSoundDetail(System.String,System.Int32,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.Int32)">
+	<summary>
+ Saves sound detail table
+ </summary>
+	<param name="p_strUserId">User id</param>
+	<param name="p_intITERATION">Iteration</param>
+	<param name="p_strTESTSPEED">Test speed</param>
+	<param name="p_strDIRECTIONOFRUN">Direction of run</param>
+	<param name="p_strSOUNDLEVELLEFT">Sound level left</param>
+	<param name="p_strSOUNDLEVELRIGHT">Sound level right</param>
+	<param name="p_strAIRTEMP">Air temperature</param>
+	<param name="p_strTRACKTEMP">Track temperature</param>
+	<param name="p_strSOUNDLEVELLEFT_TEMPCOR">Sound level left temp cor</param>
+	<param name="p_strSOUNDLEVELRIGHT_TEMPCOR">Sound level right temp cor</param>
+	<param name="p_intSoundID">Sound id</param>
+	<returns>Returns save result as integer</returns>
+	<exception cref="T:System.Exception">
+ Exception will be logged to ICS Log
+ </exception>
+	<remarks>
+		<list type="table">
+			<listheader>
+				<term>Author</term>
+				<description>Description</description>
+			</listheader>
+			<item>
+				<item>
+					<term>NA</term>
+					<description>
+						<para>NA</para>
+						<para>Original Code.</para>
+					</description>
+				</item>
+				<term>Sujitha</term>
+				<description>
+					<para>11/25/2019</para>
+					<para>Implemented code standardization.</para>
+				</description>
+			</item>
+		</list>
+	</remarks>
+</member><member name="M:CooperTire.ICS.DataAccess.CertificationDalc.SaveWetGrip(System.String,System.Int32@,System.String,System.Int32,System.String,System.DateTime,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.Int32,System.String,System.Int32,System.Int32,System.String,System.String,System.String)">
+	<summary>
+ Saves wetgrip table
+ </summary>
+	<param name="p_strUserId">User id</param>
+	<param name="p_intWetGripID">Wetgrip id</param>
+	<param name="p_strPROJECTNUMBER">Project number</param>
+	<param name="p_intTIRENUM">Tire number</param>
+	<param name="p_strTESTSPEC">Test spec</param>
+	<param name="p_dteDATEOFTEST">Date of test</param>
+	<param name="p_strTESTVEHICLE">Test vehicle</param>
+	<param name="p_strLOCATIONOFTESTTRACK">Location of test track</param>
+	<param name="p_strTESTTRACKCHARACTERISTICS">Test track characteristics</param>
+	<param name="p_strISSUEBY">Issue by</param>
+	<param name="p_strMETHODOFCERTIFICATION">Method of certification</param>
+	<param name="p_strTESTTIREDETAILS">Test tire details</param>
+	<param name="p_strTIRESIZEANDSERVICEDESC">Tire size and service description</param>
+	<param name="p_strTIREBRANDANDTRADEDESC">Tire brand and trade description</param>
+	<param name="p_strREFERENCEINFLATIONPRESSURE">Reference inflation pressure</param>
+	<param name="p_strTESTRIMWITHCODE">Test rim with code</param>
+	<param name="p_strTEMPMEASURESENSORTYPE">Temp measure sensor type</param>
+	<param name="p_strIDENTIFICATIONSRTT">Identification SRTT</param>
+	<param name="p_strTESTTIRELOAD_SRTT">Test tire load SRTT</param>
+	<param name="p_strTESTTIRELOAD_CANDIDATE">Test tire load candidate</param>
+	<param name="p_strTESTTIRELOAD_CONTROL">Test tire load control</param>
+	<param name="p_strWATERDEPTH_SRTT">Water depth SRTT</param>
+	<param name="p_strWATERDEPTH_CANDIDATE">Water depth candidate</param>
+	<param name="p_strWATERDEPTH_CONTROL">Water depth control</param>
+	<param name="p_strWETTEDTRACKTEMPAVG">Wetter track temp average</param>
+	<param name="p_intCERTIFICATIONTYPEID">Certification type id</param>
+	<param name="p_strCERTIFICATENUMBER">Certificate number</param>
+	<param name="p_intSKUID">Sku id</param>
+	<param name="p_intCertificateNUmberID">Certificate number id</param>
+	<param name="p_strOperation">Operation</param>
+	<param name="p_strGTSpecWetGrip">GT spec wet grip</param>
+	<param name="p_strMFGWWYY">MfgWwyy</param>
+	<returns>Returns save result as integer</returns>
+	<exception cref="T:System.Exception">
+ Exception will be logged to ICS Log
+ </exception>
+	<remarks>
+		<list type="table">
+			<listheader>
+				<term>Author</term>
+				<description>Description</description>
+			</listheader>
+			<item>
+				<item>
+					<term>NA</term>
+					<description>
+						<para>NA</para>
+						<para>Original Code.</para>
+					</description>
+				</item>
+				<term>Sujitha</term>
+				<description>
+					<para>11/25/2019</para>
+					<para>Implemented code standardization.</para>
+				</description>
+			</item>
+		</list>
+	</remarks>
+</member><member name="M:CooperTire.ICS.DataAccess.CertificationDalc.SaveWetGripDetail(System.String,System.Int32,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.Int32)">
+	<summary>
+ Saves wetgrip detail table
+ </summary>
+	<param name="p_strUserId">User id</param>
+	<param name="p_intITERATION">Iteration</param>
+	<param name="p_strTESTSPEED">Test speed</param>
+	<param name="p_strDIRECTIONOFRUN">Direction of run</param>
+	<param name="p_strSRTT">SRTT</param>
+	<param name="p_strCANDIDATETIRE">Candidate tire</param>
+	<param name="p_strPEAKBREAKFORCECOEFICIENT">Peak break force coefficient</param>
+	<param name="p_strMEANFULLYDEVDECELERATION">Fully dev deceleration</param>
+	<param name="p_strWETGRIPINDEX">Wet grip index</param>
+	<param name="p_strCOMMENTS">Comments</param>
+	<param name="p_intWetGripID">Wet grip id</param>
+	<returns>Returns save result as integer</returns>
+	<exception cref="T:System.Exception">
+ Exception will be logged to ICS Log
+ </exception>
+	<remarks>
+		<list type="table">
+			<listheader>
+				<term>Author</term>
+				<description>Description</description>
+			</listheader>
+			<item>
+				<item>
+					<term>NA</term>
+					<description>
+						<para>NA</para>
+						<para>Original Code.</para>
+					</description>
+				</item>
+				<term>Sujitha</term>
+				<description>
+					<para>11/25/2019</para>
+					<para>Implemented code standardization.</para>
+				</description>
+			</item>
+		</list>
+	</remarks>
+</member><member name="M:CooperTire.ICS.DataAccess.CertificationDalc.GetTestResultData(System.String,System.Int32,System.String,System.Int32,System.Int32)">
+	<summary>
+ Gets the test result data
+ </summary>
+	<param name="p_strMatlNum">Material Number.</param>
+	<param name="p_intSKUID">Sku id</param>
+	<param name="p_strCertificateNumber">Certificate number</param>
+	<param name="p_intCertificateNumberID">Certificate number id</param>
+	<param name="p_intCertificationTypeId">Certification type id</param>
+	<returns>Returns ICS data set</returns>
+	<exception cref="T:System.Exception">
+ Exception will be logged to ICS Log
+ </exception>
+	<remarks>
+		<list type="table">
+			<listheader>
+				<term>Author</term>
+				<description>Description</description>
+			</listheader>
+			<item>
+				<item>
+					<term>NA</term>
+					<description>
+						<para>NA</para>
+						<para>Original Code.</para>
+					</description>
+				</item>
+				<term>Sujitha</term>
+				<description>
+					<para>11/25/2019</para>
+					<para>Implemented code standardization.</para>
+				</description>
+			</item>
+		</list>
+	</remarks>
+</member><member name="M:CooperTire.ICS.DataAccess.CertificationDalc.GetAuditLog">
+	<summary>
+ Gets the entire audit log
+ </summary>
+	<returns>Returns audit log data as data set</returns>
+	<exception cref="T:System.Exception">
+ Exception will be logged to ICS Log
+ </exception>
+	<remarks>
+		<list type="table">
+			<listheader>
+				<term>Author</term>
+				<description>Description</description>
+			</listheader>
+			<item>
+				<item>
+					<term>NA</term>
+					<description>
+						<para>NA</para>
+						<para>Original Code.</para>
+					</description>
+				</item>
+				<term>Sujitha</term>
+				<description>
+					<para>11/25/2019</para>
+					<para>Implemented code standardization.</para>
+				</description>
+			</item>
+		</list>
+	</remarks>
+</member><member name="M:CooperTire.ICS.DataAccess.CertificationDalc.GetApprovalReasons(System.Int32)">
+	<summary>
+ Gets the approval reasons based on certification type id
+ </summary>
+	<param name="p_intCertificationTypeId">Certification type id</param>
+	<returns>Returns approval reasons as data set.</returns>
+	<exception cref="T:System.Exception">
+ Exception will be logged to ICS Log
+ </exception>
+	<remarks>
+		<list type="table">
+			<listheader>
+				<term>Author</term>
+				<description>Description</description>
+			</listheader>
+			<item>
+				<item>
+					<term>NA</term>
+					<description>
+						<para>NA</para>
+						<para>Original Code.</para>
+					</description>
+				</item>
+				<term>Sujitha</term>
+				<description>
+					<para>11/25/2019</para>
+					<para>Implemented code standardization.</para>
+				</description>
+			</item>
+		</list>
+	</remarks>
+</member><member name="M:CooperTire.ICS.DataAccess.CertificationDalc.UpdateAuditLogEntry(System.Int32,System.DateTime,System.String,System.String)">
+	<summary>
+ Updates single audit log entry
+ </summary>
+	<param name="p_intChangeLogID">Change log id</param>
+	<param name="p_dtemChangeDateTime">Change date time</param>
+	<param name="p_strApprovalStatus">Approval status</param>
+	<param name="p_strApprover">Approver</param>
+	<returns>Returns update status as boolean value</returns>
+	<exception cref="T:System.Exception">
+ Exception will be logged to ICS Log
+ </exception>
+	<remarks>
+		<list type="table">
+			<listheader>
+				<term>Author</term>
+				<description>Description</description>
+			</listheader>
+			<item>
+				<item>
+					<term>NA</term>
+					<description>
+						<para>NA</para>
+						<para>Original Code.</para>
+					</description>
+				</item>
+				<term>Sujitha</term>
+				<description>
+					<para>11/25/2019</para>
+					<para>Implemented code standardization.</para>
+				</description>
+			</item>
+		</list>
+	</remarks>
+</member><member name="M:CooperTire.ICS.DataAccess.CertificationDalc.GetAuditLogAfterDate(System.DateTime)">
+	<summary>
+ Gets audit log after given date
+ </summary>
+	<param name="p_dtemChangeDateTime">Change date and time</param>
+	<returns>Returns audit log as dataset</returns>
+	<exception cref="T:System.Exception">
+ Exception will be logged to ICS Log
+ </exception>
+	<remarks>
+		<list type="table">
+			<listheader>
+				<term>Author</term>
+				<description>Description</description>
+			</listheader>
+			<item>
+				<item>
+					<term>NA</term>
+					<description>
+						<para>NA</para>
+						<para>Original Code.</para>
+					</description>
+				</item>
+				<term>Sujitha</term>
+				<description>
+					<para>11/25/2019</para>
+					<para>Implemented code standardization.</para>
+				</description>
+			</item>
+		</list>
+	</remarks>
+</member><member name="M:CooperTire.ICS.DataAccess.CertificationDalc.CheckIfMatlNumExists(System.String)">
+	<summary>
+ Checks if material number exists
+ </summary>
+	<param name="p_strMatlNum">Material number</param>
+	<returns>Returns boolean value based on the check result</returns>
+	<exception cref="T:System.Exception">
+ Exception will be logged to ICS Log
+ </exception>
+	<remarks>
+		<list type="table">
+			<listheader>
+				<term>Author</term>
+				<description>Description</description>
+			</listheader>
+			<item>
+				<item>
+					<term>NA</term>
+					<description>
+						<para>NA</para>
+						<para>Original Code.</para>
+					</description>
+				</item>
+				<term>Sujitha</term>
+				<description>
+					<para>11/25/2019</para>
+					<para>Implemented code standardization.</para>
+				</description>
+			</item>
+		</list>
+	</remarks>
+</member><member name="M:CooperTire.ICS.DataAccess.CertificationDalc.GetCertificateID(System.String,System.Int32,System.String)">
+	<summary>
+ Gets certificate id
+ </summary>
+	<param name="p_strCertificateNumber">Certificate number</param>
+	<param name="p_intCertificateTypeId">Certificate type id</param>
+	<param name="p_strExtensionNo">Extension number</param>
+	<returns>Returns Certificate id as integer</returns>
+	<exception cref="T:System.Exception">
+ Exception will be logged to ICS Log
+ </exception>
+	<remarks>
+		<list type="table">
+			<listheader>
+				<term>Author</term>
+				<description>Description</description>
+			</listheader>
+			<item>
+				<item>
+					<term>NA</term>
+					<description>
+						<para>NA</para>
+						<para>Original Code.</para>
+					</description>
+				</item>
+				<term>Sujitha</term>
+				<description>
+					<para>11/25/2019</para>
+					<para>Implemented code standardization.</para>
+				</description>
+			</item>
+		</list>
+	</remarks>
+</member><member name="M:CooperTire.ICS.DataAccess.CertificationDalc.GetApprovedSubstitution(System.Int32,System.String,System.Single,System.Int32)">
+	<summary>
+ Gets the approved substitution value
+ </summary>
+	<param name="p_intCertificationTypeId">Certification type id</param>
+	<param name="p_strField">Field value</param>
+	<param name="p_sngValue">Single value</param>
+	<param name="p_intSKUID">Sku id</param>
+	<returns>Returns approved substitution value as single</returns>
+	<exception cref="T:System.Exception">
+ Exception will be logged to ICS Log
+ </exception>
+	<remarks>
+		<list type="table">
+			<listheader>
+				<term>Author</term>
+				<description>Description</description>
+			</listheader>
+			<item>
+				<item>
+					<term>NA</term>
+					<description>
+						<para>NA</para>
+						<para>Original Code.</para>
+					</description>
+				</item>
+				<term>Sujitha</term>
+				<description>
+					<para>11/25/2019</para>
+					<para>Implemented code standardization.</para>
+				</description>
+			</item>
+		</list>
+	</remarks>
+</member><member name="M:CooperTire.ICS.DataAccess.CertificationDalc.CheckIfCertificateNumberExists(System.String)">
+	<summary>
+ Checks if the give certificate number exists
+ </summary>
+	<param name="p_strCertificateNumber">Certificate number</param>
+	<returns>Returns boolean value based on certificate number search result</returns>
+	<exception cref="T:System.Exception">
+ Exception will be logged to ICS Log
+ </exception>
+	<remarks>
+		<list type="table">
+			<listheader>
+				<term>Author</term>
+				<description>Description</description>
+			</listheader>
+			<item>
+				<item>
+					<term>NA</term>
+					<description>
+						<para>NA</para>
+						<para>Original Code.</para>
+					</description>
+				</item>
+				<term>Sujitha</term>
+				<description>
+					<para>11/25/2019</para>
+					<para>Implemented code standardization.</para>
+				</description>
+			</item>
+		</list>
+	</remarks>
+</member><member name="M:CooperTire.ICS.DataAccess.CertificationDalc.SaveNewCertificate(System.String,System.Int32,System.String,System.String,System.String,System.String,System.String,System.String,System.String@)">
+	<summary>
+ Saves new certificate
+ </summary>
+	<param name="p_strCertificateNumber">Certificate number</param>
+	<param name="p_intCertificateTypeId">Certificate Type id</param>
+	<param name="p_strMatlNum">Material number</param>
+	<param name="p_strImporter">Importer</param>
+	<param name="p_strCustomer">Customer</param>
+	<param name="p_strOperatorName">Operator name</param>
+	<param name="p_strCertificateExtension">Certificate extension</param>
+	<param name="p_InsertPC">Inserting pc name</param>
+	<param name="p_ErrorDesc">Error description</param>
+	<returns>Returns save result as integer value</returns>
+	<exception cref="T:System.Exception">
+ Exception will be logged to ICS Log
+ </exception>
+	<remarks>
+		<list type="table">
+			<listheader>
+				<term>Author</term>
+				<description>Description</description>
+			</listheader>
+			<item>
+				<item>
+					<term>NA</term>
+					<description>
+						<para>NA</para>
+						<para>Original Code.</para>
+					</description>
+				</item>
+				<term>Sujitha</term>
+				<description>
+					<para>11/25/2019</para>
+					<para>Implemented code standardization.</para>
+				</description>
+			</item>
+		</list>
+	</remarks>
+</member><member name="M:CooperTire.ICS.DataAccess.CertificationDalc.SaveNewCertificate(System.String,System.Int32,System.String,System.String,System.String,System.String,System.String)">
+	<summary>
+ Saves new certificate
+ </summary>
+	<param name="p_strCertificateNumber">Certificate number</param>
+	<param name="p_intCertificateTypeId">Certificate Type id</param>
+	<param name="p_strMatlNum">Material number</param>
+	<param name="p_strImporter">Importer</param>
+	<param name="p_strCustomer">Customer</param>
+	<param name="p_strOperatorName">Operator name</param>
+	<param name="p_strCertificateExtension">Certificate extension</param>
+	<returns>Returns save result as boolean value</returns>
+	<exception cref="T:System.Exception">
+ Exception will be logged to ICS Log
+ </exception>
+	<remarks>
+		<list type="table">
+			<listheader>
+				<term>Author</term>
+				<description>Description</description>
+			</listheader>
+			<item>
+				<item>
+					<term>NA</term>
+					<description>
+						<para>NA</para>
+						<para>Original Code.</para>
+					</description>
+				</item>
+				<term>Sujitha</term>
+				<description>
+					<para>11/25/2019</para>
+					<para>Implemented code standardization.</para>
+				</description>
+			</item>
+		</list>
+	</remarks>
+</member><member name="M:CooperTire.ICS.DataAccess.CertificationDalc.ArchiveCertification(System.String,System.String)">
+	<summary>
+ Archives the certificates
+ </summary>
+	<param name="p_strCertificateNumber">Certificate number</param>
+	<param name="p_strOperatorName">Operator name</param>
+	<returns>Returns archive result as boolean value</returns>
+	<exception cref="T:System.Exception">
+ Exception will be logged to ICS Log
+ </exception>
+	<remarks>
+		<list type="table">
+			<listheader>
+				<term>Author</term>
+				<description>Description</description>
+			</listheader>
+			<item>
+				<item>
+					<term>NA</term>
+					<description>
+						<para>NA</para>
+						<para>Original Code.</para>
+					</description>
+				</item>
+				<term>Sujitha</term>
+				<description>
+					<para>11/25/2019</para>
+					<para>Implemented code standardization.</para>
+				</description>
+			</item>
+		</list>
+	</remarks>
+</member><member name="M:CooperTire.ICS.DataAccess.CertificationDalc.GetCertifExtension(System.Int32)">
+	<summary>
+ Gets certificate extension based on given imark certificate id
+ </summary>
+	<param name="p_intImarkCertId">Imark certificate Id</param>
+	<returns>Returns certificate extension string</returns>
+	<exception cref="T:System.Exception">
+ Exception will be logged to ICS Log
+ </exception>
+	<remarks>
+		<list type="table">
+			<listheader>
+				<term>Author</term>
+				<description>Description</description>
+			</listheader>
+			<item>
+				<item>
+					<term>NA</term>
+					<description>
+						<para>NA</para>
+						<para>Original Code.</para>
+					</description>
+				</item>
+				<term>Sujitha</term>
+				<description>
+					<para>11/25/2019</para>
+					<para>Implemented code standardization.</para>
+				</description>
+			</item>
+		</list>
+	</remarks>
+</member><member name="M:CooperTire.ICS.DataAccess.CertificationDalc.GetLatestImarkCertifId">
+	<summary>
+ Gets latest imark certificate id
+ </summary>
+	<returns>Returns latest imark certificate id as integer</returns>
+	<exception cref="T:System.Exception">
+ Exception will be logged to ICS Log
+ </exception>
+	<remarks>
+		<list type="table">
+			<listheader>
+				<term>Author</term>
+				<description>Description</description>
+			</listheader>
+			<item>
+				<item>
+					<term>NA</term>
+					<description>
+						<para>NA</para>
+						<para>Original Code.</para>
+					</description>
+				</item>
+				<term>Sujitha</term>
+				<description>
+					<para>11/25/2019</para>
+					<para>Implemented code standardization.</para>
+				</description>
+			</item>
+		</list>
+	</remarks>
+</member><member name="M:CooperTire.ICS.DataAccess.CertificationDalc.GetLatestGSOCertifNumber">
+	<summary>
+ Gets latest GSO certificate number
+ </summary>
+	<returns>Returns latest GSO certificate number as string</returns>
+	<exception cref="T:System.Exception">
+ Exception will be logged to ICS Log
+ </exception>
+	<remarks>
+		<list type="table">
+			<listheader>
+				<term>Author</term>
+				<description>Description</description>
+			</listheader>
+			<item>
+				<item>
+					<term>NA</term>
+					<description>
+						<para>NA</para>
+						<para>Original Code.</para>
+					</description>
+				</item>
+				<term>Sujitha</term>
+				<description>
+					<para>11/25/2019</para>
+					<para>Implemented code standardization.</para>
+				</description>
+			</item>
+		</list>
+	</remarks>
+</member><member name="M:CooperTire.ICS.DataAccess.CertificationDalc.GetCertificationTypeID(System.String)">
+	<summary>
+ Gets certification type id based on given certification type name
+ </summary>
+	<param name="p_strCertificationTypeName">Certification type name</param>
+	<returns>Returns certification type id as integer</returns>
+	<exception cref="T:System.Exception">
+ Exception will be logged to ICS Log
+ </exception>
+	<remarks>
+		<list type="table">
+			<listheader>
+				<term>Author</term>
+				<description>Description</description>
+			</listheader>
+			<item>
+				<item>
+					<term>NA</term>
+					<description>
+						<para>NA</para>
+						<para>Original Code.</para>
+					</description>
+				</item>
+				<term>Sujitha</term>
+				<description>
+					<para>11/25/2019</para>
+					<para>Implemented code standardization.</para>
+				</description>
+			</item>
+		</list>
+	</remarks>
+</member><member name="M:CooperTire.ICS.DataAccess.CertificationDalc.AddCustomer(System.Int32,System.String,System.String,System.String,System.String,System.String)">
+	<summary>
+ Adds customer information
+ </summary>
+	<param name="p_intSKUId">Sku id</param>
+	<param name="p_strCustomer">Customer name</param>
+	<param name="p_strImporter">Importer</param>
+	<param name="p_strImporterRepresentative">Importer representative</param>
+	<param name="p_strImporterAddress">Importer address</param>
+	<param name="p_strCountryLocation">Country location</param>
+	<returns>Returns save result as integer</returns>
+	<exception cref="T:System.Exception">
+ Exception will be logged to ICS Log
+ </exception>
+	<remarks>
+		<list type="table">
+			<listheader>
+				<term>Author</term>
+				<description>Description</description>
+			</listheader>
+			<item>
+				<item>
+					<term>NA</term>
+					<description>
+						<para>NA</para>
+						<para>Original Code.</para>
+					</description>
+				</item>
+				<term>Sujitha</term>
+				<description>
+					<para>11/25/2019</para>
+					<para>Implemented code standardization.</para>
+				</description>
+			</item>
+		</list>
+	</remarks>
+</member><member name="M:CooperTire.ICS.DataAccess.CertificationDalc.GetInputValue(System.String)">
+	<summary>
+ Gets passed input value and checks if empty
+ </summary>
+	<param name="inputParameterValue">Input value</param>
+	<returns>Returns passed input value if not empty or else returns null</returns>
+	<exception cref="T:System.Exception">
+ Exception will be logged to ICS Log
+ </exception>
+	<remarks>
+		<list type="table">
+			<listheader>
+				<term>Author</term>
+				<description>Description</description>
+			</listheader>
+			<item>
+				<item>
+					<term>NA</term>
+					<description>
+						<para>NA</para>
+						<para>Original Code.</para>
+					</description>
+				</item>
+				<term>Sujitha</term>
+				<description>
+					<para>11/25/2019</para>
+					<para>Implemented code standardization.</para>
+				</description>
+			</item>
+		</list>
+	</remarks>
+</member><member name="M:CooperTire.ICS.DataAccess.CertificationDalc.GetCertifiedMaterialCount(System.Int32,System.String,System.String)">
+	<summary>
+ Gets the certified materials count
+ </summary>
+	<param name="p_intCertificationTypeId">Certification type id</param>
+	<param name="p_strCertificateNumber">Certificate number</param>
+	<param name="p_strCertificateExtension">Certificate extension</param>
+	<returns>Returns certified material count as integer</returns>
+	<exception cref="T:System.Exception">
+ Exception will be logged to ICS Log
+ </exception>
+	<remarks>
+		<list type="table">
+			<listheader>
+				<term>Author</term>
+				<description>Description</description>
+			</listheader>
+			<item>
+				<item>
+					<term>NA</term>
+					<description>
+						<para>NA</para>
+						<para>Original Code.</para>
+					</description>
+				</item>
+				<term>Sujitha</term>
+				<description>
+					<para>11/25/2019</para>
+					<para>Implemented code standardization.</para>
+				</description>
+			</item>
+		</list>
+	</remarks>
+</member><member name="M:CooperTire.ICS.DataAccess.CertificationDalc.RenameCertificate(System.Int32,System.String,System.String,System.String,System.String,System.String)">
+	<summary>
+ Renames the certificate
+ </summary>
+	<param name="p_intCertificationTypeId">Certification type id</param>
+	<param name="p_strOldCertificateNumber">Old certificate number</param>
+	<param name="p_strOldCertificateExtension">Old certificate extension</param>
+	<param name="p_strNewCertificateNumber">New certificate number</param>
+	<param name="p_strNewCertificateExtension">New certificate extension</param>
+	<param name="p_strOperatorName">Operator name</param>
+	<returns>Returns boolean value based on renaming result</returns>
+	<exception cref="T:System.Exception">
+ Exception will be logged to ICS Log
+ </exception>
+	<remarks>
+		<list type="table">
+			<listheader>
+				<term>Author</term>
+				<description>Description</description>
+			</listheader>
+			<item>
+				<item>
+					<term>NA</term>
+					<description>
+						<para>NA</para>
+						<para>Original Code.</para>
+					</description>
+				</item>
+				<term>Sujitha</term>
+				<description>
+					<para>11/25/2019</para>
+					<para>Implemented code standardization.</para>
+				</description>
+			</item>
+		</list>
+	</remarks>
+</member><member name="M:CooperTire.ICS.DataAccess.CertificationDalc.DeleteCertificate(System.Int32,System.String,System.String,System.String)">
+	<summary>
+ Deletes the certificate
+ </summary>
+	<param name="p_intCertificationTypeId">Certification Type Id</param>
+	<param name="p_strCertificateNumber">Certificate Number</param>
+	<param name="p_strCertificateExtension">Certificate Extension</param>
+	<param name="p_strOperatorName">Operator name</param>
+	<returns>Returns boolean value based on deleting result</returns>
+	<exception cref="T:System.Exception">
+ Exception will be logged to ICS Log
+ </exception>
+	<remarks>
+		<list type="table">
+			<listheader>
+				<term>Author</term>
+				<description>Description</description>
+			</listheader>
+			<item>
+				<item>
+					<term>NA</term>
+					<description>
+						<para>NA</para>
+						<para>Original Code.</para>
+					</description>
+				</item>
+				<term>Sujitha</term>
+				<description>
+					<para>11/25/2019</para>
+					<para>Implemented code standardization.</para>
+				</description>
+			</item>
+		</list>
+	</remarks>
+</member><member name="M:CooperTire.ICS.DataAccess.CertificationDalc.GetCertificateMaterials(System.Int32,System.String,System.String)">
+	<summary>
+ Gets the certificate materials
+ </summary>
+	<param name="p_intCertificationTypeId">Certification Type Id</param>
+	<param name="p_strCertificateNumber">Certificate number</param>
+	<param name="p_strCertificateExtension">Certificate extension</param>
+	<returns>Returns certificate materials as data table</returns>
+	<exception cref="T:System.Exception">
+ Exception will be logged to ICS Log
+ </exception>
+	<remarks>
+		<list type="table">
+			<listheader>
+				<term>Author</term>
+				<description>Description</description>
+			</listheader>
+			<item>
+				<item>
+					<term>NA</term>
+					<description>
+						<para>NA</para>
+						<para>Original Code.</para>
+					</description>
+				</item>
+				<term>Sujitha</term>
+				<description>
+					<para>11/25/2019</para>
+					<para>Implemented code standardization.</para>
+				</description>
+			</item>
+		</list>
+	</remarks>
+</member><member name="M:CooperTire.ICS.DataAccess.CertificationDalc.DetachCertificate(System.Int32,System.Int32)">
+	<summary>
+ Detaches the certificate
+ </summary>
+	<param name="p_intSkuId">Certification Id</param>
+	<param name="p_intCertificateId">Certificate Id</param>
+	<returns>Returns boolean value based on detach result</returns>
+	<exception cref="T:System.Exception">
+ Exception will be logged to ICS Log
+ </exception>
+	<remarks>
+		<list type="table">
+			<listheader>
+				<term>Author</term>
+				<description>Description</description>
+			</listheader>
+			<item>
+				<item>
+					<term>NA</term>
+					<description>
+						<para>NA</para>
+						<para>Original Code.</para>
+					</description>
+				</item>
+				<term>Sujitha</term>
+				<description>
+					<para>11/25/2019</para>
+					<para>Implemented code standardization.</para>
+				</description>
+			</item>
+		</list>
+	</remarks>
+</member><member name="M:CooperTire.ICS.DataAccess.CertificationDalc.MoveCertificate(System.Int32,System.String,System.String,System.Int32,System.Int32,System.String)">
+	<summary>
+ Moves the certificate
+ </summary>
+	<param name="p_intCertificationTypeId">Certification Type Id</param>
+	<param name="p_strNewCertificateNumber">New Certificate Number</param>
+	<param name="p_strNewCertificateExtension">New Certificate Extension</param>
+	<param name="p_intSkuId">Sku Id</param>
+	<param name="p_intCertificateId">Certificate Id</param>
+	<param name="p_strOperatorName">Operator name</param>
+	<returns>Returns boolean value based on the move result</returns>
+	<exception cref="T:System.Exception">
+ Exception will be logged to ICS Log
+ </exception>
+	<remarks>
+		<list type="table">
+			<listheader>
+				<term>Author</term>
+				<description>Description</description>
+			</listheader>
+			<item>
+				<item>
+					<term>NA</term>
+					<description>
+						<para>NA</para>
+						<para>Original Code.</para>
+					</description>
+				</item>
+				<term>Sujitha</term>
+				<description>
+					<para>11/25/2019</para>
+					<para>Implemented code standardization.</para>
+				</description>
+			</item>
+		</list>
+	</remarks>
+</member><member name="M:CooperTire.ICS.DataAccess.CertificationDalc.GetDuplicateCertificates(System.String,System.String)">
+	<summary>
+ Gets duplicate certificates
+ </summary>
+	<param name="p_strMaterialNumber">Material number</param>
+	<param name="p_strSpeedRating">Speed rating</param>
+	<returns>Returns duplicate certificates as data table</returns>
+	<exception cref="T:System.Exception">
+ Exception will be logged to ICS Log
+ </exception>
+	<remarks>
+		<list type="table">
+			<listheader>
+				<term>Author</term>
+				<description>Description</description>
+			</listheader>
+			<item>
+				<item>
+					<term>NA</term>
+					<description>
+						<para>NA</para>
+						<para>Original Code.</para>
+					</description>
+				</item>
+				<term>Sujitha</term>
+				<description>
+					<para>11/25/2019</para>
+					<para>Implemented code standardization.</para>
+				</description>
+			</item>
+		</list>
+	</remarks>
+</member><member name="M:CooperTire.ICS.DataAccess.CertificationDalc.DeleteDuplicateCertificates(System.Int32)">
+	<summary>
+ Deletes duplicate certificates
+ </summary>
+	<param name="p_intSkuId">Sku id</param>
+	<returns>Returns boolean value based on deletion result</returns>
+	<exception cref="T:System.Exception">
+ Exception will be logged to ICS Log
+ </exception>
+	<remarks>
+		<list type="table">
+			<listheader>
+				<term>Author</term>
+				<description>Description</description>
+			</listheader>
+			<item>
+				<item>
+					<term>NA</term>
+					<description>
+						<para>NA</para>
+						<para>Original Code.</para>
+					</description>
+				</item>
+				<term>Sujitha</term>
+				<description>
+					<para>11/25/2019</para>
+					<para>Implemented code standardization.</para>
+				</description>
+			</item>
+		</list>
+	</remarks>
+</member><member name="M:CooperTire.ICS.DataAccess.CertificationDalc.GetFamilies(System.Int32)">
+	<summary>
+ Gets the records from imark family table based on given certificate id
+ </summary>
+	<param name="pn_intCertificateID">Certificate Id</param>
+	<returns>Returns the imark family table as data table</returns>
+	<exception cref="T:System.Exception">
+ Exception will be logged to ICS Log
+ </exception>
+	<remarks>
+		<list type="table">
+			<listheader>
+				<term>Author</term>
+				<description>Description</description>
+			</listheader>
+			<item>
+				<item>
+					<term>NA</term>
+					<description>
+						<para>NA</para>
+						<para>Original Code.</para>
+					</description>
+				</item>
+				<term>Sujitha</term>
+				<description>
+					<para>11/25/2019</para>
+					<para>Implemented code standardization.</para>
+				</description>
+			</item>
+		</list>
+	</remarks>
+</member><member name="M:CooperTire.ICS.DataAccess.CertificationDalc.CheckIsFamilyIdExist(System.Int32,System.String,System.String@)">
+	<summary>
+ Checks whether the family id exists or not and gets the family desc
+ </summary>
+	<param name="p_intCertificateid">CertificateId</param>
+	<param name="p_intFamilyId">Family Id</param>
+	<param name="p_strFamilyDesc">Family Desc</param>
+	<returns>Returns boolean value based on family id existence</returns>
+	<exception cref="T:System.Exception">
+ Exception will be logged to ICS Log
+ </exception>
+	<remarks>
+		<list type="table">
+			<listheader>
+				<term>Author</term>
+				<description>Description</description>
+			</listheader>
+			<item>
+				<item>
+					<term>NA</term>
+					<description>
+						<para>NA</para>
+						<para>Original Code.</para>
+					</description>
+				</item>
+				<term>Sujitha</term>
+				<description>
+					<para>11/25/2019</para>
+					<para>Implemented code standardization.</para>
+				</description>
+			</item>
+		</list>
+	</remarks>
+</member><member name="M:CooperTire.ICS.DataAccess.CertificationDalc.GetTireType">
+	<summary>
+ Gets type of tires
+ </summary>
+	<returns>Returns type of tires as data table</returns>
+	<exception cref="T:System.Exception">
+ Exception will be logged to ICS Log
+ </exception>
+	<remarks>
+		<list type="table">
+			<listheader>
+				<term>Author</term>
+				<description>Description</description>
+			</listheader>
+			<item>
+				<item>
+					<term>NA</term>
+					<description>
+						<para>NA</para>
+						<para>Original Code.</para>
+					</description>
+				</item>
+				<term>Sujitha</term>
+				<description>
+					<para>11/25/2019</para>
+					<para>Implemented code standardization.</para>
+				</description>
+			</item>
+		</list>
+	</remarks>
+</member><member name="M:CooperTire.ICS.DataAccess.CertificationDalc.SaveFamily(System.Int32,System.Int32,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String)">
+	<summary>
+ Inserts/updates the record in Imark family table
+ </summary>
+	<param name="p_intCertificateid">Certificate id</param>
+	<param name="p_intFamilyID">Family id</param>
+	<param name="p_strFamilyCode">Family code</param>
+	<param name="p_strFamilyDesc">Family description</param>
+	<param name="p_strApplicationCat">Application cat</param>
+	<param name="p_strConstructionType">Construction type</param>
+	<param name="p_strStructureType">Structure type</param>
+	<param name="p_strMountingType">Mounting type</param>
+	<param name="p_strAspectRatioCat">Aspect ratio cat</param>
+	<param name="p_strSpeedRatingCat">Speed rating cat</param>
+	<param name="p_strLoadIndexCat">Load index cat</param>
+	<param name="p_strUserName">User name</param>
+	<returns>Returns boolean value based on save operation</returns>
+	<exception cref="T:System.Exception">
+ Exception will be logged to ICS Log
+ </exception>
+	<remarks>
+		<list type="table">
+			<listheader>
+				<term>Author</term>
+				<description>Description</description>
+			</listheader>
+			<item>
+				<item>
+					<term>NA</term>
+					<description>
+						<para>NA</para>
+						<para>Original Code.</para>
+					</description>
+				</item>
+				<term>Sujitha</term>
+				<description>
+					<para>11/25/2019</para>
+					<para>Implemented code standardization.</para>
+				</description>
+			</item>
+		</list>
+	</remarks>
+</member><member name="M:CooperTire.ICS.DataAccess.CertificationDalc.Deletefamily(System.Int32,System.Int32)">
+	<summary>
+ Deletes the record from Imark family table for the given family id
+ </summary>
+	<param name="p_intCertificateid">Certificate id</param>
+	<param name="p_intFamilyID">Family id</param>
+	<returns>Returns boolean value based on delete operation</returns>
+	<exception cref="T:System.Exception">
+ Exception will be logged to ICS Log
+ </exception>
+	<remarks>
+		<list type="table">
+			<listheader>
+				<term>Author</term>
+				<description>Description</description>
+			</listheader>
+			<item>
+				<item>
+					<term>NA</term>
+					<description>
+						<para>NA</para>
+						<para>Original Code.</para>
+					</description>
+				</item>
+				<term>Sujitha</term>
+				<description>
+					<para>11/25/2019</para>
+					<para>Implemented code standardization.</para>
+				</description>
+			</item>
+		</list>
+	</remarks>
+</member><member name="M:CooperTire.ICS.DataAccess.CertificationDalc.GetMaterial(System.String)">
+	<summary>
+ Gets the material details for a given material number
+ </summary>
+	<param name="p_strMaterialNumber">Material number</param>
+	<returns>Returns material details as data table</returns>
+	<exception cref="T:System.Exception">
+ Exception will be logged to ICS Log
+ </exception>
+	<remarks>
+		<list type="table">
+			<listheader>
+				<term>Author</term>
+				<description>Description</description>
+			</listheader>
+			<item>
+				<item>
+					<term>NA</term>
+					<description>
+						<para>NA</para>
+						<para>Original Code.</para>
+					</description>
+				</item>
+				<term>Sujitha</term>
+				<description>
+					<para>11/25/2019</para>
+					<para>Implemented code standardization.</para>
+				</description>
+			</item>
+		</list>
+	</remarks>
+</member><member name="M:CooperTire.ICS.DataAccess.CertificationDalc.EditMaterial(System.Int32,System.String)">
+	<summary>
+ Updates the speed rating
+ </summary>
+	<param name="p_intSkuID">Sku Id</param>
+	<param name="p_strSpeedrating">Speed rating</param>
+	<returns>Returns boolean value based on edit result</returns>
+	<exception cref="T:System.Exception">
+ Exception will be logged to ICS Log
+ </exception>
+	<remarks>
+		<list type="table">
+			<listheader>
+				<term>Author</term>
+				<description>Description</description>
+			</listheader>
+			<item>
+				<item>
+					<term>NA</term>
+					<description>
+						<para>NA</para>
+						<para>Original Code.</para>
+					</description>
+				</item>
+				<term>Sujitha</term>
+				<description>
+					<para>11/25/2019</para>
+					<para>Implemented code standardization.</para>
+				</description>
+			</item>
+		</list>
+	</remarks>
+</member><member name="M:CooperTire.ICS.DataAccess.CertificationDalc.CopyCertification(System.String)">
+	<summary>
+ Copies certification
+ </summary>
+	<param name="p_strMatlNum">Material number</param>
+	<returns>Returns boolean value based on copy result</returns>
+	<exception cref="T:System.Exception">
+ Exception will be logged to ICS Log
+ </exception>
+	<remarks>
+		<list type="table">
+			<listheader>
+				<term>Author</term>
+				<description>Description</description>
+			</listheader>
+			<item>
+				<item>
+					<term>NA</term>
+					<description>
+						<para>NA</para>
+						<para>Original Code.</para>
+					</description>
+				</item>
+				<term>Sujitha</term>
+				<description>
+					<para>11/25/2019</para>
+					<para>Implemented code standardization.</para>
+				</description>
+			</item>
+		</list>
+	</remarks>
+</member><member name="M:CooperTire.ICS.DataAccess.CertificationDalc.AttachCertification(System.Int32,System.String,System.String,System.Int32)">
+	<summary>
+ Attaches the certification record
+ </summary>
+	<param name="p_skuid">Sku Id</param>
+	<param name="p_strCertNum">Certificate number</param>
+	<param name="p_strExtensionEn">Extension</param>
+	<param name="p_certificationtypeid">Certification type id</param>
+	<returns>Returns certification result as string</returns>
+	<exception cref="T:System.Exception">
+ Exception will be logged to ICS Log
+ </exception>
+	<remarks>
+		<list type="table">
+			<listheader>
+				<term>Author</term>
+				<description>Description</description>
+			</listheader>
+			<item>
+				<item>
+					<term>NA</term>
+					<description>
+						<para>NA</para>
+						<para>Original Code.</para>
+					</description>
+				</item>
+				<term>Sujitha</term>
+				<description>
+					<para>11/25/2019</para>
+					<para>Implemented code standardization.</para>
+				</description>
+			</item>
+		</list>
+	</remarks>
+</member><member name="M:CooperTire.ICS.DataAccess.CertificationDalc.RefreshProduct(System.String,System.String@)">
+	<summary>
+ Refreshes product data
+ </summary>
+	<param name="p_strMaterialNumber">Material number</param>
+	<param name="p_strErrorDesc">Error description</param>
+	<returns>Returns error number as an integer</returns>
+	<exception cref="T:System.Exception">
+ Exception will be logged to ICS Log
+ </exception>
+	<remarks>
+		<list type="table">
+			<listheader>
+				<term>Author</term>
+				<description>Description</description>
+			</listheader>
+			<item>
+				<item>
+					<term>NA</term>
+					<description>
+						<para>NA</para>
+						<para>Original Code.</para>
+					</description>
+				</item>
+				<term>Sujitha</term>
+				<description>
+					<para>11/25/2019</para>
+					<para>Implemented code standardization.</para>
+				</description>
+			</item>
+		</list>
+	</remarks>
+</member><member name="T:CooperTire.ICS.DataAccess.CertificationDalc">
+	<summary>
+ Certification specific data access methods
+ </summary>
+	<remarks>
+		<list type="table">
+			<listheader>
+				<term>Author</term>
+				<description>Description</description>
+			</listheader>
+			<item>
+				<item>
+					<term>NA</term>
+					<description>
+						<para>NA</para>
+						<para>Original Code.</para>
+					</description>
+				</item>
+				<term>Sujitha</term>
+				<description>
+					<para>11/25/2019</para>
+					<para>Implemented code standardization.</para>
+				</description>
+			</item>
+		</list>
+	</remarks>
+</member><member name="P:CooperTire.ICS.DataAccess.My.Resources.Resources.ResourceManager">
+	<summary>
+  Returns the cached ResourceManager instance used by this class.
+</summary>
+</member><member name="P:CooperTire.ICS.DataAccess.My.Resources.Resources.Culture">
+	<summary>
+  Overrides the current thread's CurrentUICulture property for all
+  resource lookups using this strongly typed resource class.
+</summary>
+</member><member name="P:CooperTire.ICS.DataAccess.My.Resources.Resources.OracleTypeError">
+	<summary>
+  Looks up a localized string similar to This function don't use OracleType.Char data type, this data type has incompatibilities with MS Oracle data provider..
+</summary>
+</member><member name="T:CooperTire.ICS.DataAccess.My.Resources.Resources">
+	<summary>
+  A strongly-typed resource class, for looking up localized strings, etc.
+</summary>
+</member>
+</members>
+</doc>

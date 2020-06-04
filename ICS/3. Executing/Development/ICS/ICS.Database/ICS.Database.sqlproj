@@ -1,0 +1,144 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <SccProvider>MSSCCI:Team Foundation Server MSSCCI Provider</SccProvider>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccLocalPath>..\..</SccLocalPath>
+    <SccProjectName>$/Serena/DEV</SccProjectName>
+    <UpgradedFromDBP>True</UpgradedFromDBP>
+    <Name>dbpProjectName</Name>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectVersion>4.1</ProjectVersion>
+    <ProjectGuid>{d1bd96ba-09a0-4d64-a52d-aeaa0ebc4295}</ProjectGuid>
+    <DSP>Microsoft.Data.Tools.Schema.Sql.Sql120DatabaseSchemaProvider</DSP>
+    <OutputType>Database</OutputType>
+    <RootPath>
+    </RootPath>
+    <SccProvider>MSSCCI:Team Foundation Server MSSCCI Provider</SccProvider>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccLocalPath>..\..</SccLocalPath>
+    <SccProjectName>$/Serena/DEV</SccProjectName>
+    <UpgradedFromDBP>True</UpgradedFromDBP>
+    <RootNamespace>dbpProjectName</RootNamespace>
+    <PostUpgradeAddToSCC>;D:\Cooper Projects\trunk\ICS Project\3. Executing\Development\ICS\ICS.Database\ICS.Database.sqlproj;D:\Cooper Projects\trunk\ICS Project\3. Executing\Development\ICS\ICS.Database\Connections.txt</PostUpgradeAddToSCC>
+    <SccProvider>MSSCCI:Team Foundation Server MSSCCI Provider</SccProvider>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccLocalPath>..\..</SccLocalPath>
+    <SccProjectName>$/Serena/DEV</SccProjectName>
+    <UpgradedFromDBP>True</UpgradedFromDBP>
+    <AssemblyName>dbpProjectName</AssemblyName>
+    <ModelCollation>1033, CI</ModelCollation>
+    <DefaultFileStructure>BySchemaAndSchemaType</DefaultFileStructure>
+    <DeployToDatabase>True</DeployToDatabase>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetLanguage>CS</TargetLanguage>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <SqlServerVerification>False</SqlServerVerification>
+    <IncludeCompositeObjects>True</IncludeCompositeObjects>
+    <TargetDatabaseSet>True</TargetDatabaseSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <BuildScriptName>$(MSBuildProjectName).sql</BuildScriptName>
+    <TreatWarningsAsErrors>False</TreatWarningsAsErrors>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <BuildScriptName>$(MSBuildProjectName).sql</BuildScriptName>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">11.0</VisualStudioVersion>
+    <!-- Default to the v11.0 targets path if the targets file for the current VS version is not found -->
+    <SSDTExists Condition="Exists('$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets')">True</SSDTExists>
+    <VisualStudioVersion Condition="'$(SSDTExists)' == ''">11.0</VisualStudioVersion>
+  </PropertyGroup>
+  <Import Condition="'$(SQLDBExtensionsRefPath)' != ''" Project="$(SQLDBExtensionsRefPath)\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
+  <Import Condition="'$(SQLDBExtensionsRefPath)' == ''" Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
+  <ItemGroup>
+    <Folder Include="Properties" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Change Scripts" />
+    <Folder Include="CreateScripts" />
+    <Folder Include="Queries" />
+    <Folder Include="TestEnvironmentScripts" />
+    <Folder Include="TestScripts" />
+    <Folder Include="Properties" />
+  </ItemGroup>
+  <ItemGroup>
+    <NotInBuild Include="Connections.txt" />
+    <NotInBuild Include="CreateScripts\APP_Message.sql" />
+    <NotInBuild Include="CreateScripts\App_Message_Package.sql" />
+    <NotInBuild Include="CreateScripts\CertificateTestData.sql" />
+    <NotInBuild Include="CreateScripts\Certification_CRUD_Package.sql" />
+    <NotInBuild Include="CreateScripts\CreateObjectsFromScratch.sql" />
+    <NotInBuild Include="CreateScripts\Drop_ICS_Objects.sql" />
+    <NotInBuild Include="CreateScripts\DROP_ICS_User.sql" />
+    <NotInBuild Include="CreateScripts\ICS.sql" />
+    <NotInBuild Include="CreateScripts\ICS_COMMON_FUNCTIONS.SQL" />
+    <NotInBuild Include="CreateScripts\ICS_CreateTables.sql" />
+    <NotInBuild Include="CreateScripts\ICS_CreateUserAccounts.sql" />
+    <NotInBuild Include="CreateScripts\ICS_PACKAGE_CRUD.sql" />
+    <NotInBuild Include="CreateScripts\ICS_Synonym_Grants.sql" />
+    <NotInBuild Include="CreateScripts\ICS_Views.sql" />
+    <NotInBuild Include="CreateScripts\INSERT_APP_MESSAGE.sql" />
+    <NotInBuild Include="CreateScripts\NewReferenceData(Product_Brand_NPRMaster).sql" />
+    <NotInBuild Include="CreateScripts\ReferenceData.sql" />
+    <NotInBuild Include="CreateScripts\ReferenceData_DefaultValues_CertificationType.sql" />
+    <NotInBuild Include="CreateScripts\Reports_Package.sql" />
+    <NotInBuild Include="CreateScripts\TableSpace_Data_TS.sql" />
+    <NotInBuild Include="CreateScripts\TestResults_CRUD_Package.sql" />
+    <NotInBuild Include="Queries\ClearCertificatesDromDB.sql" />
+    <NotInBuild Include="Queries\DefaultValues.sql" />
+    <NotInBuild Include="Queries\GetBrandProduct_Country.sql" />
+    <NotInBuild Include="Queries\PIvot table for emark.sql" />
+    <NotInBuild Include="Queries\Product Uninon.sql" />
+    <NotInBuild Include="Queries\Quality_Search.sql" />
+    <NotInBuild Include="Queries\Regions Cert x UnCert.sql" />
+    <NotInBuild Include="TestEnvironmentScripts\Create_Test_ObjectsFromScratch.sql" />
+    <NotInBuild Include="TestEnvironmentScripts\DropTestUsers.sql" />
+    <NotInBuild Include="TestScripts\Test_App_message_GetErrors.sql" />
+    <NotInBuild Include="TestScripts\Test_App_message_insert.sql" />
+    <NotInBuild Include="TestScripts\TEST_CERTIFICATION_CRUD.GETCERTIFICATESINFO.sql" />
+    <NotInBuild Include="TestScripts\Test_CertificationCrud_Certificates_CCC_Insert.sql" />
+    <NotInBuild Include="TestScripts\Test_CertificationCrud_Certificates_GSO_Insert.sql" />
+    <NotInBuild Include="TestScripts\Test_CertificationCrud_Certificates_InMark_Insert.sql" />
+    <NotInBuild Include="TestScripts\Test_CertificationCrud_Certificates_NOM_Insert.sql" />
+    <NotInBuild Include="TestScripts\Test_CertificationCrud_GET_Certificates_ECE_Insert.sql" />
+    <NotInBuild Include="TestScripts\Test_CertificationCrud_GET_CERTIFICATIONBYBRANDCODE.sql" />
+    <NotInBuild Include="TestScripts\Test_CertificationCrud_GET_CERTIFICATIONSearchRedulst.sql" />
+    <NotInBuild Include="TestScripts\Test_CertificationCrud_GetcertificationId.sql" />
+    <NotInBuild Include="TestScripts\Test_ICS_CERTIFICATION_CRUD_AUDIT_LOG_INSERT.sql" />
+    <NotInBuild Include="TestScripts\Test_ICS_CertificationCRUD_Certificate_Save.sql" />
+    <NotInBuild Include="TestScripts\TEST_ICS_CRUD_GetCountriesByRegionName.sql" />
+    <NotInBuild Include="TestScripts\Test_ICS_CRUD_GetSearchTypesByCertification.sql" />
+    <NotInBuild Include="TestScripts\Test_ICS_Packages.sql" />
+    <NotInBuild Include="TestScripts\Test_ICS_Packages_GetCountries.sql" />
+    <NotInBuild Include="TestScripts\Test_ICS_Packages_SearchBrands.sql" />
+    <NotInBuild Include="TestScripts\TEST_ICS_TestResults,Measure_Save.sql" />
+    <NotInBuild Include="TestScripts\Test_ICS_TestResults_CheckIfProductExists.sql" />
+    <NotInBuild Include="TestScripts\Test_ICS_TestResults_GetMeasure.sql" />
+    <NotInBuild Include="TestScripts\Test_TestResults_CRUD_GetTestResults.sql" />
+    <NotInBuild Include="TestScripts\TesteProcwith parameter list.sql" />
+  </ItemGroup>
+</Project>

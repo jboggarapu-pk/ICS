@@ -1,0 +1,3 @@
+D:\trunk\ICS\3. Executing\Development\ICS\ICS.Depository\obj\Debug\ICS.DepositoryTender.vbprojResolveAssemblyReference.cache
+D:\trunk\ICS\3. Executing\Development\ICS\ICS.Depository\obj\Debug\CooperTire.ICS.DepositoryTender.Resources.resources
+D:\trunk\ICS\3. Executing\Development\ICS\ICS.Depository\obj\Debug\ICS.DepositoryTender.vbproj.GenerateResource.Cache

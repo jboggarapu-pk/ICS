@@ -1,0 +1,578 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="12.0">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{610A9461-14D6-4358-974C-181288FEEEE2}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{F184B08F-C81C-45F6-A57F-5ABD9991F28F}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <RootNamespace>CooperTire.ICS.Web</RootNamespace>
+    <AssemblyName>ICS.Web</AssemblyName>
+    <SccProjectName>%24/Serena/DEV</SccProjectName>
+    <SccLocalPath>..\..</SccLocalPath>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccProvider>MSSCCI:Team Foundation Server MSSCCI Provider</SccProvider>
+    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>2.0</OldToolsVersion>
+    <UseIISExpress>false</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\</OutputPath>
+    <DocumentationFile>ICS.xml</DocumentationFile>
+    <NoWarn>42353,42354,42355</NoWarn>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <WarningsAsErrors>41999,42016,42017,42018,42019,42020,42021,42022,42030,42032,42036,42104,42108,42109</WarningsAsErrors>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DocumentationFile>ICS.xml</DocumentationFile>
+    <NoWarn>42353,42354,42355</NoWarn>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <WarningsAsErrors>41999,42016,42017,42018,42019,42020,42021,42022,42030,42032,42036,42104,42108,42109</WarningsAsErrors>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AjaxControlToolkit, Version=1.0.20229.21479, Culture=neutral, PublicKeyToken=28f01b0e84b6d53e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\ICS.RefKit\AjaxControlToolkit.dll</HintPath>
+    </Reference>
+    <Reference Include="AJAXExtensionsToolbox, Version=1.0.61025.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\ICS.RefKit\AJAXExtensionsToolbox.dll</HintPath>
+    </Reference>
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=10.2.3600.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\ICS.RefKit\CrystalDecisions.CrystalReports.Engine.dll</HintPath>
+    </Reference>
+    <Reference Include="CrystalDecisions.Enterprise.Framework, Version=10.5.3700.0, Culture=neutral, PublicKeyToken=692fbea5521e1304">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>..\ICS.RefKit\CrystalDecisions.Enterprise.Framework.dll</HintPath>
+    </Reference>
+    <Reference Include="CrystalDecisions.Enterprise.InfoStore, Version=10.5.3700.0, Culture=neutral, PublicKeyToken=692fbea5521e1304">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>..\ICS.RefKit\CrystalDecisions.Enterprise.InfoStore.dll</HintPath>
+    </Reference>
+    <Reference Include="CrystalDecisions.ReportSource, Version=10.2.3600.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\ICS.RefKit\CrystalDecisions.ReportSource.dll</HintPath>
+    </Reference>
+    <Reference Include="CrystalDecisions.Shared, Version=10.2.3600.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\ICS.RefKit\CrystalDecisions.Shared.dll</HintPath>
+    </Reference>
+    <Reference Include="CrystalDecisions.Web, Version=10.2.3600.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\ICS.RefKit\CrystalDecisions.Web.dll</HintPath>
+    </Reference>
+    <Reference Include="CrystalDecisions.Windows.Forms, Version=10.2.3600.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\ICS.RefKit\CrystalDecisions.Windows.Forms.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.Common, Version=3.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\ICS.RefKit\Microsoft.Practices.EnterpriseLibrary.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.ExceptionHandling, Version=3.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\ICS.RefKit\Microsoft.Practices.EnterpriseLibrary.ExceptionHandling.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.ExceptionHandling.Logging, Version=3.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\ICS.RefKit\Microsoft.Practices.EnterpriseLibrary.ExceptionHandling.Logging.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.Validation, Version=3.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\ICS.RefKit\Microsoft.Practices.EnterpriseLibrary.Validation.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.Validation.Integration.AspNet, Version=3.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\ICS.RefKit\Microsoft.Practices.EnterpriseLibrary.Validation.Integration.AspNet.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.ObjectBuilder, Version=1.0.51206.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\ICS.RefKit\Microsoft.Practices.ObjectBuilder.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions, Version=1.0.61025.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\ICS.RefKit\System.Web.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Extensions.Design, Version=1.0.61025.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\ICS.RefKit\System.Web.Extensions.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Web.Mobile" />
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Data" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Collections.Specialized" />
+    <Import Include="System.Configuration" />
+    <Import Include="System.Text" />
+    <Import Include="System.Text.RegularExpressions" />
+    <Import Include="System.Web" />
+    <Import Include="System.Web.Caching" />
+    <Import Include="System.Web.SessionState" />
+    <Import Include="System.Web.Security" />
+    <Import Include="System.Web.Profile" />
+    <Import Include="System.Web.UI" />
+    <Import Include="System.Web.UI.HtmlControls" />
+    <Import Include="System.Web.UI.WebControls" />
+    <Import Include="System.Web.UI.WebControls.WebParts" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Global.asax" />
+    <Content Include="Home.aspx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Approval.aspx.designer.vb">
+      <DependentUpon>Approval.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Approval.aspx.vb">
+      <DependentUpon>Approval.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ArchiveCertification.aspx.designer.vb">
+      <DependentUpon>ArchiveCertification.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ArchiveCertification.aspx.vb">
+      <DependentUpon>ArchiveCertification.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Base\BaseCertificationControl.vb">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Base\BasePage.vb">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Base\BaseUserControl.vb">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CertificationDefaults.aspx.designer.vb">
+      <DependentUpon>CertificationDefaults.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CertificationDefaults.aspx.vb">
+      <DependentUpon>CertificationDefaults.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CertificationSearchEx.aspx.designer.vb">
+      <DependentUpon>CertificationSearchEx.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CertificationSearchEx.aspx.vb">
+      <DependentUpon>CertificationSearchEx.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Error.aspx.designer.vb">
+      <DependentUpon>Error.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Error.aspx.vb">
+      <DependentUpon>Error.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Marketing.aspx.designer.vb">
+      <DependentUpon>Marketing.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Marketing.aspx.vb">
+      <DependentUpon>Marketing.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MarketingNew.aspx.designer.vb">
+      <DependentUpon>MarketingNew.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MarketingNew.aspx.vb">
+      <DependentUpon>MarketingNew.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Query.aspx.designer.vb">
+      <DependentUpon>Query.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Query.aspx.vb">
+      <DependentUpon>Query.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Report.aspx.designer.vb">
+      <DependentUpon>Report.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Report.aspx.vb">
+      <DependentUpon>Report.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ReportSelectorView.aspx.designer.vb">
+      <DependentUpon>ReportSelectorView.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ReportSelectorView.aspx.vb">
+      <DependentUpon>ReportSelectorView.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\AddCertificationUC.ascx.designer.vb">
+      <DependentUpon>AddCertificationUC.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\AddCertificationUC.ascx.vb">
+      <DependentUpon>AddCertificationUC.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\ArchiveCertificationUC.ascx.designer.vb">
+      <DependentUpon>ArchiveCertificationUC.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\ArchiveCertificationUC.ascx.vb">
+      <DependentUpon>ArchiveCertificationUC.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\AttachCertificationUC.ascx.designer.vb">
+      <DependentUpon>AttachCertificationUC.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\AttachCertificationUC.ascx.vb">
+      <DependentUpon>AttachCertificationUC.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\CCCCertificationUC.ascx.designer.vb">
+      <DependentUpon>CCCCertificationUC.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\CCCCertificationUC.ascx.vb">
+      <DependentUpon>CCCCertificationUC.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\CertificationDefaultsUC.ascx.designer.vb">
+      <DependentUpon>CertificationDefaultsUC.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\CertificationDefaultsUC.ascx.vb">
+      <DependentUpon>CertificationDefaultsUC.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\CopyCertificationUC.ascx.designer.vb">
+      <DependentUpon>CopyCertificationUC.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\CopyCertificationUC.ascx.vb">
+      <DependentUpon>CopyCertificationUC.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\DeleteCertificationUC.ascx.designer.vb">
+      <DependentUpon>DeleteCertificationUC.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\DeleteCertificationUC.ascx.vb">
+      <DependentUpon>DeleteCertificationUC.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\DetachOrMoveCertificationUC.ascx.designer.vb">
+      <DependentUpon>DetachOrMoveCertificationUC.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\DetachOrMoveCertificationUC.ascx.vb">
+      <DependentUpon>DetachOrMoveCertificationUC.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\DupCorrectCertificationUC.ascx.designer.vb">
+      <DependentUpon>DupCorrectCertificationUC.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\DupCorrectCertificationUC.ascx.vb">
+      <DependentUpon>DupCorrectCertificationUC.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\EditCertificationUC.ascx.designer.vb">
+      <DependentUpon>EditCertificationUC.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\EditCertificationUC.ascx.vb">
+      <DependentUpon>EditCertificationUC.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\Emark117CertificationUC.ascx.designer.vb">
+      <DependentUpon>Emark117CertificationUC.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\Emark117CertificationUC.ascx.vb">
+      <DependentUpon>Emark117CertificationUC.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\EmarkCertificationUC.ascx.designer.vb">
+      <DependentUpon>EmarkCertificationUC.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\EmarkCertificationUC.ascx.vb">
+      <DependentUpon>EmarkCertificationUC.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Global.asax.vb">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Home.aspx.vb">
+      <DependentUpon>Home.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Home.aspx.designer.vb">
+      <DependentUpon>Home.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ICS.Master.designer.vb">
+      <DependentUpon>ICS.Master</DependentUpon>
+    </Compile>
+    <Compile Include="ICS.Master.vb">
+      <DependentUpon>ICS.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="My Project\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="UserControls\FamilyMaintenanceUC.ascx.designer.vb">
+      <DependentUpon>FamilyMaintenanceUC.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\FamilyMaintenanceUC.ascx.vb">
+      <DependentUpon>FamilyMaintenanceUC.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\GeneralCertificationUC.ascx.designer.vb">
+      <DependentUpon>GeneralCertificationUC.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\GeneralCertificationUC.ascx.vb">
+      <DependentUpon>GeneralCertificationUC.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\GSOCertificationUC.ascx.designer.vb">
+      <DependentUpon>GSOCertificationUC.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\GSOCertificationUC.ascx.vb">
+      <DependentUpon>GSOCertificationUC.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\ImarkCertificationUC.ascx.designer.vb">
+      <DependentUpon>ImarkCertificationUC.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\ImarkCertificationUC.ascx.vb">
+      <DependentUpon>ImarkCertificationUC.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\IndiaMarkCertificationUC.ascx.designer.vb">
+      <DependentUpon>IndiaMarkCertificationUC.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\IndiaMarkCertificationUC.ascx.vb">
+      <DependentUpon>IndiaMarkCertificationUC.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\NOMCertificationUC.ascx.designer.vb">
+      <DependentUpon>NOMCertificationUC.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\NOMCertificationUC.ascx.vb">
+      <DependentUpon>NOMCertificationUC.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\QueryUC.ascx.designer.vb">
+      <DependentUpon>QueryUC.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\QueryUC.ascx.vb">
+      <DependentUpon>QueryUC.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\RefreshProductUC.ascx.designer.vb">
+      <DependentUpon>RefreshProductUC.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\RefreshProductUC.ascx.vb">
+      <DependentUpon>RefreshProductUC.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\RenameCertificationUC.ascx.designer.vb">
+      <DependentUpon>RenameCertificationUC.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\RenameCertificationUC.ascx.vb">
+      <DependentUpon>RenameCertificationUC.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\SessionTimeOutMonitorUC.ascx.designer.vb">
+      <DependentUpon>SessionTimeOutMonitorUC.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\SessionTimeOutMonitorUC.ascx.vb">
+      <DependentUpon>SessionTimeOutMonitorUC.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\TestResultsUC.ascx.designer.vb">
+      <DependentUpon>TestResultsUC.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\TestResultsUC.ascx.vb">
+      <DependentUpon>TestResultsUC.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ExcelExport.aspx.designer.vb">
+      <DependentUpon>ExcelExport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ExcelExport.aspx.vb">
+      <DependentUpon>ExcelExport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Approval.aspx" />
+    <Content Include="App_Themes\ICS\ICS.css" />
+    <Content Include="ArchiveCertification.aspx" />
+    <Content Include="CertificationDefaults.aspx" />
+    <Content Include="CertificationSearchEx.aspx" />
+    <Content Include="Error.aspx" />
+    <Content Include="Images\ajax-loader.gif" />
+    <Content Include="Images\bg-menu-main.png" />
+    <Content Include="Images\body-bg.png" />
+    <Content Include="Images\checked.png" />
+    <Content Include="Images\collapse.jpg" />
+    <Content Include="Images\cooper-tires.png" />
+    <Content Include="Images\CooperTires.bmp" />
+    <Content Include="Images\expand.jpg" />
+    <Content Include="Images\Refresh.jpg" />
+    <Content Include="Images\unchecked.png" />
+    <Content Include="Marketing.aspx" />
+    <Content Include="MarketingNew.aspx" />
+    <Content Include="Query.aspx" />
+    <Content Include="Report.aspx" />
+    <Content Include="ReportSelectorView.aspx" />
+    <Content Include="TreeLineImages\dash.gif" />
+    <Content Include="TreeLineImages\dashminus.gif" />
+    <Content Include="TreeLineImages\dashplus.gif" />
+    <Content Include="TreeLineImages\i.gif" />
+    <Content Include="TreeLineImages\l.gif" />
+    <Content Include="TreeLineImages\lminus.gif" />
+    <Content Include="TreeLineImages\lplus.gif" />
+    <Content Include="TreeLineImages\minus.gif" />
+    <Content Include="TreeLineImages\noexpand.gif" />
+    <Content Include="TreeLineImages\plus.gif" />
+    <Content Include="TreeLineImages\r.gif" />
+    <Content Include="TreeLineImages\rminus.gif" />
+    <Content Include="TreeLineImages\rplus.gif" />
+    <Content Include="TreeLineImages\t.gif" />
+    <Content Include="TreeLineImages\tminus.gif" />
+    <Content Include="TreeLineImages\tplus.gif" />
+    <Content Include="UserControls\AddCertificationUC.ascx" />
+    <Content Include="UserControls\ArchiveCertificationUC.ascx" />
+    <Content Include="UserControls\AttachCertificationUC.ascx" />
+    <Content Include="UserControls\CCCCertificationUC.ascx" />
+    <Content Include="UserControls\CertificationDefaultsUC.ascx" />
+    <Content Include="UserControls\CopyCertificationUC.ascx" />
+    <Content Include="UserControls\DeleteCertificationUC.ascx" />
+    <Content Include="UserControls\DetachOrMoveCertificationUC.ascx" />
+    <Content Include="UserControls\DupCorrectCertificationUC.ascx" />
+    <Content Include="UserControls\EditCertificationUC.ascx" />
+    <Content Include="UserControls\Emark117CertificationUC.ascx" />
+    <Content Include="UserControls\EmarkCertificationUC.ascx" />
+    <Content Include="ICS.Master" />
+    <Content Include="App_Themes\ICS\ICS.skin" />
+    <None Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+    <Content Include="UserControls\FamilyMaintenanceUC.ascx" />
+    <Content Include="UserControls\GeneralCertificationUC.ascx" />
+    <Content Include="UserControls\IndiaMarkCertificationUC.ascx" />
+    <Content Include="UserControls\QueryUC.ascx" />
+    <Content Include="UserControls\RefreshProductUC.ascx" />
+    <Content Include="UserControls\RenameCertificationUC.ascx" />
+    <Content Include="UserControls\SessionTimeOutMonitorUC.ascx" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="UserControls\GSOCertificationUC.ascx" />
+    <Content Include="UserControls\ImarkCertificationUC.ascx" />
+    <Content Include="UserControls\NOMCertificationUC.ascx" />
+    <Content Include="UserControls\TestResultsUC.ascx" />
+    <Content Include="Web.sitemap" />
+    <Content Include="ExcelExport.aspx" />
+    <Content Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{967B4E0D-AD0C-4609-AB67-0FA40C0206D8}" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ICS.Common\ICS.Common.vbproj">
+      <Project>{D8CC2E59-E9A5-49F4-9498-3655E697778E}</Project>
+      <Name>ICS.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ICS.DomainEntities\ICS.DomainEntities.vbproj">
+      <Project>{212C9976-86D3-4D77-B7C1-BE38B39ADDB0}</Project>
+      <Name>ICS.DomainEntities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ICS.Presenter\ICS.Presenter.vbproj">
+      <Project>{632F9E08-5297-46BC-A36B-8EC2CFBCE386}</Project>
+      <Name>ICS.Presenter</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionStrict>On</OptionStrict>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.VisualBasic.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>2181</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost/ICSWeb</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>

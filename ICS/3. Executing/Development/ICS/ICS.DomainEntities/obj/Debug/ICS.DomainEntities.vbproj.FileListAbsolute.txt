@@ -1,0 +1,3 @@
+D:\trunk\ICS\3. Executing\Development\ICS\ICS.DomainEntities\obj\Debug\CooperTire.ICS.DomainEntities.Resources.resources
+D:\trunk\ICS\3. Executing\Development\ICS\ICS.DomainEntities\obj\Debug\ICS.DomainEntities.vbproj.GenerateResource.Cache
+D:\trunk\ICS\3. Executing\Development\ICS\ICS.DomainEntities\obj\Debug\ICS.DomainEntities.vbprojResolveAssemblyReference.cache
