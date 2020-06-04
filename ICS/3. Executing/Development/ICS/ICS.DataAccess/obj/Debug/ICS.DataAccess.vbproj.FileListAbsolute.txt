@@ -1,3 +1,0 @@
-D:\trunk\ICS\3. Executing\Development\ICS\ICS.DataAccess\obj\Debug\ICS.DataAccess.vbprojResolveAssemblyReference.cache
-D:\trunk\ICS\3. Executing\Development\ICS\ICS.DataAccess\obj\Debug\CooperTire.ICS.DataAccess.Resources.resources
-D:\trunk\ICS\3. Executing\Development\ICS\ICS.DataAccess\obj\Debug\ICS.DataAccess.vbproj.GenerateResource.Cache

@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="utf-8" ?>
-<siteMap xmlns="http://schemas.microsoft.com/AspNet/SiteMap-File-1.0" >
-    <siteMapNode url="http://localhost/ICS.Web/Home.aspx" title="Home"  description="Home">
-		<siteMapNode title="Marketing" description="Marketing">
-			<siteMapNode url="~/Marketing.aspx" title="Marketing"  description="Marketing"/>
-			<siteMapNode url="~/CertificationSearchEx.aspx" title="Certification Search"  description="Certification Search" />
-		</siteMapNode>		
-    </siteMapNode>
-</siteMap>
