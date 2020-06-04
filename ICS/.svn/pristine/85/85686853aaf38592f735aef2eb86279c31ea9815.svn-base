@@ -1,0 +1,110 @@
+<%@ Control Language="vb" AutoEventWireup="false" Codebehind="RenameCertificationUC.ascx.vb"
+    Inherits="CooperTire.ICS.Web.RenameCertificationUC" %>
+<%@ Register Assembly="Microsoft.Practices.EnterpriseLibrary.Validation.Integration.AspNet"
+    Namespace="Microsoft.Practices.EnterpriseLibrary.Validation.Integration.AspNet"
+    TagPrefix="validation" %>
+<%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="ajaxToolkit" %>
+<asp:Panel ID="pnlRenameCertification" runat="server" CssClass="UCActionPanel" meta:resourcekey="pnlRenameCertificationResource1">
+    <asp:Label ID="lblFormTitle" runat="server" meta:resourcekey="lblFormTitleResource1"></asp:Label><br />
+    <asp:Label ID="lblSuccessText" runat="server" SkinID="SuccessText" Text="&nbsp;" meta:resourcekey="lblSuccessTextResource1"></asp:Label>
+    <asp:Label ID="lblErrorText" runat="server" SkinID="ErrorText" meta:resourcekey="lblErrorTextResource1"></asp:Label> 
+    <table border="0" width="70%">
+        <tr>
+            <td colspan="3">
+                <table border="0" width="100%">                  
+                    <tr>
+                        <td>
+                            <asp:Label ID="lblOldCertNumber" runat="server" Text="Old Certificate" meta:resourcekey="lblOldCertNumberResource1" /></td>
+                        <td>
+                            <asp:Label ID="lblOldExtension" runat="server" Text="Extension" meta:resourcekey="lblOldExtensionResource1" /></td>
+                        <td>
+                            <asp:Label ID="lblNewCertNumber" runat="server" Text="New Certificate" meta:resourcekey="lblNewCertNumberResource1" /></td>
+                        <td>
+                            <asp:Label ID="lblNewExtension" runat="server" Text="Extension" meta:resourcekey="lblNewExtensionResource1" /></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <asp:TextBox ID="txtOldCertNumber" runat="server" MaxLength="20" Width="150px" meta:resourcekey="txtOldCertNumberResource1" /></td>
+                        <td>
+                            <asp:TextBox ID="txtOldExtension" runat="server" MaxLength="30" Width="100px" meta:resourcekey="txtOldExtensionResource1" /></td>                       
+                            <ajaxToolkit:FilteredTextBoxExtender ID="FTBOldExtension" runat="server" 
+                                                                 TargetControlID="txtOldExtension" FilterType="Numbers" Enabled="True" />
+                        <td>
+                            <asp:TextBox ID="txtNewCertNumber" runat="server" MaxLength="20" Width="150px" meta:resourcekey="txtNewCertNumberResource1" /></td>
+                        <td>
+                            <asp:TextBox ID="txtNewExtension" runat="server" MaxLength="30" Width="100px" meta:resourcekey="txtNewExtensionResource1" />
+                            <ajaxToolkit:FilteredTextBoxExtender ID="FTBNewExtension" runat="server" 
+                                                                 TargetControlID="txtNewExtension" FilterType="Numbers" Enabled="True" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>                       
+                            <asp:Label ID="lblErrOldCertNumber" runat="server" Text="The Old Certificate Number is not valid."
+                                       Visible="False" SkinID="ErrorText" meta:resourcekey="lblErrOldCertNumberResource1" /></td>
+                        <td>
+                            <asp:Label ID="lblErrOldExtension" runat="server" Text="The Old Extension is not valid."
+                                       Visible="False" SkinID="ErrorText" meta:resourcekey="lblErrOldExtensionResource1" /></td>                       
+                  
+                        <td>                       
+                            <asp:Label ID="lblErrNewCertNumber" runat="server" Text="The New Certificate Number is not valid."
+                                       Visible="False" SkinID="ErrorText" meta:resourcekey="lblErrNewCertNumberResource1"></asp:Label></td>
+                        <td>
+                            <asp:Label ID="lblErrNewExtension" runat="server" Text="The New Extension is not valid."
+                                       Visible="False" SkinID="ErrorText" meta:resourcekey="lblErrNewExtensionResource1" /></td>
+                    </tr>
+                </table>
+            </td>
+        </tr>  
+        <tr>
+            <td colspan="1" style="height: 27px" align="center">
+                &nbsp;<asp:Button ID="btnSave" runat="server" Text="Save" OnClick="Click_btnSave" meta:resourcekey="btnSaveResource1" />
+                <asp:Button ID="btnCancel" runat="server" Text="Cancel" OnClick="Click_btnCancel" meta:resourcekey="btnCancelResource1" />
+            </td>
+        </tr>
+    </table>    
+    <ajaxToolkit:ModalPopupExtender ID="ConfirmPopUp" runat="server" PopupControlID="pnlConfirm"
+        TargetControlID="hidConfirm" BackgroundCssClass="modalBackground" DynamicServicePath="" Enabled="True" />
+    <asp:HiddenField ID="hidConfirm" runat="server" />
+    <asp:Panel ID="pnlConfirm" runat="server" CssClass="modalPopup" Style="display: none"
+        Width="280px" meta:resourcekey="pnlConfirmResource1">
+        <table>
+            <tr>
+                <td colspan="2">
+                    <asp:Label ID="lblWarningMessage" runat="server" meta:resourcekey="lblWarningMessageResource1" />
+                    <br />
+                </td>
+            </tr>
+            <tr>
+                 <td align="center">
+                    <asp:Button ID="btnSaveConfirm" runat="server" Text="Confirm" OnClick="Click_SaveConfirm" meta:resourcekey="btnSaveConfirmResource1" />&nbsp;
+                </td>
+                <td align="center">
+                    <asp:Button ID="btnSaveCancel" runat="server" Text="Cancel" OnClick="Click_SaveCancel" meta:resourcekey="btnSaveCancelResource1" />
+                </td>
+            </tr>
+        </table>
+    </asp:Panel>
+    <ajaxToolkit:ModalPopupExtender ID="CancelAlertPopUp" runat="server" PopupControlID="pnlCancelAlert"
+        TargetControlID="hidCancel" BackgroundCssClass="modalBackground" DynamicServicePath="" Enabled="True" />
+    <asp:HiddenField ID="hidCancel" runat="server" />
+    <asp:Panel ID="pnlCancelAlert" runat="server" CssClass="modalPopup" Style="display: none"
+        Width="280px" meta:resourcekey="pnlCancelAlertResource1">
+        <table>
+            <tr>
+                <td colspan="2">
+                    <label>
+                        All your changes will be lost, would you like to continue?</label>
+                    <br />
+                </td>
+            </tr>
+            <tr>
+                <td align="center">
+                    <asp:Button ID="Button_OK" runat="server" Text="OK" OnClick="Click_Confirm" meta:resourcekey="Button_OKResource1" />&nbsp;
+                </td>
+                <td align="center">
+                    <asp:Button ID="Button_Cancel" runat="server" Text="Cancel" OnClick="Click_Cancel" meta:resourcekey="Button_CancelResource1" />
+                </td>
+            </tr>
+        </table>
+    </asp:Panel>
+</asp:Panel>

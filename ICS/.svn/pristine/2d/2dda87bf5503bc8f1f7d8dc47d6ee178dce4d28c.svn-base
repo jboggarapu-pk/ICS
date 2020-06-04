@@ -1,0 +1,131 @@
+Imports System.Configuration
+
+''' <summary>
+''' Handles depository construction depending on Depository Mode
+''' </summary>
+''' <remarks>
+''' <list type="table">
+''' <listheader>
+''' <term>Author</term>
+''' <description>Description</description>
+''' </listheader>
+''' <item>
+''' <term>N/A</term>
+''' <description>
+''' <para>N/A</para>
+''' <para>Original Code.</para>
+''' </description>
+''' </item>
+''' <item>
+''' <term>Vinay Chowdavarapu</term>
+''' <description>
+''' <para>09/10/2019</para>
+''' <para>Implemented Coding Standards.</para>
+''' </description>
+''' </item>
+''' </list>
+''' </remarks>
+Public Class Depository
+
+#Region "Enum"
+
+    ''' <summary>
+    ''' Depository Mode
+    ''' </summary>
+    ''' <remarks></remarks>
+    Public Enum DepositoryMode
+        None
+        Database
+        Mock
+    End Enum
+#End Region
+
+#Region "Global Variables"
+
+    ''' <summary>
+    ''' IDepository Object
+    ''' </summary>
+    ''' <remarks></remarks>
+    Private Shared objCurrentDepository As IDepository = Nothing
+
+    ''' <summary>
+    ''' depository mode object
+    ''' </summary>
+    ''' <remarks></remarks>
+    Private Shared objDepositoryMode As DepositoryMode = DepositoryMode.None
+#End Region
+
+#Region "Public Properties"
+
+    ''' <summary>
+    ''' Get current depository which is in use
+    ''' </summary>
+    ''' <value>Depository Object</value>
+    ''' <returns></returns>
+    ''' <remarks>
+    ''' <list type="table">
+    ''' <listheader>
+    ''' <term>Author</term>
+    ''' <description>Description</description>
+    ''' </listheader>
+    ''' <item>
+    ''' <term>N/A</term>
+    ''' <description>
+    ''' <para>N/A</para>
+    ''' <para>Original Code.</para>
+    ''' </description>
+    ''' </item>
+    ''' <item>
+    ''' <term>Vinay Chowdavarapu</term>
+    ''' <description>
+    ''' <para>09/10/2019</para>
+    ''' <para>Implemented Coding Standards.</para>
+    ''' </description>
+    ''' </item>
+    ''' </list>
+    ''' </remarks>
+    Public Shared ReadOnly Property CurrentDepositoryMode() As DepositoryMode
+        Get
+            Return objDepositoryMode
+        End Get
+    End Property
+
+
+    ''' <summary>
+    ''' Current depository
+    ''' </summary>
+    ''' <value>Depository Object</value>
+    ''' <returns>depository currently in use</returns>
+    ''' <remarks>
+    ''' <list type="table">
+    ''' <listheader>
+    ''' <term>Author</term>
+    ''' <description>Description</description>
+    ''' </listheader>
+    ''' <item>
+    ''' <term>N/A</term>
+    ''' <description>
+    ''' <para>N/A</para>
+    ''' <para>Original Code.</para>
+    ''' </description>
+    ''' </item>
+    ''' <item>
+    ''' <term>Vinay Chowdavarapu</term>
+    ''' <description>
+    ''' <para>09/10/2019</para>
+    ''' <para>Implemented Coding Standards.</para>
+    ''' </description>
+    ''' </item>
+    ''' </list>
+    ''' </remarks>
+    Public Shared ReadOnly Property Current() As IDepository
+        Get
+            If objCurrentDepository Is Nothing Then
+                objCurrentDepository = New DataDepository()
+            End If
+            Return objCurrentDepository
+        End Get
+    End Property
+#End Region
+
+End Class

@@ -1,0 +1,7 @@
+<%@ Page Language="vb" MasterPageFile="~/ICS.master" AutoEventWireup="true" CodeBehind="Error.aspx.vb" Inherits="CooperTire.ICS.Web._Error" culture="auto" meta:resourcekey="PageResource1" uiculture="auto" %>
+
+<asp:Content ID="contError" ContentPlaceHolderID="cphICSContentHolder" Runat="Server">
+        <br />
+        <asp:Label ID="lblError" runat="server" Text="An error occured in ICS application. Please see the Event Log for details." Font-Size="Large" ForeColor="Black" meta:resourcekey="lblErrorResource1"></asp:Label>
+        <br />
+</asp:Content>

@@ -1,0 +1,512 @@
+Imports CooperTire.ICS.Model
+Imports CooperTire.ICS.Common
+Imports CrystalDecisions.Shared
+Imports System.IO
+Imports Microsoft.Office.Interop
+''' <summary>
+''' Report selector presenter
+''' </summary>
+''' <remarks></remarks>
+Public Class ReportSelectorPresenter
+    Inherits ViewPresenterBase
+
+    ' Changed sku to material number , added methods for populating the data to view for brand , brand lines.
+    ' as per PRJ3617 SAP Interface to International Certification System (OPQ.I.8265)Remediation. 
+
+#Region "Members"
+
+    Private m_view As IReportSelectorView
+    'Dim m_objExcelApp As New Excel.Application
+    'Dim m_objExcelBook As Excel.Workbook
+    'Dim m_objExcelWorksheet As Excel.Worksheet
+
+#End Region
+
+#Region "Constructors / Destructors"
+
+    Public Sub New(ByVal p_view As IReportSelectorView)
+
+        MyBase.New(p_view)
+
+        Try
+            m_view = p_view
+            SubscribeToEvents()
+        Catch exc As Exception
+            EventLogger.Enter(exc)
+            Throw New Exception("Error creating " + Me.ToString())
+        End Try
+
+    End Sub
+
+#End Region
+
+#Region "Methods"
+
+    ''' <summary>
+    ''' Attach presenter to view’s events.
+    ''' </summary>
+    ''' <remarks></remarks>
+    Private Sub SubscribeToEvents()
+
+        AddHandler m_view.LoadView, AddressOf OnLoadView
+        AddHandler m_view.SelectReport, AddressOf OnSelectReport
+        AddHandler m_view.RefreshPage, AddressOf OnRefreshPage
+
+    End Sub
+
+    ''' <summary>
+    ''' Load data for the view
+    ''' </summary>
+    ''' <param name="sender"></param>
+    ''' <param name="e"></param>
+    ''' <remarks></remarks>
+    Private Sub OnLoadView(ByVal sender As Object, ByVal e As EventArgs)
+
+        Try
+            If (Not m_view.IsPostBackView) Then
+                LoadViewData()
+            Else
+                RefreshView()
+            End If
+        Catch exc As Exception
+            EventLogger.Enter(exc)
+            m_view.ErrorText = "Error loading form data."
+        End Try
+
+    End Sub
+
+    ''' <summary>
+    ''' 
+    ''' </summary>
+    ''' <param name="p_reportName"></param>
+    ''' <remarks></remarks>
+    Private Sub OnSelectReport(ByVal p_reportName As Object)
+
+        Try
+
+            Select Case p_reportName
+                Case NameAid.Report.EmarkCertification.ToString
+                    m_view.ShowCertificateBrandPrompt()
+                Case NameAid.Report.ImarkSamplingAndTireTests.ToString, _
+                    NameAid.Report.EmarkSimilarCertificateSearch.ToString()
+                    m_view.ShowMaterialOnlyPrompt()
+                Case NameAid.Report.SKUCertification.ToString
+                    m_view.ShowMaterialPrompt()
+                Case NameAid.Report.ImarkSamplingAndTireTests.ToString, _
+                    NameAid.Report.ImarkConformityMarkReport.ToString, _
+                    NameAid.Report.ExceptionReport.ToString, _
+                    NameAid.Report.ImarkECEAuthenticityReport.ToString
+                    m_view.ShowNoParamPrompt()
+                Case NameAid.Report.ImarkCertification.ToString
+                    m_view.ShowDatePrompt("Date Submitted")
+                Case NameAid.Report.TraceabilityReport.ToString
+                    m_view.ShowTraceabilityPrompt()
+                Case NameAid.Report.EmarkMelkshamTestReport.ToString, _
+                    NameAid.Report.EmarkMSRPassengerReport.ToString, _
+                    NameAid.Report.EmarkMSRTruckReport.ToString, _
+                    NameAid.Report.EmarkMETruckReport.ToString, _
+                    NameAid.Report.GSOTruckCertification.ToString, _
+                    NameAid.Report.GSOPassengerCertification.ToString, _
+                    NameAid.Report.CCCProductDescriptionReport.ToString, _
+                    NameAid.Report.CCCSequentialReport.ToString, _
+                    NameAid.Report.EmarkPassengerApplication.ToString, _
+                    NameAid.Report.EmarkLightTruckApplication.ToString, _
+                    NameAid.Report.NOMPassengerCertification.ToString, _
+                    NameAid.Report.NOMLightTruckCertification.ToString, _
+                    NameAid.Report.CertificationRenewalReport.ToString
+                    m_view.ShowCertificatePrompt()
+                Case NameAid.Report.GSOConformityCertificateReport.ToString
+                    m_view.ShowBatchPrompt()
+                Case Else
+                    ' default
+                    m_view.ShowCertificateExtPrompt()
+            End Select
+
+        Catch exc As Exception
+            EventLogger.Enter(exc)
+            m_view.ErrorText = "Error selecting report."
+        End Try
+
+    End Sub
+
+    Private Sub OnRefreshPage()
+        Try
+            LoadViewData()
+        Catch exc As Exception
+            EventLogger.Enter(exc)
+            m_view.ErrorText = "Error loading form data."
+        End Try
+    End Sub
+
+    Public Sub LoadViewData()
+
+        Dim strRptPath = m_view.RepPath
+        Dim reportsModel As ReportSelectorModel = New ReportSelectorModel(strRptPath)
+        m_view.AvailReports = reportsModel.AvailReports
+        'm_view.CertificationTypes = reportsModel.CertificateTypes
+        'm_view.RepDocument = Nothing
+        LoadCertificateTypes(String.Empty)
+        LoadBrands(String.Empty)
+        m_view.ShowCertificateExtPrompt()
+
+    End Sub
+
+    ''' <summary>
+    ''' Get previous Data Source and then re-apply it to the viewer
+    ''' </summary>
+    ''' <remarks></remarks>
+    Private Sub RefreshView()
+
+        'm_view.RepSource = m_view.RepDocument
+
+    End Sub
+
+    ' Changed as per PRJ3617 SAP Interface to International Certification System (OPQ.I.8265)Remediation 
+    Public Function SubmitReport() As String
+        Try
+
+            Dim errorMsg As String = ""
+            Dim strRptPath = m_view.RepPath
+            Dim reportsModel As ReportSelectorModel = New ReportSelectorModel(strRptPath)
+            Dim certModel As CertificateModel = New CertificateModel
+            Dim strSelectedReportName As String = m_view.SelectedReportName
+            Dim blnExcelExport As Boolean = False
+            Dim ds As DataSet = Nothing
+            Dim crExportOptions As New ExportOptions
+            Dim blnReturn As Boolean = False
+            Dim strReturn As String
+
+            m_view.RepDocument = Nothing
+            m_view.ExcelExportDataSet = Nothing
+
+            Select Case strSelectedReportName
+                Case NameAid.Report.EmarkLightTruckCertification.ToString
+                    If m_view.Param1 = "" Then
+                        errorMsg = "certificate field is empty please enter a value."
+                    Else
+                        m_view.RepDocument = reportsModel.GetEmarkLightTruckCertification(m_view.Param1, m_view.Param2)
+                        errorMsg = "No certification found."
+                    End If
+                Case NameAid.Report.EmarkPassengerCertification.ToString
+                    If m_view.Param1 = "" Then
+                        errorMsg = "certificate field is empty please enter a value."
+                    Else
+                        m_view.RepDocument = reportsModel.GetEmarkPassengerCertification(m_view.Param1, m_view.Param2)
+                        errorMsg = "No certification found."
+                    End If
+                Case NameAid.Report.EmarkE117Certification.ToString
+                    If m_view.Param1 = "" Then
+                        errorMsg = "certificate field is empty please enter a value."
+                    Else
+                        m_view.RepDocument = reportsModel.GetEmarkE117Certification(m_view.Param1, m_view.Param2)
+                        errorMsg = "No certification found."
+                    End If
+                Case NameAid.Report.EmarkMSRPassengerReport.ToString
+                    If m_view.Param1 = "" Then
+                        errorMsg = "certificate field is empty please enter a value."
+                    Else
+                        m_view.RepDocument = reportsModel.GetEmarkMSRPassengerData(m_view.Param1)
+                        errorMsg = "No certification found."
+                    End If
+                Case NameAid.Report.EmarkMSRTruckReport.ToString
+                    If m_view.Param1 = "" Then
+                        errorMsg = "certificate field is empty please enter a value."
+                    Else
+                        m_view.RepDocument = reportsModel.GetEmarkMSRTruckData(m_view.Param1)
+                        errorMsg = "No certification found."
+                    End If
+                Case NameAid.Report.EmarkMETruckReport.ToString
+                    If m_view.Param1 = "" Then
+                        errorMsg = "certificate field is empty please enter a value."
+                    Else
+                        m_view.RepDocument = reportsModel.GetEmarkMETruckData(m_view.Param1)
+                        errorMsg = "No certification found."
+                    End If
+                Case NameAid.Report.EmarkMelkshamTestReport.ToString
+                    If m_view.Param1 = "" Then
+                        errorMsg = "certificate field is empty please enter a value."
+                    Else
+                        m_view.RepDocument = reportsModel.GetEmarkMelkshamReportData(m_view.Param1)
+                        errorMsg = "No certification found."
+                    End If
+                Case NameAid.Report.GSOPassengerCertification.ToString
+                    If m_view.Param1 = "" Then
+                        errorMsg = "certificate field is empty please enter a value."
+                    Else
+                        m_view.RepDocument = reportsModel.GetGSOPassengerCertification(m_view.Param1, m_view.Param2)
+                        errorMsg = "No certification found."
+                    End If
+                Case NameAid.Report.GSOTruckCertification.ToString
+                    If m_view.Param1 = "" Then
+                        errorMsg = "certificate field is empty please enter a value."
+                    Else
+                        m_view.RepDocument = reportsModel.GetGSOLightTruckSequential(m_view.Param1, m_view.Param2)
+                        errorMsg = "No certification found."
+                    End If
+                Case NameAid.Report.GSOConformityCertificateReport.ToString
+                    If m_view.Param5 = "" Then
+                        errorMsg = "Batch number is empty - please enter a value."
+                    Else
+                        m_view.RepDocument = reportsModel.GetGSOConformityReportData(m_view.Param5)
+                        errorMsg = "Batch not found."
+                    End If
+                Case NameAid.Report.ImarkConformityMarkReport.ToString
+                    m_view.RepDocument = reportsModel.GetImarkConformityCertification()
+                    errorMsg = "No certification found."
+                Case NameAid.Report.ImarkSamplingAndTireTests.ToString
+                    If m_view.Param5 = "" Then
+                        errorMsg = "Please enter a Material Number."
+                    Else
+                        m_view.RepDocument = reportsModel.GetImarkSamplingAndTireTests(m_view.Param5)
+                        errorMsg = "No certifications found."
+                    End If
+                Case NameAid.Report.CCCSequentialReport.ToString
+                    If m_view.Param1 = "" Then
+                        errorMsg = "Certificate field is empty.  Please enter a value."
+                    Else
+                        m_view.RepDocument = reportsModel.GetCCCSequentialReport(m_view.Param1, m_view.Param2)
+                        errorMsg = "No certification found."
+                    End If
+                Case NameAid.Report.CCCProductDescriptionReport.ToString
+                    ' Mark this as an Excel export and not a Crystal Report
+                    blnExcelExport = True
+                    If m_view.Param1 = "" Then
+                        errorMsg = "Certificate field is empty.  Please enter a value."
+                    Else
+                        m_view.ExcelExportDataSet = reportsModel.GetCCCProductDescriptionReport(m_view.Param1, m_view.Param2)
+                        errorMsg = "No certification found."
+                    End If
+                Case NameAid.Report.SKUCertification.ToString
+                    If (m_view.Param2 = "" And (m_view.Brand = "Select ..." Or m_view.Brand = String.Empty)) Then
+                        errorMsg = "Material Number/Brand are empty. Please enter at least one of them."
+                    Else
+                        ' m_view.RepDocument = reportsModel.GetSKUCertification(m_view.Param2, m_view.Param5, m_view.Param4)
+                        If m_view.Param2 = "" And (m_view.Brand <> "Select ..." Or String.IsNullOrEmpty(m_view.Brand)) Then
+                            If (m_view.BrandLine = "Select ..." Or m_view.BrandLine = String.Empty) Then
+                                errorMsg = "Brand Line is not selected."
+                            Else
+                                m_view.RepDocument = reportsModel.GetSKUCertification(String.Empty, m_view.Brand, m_view.BrandLine, m_view.Param4)
+                                errorMsg = "No certification found."
+                            End If
+                        Else
+                            m_view.RepDocument = reportsModel.GetSKUCertification(m_view.Param2, m_view.Brand, m_view.BrandLine, m_view.Param4)
+                            errorMsg = "No certification found."
+                        End If
+                    End If
+                Case NameAid.Report.ImarkCertification.ToString
+                        Dim workdate As DateTime
+                        If m_view.Param3.Length = 0 Then
+                            m_view.RepDocument = reportsModel.GetImarkCertification(Nothing)
+                        Else
+                            If (DateTime.TryParse(m_view.Param3, workdate)) Then
+                                m_view.RepDocument = reportsModel.GetImarkCertification(workdate)
+                                errorMsg = "Missing Date Submitted"
+                            Else
+                                errorMsg = "Error in data input"
+                            End If
+                        End If
+                        errorMsg = "No certification found."
+                Case NameAid.Report.EmarkCertification.ToString
+                    If (m_view.Param1 And (m_view.Brand = "Select ..." Or m_view.Brand = String.Empty)) Then
+                        errorMsg = "Must enter Certificate number or Brand and Brand Line"
+                    Else
+                        If m_view.Param1 = "" And (m_view.Brand <> "Select ..." Or String.IsNullOrEmpty(m_view.Brand)) Then
+                            If (m_view.BrandLine = "Select ..." Or m_view.BrandLine = String.Empty) Then
+                                errorMsg = "Brand Line is not selected."
+                            Else
+                                m_view.RepDocument = reportsModel.GetEmarkCertification(m_view.Param1, m_view.Brand, m_view.BrandLine)
+                                errorMsg = "No data found."
+                            End If
+                        Else
+                            m_view.RepDocument = reportsModel.GetEmarkCertification(m_view.Param1, m_view.Brand, m_view.BrandLine)
+                            errorMsg = "No data found."
+                        End If
+                    End If
+                Case NameAid.Report.TraceabilityReport.ToString
+                        Dim CertTypeId As Integer
+                        Select Case m_view.Param4
+                        Case "CCC" ' NameAid.Certification.CCC.ToString
+                            CertTypeId = certModel.GetCertificateTypeID("CCC")
+                        Case "India_Mark" 'NameAid.Certification.India_Mark.ToString
+                            CertTypeId = certModel.GetCertificateTypeID("India_Mark")
+                        Case "ECE3054" ' NameAid.Certification.ECE3054.ToString
+                            CertTypeId = certModel.GetCertificateTypeID("ECE3054")
+                        Case "ECE117" ' NameAid.Certification.ECE117.ToString
+                            CertTypeId = certModel.GetCertificateTypeID("ECE117")
+                        Case "GSO" ' NameAid.Certification.GSO.ToString
+                            CertTypeId = certModel.GetCertificateTypeID("GSO")
+                        Case "Imark" 'NameAid.Certification.Imark.ToString
+                            CertTypeId = certModel.GetCertificateTypeID("Imark")
+                        Case "NOM" ' NameAid.Certification.NOM.ToString
+                            CertTypeId = certModel.GetCertificateTypeID("NOM")
+                        Case Else
+                            CertTypeId = 0
+                    End Select
+                        If m_view.Param1 = "" And CertTypeId = 0 Then
+                            errorMsg = "Missing Certificate number or Certificate Type"
+                        Else
+
+                            Dim CertNum As String = Nothing
+                            If Not String.IsNullOrEmpty(m_view.Param1.Trim) Then
+                                CertNum = m_view.Param1.Trim
+                            End If
+                        m_view.RepDocument = reportsModel.GetTraceabilityData(CertNum, CertTypeId, m_view.IncludeArchived)
+                            errorMsg = "No certification found."
+                        End If
+                Case NameAid.Report.ExceptionReport.ToString
+                        m_view.RepDocument = reportsModel.GetExceptionReportData()
+                        errorMsg = "No exception data found."
+                Case NameAid.Report.EmarkPassengerApplication.ToString
+                        If m_view.Param1 = "" Then
+                            errorMsg = "certificate field is empty please enter a value."
+                        Else
+                            m_view.RepDocument = reportsModel.GetEmarkPassengerApplication(m_view.Param1)
+                            errorMsg = "No certification found."
+                        End If
+                Case NameAid.Report.EmarkLightTruckApplication.ToString
+                        If m_view.Param1 = "" Then
+                            errorMsg = "certificate field is empty please enter a value."
+                        Else
+                            m_view.RepDocument = reportsModel.GetEmarkLightTruckApplication(m_view.Param1)
+                            errorMsg = "No certification found."
+                        End If
+                Case NameAid.Report.NOMPassengerCertification.ToString
+                        If m_view.Param1 = "" Then
+                            errorMsg = "certificate field is empty please enter a value."
+                        Else
+                            m_view.RepDocument = reportsModel.GetNomPassengerCertification(m_view.Param1)
+                            errorMsg = "No certification found."
+                        End If
+                Case NameAid.Report.NOMLightTruckCertification.ToString
+                        If m_view.Param1 = "" Then
+                            errorMsg = "certificate field is empty please enter a value."
+                        Else
+                            m_view.RepDocument = reportsModel.GetNomLightTruckCertification(m_view.Param1)
+                            errorMsg = "No certification found."
+                        End If
+                Case NameAid.Report.ImarkECEAuthenticityReport.ToString
+                        m_view.RepDocument = reportsModel.GetAuthenticity
+                        errorMsg = "No data found."
+
+                Case NameAid.Report.CertificationRenewalReport.ToString
+                        If m_view.Param1 = "" Then
+                            errorMsg = "certificate field is empty please enter a value."
+                        Else
+                            m_view.RepDocument = reportsModel.GetCertificationRenewal(m_view.Param1, 1)
+                            errorMsg = "No certification found."
+                        End If
+                Case NameAid.Report.EmarkSimilarCertificateSearch.ToString
+                        If m_view.Param5 = "" Then
+                            errorMsg = "Please enter a Material Number."
+                        Else
+                        m_view.RepDocument = reportsModel.EmarkSimilarCertificateSearch(m_view.Param5)
+                            errorMsg = "No certifications found."
+                        End If
+            End Select
+
+            If blnExcelExport = True Then
+                'Excel Export
+                If m_view.ExcelExportDataSet Is Nothing Then
+                    m_view.ErrorText = errorMsg
+                    m_view.InfoText = String.Empty
+                    strReturn = "N"
+                Else
+                    ' XML Map was not defined globally as it is only used in this method.
+                    'Dim excelMap As Excel.XmlMap
+
+                    'Dim strFileNamePath As String = m_view.RepPath + "\" + NameAid.Report.CCCProductDescriptionReport.ToString + ".xls"
+
+                    'm_objExcelBook = m_objExcelApp.Workbooks.Open(strFileNamePath, , True)
+
+                    ''  NOTE: This assumes the spreadsheet contains only one XML Map.  If the 
+                    ''  spreadsheet contains multiple XML Maps, the user will be prompted 
+                    ''  to select an XML Map to use
+                    ''  when the data is imported via the XmlImportXml method.
+                    'excelMap = m_objExcelBook.XmlMaps(1)
+
+                    ''  Imports the data from the dataset into the spreadsheet using the mapping.
+                    'm_objExcelBook.XmlImportXml(m_view.ExcelExportDataSet.GetXml, excelMap)
+                    'm_objExcelWorksheet = CType(m_objExcelBook.Worksheets(1), Excel.Worksheet)
+                    'm_objExcelWorksheet.Name = "Product Description Form"
+
+                    ''  Make excel spreadsheet visible.
+                    'm_objExcelApp.Visible = True
+                    'blnReturn = True
+                    strReturn = "E"
+                End If
+            Else
+                If m_view.RepDocument Is Nothing OrElse m_view.RepDocument.FileName = String.Empty Then
+                    m_view.ErrorText = errorMsg
+                    m_view.InfoText = String.Empty
+                    strReturn = "N"
+                Else
+                    'Return True
+                    strReturn = "R"
+                End If
+            End If
+            Return strReturn
+        Catch exc As Exception
+            EventLogger.Enter(exc)
+            m_view.ErrorText = "Error loading report."
+            Return "N"
+            'm_view.ErrorText = exc.Message.ToString() 
+
+            'For Excel export, close workbook
+            'If Not m_objExcelBook Is Nothing Then
+            '    m_objExcelBook.Close()
+            'End If
+        End Try
+    End Function
+
+    ''' <summary>
+    ''' Load Data for the Brands to View.
+    ''' </summary>
+    ''' <remarks></remarks>
+    Public Sub LoadBrands(ByVal p_strBrand As String)
+        Try
+            'Get the Brand names for Add Brand drop-down list
+            Dim certSearch As CertificationSearch = New CertificationSearch()
+            Dim listBrandNames As List(Of String) = certSearch.GetBrands(p_strBrand)
+            listBrandNames.Insert(0, "Select ...")
+            m_view.Brands = listBrandNames
+            m_view.DataBindView()
+        Catch exp As Exception
+            EventLogger.Enter(exp)
+            m_view.ErrorText = "Error loading Brand data."
+        End Try
+    End Sub
+
+    ''' <summary>
+    ''' Load Data for the BrandLines to View.
+    ''' </summary>
+    ''' <remarks></remarks>
+    Public Sub LoadBrandLines(ByVal p_strLine As String)
+        Try
+            'Get the Brand Line names for Add Brand Line drop-down list
+            Dim certSearch As CertificationSearch = New CertificationSearch()
+            Dim listBrandLineNames As List(Of String) = certSearch.GetBrandLines(p_strLine)
+            listBrandLineNames.Insert(0, "Select ...")
+            m_view.BrandLines = listBrandLineNames
+            m_view.DataBindView()
+
+        Catch exp As Exception
+            EventLogger.Enter(exp)
+            m_view.ErrorText = "Error loading Brand Line data."
+        End Try
+    End Sub
+    Public Sub LoadCertificateTypes(ByVal p_strCertType As String)
+        Try
+            'Get the certification types for ddlCertTypes
+            Dim certSearch As CertificationSearch = New CertificationSearch()
+            Dim listCertificationTypes As List(Of String) = certSearch.GetCertificationNames
+            listCertificationTypes.Insert(0, "Select ...")
+            m_view.CertificationTypes = listCertificationTypes
+            m_view.DataBindView()
+        Catch exp As Exception
+            EventLogger.Enter(exp)
+            m_view.ErrorText = "Error loading Certification Type data."
+        End Try
+    End Sub
+#End Region
+
+End Class

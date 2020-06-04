@@ -1,0 +1,1698 @@
+Imports System.configuration
+Imports System.Globalization
+
+''' <summary>
+''' Class contains tire test data operation methods.
+''' </summary>
+''' <remarks>
+''' <list type="table">
+''' <listheader>
+''' <term>Author</term>
+''' <description>Description</description>
+''' </listheader>
+''' <item>
+''' <term>Srinivas.S</term>
+''' <description>
+''' <para>11/19/2019</para>
+''' <para>Original Code.</para>
+''' </description>
+''' </item> 
+''' </list>
+''' </remarks>
+Public Class Business
+    Implements IDisposable
+
+
+#Region " Members and Constants"
+
+    '***this will need changed to point to ics.depository layers to get to procdures in  ICS_PROCS
+    ' Added as per PRJ3617 SAP Interface to International Certification System (OPQ.I.8265) SAP to ICS.
+    Dim cooperServiceBroker As New cooperservicebroker.CsbPublicPI
+    Const securityKey As String = "FxIzRezd/NokJFC0bjMrISJ4K50TPuepN9+zlNP6lrhTG8NRBmmPcQ==" 'QA new
+
+    ''' <summary>
+    '''  Constant to hold OperationDescription text
+    ''' </summary>
+    Private Const OperationDescriptionText As String = "OperationDescription"
+    ''' <summary>
+    '''  Constant to hold ProjectNum text
+    ''' </summary>
+    Private Const ProjectNumText As String = "ProjectNum"
+    ''' <summary>
+    '''  Constant to hold TireNum text
+    ''' </summary>
+    Private Const TireNumText As String = "TireNum"
+    ''' <summary>
+    '''  Constant to hold TestSpec text
+    ''' </summary>
+    Private Const TestSpecText As String = "TestSpec"
+    ''' <summary>
+    '''  Constant to hold ITERATION text
+    ''' </summary>
+    Private Const ITERATIONText As String = "ITERATION"
+    ''' <summary>
+    '''  Constant to hold BeadUnseatDtl text
+    ''' </summary>
+    Private Const BeadUnseatDtlText As String = "BeadUnseatDtl"
+    ''' <summary>
+    '''  Constant to hold GTSpec text
+    ''' </summary>
+    Private Const GTSpecText As String = "GTSpec"
+    ''' <summary>
+    '''  Constant to hold SERIALDATE text
+    ''' </summary>
+    Private Const SERIALDATEText As String = "SERIALDATE"
+    ''' <summary>
+    '''  Constant to hold PassYN text
+    ''' </summary>
+    Private Const PassYNText As String = "PassYN"
+    ''' <summary>
+    '''  Constant to hold SerialDate text
+    ''' </summary>
+    Private Const TextSerialDate As String = "SerialDate"
+    ''' <summary>
+    '''  Constant to hold DOTSerialNumber text
+    ''' </summary>
+    Private Const DOTSerialNumberText As String = "DOTSerialNumber"
+    ''' <summary>
+    '''  Constant to hold CompletionDate text
+    ''' </summary>
+    Private Const CompletionDateText As String = "CompletionDate"
+    ''' <summary>
+    '''  Constant to hold TestSKU text
+    ''' </summary>
+    Private Const TestSKUText As String = "TestSKU"
+    ''' <summary>
+    '''  Constant to hold BeadUnseatHdr text
+    ''' </summary>
+    Private Const BeadUnseatHdrText As String = "BeadUnseatHdr"
+    ''' <summary>
+    '''  Constant to hold PlungerDtl text
+    ''' </summary>
+    Private Const PlungerDtlText As String = "PlungerDtl"
+    ''' <summary>
+    '''  Constant to hold TreadWearDtl text
+    ''' </summary>
+    Private Const TreadWearDtlText As String = "TreadWearDtl"
+    ''' <summary>
+    '''  Constant to hold TreadWearHdr text
+    ''' </summary>
+    Private Const TreadWearHdrText As String = "TreadWearHdr"
+    ''' <summary>
+    '''  Constant to hold RimWidth text
+    ''' </summary>
+    Private Const RimWidthText As String = "RimWidth"
+    ''' <summary>
+    '''  Constant to hold InflationPressure text
+    ''' </summary>
+    Private Const InflationPressureText As String = "InflationPressure"
+    ''' <summary>
+    '''  Constant to hold MeasureHdr text
+    ''' </summary>
+    Private Const MeasureHdrText As String = "MeasureHdr"
+    ''' <summary>
+    '''  Constant to hold MeasureDtl text
+    ''' </summary>
+    Private Const MeasureDtlText As String = "MeasureDtl"
+    ''' <summary>
+    '''  Constant to hold StepCompletionDate text
+    ''' </summary>
+    Private Const StepCompletionDateText As String = "StepCompletionDate"
+    ''' <summary>
+    '''  Constant to hold InfPressure text
+    ''' </summary>
+    Private Const InfPressureText As String = "InfPressure"
+    ''' <summary>
+    '''  Constant to hold AmbTemp text
+    ''' </summary>
+    Private Const AmbTempText As String = "AmbTemp"
+    ''' <summary>
+    '''  Constant to hold SetInflation text
+    ''' </summary>
+    Private Const SetInflationText As String = "SetInflation"
+    ''' <summary>
+    '''  Constant to hold LoadPercent text
+    ''' </summary>
+    Private Const LoadPercentText As String = "LoadPercent"
+    ''' <summary>
+    '''  Constant to hold Load text
+    ''' </summary>
+    Private Const LoadText As String = "Load"
+    ''' <summary>
+    '''  Constant to hold TotDistance text
+    ''' </summary>
+    Private Const TotDistanceText As String = "TotDistance"
+    ''' <summary>
+    '''  Constant to hold Speed text
+    ''' </summary>
+    Private Const SpeedText As String = "Speed"
+    ''' <summary>
+    '''  Constant to hold TimeInMin text
+    ''' </summary>
+    Private Const TimeInMinText As String = "TimeInMin"
+    ''' <summary>
+    '''  Constant to hold TestStep text
+    ''' </summary>
+    Private Const TestStepText As String = "TestStep"
+    ''' <summary>
+    '''  Constant to hold EndLowInfDtl text
+    ''' </summary>
+    Private Const EndLowInfDtltext As String = "EndLowInfDtl"
+    ''' <summary>
+    '''  Constant to hold EnduranceDtl text
+    ''' </summary>
+    Private Const EnduranceDtlText As String = "EnduranceDtl"
+    ''' <summary>
+    '''  Constant to hold EnduranceHdr text
+    ''' </summary>
+    Private Const EnduranceHdrText As String = "EnduranceHdr"
+    ''' <summary>
+    '''  Constant to hold DOTSERIALNUMBER text
+    ''' </summary>
+    Private Const TextDOTSERIALNUMBER As String = "DOTSERIALNUMBER"
+    ''' <summary>
+    '''  Constant to hold RIMDIAMETER text
+    ''' </summary>
+    Private Const TextRIMDIAMETER As String = "RIMDIAMETER"
+    ''' <summary>
+    '''  Constant to hold CertType text
+    ''' </summary>
+    Private Const CertTypeText As String = "CertType:"
+    ''' <summary>
+    '''  Constant to hold TireType text
+    ''' </summary>
+    Private Const TireTypeText As String = " TireType:"
+    ''' <summary>
+    '''  Constant to hold PlungerHdr text
+    ''' </summary>
+    Private Const PlungerHdrText As String = "PlungerHdr"
+    ''' <summary>
+    '''  Constant to hold HighSpeedDtl text
+    ''' </summary>
+    Private Const HighSpeedDtlText As String = "HighSpeedDtl"
+    ''' <summary>
+    '''  Constant to hold HighSpeedHdr text
+    ''' </summary>
+    Private Const HighSpeedHdrText As String = "HighSpeedHdr"
+    ''' <summary>
+    '''  Constant to hold Error text
+    ''' </summary>
+    Private Const ErrorText As String = "Error"
+    ''' <summary>
+    '''  Constant to hold ERRORNUM text
+    ''' </summary>
+    Private Const ErrorNumText As String = "ERRORNUM"
+    ''' <summary>
+    '''  Constant to hold Y text
+    ''' </summary>
+    Private Const YText As String = "Y"
+
+#End Region
+
+#Region " Constructors / Destructors "
+
+#End Region
+
+#Region " IDisposable Support "
+
+    Private disposedValue As Boolean = False        ' To detect redundant calls
+
+    ' IDisposable
+    ''' <summary>
+    ''' Dispose
+    ''' </summary>
+    ''' <remarks>
+    ''' <list type="table">
+    ''' <listheader>
+    ''' <term>Author</term>
+    ''' <description>Description</description>
+    ''' </listheader>
+    ''' <item>
+    ''' <term>Srinivas.S</term>
+    ''' <description>
+    ''' <para>11/19/2019</para>
+    ''' <para>Original Code.</para>
+    ''' </description>
+    ''' </item> 
+    ''' </list>
+    ''' </remarks>
+    Protected Overridable Sub Dispose(ByVal disposing As Boolean)
+        If Not Me.disposedValue Then
+            If disposing Then
+                'free managed resources when explicitly called
+                'm_clsData.Dispose()
+            End If
+
+            'free shared unmanaged resources
+        End If
+        Me.disposedValue = True
+    End Sub
+
+
+    ' This code added by Visual Basic to correctly implement the disposable pattern.
+    ''' <summary>
+    ''' Dispose
+    ''' </summary>
+    ''' <remarks>
+    ''' <list type="table">
+    ''' <listheader>
+    ''' <term>Author</term>
+    ''' <description>Description</description>
+    ''' </listheader>
+    ''' <item>
+    ''' <term>Srinivas.S</term>
+    ''' <description>
+    ''' <para>11/19/2019</para>
+    ''' <para>Original Code.</para>
+    ''' </description>
+    ''' </item> 
+    ''' </list>
+    ''' </remarks>
+    Public Sub Dispose() Implements IDisposable.Dispose
+        ' Do not change this code.  Put cleanup code in Dispose(ByVal disposing As Boolean) above.
+        Dispose(True)
+        GC.SuppressFinalize(Me)
+    End Sub
+
+
+#End Region
+
+#Region " Business Calls "
+
+    ''' <summary>
+    '''  Method to Get Client Tests
+    ''' </summary>
+    ''' <returns>TRProductSectionData</returns> 
+    ''' <param name="p_intCertType">Certificate Type</param>
+    ''' <param name="p_intTireType">Tire Type</param>
+    ''' <param name="p_strUseSap">Use Sap</param>
+    ''' <param name="p_strUseTracs">Use Tracs</param>
+    ''' <param name="p_oSet">ClientRequest Object</param>
+    ''' <param name="p_blnSuccess">Success Flag</param>
+    ''' <exception cref="Exception">
+    '''  Logs the exception if any error occurs.
+    ''' </exception>
+    ''' <remarks>
+    ''' <list type="table">
+    ''' <listheader>
+    ''' <term>Author</term>
+    ''' <description>Description</description>
+    ''' </listheader>
+    ''' <item>
+    ''' <term>N/A</term>
+    ''' <description>
+    ''' <para>N/A</para>
+    ''' <para>Original Code.</para>
+    ''' </description>
+    ''' </item>
+    ''' <item>
+    ''' <term>Srinivas S</term>
+    ''' <description>
+    ''' <para>11/28/2019</para>
+    ''' <para>Implemented Coding Standards</para>
+    ''' </description>
+    ''' </item> 
+    ''' </list>
+    ''' </remarks>    
+    Public Function GetClientTests(ByVal p_intCertType As Integer, ByVal p_intTireType As Integer, _
+                                   ByVal p_strUseSap As String, ByVal p_strUseTracs As String, _
+            ByRef p_oSet As ICS.Datasets.ClientRequest, ByRef p_blnSuccess As Boolean) As ICS.Datasets.TRACStoICSDataset
+        Const ProjText As String = " Proj:"
+        Const TireText As String = " Tire:"
+        Const SeqText As String = " Seq:"
+
+        Dim strProjectNum As String = ""
+        Dim intTireNum As Integer
+        Dim intTestSequence As Integer
+        'Dim strTestType As String
+        Dim lbSuccess As Boolean = False
+        'Dim lnIndex As Integer
+
+        'Dim oData As New TRACSSupportDLL.DBaseData
+        Dim stTRACSSet As New ICS.Datasets.TRACStoICSDataset
+
+        ' Added as per PRJ3617 SAP Interface to International Certification System (OPQ.I.8265) SAP to ICS.
+        Dim oClientTests As Data.DataSet
+        Dim oSap As New Data.DataSet
+        Dim lbSapData As Boolean = False
+
+        Try
+
+            ' Added as per PRJ3617 SAP Interface to International Certification System (OPQ.I.8265) SAP to ICS.
+            'Split ClientRequest into SAP and Tracs
+            SplitSapAndTracsDataset(p_oSet, oSap)
+
+            'Gets from SAP
+            If (String.Compare(p_strUseSap, YText, True) = 0) Then
+                If ((Not oSap Is Nothing) AndAlso (oSap.Tables.Count > 0) AndAlso (oSap.Tables(0).Rows.Count > 0)) Then
+
+                    'obtain data from SAP
+                    Dim cooperServiceBroker As New CooperServiceBroker.CsbPublicPI
+                    oClientTests = cooperServiceBroker.GetClientTests(securityKey, CStr(p_intCertType), "0", oSap)
+
+                    If ((Not oClientTests Is Nothing) AndAlso (oClientTests.Tables.Count > 0)) Then
+                        If ((oClientTests.Tables(ErrorText).Rows.Count > 0) AndAlso (Convert.ToInt16(oClientTests.Tables(ErrorText).Rows(0).Item(ErrorNumText)) = 1)) Then
+
+                            p_blnSuccess = True
+                            lbSapData = True
+
+                            For Each table As DataTable In oClientTests.Tables
+                                'Add HighSpeed results
+                                If ((String.Compare(table.TableName, HighSpeedHdrText, True) = 0 Or _
+                                    String.Compare(table.TableName, HighSpeedDtlText, True) = 0) AndAlso table.Rows.Count > 0) Then
+                                    AddSAPHighSpeedToTRACSData(table, stTRACSSet)
+                                End If
+
+                                ' Add Endurance results
+                                If ((String.Compare(table.TableName, EnduranceHdrText, True) = 0 Or _
+                                   String.Compare(table.TableName, EnduranceDtlText, True) = 0 Or _
+                                   String.Compare(table.TableName, EndLowInfDtltext, True) = 0) AndAlso table.Rows.Count > 0) Then
+                                    AddSAPEnduranceToTRACSData(table, stTRACSSet)
+                                End If
+
+                                '  Add Measurement Results
+                                If ((String.Compare(table.TableName, MeasureHdrText, True) = 0 Or _
+                                    String.Compare(table.TableName, MeasureDtlText, True) = 0) AndAlso table.Rows.Count > 0) Then
+                                    AddSAPMeasureToTRACSData(table, stTRACSSet)
+                                End If
+
+                                '  Add Treadwear Indicator Results
+                                If ((String.Compare(table.TableName, TreadWearHdrText, True) = 0 Or _
+                                    String.Compare(table.TableName, TreadWearDtlText, True) = 0) AndAlso table.Rows.Count > 0) Then
+                                    AddSAPTreadWearToTRACSData(table, stTRACSSet)
+                                End If
+
+                                '  Add Plunger Results
+                                If ((String.Compare(table.TableName, PlungerHdrText, True) = 0 Or _
+                                    String.Compare(table.TableName, PlungerDtlText, True) = 0) AndAlso table.Rows.Count > 0) Then
+                                    AddSAPPlungerToTRACSData(table, stTRACSSet)
+                                End If
+
+                                '  Add BeadUnseat Results
+                                If ((String.Compare(table.TableName, BeadUnseatHdrText, True) = 0 Or _
+                                    String.Compare(table.TableName, BeadUnseatDtlText, True) = 0) AndAlso table.Rows.Count > 0) Then
+                                    AddSAPBeadUnseatToTRACSData(table, stTRACSSet)
+                                End If
+                            Next
+
+                        Else
+                            p_blnSuccess = False
+                        End If
+                    End If
+                End If
+            End If
+
+        Catch AppErr As Exception
+            p_blnSuccess = False
+            Dim AppData As String
+            AppData = CertTypeText & CStr(p_intCertType) & TireTypeText & CStr(p_intTireType) & ProjText & strProjectNum & TireText & CStr(intTireNum) & SeqText & CStr(intTestSequence)
+            'AppError(AppData, AppErr)
+        Finally
+        End Try
+        Return stTRACSSet
+    End Function
+
+    ''' <summary>
+    '''  Method to Get TRACS Data
+    ''' </summary>
+    ''' <returns>TRProductSectionData</returns> 
+    ''' <param name="p_intCertType">intCertType</param>
+    ''' <param name="p_intTireType">intTireType</param>
+    ''' <param name="p_strSKU">strSKU</param>
+    ''' <param name="p_intProdLocNum">intProdLocNum</param>
+    ''' <param name="p_strUseSap">strUseSap</param>
+    ''' <param name="p_strUseTracs">strUseTracs</param>
+    ''' <param name="p_blnSuccess">blnSuccess</param>
+    ''' <exception cref="Exception">
+    '''  Logs the exception if any error occurs.
+    ''' </exception>
+    ''' <remarks>
+    ''' <list type="table">
+    ''' <listheader>
+    ''' <term>Author</term>
+    ''' <description>Description</description>
+    ''' </listheader>
+    ''' <item>
+    ''' <term>N/A</term>
+    ''' <description>
+    ''' <para>N/A</para>
+    ''' <para>Original Code.</para>
+    ''' </description>
+    ''' </item>
+    ''' <item>
+    ''' <term>Srinivas S</term>
+    ''' <description>
+    ''' <para>11/28/2019</para>
+    ''' <para>Implemented Coding Standards</para>
+    ''' </description>
+    ''' </item> 
+    ''' </list>
+    ''' </remarks>
+    Public Function GetTRACSData(ByVal p_intCertType As Integer, ByVal p_intTireType As Integer, ByVal p_strSKU As _
+                            String, ByVal p_intProdLocNum As Integer, ByVal p_strUseSap As String, ByVal p_strUseTracs As String, _
+                            ByRef p_blnSuccess As Boolean) As ICS.Datasets.TRACStoICSDataset
+        Const SKUText As String = " SKU:"
+        Const ProdLocText As String = " ProdLoc:"
+        Const UnknownText As String = "Unknown"
+        Const HdrText As String = "Hdr"
+
+        ' Dim oData As New TRACSSupportDLL.DBaseData
+        Dim stTRACSSet As New ICS.Datasets.TRACStoICSDataset
+        Dim stSKUSet As New ICS.Datasets.SKUtoICSDataset
+        Dim oSet As Data.DataSet
+        Dim lnRowIndex As Int16
+        Dim lnTableIndex As Int16
+        Dim oTable As DataTable
+        Dim ldLatestSerialDate As Date
+        Dim ldLatestTestDate As Date = #1/1/1800#
+        Dim lsDOTSerialNumber As String = String.Empty
+        Dim lnMeaRimWidth As Single
+        Dim lsDOTPlant As String = String.Empty
+        Dim lsPlantName As String = String.Empty
+        Dim lsSKU As String = String.Empty
+
+        ' Added as per PRJ3617 SAP Interface to International Certification System (OPQ.I.8265) SAP to ICS.
+        Dim lbHSSap As Boolean = False
+        Dim lbENDSap As Boolean = False
+        Dim lbMEASap As Boolean = False
+        Dim lbTWISap As Boolean = False
+        Dim lbPLGSap As Boolean = False
+        Dim lbBDUSap As Boolean = False
+
+        Dim lbSapData As Boolean = False
+
+        Try
+            ' Added as per PRJ3617 SAP Interface to International Certification System (OPQ.I.8265) SAP to ICS.
+            'Gets from SAP
+            If (String.Compare(p_strUseSap, YText, True) = 0) Then
+                Dim cooperServiceBroker As New CooperServiceBroker.CsbPublicPI
+
+                oSet = cooperServiceBroker.GetTestingData(securityKey, CStr(p_intCertType), p_strSKU, CStr(0))
+
+                'Check for each test returned, and add to TracsDataSet.  
+                If ((Not oSet Is Nothing) AndAlso (oSet.Tables.Count > 0)) Then
+                    If ((oSet.Tables(ErrorText).Rows.Count > 0) AndAlso (Convert.ToInt16(oSet.Tables(ErrorText).Rows(0).Item(ErrorNumText)) = 1)) Then
+
+                        p_blnSuccess = True
+                        lbSapData = True
+
+                        For Each table As DataTable In oSet.Tables
+                            'Add HighSpeed results
+                            If ((String.Compare(table.TableName, HighSpeedHdrText, True) = 0 Or _
+                                     String.Compare(table.TableName, HighSpeedDtlText, True) = 0) AndAlso table.Rows.Count > 0) Then
+                                lbHSSap = True
+                                AddSAPHighSpeedToTRACSData(table, stTRACSSet)
+                            End If
+
+                            ' Add Endurance results
+                            If ((String.Compare(table.TableName, EnduranceHdrText, True) = 0 Or _
+                                String.Compare(table.TableName, EnduranceDtlText, True) = 0 Or _
+                                String.Compare(table.TableName, EndLowInfDtltext, True) = 0) AndAlso table.Rows.Count > 0) Then
+                                lbENDSap = True
+                                AddSAPEnduranceToTRACSData(table, stTRACSSet)
+                            End If
+
+                            '  Add Measure results
+                            If ((String.Compare(table.TableName, MeasureHdrText, True) = 0 Or _
+                                String.Compare(table.TableName, MeasureDtlText, True) = 0) AndAlso table.Rows.Count > 0) Then
+                                lbMEASap = True
+                                AddSAPMeasureToTRACSData(table, stTRACSSet)
+                            End If
+
+                            '  Add Treadwear results
+                            If ((String.Compare(table.TableName, TreadWearHdrText, True) = 0 Or _
+                                String.Compare(table.TableName, TreadWearDtlText, True) = 0) AndAlso table.Rows.Count > 0) Then
+                                lbTWISap = True
+                                AddSAPTreadWearToTRACSData(table, stTRACSSet)
+                            End If
+
+                            '  Add Plunger results
+                            If ((String.Compare(table.TableName, PlungerHdrText, True) = 0 Or _
+                                String.Compare(table.TableName, PlungerDtlText, True) = 0) AndAlso table.Rows.Count > 0) Then
+                                lbPLGSap = True
+                                AddSAPPlungerToTRACSData(table, stTRACSSet)
+                            End If
+
+                            '  Add BeadUnseat results
+                            If ((String.Compare(table.TableName, BeadUnseatHdrText, True) = 0 Or _
+                                String.Compare(table.TableName, BeadUnseatDtlText, True) = 0) AndAlso table.Rows.Count > 0) Then
+                                lbBDUSap = True
+                                AddSAPBeadUnseatToTRACSData(table, stTRACSSet)
+                            End If
+                        Next
+                    Else
+                        p_blnSuccess = False
+                    End If
+                End If
+            End If
+
+            '  Add logic to cycle through header tables for greatest serial date
+            '  Loop Thru TRACS Data and Find Latest Serial Date with corresponding 
+            '  Serial Number and Rim Width
+            For lnTableIndex = 0 To CShort(stTRACSSet.Tables.Count - 1)
+                oTable = stTRACSSet.Tables(lnTableIndex)
+                If Mid(oTable.TableName, oTable.TableName.Length - 2, 3) = HdrText Then
+                    For lnRowIndex = 0 To CShort(oTable.Rows.Count - 1)
+                        If oTable.TableName = MeasureHdrText Then
+                            lnMeaRimWidth = CSng(oTable.Rows(lnRowIndex).Item(RimWidthText))
+                        End If
+                        If (Not oTable.Rows(lnRowIndex).Item(CompletionDateText) Is System.DBNull.Value _
+                                AndAlso Not String.IsNullOrEmpty(CStr(oTable.Rows(lnRowIndex).Item(CompletionDateText)))) Then
+                            ' Changed as per PRJ3617 SAP Interface to International Certification System (OPQ.I.8265) SAP to ICS.
+                            If CDate(ConvertToDate(CStr(oTable.Rows(lnRowIndex).Item(CompletionDateText)))) > ldLatestTestDate Then
+                                If (oTable.Rows(lnRowIndex).Item(TextSerialDate).ToString <> "") Then
+                                    ' Changed as per PRJ3617 SAP Interface to International Certification System (OPQ.I.8265) SAP to ICS.
+                                    ldLatestSerialDate = CDate(ConvertToDate(CStr(oTable.Rows(lnRowIndex).Item(TextSerialDate))))
+                                End If
+                                lsDOTSerialNumber = CStr(oTable.Rows(lnRowIndex).Item(DOTSerialNumberText))
+                                ' Changed as per PRJ3617 SAP Interface to International Certification System (OPQ.I.8265) SAP to ICS.
+                                ldLatestTestDate = CDate(ConvertToDate(CStr(oTable.Rows(lnRowIndex).Item(CompletionDateText))))
+                                lsDOTPlant = Mid(CStr(oTable.Rows(lnRowIndex).Item(DOTSerialNumberText)), 1, 2)
+                            End If
+                        End If
+                    Next
+                End If
+            Next
+
+            'GetPlantLocation(lsDOTPlant, lsPlantName)
+            lsPlantName = UnknownText
+
+            '  Update Recent Test Data Table with information found above
+            Dim sTRACSHdrRow As ICS.Datasets.TRACStoICSDataset.RecentTestDataRow = stTRACSSet.RecentTestData.NewRecentTestDataRow
+            sTRACSHdrRow.PlantProduced = lsPlantName
+            sTRACSHdrRow.MostRecentTestDate = CStr(ldLatestTestDate)
+            sTRACSHdrRow.DOTSerialNumber = lsDOTSerialNumber
+            sTRACSHdrRow.SerialDate = CStr(ldLatestSerialDate)
+            sTRACSHdrRow.MeaRimWidth = lnMeaRimWidth
+            stTRACSSet.RecentTestData.AddRecentTestDataRow(sTRACSHdrRow)
+
+        Catch AppErr As Exception
+            p_blnSuccess = False
+            Dim AppData As String
+            AppData = CertTypeText & CStr(p_intCertType) & TireTypeText & CStr(p_intTireType) & SKUText & p_strSKU & ProdLocText & CStr(p_intProdLocNum)
+            'AppError(AppData, AppErr)
+        Finally
+            stSKUSet.Dispose()
+        End Try
+        Return stTRACSSet
+    End Function
+
+    'Changed as per Incident # 31208 and Change Order # 6074
+    ''' <summary>
+    '''  Method to add Product data to TRACS
+    ''' </summary>
+    ''' <param name="p_oSet">DataSet Object</param>
+    ''' <param name="p_stSKU">SKUtoICSDataset Object</param>    
+    ''' <exception cref="Exception">
+    ''' Throws the exception if any error occurs.
+    ''' </exception>
+    ''' <remarks>
+    ''' <list type="table">
+    ''' <listheader>
+    ''' <term>Author</term>
+    ''' <description>Description</description>
+    ''' </listheader>
+    ''' <item>
+    ''' <term>N/A</term>
+    ''' <description>
+    ''' <para>N/A</para>
+    ''' <para>Original Code.</para>
+    ''' </description>
+    ''' </item>
+    ''' <item>
+    ''' <term>Srinivas S</term>
+    ''' <description>
+    ''' <para>11/28/2019</para>
+    ''' <para>Implemented Coding Standards</para>
+    ''' </description>
+    ''' </item> 
+    ''' </list>
+    ''' </remarks>
+    Private Sub AddProductDataToTRACSData(ByVal p_oSet As System.Data.DataSet, ByRef p_stSKU As ICS.Datasets.SKUtoICSDataset)
+
+        Dim i As Int16
+        Const ProductDataText As String = "ProductData"
+        Const SKUText As String = "SKU"
+        Const BRANDDESCText As String = "BRANDDESC"
+        Const SIZESTAMPText As String = "SIZESTAMP"
+        Const SPEEDRATINGText As String = "SPEEDRATING"
+        Const SINGLOADINDEXText As String = "SINGLOADINDEX"
+        Const DUALLOADINDEXText As String = "DUALLOADINDEX"
+        Const BIASBELTEDRADIALText As String = "BIASBELTEDRADIAL"
+        Const TUBELESSText As String = "TUBELESS"
+        Const REINFORCEDYNText As String = "REINFORCEDYN"
+        Const EXTRALOADYNText As String = "EXTRALOADYN"
+        Const UTQGTREADWEARText As String = "UTQGTREADWEAR"
+        Const UTQGTRACTIONText As String = "UTQGTRACTION"
+        Const UTQGTEMPText As String = "UTQGTEMP"
+        Const MUDSNOWYNText As String = "MUDSNOWYN"
+        Const LOADRANGEText As String = "LOADRANGE"
+        Const MEARIMWIDTHText As String = "MEARIMWIDTH"
+        Const REGROOVABLEINDText As String = "REGROOVABLEIND"
+        Const PLANTPRODUCEDText As String = "PLANTPRODUCED"
+        Const MOSTRECENTTESTDATEText As String = "MOSTRECENTTESTDATE"
+        Const IMARKText As String = "IMARK"
+        Const TECHNICALPLATFORMText As String = "TECHNICALPLATFORM"
+        Const ASPECTRATIOText As String = "ASPECTRATIO"
+        Const MFGWWYYText As String = "MFGWWYY"
+        Const SevereWeatherIndText As String = "SevereWeatherInd"
+        Const TireTypeIDText As String = "TireTypeID"
+        Const TreadPatternText As String = "TreadPattern"
+        Try
+            '   Add TreadWear Indicators Header to Result Set
+            If p_oSet.Tables(0).TableName = ProductDataText Then
+                ConvertNulls(p_oSet.Tables(0))
+                For i = 0 To CShort(p_oSet.Tables(0).Rows.Count - 1)
+                    Dim sSKUHdrRow As ICS.Datasets.SKUtoICSDataset.ProductDataRow = p_stSKU.ProductData.NewProductDataRow
+                    sSKUHdrRow.SKU = CStr(p_oSet.Tables(0).Rows(i).Item(SKUText))
+                    sSKUHdrRow.BrandDesc = CStr(p_oSet.Tables(0).Rows(i).Item(BRANDDESCText))
+                    sSKUHdrRow.SerialDate = CStr(p_oSet.Tables(0).Rows(i).Item(SERIALDATEText))
+                    sSKUHdrRow.DOTSerialNumber = CStr(p_oSet.Tables(0).Rows(i).Item(TextDOTSERIALNUMBER))
+                    sSKUHdrRow.SizeStamp = CStr(p_oSet.Tables(0).Rows(i).Item(SIZESTAMPText))
+                    sSKUHdrRow.SpeedRating = CStr(p_oSet.Tables(0).Rows(i).Item(SPEEDRATINGText))
+                    sSKUHdrRow.SingLoadIndex = CStr(p_oSet.Tables(0).Rows(i).Item(SINGLOADINDEXText))
+                    sSKUHdrRow.DualLoadIndex = CStr(p_oSet.Tables(0).Rows(i).Item(DUALLOADINDEXText))
+                    sSKUHdrRow.BiasBeltedRadial = CStr(p_oSet.Tables(0).Rows(i).Item(BIASBELTEDRADIALText))
+                    sSKUHdrRow.TubelessYN = CStr(p_oSet.Tables(0).Rows(i).Item(TUBELESSText))
+                    sSKUHdrRow.ReinforcedYN = CStr(p_oSet.Tables(0).Rows(i).Item(REINFORCEDYNText))
+                    sSKUHdrRow.ExtraLoadYN = CStr(p_oSet.Tables(0).Rows(i).Item(EXTRALOADYNText))
+                    sSKUHdrRow.UTQGTreadwear = CStr(p_oSet.Tables(0).Rows(i).Item(UTQGTREADWEARText))
+                    sSKUHdrRow.UTQGTraction = CStr(p_oSet.Tables(0).Rows(i).Item(UTQGTRACTIONText))
+                    sSKUHdrRow.UTQGTemp = CStr(p_oSet.Tables(0).Rows(i).Item(UTQGTEMPText))
+                    sSKUHdrRow.MudSnowYN = CStr(p_oSet.Tables(0).Rows(i).Item(MUDSNOWYNText))
+                    sSKUHdrRow.RimDiameter = ConvertToSingle(CStr(p_oSet.Tables(0).Rows(i).Item(TextRIMDIAMETER)))
+                    sSKUHdrRow.LoadRange = CStr(p_oSet.Tables(0).Rows(i).Item(LOADRANGEText))
+                    sSKUHdrRow.MeaRimWidth = ConvertToSingle(CStr(p_oSet.Tables(0).Rows(i).Item(MEARIMWIDTHText)))
+                    sSKUHdrRow.RegroovableInd = CStr(p_oSet.Tables(0).Rows(i).Item(REGROOVABLEINDText))
+                    sSKUHdrRow.PlantProduced = CStr(p_oSet.Tables(0).Rows(i).Item(PLANTPRODUCEDText))
+                    sSKUHdrRow.MostRecentTestDate = CStr(p_oSet.Tables(0).Rows(i).Item(MOSTRECENTTESTDATEText))
+                    sSKUHdrRow.IMark = CStr(p_oSet.Tables(0).Rows(i).Item(IMARKText))
+                    sSKUHdrRow.PPN = CStr(p_oSet.Tables(0).Rows(i).Item(TECHNICALPLATFORMText))
+                    sSKUHdrRow.AspectRatio = CStr(p_oSet.Tables(0).Rows(i).Item(ASPECTRATIOText))
+                    sSKUHdrRow.MFGWWYY = CStr(p_oSet.Tables(0).Rows(i).Item(MFGWWYYText))
+                    sSKUHdrRow.SevereWeatherInd = CStr(p_oSet.Tables(0).Rows(i).Item(SevereWeatherIndText))
+                    sSKUHdrRow.TireTypeID = CStr(p_oSet.Tables(0).Rows(i).Item(TireTypeIDText))
+                    sSKUHdrRow.TreadPattern = CStr(p_oSet.Tables(0).Rows(i).Item(TreadPatternText))
+                    p_stSKU.ProductData.AddProductDataRow(sSKUHdrRow)
+                Next
+            End If
+        Catch
+            Throw
+        End Try
+       
+    End Sub
+
+    ''' <summary>
+    '''  Method to add SAP High Speed To TRACS Data
+    ''' </summary>
+    ''' <param name="p_oTable">DataTable Object</param>
+    ''' <param name="p_stTRACS">TRACStoICSDataset Object</param>
+    ''' <exception cref="Exception">
+    ''' Throws the exception if any error occurs.
+    ''' </exception>
+    ''' <remarks>
+    ''' <list type="table">
+    ''' <listheader>
+    ''' <term>Author</term>
+    ''' <description>Description</description>
+    ''' </listheader>
+    ''' <item>
+    ''' <term>N/A</term>
+    ''' <description>
+    ''' <para>N/A</para>
+    ''' <para>Original Code.</para>
+    ''' </description>
+    ''' </item>
+    ''' <item>
+    ''' <term>Srinivas S</term>
+    ''' <description>
+    ''' <para>11/28/2019</para>
+    ''' <para>Implemented Coding Standards</para>
+    ''' </description>
+    ''' </item> 
+    ''' </list>
+    ''' </remarks>
+    Private Sub AddSAPHighSpeedToTRACSData(ByVal p_oTable As System.Data.DataTable, ByRef p_stTRACS As ICS.Datasets.TRACStoICSDataset)
+        Dim rowCount As Int16
+        Const PROJECTNUMText As String = "PROJECTNUM"
+        Const TIRENUMText As String = "TIRENUM"
+        Const TESTSPECText As String = "TESTSPEC"
+        Const TESTSKUText As String = "TESTSKU"
+        Const COMPLETIONDATEText As String = "COMPLETIONDATE"
+        Const TextPRECONDSTARTDATE As String = "PRECONDSTARTDATE"
+        Const PRECONDSTARTTEMPText As String = "PRECONDSTARTTEMP"
+        Const RIMWIDTHText As String = "RIMWIDTH"
+        Const PRECONDENDDATEText As String = "PRECONDENDDATE"
+        Const PRECONDENDTEMPText As String = "PRECONDENDTEMP"
+        Const PRECONDTIMEText As String = "PRECONDTIME"
+        Const INFLATIONPRESSUREText As String = "INFLATIONPRESSURE"
+        Const BEFOREDIAMETERText As String = "BEFOREDIAMETER"
+        Const AFTERDIAMETERText As String = "AFTERDIAMETER"
+        Const BEFOREINFLATIONText As String = "BEFOREINFLATION"
+        Const AFTERINFLATIONText As String = "AFTERINFLATION"
+        Const WHEELPOSITIONText As String = "WHEELPOSITION"
+        Const WHEELNUMText As String = "WHEELNUM"
+        Const FINALTEMPText As String = "FINALTEMP"
+        Const FINALDISTANCEText As String = "FINALDISTANCE"
+        Const FINALINFLATIONText As String = "FINALINFLATION"
+        Const POSTCONDSTARTDATEText As String = "POSTCONDSTARTDATE"
+        Const POSTCONDENDDATEText As String = "POSTCONDENDDATE"
+        Const POSTCONDTIMEText As String = "POSTCONDTIME"
+        Const POSTCONDENDTEMPText As String = "POSTCONDENDTEMP"
+        Const PASSYNText As String = "PASSYN"
+        Const ANALYSISCODEText As String = "ANALYSISCODE"
+        Const COMPLETEDBYText As String = "COMPLETEDBY"
+        Try
+            If p_oTable.TableName = HighSpeedHdrText Then
+                ConvertNulls(p_oTable)
+                For rowCount = 0 To CShort(p_oTable.Rows.Count - 1)
+                    Dim sTRACSHdrRow As ICS.Datasets.TRACStoICSDataset.HighSpeedHdrRow = p_stTRACS.HighSpeedHdr.NewHighSpeedHdrRow
+                    sTRACSHdrRow.ProjectNum = CStr(p_oTable.Rows(rowCount).Item(PROJECTNUMText))
+                    sTRACSHdrRow.TireNum = ConvertToShort(CStr(p_oTable.Rows(rowCount).Item(TIRENUMText)))
+                    sTRACSHdrRow.TestSpec = CStr(p_oTable.Rows(rowCount).Item(TESTSPECText))
+                    sTRACSHdrRow.TestSKU = CStr(p_oTable.Rows(rowCount).Item(TESTSKUText))
+                    sTRACSHdrRow.CompletionDate = CStr(ConvertToDate(CStr(p_oTable.Rows(rowCount).Item(COMPLETIONDATEText))))
+                    sTRACSHdrRow.DOTSerialNumber = CStr(p_oTable.Rows(rowCount).Item(TextDOTSERIALNUMBER))
+                    sTRACSHdrRow.SerialDate = CStr(p_oTable.Rows(rowCount).Item(SERIALDATEText))
+                    sTRACSHdrRow.PreCondStartDate = CStr(ConvertToDate(CStr(p_oTable.Rows(rowCount).Item(TextPRECONDSTARTDATE))))
+                    sTRACSHdrRow.PreCondSartTemp = ConvertToShort(CStr(p_oTable.Rows(rowCount).Item(PRECONDSTARTTEMPText)))
+                    sTRACSHdrRow.RimDiameter = ConvertToSingle(CStr(p_oTable.Rows(rowCount).Item(TextRIMDIAMETER)))
+                    sTRACSHdrRow.RimWidth = ConvertToSingle(CStr(p_oTable.Rows(rowCount).Item(RIMWIDTHText)))
+                    sTRACSHdrRow.PreCondEndDate = CStr(ConvertToDate(CStr(p_oTable.Rows(rowCount).Item(PRECONDENDDATEText))))
+                    sTRACSHdrRow.PreCondEndTemp = ConvertToShort(CStr(p_oTable.Rows(rowCount).Item(PRECONDENDTEMPText)))
+                    sTRACSHdrRow.PreCondTime = ConvertToSingle(CStr(p_oTable.Rows(rowCount).Item(PRECONDTIMEText)))
+                    sTRACSHdrRow.InflationPressure = ConvertToShort(CStr(p_oTable.Rows(rowCount).Item(INFLATIONPRESSUREText)))
+                    sTRACSHdrRow.BeforeDiameter = ConvertToSingle(CStr(p_oTable.Rows(rowCount).Item(BEFOREDIAMETERText)))
+                    sTRACSHdrRow.AfterDiameter = ConvertToSingle(CStr(p_oTable.Rows(rowCount).Item(AFTERDIAMETERText)))
+                    sTRACSHdrRow.BeforeInflation = ConvertToShort(CStr(p_oTable.Rows(rowCount).Item(BEFOREINFLATIONText)))
+                    sTRACSHdrRow.AfterInflation = ConvertToShort(CStr(p_oTable.Rows(rowCount).Item(AFTERINFLATIONText)))
+                    sTRACSHdrRow.WheelPosition = ConvertToShort(CStr(p_oTable.Rows(rowCount).Item(WHEELPOSITIONText)))
+                    sTRACSHdrRow.WheelNum = ConvertToShort(CStr(p_oTable.Rows(rowCount).Item(WHEELNUMText)))
+                    sTRACSHdrRow.FinalTemp = ConvertToShort(CStr(p_oTable.Rows(rowCount).Item(FINALTEMPText)))
+                    sTRACSHdrRow.FinalDistance = ConvertToSingle(CStr(p_oTable.Rows(rowCount).Item(FINALDISTANCEText)))
+                    sTRACSHdrRow.FinalInflation = ConvertToShort(CStr(p_oTable.Rows(rowCount).Item(FINALINFLATIONText)))
+                    sTRACSHdrRow.PostCondStartDate = CStr(ConvertToDate(CStr(p_oTable.Rows(rowCount).Item(POSTCONDSTARTDATEText))))
+                    sTRACSHdrRow.PostCondEndDate = CStr(ConvertToDate(CStr(p_oTable.Rows(rowCount).Item(POSTCONDENDDATEText))))
+                    sTRACSHdrRow.PostCondTime = ConvertToSingle(CStr(p_oTable.Rows(rowCount).Item(POSTCONDTIMEText)))
+                    sTRACSHdrRow.PostCondEndTemp = ConvertToShort(CStr(p_oTable.Rows(rowCount).Item(POSTCONDENDTEMPText)))
+                    sTRACSHdrRow.PassYN = CStr(p_oTable.Rows(rowCount).Item(PASSYNText))
+                    sTRACSHdrRow.AnalysisCode = CStr(p_oTable.Rows(rowCount).Item(ANALYSISCODEText))
+                    sTRACSHdrRow.CompletedBy = CStr(p_oTable.Rows(rowCount).Item(COMPLETEDBYText))
+                    sTRACSHdrRow.Operation = CStr(p_oTable.Rows(rowCount).Item(OperationDescriptionText))
+                    sTRACSHdrRow.MFGWWYY = CStr(p_oTable.Rows(rowCount).Item(SERIALDATEText))
+                    sTRACSHdrRow.GTSPEC = CStr(p_oTable.Rows(rowCount).Item(GTSpecText))
+                    p_stTRACS.HighSpeedHdr.AddHighSpeedHdrRow(sTRACSHdrRow)
+                Next
+            End If
+
+            '   Add High Speed Detail to Result Set
+            If p_oTable.TableName = HighSpeedDtlText Then
+                ConvertNulls(p_oTable)
+                For rowCount = 0 To CShort(p_oTable.Rows.Count - 1)
+                    Dim sTRACSDtlRow As ICS.Datasets.TRACStoICSDataset.HighSpeedDtlRow = p_stTRACS.HighSpeedDtl.NewHighSpeedDtlRow
+                    sTRACSDtlRow.TestStep = ConvertToShort(CStr(p_oTable.Rows(rowCount).Item(TestStepText)))
+                    sTRACSDtlRow.TimeInMin = ConvertToShort(CStr(p_oTable.Rows(rowCount).Item(TimeInMinText)))
+                    sTRACSDtlRow.Speed = ConvertToSingle(CStr(p_oTable.Rows(rowCount).Item(SpeedText)))
+                    sTRACSDtlRow.TotMiles = ConvertToSingle(CStr(p_oTable.Rows(rowCount).Item(TotDistanceText)))
+                    sTRACSDtlRow.Load = ConvertToSingle(CStr(p_oTable.Rows(rowCount).Item(LoadText)))
+                    sTRACSDtlRow.LoadPercent = ConvertToSingle(CStr(p_oTable.Rows(rowCount).Item(LoadPercentText)))
+                    sTRACSDtlRow.SetInflation = ConvertToShort(CStr(p_oTable.Rows(rowCount).Item(SetInflationText)))
+                    sTRACSDtlRow.AmbTemp = ConvertToShort(CStr(p_oTable.Rows(rowCount).Item(AmbTempText)))
+                    sTRACSDtlRow.InfPressure = ConvertToShort(CStr(p_oTable.Rows(rowCount).Item(InfPressureText)))
+                    sTRACSDtlRow.StepCompletionDate = CStr(ConvertToDate(CStr(p_oTable.Rows(rowCount).Item(StepCompletionDateText))))
+                    p_stTRACS.HighSpeedDtl.AddHighSpeedDtlRow(sTRACSDtlRow)
+                Next
+            End If
+        Catch
+            Throw
+        End Try
+    End Sub
+
+    ''' <summary>
+    '''  Method to add SAP Endurance To TRACS Data
+    ''' </summary>
+    ''' <param name="p_oTable">DataTable Object</param>
+    ''' <param name="p_stTRACS">TRACStoICSDataset Object</param>
+    ''' <exception cref="Exception">
+    ''' Throws the exception if any error occurs.
+    ''' </exception>
+    ''' <remarks>
+    ''' <list type="table">
+    ''' <listheader>
+    ''' <term>Author</term>
+    ''' <description>Description</description>
+    ''' </listheader>
+    ''' <item>
+    ''' <term>N/A</term>
+    ''' <description>
+    ''' <para>N/A</para>
+    ''' <para>Original Code.</para>
+    ''' </description>
+    ''' </item>
+    ''' <item>
+    ''' <term>Srinivas S</term>
+    ''' <description>
+    ''' <para>11/28/2019</para>
+    ''' <para>Implemented Coding Standards</para>
+    ''' </description>
+    ''' </item> 
+    ''' </list>
+    ''' </remarks>
+    Private Sub AddSAPEnduranceToTRACSData(ByVal p_oTable As System.Data.DataTable, ByRef p_stTRACS As ICS.Datasets.TRACStoICSDataset)
+        Dim rowCount As Int16
+
+        Dim iLowStep As Integer
+        Const CompletedByText As String = "CompletedBy"
+        Const AnalysisCodeText As String = "AnalysisCode"
+        Const PostCondTimeText As String = "PostCondTime"
+        Const PostCondEndTempText As String = "PostCondEndTemp"
+        Const PostCondEndDateText As String = "PostCondEndDate"
+        Const PostCondStartDateText As String = "PostCondStartDate"
+        Const FinalInflationText As String = "FinalInflation"
+        Const FinalDistanceText As String = "FinalDistance"
+        Const FinalTempText As String = "FinalTemp"
+        Const LowInfEndInflationText As String = "LowInfEndInflation"
+        Const LowInfStartInflationText As String = "LowInfStartInflation"
+        Const LowInfTotalDistanceText As String = "LowInfTotalDistance"
+        Const LowInfEndTempText As String = "LowInfEndTemp"
+        Const WheelNumText As String = "WheelNum"
+        Const WheelPositionText As String = "WheelPosition"
+        Const AfterInflationText As String = "AfterInflation"
+        Const BeforeInflationText As String = "BeforeInflation"
+        Const AfterDiameterText As String = "AfterDiameter"
+        Const BeforeDiameterText As String = "BeforeDiameter"
+        Const PreCondEndTempText As String = "PreCondEndTemp"
+        Const PreCondEndDateText As String = "PreCondEndDate"
+        Const RimDiameterText As String = "RimDiameter"
+        Const PreCondSartTempText As String = "PreCondSartTemp"
+        Const PreCondStartDateText As String = "PreCondStartDate"
+        Try
+            '   Add Endurance Header to Result Set
+            If p_oTable.TableName = EnduranceHdrText Then
+                ConvertNulls(p_oTable)
+                For rowCount = 0 To CShort(p_oTable.Rows.Count - 1)
+                    Dim sTRACSHdrRow As ICS.Datasets.TRACStoICSDataset.EnduranceHdrRow = p_stTRACS.EnduranceHdr.NewEnduranceHdrRow
+                    sTRACSHdrRow.ProjectNum = CStr(p_oTable.Rows(rowCount).Item(ProjectNumText))
+                    sTRACSHdrRow.TireNum = ConvertToShort(CStr(p_oTable.Rows(rowCount).Item(TireNumText)))
+                    sTRACSHdrRow.TestSpec = CStr(p_oTable.Rows(rowCount).Item(TestSpecText))
+                    sTRACSHdrRow.TestSKU = CStr(p_oTable.Rows(rowCount).Item(TestSKUText))
+                    sTRACSHdrRow.CompletionDate = CStr(ConvertToDate(CStr(p_oTable.Rows(rowCount).Item(CompletionDateText))))
+                    sTRACSHdrRow.DOTSerialNumber = CStr(p_oTable.Rows(rowCount).Item(DOTSerialNumberText))
+                    sTRACSHdrRow.SerialDate = CStr(p_oTable.Rows(rowCount).Item(TextSerialDate))
+                    sTRACSHdrRow.PreCondStartDate = CStr(p_oTable.Rows(rowCount).Item(PreCondStartDateText))
+                    sTRACSHdrRow.PreCondSartTemp = ConvertToShort(CStr(p_oTable.Rows(rowCount).Item(PreCondSartTempText)))
+                    sTRACSHdrRow.RimDiameter = ConvertToSingle(CStr(p_oTable.Rows(rowCount).Item(RimDiameterText)))
+                    sTRACSHdrRow.RimWidth = ConvertToSingle(CStr(p_oTable.Rows(rowCount).Item(RimWidthText)))
+                    sTRACSHdrRow.PreCondEndDate = CStr(p_oTable.Rows(rowCount).Item(PreCondEndDateText))
+                    sTRACSHdrRow.PreCondEndTemp = ConvertToShort(CStr(p_oTable.Rows(rowCount).Item(PreCondEndTempText)))
+                    sTRACSHdrRow.InflationPressure = ConvertToShort(CStr(p_oTable.Rows(rowCount).Item(InflationPressureText)))
+                    sTRACSHdrRow.BeforeDiameter = ConvertToSingle(CStr(p_oTable.Rows(rowCount).Item(BeforeDiameterText)))
+                    sTRACSHdrRow.AfterDiameter = ConvertToSingle(CStr(p_oTable.Rows(rowCount).Item(AfterDiameterText)))
+                    sTRACSHdrRow.BeforeInflation = ConvertToShort(CStr(p_oTable.Rows(rowCount).Item(BeforeInflationText)))
+                    sTRACSHdrRow.AfterInflation = ConvertToShort(CStr(p_oTable.Rows(rowCount).Item(AfterInflationText)))
+                    sTRACSHdrRow.WheelPosition = ConvertToShort(CStr(p_oTable.Rows(rowCount).Item(WheelPositionText)))
+                    sTRACSHdrRow.WheelNum = ConvertToShort(CStr(p_oTable.Rows(rowCount).Item(WheelNumText)))
+                    sTRACSHdrRow.LowInfEndTemp = ConvertToShort(CStr(p_oTable.Rows(rowCount).Item(LowInfEndTempText)))
+                    sTRACSHdrRow.LowInfTotalDistance = ConvertToSingle(CStr(p_oTable.Rows(rowCount).Item(LowInfTotalDistanceText)))
+                    sTRACSHdrRow.LowInfStartInflation = ConvertToShort(CStr(p_oTable.Rows(rowCount).Item(LowInfStartInflationText)))
+                    sTRACSHdrRow.LowInfEndInflation = ConvertToShort(CStr(p_oTable.Rows(rowCount).Item(LowInfEndInflationText)))
+                    sTRACSHdrRow.FinalTemp = ConvertToShort(CStr(p_oTable.Rows(rowCount).Item(FinalTempText)))
+                    sTRACSHdrRow.FinalDistance = ConvertToSingle(CStr(p_oTable.Rows(rowCount).Item(FinalDistanceText)))
+                    sTRACSHdrRow.FinalInflation = ConvertToShort(CStr(p_oTable.Rows(rowCount).Item(FinalInflationText)))
+                    sTRACSHdrRow.PostCondStartDate = CStr(ConvertToDate(CStr(p_oTable.Rows(rowCount).Item(PostCondStartDateText))))
+                    sTRACSHdrRow.PostCondEndDate = CStr(ConvertToDate(CStr(p_oTable.Rows(rowCount).Item(PostCondEndDateText))))
+                    sTRACSHdrRow.PostCondEndTemp = ConvertToShort(CStr(p_oTable.Rows(rowCount).Item(PostCondEndTempText)))
+                    sTRACSHdrRow.PostCondTime = ConvertToSingle(CStr(p_oTable.Rows(rowCount).Item(PostCondTimeText)))
+                    If sTRACSHdrRow.PostCondTime > 32767 Then 'checking for invalid data from SAP.
+                        sTRACSHdrRow.PostCondTime = 0
+                    End If
+                    sTRACSHdrRow.PassYN = CStr(p_oTable.Rows(rowCount).Item(PassYNText))
+                    sTRACSHdrRow.AnalysisCode = CStr(p_oTable.Rows(rowCount).Item(AnalysisCodeText))
+                    sTRACSHdrRow.CompletedBy = CStr(p_oTable.Rows(rowCount).Item(CompletedByText))
+                    sTRACSHdrRow.Operation = CStr(p_oTable.Rows(rowCount).Item(OperationDescriptionText))
+                    sTRACSHdrRow.MFGWWYY = CStr(p_oTable.Rows(rowCount).Item(SERIALDATEText))
+                    sTRACSHdrRow.GTSPEC = CStr(p_oTable.Rows(rowCount).Item(GTSpecText))
+                    p_stTRACS.EnduranceHdr.AddEnduranceHdrRow(sTRACSHdrRow)
+                Next
+            End If
+
+            'Need to split out low inflation steps
+
+            '   Add Endurance Detail to Result Set
+            If p_oTable.TableName = EnduranceDtlText Then
+                iLowStep = 0
+                ConvertNulls(p_oTable)
+                For rowCount = 0 To CShort(p_oTable.Rows.Count - 1)
+                    If ConvertToShort(CStr(p_oTable.Rows(rowCount).Item(TestStepText))) <> 0 And _
+                       p_oTable.Rows(rowCount).Item(TimeInMinText) Is "" And _
+                        p_oTable.Rows(rowCount).Item(SpeedText) Is "" And _
+                        p_oTable.Rows(rowCount).Item(TotDistanceText) Is "" Then
+                        'skip steps that don't have values (steps being returned even though they weren't completed.jeseitz 6/25/2014
+                    Else
+
+                        Dim sTRACSDtlRow As ICS.Datasets.TRACStoICSDataset.EnduranceDtlRow = p_stTRACS.EnduranceDtl.NewEnduranceDtlRow
+                        sTRACSDtlRow.TestStep = ConvertToShort(CStr(p_oTable.Rows(rowCount).Item(TestStepText)))
+                        sTRACSDtlRow.TimeInMin = ConvertToShort(CStr(p_oTable.Rows(rowCount).Item(TimeInMinText)))
+                        sTRACSDtlRow.Speed = ConvertToSingle(CStr(p_oTable.Rows(rowCount).Item(SpeedText)))
+                        sTRACSDtlRow.TotMiles = ConvertToSingle(CStr(p_oTable.Rows(rowCount).Item(TotDistanceText)))
+                        sTRACSDtlRow.Load = ConvertToSingle(CStr(p_oTable.Rows(rowCount).Item(LoadText)))
+                        sTRACSDtlRow.LoadPercent = ConvertToSingle(CStr(p_oTable.Rows(rowCount).Item(LoadPercentText)))
+                        sTRACSDtlRow.SetInflation = ConvertToShort(CStr(p_oTable.Rows(rowCount).Item(SetInflationText)))
+                        sTRACSDtlRow.AmbTemp = ConvertToShort(CStr(p_oTable.Rows(rowCount).Item(AmbTempText)))
+                        sTRACSDtlRow.InfPressure = ConvertToShort(CStr(p_oTable.Rows(rowCount).Item(InfPressureText)))
+                        sTRACSDtlRow.StepCompletionDate = CStr(ConvertToDate(CStr(p_oTable.Rows(rowCount).Item(StepCompletionDateText))))
+                        'Don't add it if set inflation > 0 after the first step - this is the start of the low inflation
+                        If iLowStep = 0 And (rowCount > 0 And sTRACSDtlRow.SetInflation > 0) Then
+                            iLowStep = rowCount
+                        End If
+                        If iLowStep = 0 Then
+                            p_stTRACS.EnduranceDtl.AddEnduranceDtlRow(sTRACSDtlRow)
+                        End If
+                    End If
+                Next
+            End If
+
+            '   Add Endurance Low Inflation Detail to Result Set
+            If p_oTable.TableName = EndLowInfDtltext Then
+                If iLowStep > 0 Then
+                    ConvertNulls(p_oTable)
+                    For rowCount = CShort(iLowStep) To CShort(p_oTable.Rows.Count - 1)
+                        If ConvertToShort(CStr(p_oTable.Rows(rowCount).Item(TestStepText))) <> 0 And _
+                           p_oTable.Rows(rowCount).Item(TimeInMinText) Is "" And _
+                            p_oTable.Rows(rowCount).Item(SpeedText) Is "" And _
+                            p_oTable.Rows(rowCount).Item(TotDistanceText) Is "" Then
+                        Else
+
+                            Dim sTRACSDtlRow As ICS.Datasets.TRACStoICSDataset.EndLowInfDtlRow = p_stTRACS.EndLowInfDtl.NewEndLowInfDtlRow
+                            sTRACSDtlRow.TestStep = ConvertToShort(CStr(p_oTable.Rows(rowCount).Item(TestStepText)))
+                            sTRACSDtlRow.TimeInMin = ConvertToShort(CStr(p_oTable.Rows(rowCount).Item(TimeInMinText)))
+                            sTRACSDtlRow.Speed = ConvertToSingle(CStr(p_oTable.Rows(rowCount).Item(SpeedText)))
+                            sTRACSDtlRow.TotMiles = ConvertToSingle(CStr(p_oTable.Rows(rowCount).Item(TotDistanceText)))
+                            sTRACSDtlRow.Load = ConvertToSingle(CStr(p_oTable.Rows(rowCount).Item(LoadText)))
+                            sTRACSDtlRow.LoadPercent = ConvertToSingle(CStr(p_oTable.Rows(rowCount).Item(LoadPercentText)))
+                            sTRACSDtlRow.SetInflation = ConvertToShort(CStr(p_oTable.Rows(rowCount).Item(SetInflationText)))
+                            sTRACSDtlRow.AmbTemp = ConvertToShort(CStr(p_oTable.Rows(rowCount).Item(AmbTempText)))
+                            sTRACSDtlRow.InfPressure = ConvertToShort(CStr(p_oTable.Rows(rowCount).Item(InfPressureText)))
+                            sTRACSDtlRow.StepCompletionDate = CStr(ConvertToDate(CStr(p_oTable.Rows(rowCount).Item(StepCompletionDateText))))
+                            p_stTRACS.EndLowInfDtl.AddEndLowInfDtlRow(sTRACSDtlRow)
+                        End If
+                    Next
+                End If
+            End If
+        Catch
+            Throw
+        End Try
+    End Sub
+
+    ''' <summary>
+    '''  Method to add SAP Measure To TRACS Data
+    ''' </summary>
+    ''' <param name="p_oTable">DataTable Object</param>
+    ''' <param name="p_stTRACS">TRACStoICSDataset Object</param>
+    ''' <exception cref="Exception">
+    ''' Throws the exception if any error occurs.
+    ''' </exception>
+    ''' <remarks>
+    ''' <list type="table">
+    ''' <listheader>
+    ''' <term>Author</term>
+    ''' <description>Description</description>
+    ''' </listheader>
+    ''' <item>
+    ''' <term>N/A</term>
+    ''' <description>
+    ''' <para>N/A</para>
+    ''' <para>Original Code.</para>
+    ''' </description>
+    ''' </item>
+    ''' <item>
+    ''' <term>Srinivas S</term>
+    ''' <description>
+    ''' <para>11/28/2019</para>
+    ''' <para>Implemented Coding Standards</para>
+    ''' </description>
+    ''' </item> 
+    ''' </list>
+    ''' </remarks>
+    Private Sub AddSAPMeasureToTRACSData(ByVal p_oTable As System.Data.DataTable, ByRef p_stTRACS As ICS.Datasets.TRACStoICSDataset)
+        'JESEITZ 6/22/2015 - REQUEST 153828 - Add new fields MAXIMUM_OVERALL_GROWN, MAXIMUM_OUTER_DIAMETER_NEW,MIN_OUTER_DIAMETER_NEW
+        Dim rowCount As Int16
+        Const OverallWidthText As String = "OverallWidth"
+        Const SectionWidthText As String = "SectionWidth"
+        Const IterationText As String = "Iteration"
+        Const MINOUTERDIAMETERNEWText As String = "MIN_OUTER_DIAMETER_NEW"
+        Const MAXIMUMOUTERDIAMETERNEWText As String = "MAXIMUM_OUTER_DIAMETER_NEW"
+        Const ActSizeFactorText As String = "ActSizeFactor"
+        Const EndTimeText As String = "EndTime"
+        Const MountTempText As String = "MountTemp"
+        Const MountTimeText As String = "MountTime"
+        Const MinSizeFactorText As String = "MinSizeFactor"
+        Const MAXIMUMOVERALLWIDTHGROWNText As String = "MAXIMUM_OVERALL_WIDTH_GROWN"
+        Const MaxOverallWidthText As String = "MaxOverallWidth"
+        Const AvgOverallWidthText As String = "AvgOverallWidth"
+        Const AvgSectionWidthText As String = "AvgSectionWidth"
+        Const DiameterText As String = "Diameter"
+        Const MoldDesignText As String = "MoldDesign"
+
+        '   Add Measure Header to Result Set
+        If p_oTable.TableName = MeasureHdrText Then
+            ConvertNulls(p_oTable)
+            For rowCount = 0 To CShort(p_oTable.Rows.Count - 1)
+                Dim sTRACSHdrRow As ICS.Datasets.TRACStoICSDataset.MeasureHdrRow = p_stTRACS.MeasureHdr.NewMeasureHdrRow
+                sTRACSHdrRow.ProjectNum = CStr(p_oTable.Rows(rowCount).Item(ProjectNumText))
+                sTRACSHdrRow.TireNum = ConvertToShort(CStr(p_oTable.Rows(rowCount).Item(TireNumText)))
+                sTRACSHdrRow.TestSpec = CStr(p_oTable.Rows(rowCount).Item(TestSpecText))
+                sTRACSHdrRow.TestSKU = CStr(p_oTable.Rows(rowCount).Item(TestSKUText))
+                sTRACSHdrRow.CompletionDate = CStr(ConvertToDate(CStr(p_oTable.Rows(rowCount).Item(CompletionDateText))))
+                sTRACSHdrRow.InflationPressure = ConvertToShort(CStr(p_oTable.Rows(rowCount).Item(InflationPressureText)))
+                sTRACSHdrRow.MoldDesign = CStr(p_oTable.Rows(rowCount).Item(MoldDesignText))
+                sTRACSHdrRow.RimWidth = ConvertToSingle(CStr(p_oTable.Rows(rowCount).Item(RimWidthText)))
+                sTRACSHdrRow.DOTSerialNumber = CStr(p_oTable.Rows(rowCount).Item(DOTSerialNumberText))
+                sTRACSHdrRow.SerialDate = CStr(p_oTable.Rows(rowCount).Item(TextSerialDate))
+                sTRACSHdrRow.Diameter = ConvertToSingle(CStr(p_oTable.Rows(rowCount).Item(DiameterText)))
+                sTRACSHdrRow.AvgSectionWidth = ConvertToSingle(CStr(p_oTable.Rows(rowCount).Item(AvgSectionWidthText)))
+                sTRACSHdrRow.AvgOverallWidth = ConvertToSingle(CStr(p_oTable.Rows(rowCount).Item(AvgOverallWidthText)))
+                sTRACSHdrRow.MAXOVERALLWIDTHNEW = ConvertToSingle(CStr(p_oTable.Rows(rowCount).Item(MaxOverallWidthText)))
+                If p_oTable.Columns.Contains(MAXIMUMOVERALLWIDTHGROWNText) Then
+                    sTRACSHdrRow.MaxOverallWidth = ConvertToSingle(CStr(p_oTable.Rows(rowCount).Item(MAXIMUMOVERALLWIDTHGROWNText)))
+                Else
+                    sTRACSHdrRow.MaxOverallWidth = ConvertToSingle(Nothing)
+                End If
+                sTRACSHdrRow.MinSizeFactor = ConvertToSingle(CStr(p_oTable.Rows(rowCount).Item(MinSizeFactorText)))
+                sTRACSHdrRow.MountTime = CStr(p_oTable.Rows(rowCount).Item(MountTimeText))
+                sTRACSHdrRow.MountTemp = ConvertToShort(CStr(p_oTable.Rows(rowCount).Item(MountTempText)))
+                sTRACSHdrRow.EndTime = CStr(p_oTable.Rows(rowCount).Item(EndTimeText))
+                sTRACSHdrRow.ActSizeFactor = ConvertToSingle(CStr(p_oTable.Rows(rowCount).Item(ActSizeFactorText)))
+                sTRACSHdrRow.PassYN = CStr(p_oTable.Rows(rowCount).Item(PassYNText))
+                sTRACSHdrRow.Operation = CStr(p_oTable.Rows(rowCount).Item(OperationDescriptionText))
+                sTRACSHdrRow.MFGWWYY = CStr(p_oTable.Rows(rowCount).Item(SERIALDATEText))
+                sTRACSHdrRow.GTSPEC = CStr(p_oTable.Rows(rowCount).Item(GTSpecText))
+                If p_oTable.Columns.Contains(MAXIMUMOUTERDIAMETERNEWText) Then
+                    sTRACSHdrRow.MAXOVERALLDIAMETER = ConvertToSingle(CStr(p_oTable.Rows(rowCount).Item(MAXIMUMOUTERDIAMETERNEWText)))
+                Else
+                    sTRACSHdrRow.MAXOVERALLDIAMETER = ConvertToSingle(Nothing)
+                End If
+                If p_oTable.Columns.Contains(MINOUTERDIAMETERNEWText) Then
+                    sTRACSHdrRow.MINOVERALLDIAMETER = ConvertToSingle(CStr(p_oTable.Rows(rowCount).Item(MINOUTERDIAMETERNEWText)))
+                Else
+                    sTRACSHdrRow.MINOVERALLDIAMETER = ConvertToSingle(Nothing)
+                End If
+                p_stTRACS.MeasureHdr.AddMeasureHdrRow(sTRACSHdrRow)
+            Next
+        End If
+
+        '   Add Measure Detail to Result Set
+        If p_oTable.TableName = MeasureDtlText Then
+            ConvertNulls(p_oTable)
+            For rowCount = 0 To CShort(p_oTable.Rows.Count - 1)
+                Dim sTRACSDtlRow As ICS.Datasets.TRACStoICSDataset.MeasureDtlRow = p_stTRACS.MeasureDtl.NewMeasureDtlRow
+                sTRACSDtlRow.Iteration = ConvertToShort(CStr(p_oTable.Rows(rowCount).Item(IterationText)))
+                sTRACSDtlRow.SectionWidth = ConvertToSingle(CStr(p_oTable.Rows(rowCount).Item(SectionWidthText)))
+                sTRACSDtlRow.OverallWidth = ConvertToSingle(CStr(p_oTable.Rows(rowCount).Item(OverallWidthText)))
+                p_stTRACS.MeasureDtl.AddMeasureDtlRow(sTRACSDtlRow)
+            Next
+        End If
+    End Sub
+
+    ''' <summary>
+    '''  Method to add SAP Tread Wear To TRACS Data
+    ''' </summary>
+    ''' <param name="p_oTable">DataTable Object</param>
+    ''' <param name="p_stTRACS">TRACStoICSDataset Object</param>
+    ''' <exception cref="Exception">
+    ''' Throws the exception if any error occurs.
+    ''' </exception>
+    ''' <remarks>
+    ''' <list type="table">
+    ''' <listheader>
+    ''' <term>Author</term>
+    ''' <description>Description</description>
+    ''' </listheader>
+    ''' <item>
+    ''' <term>N/A</term>
+    ''' <description>
+    ''' <para>N/A</para>
+    ''' <para>Original Code.</para>
+    ''' </description>
+    ''' </item>
+    ''' <item>
+    ''' <term>Srinivas S</term>
+    ''' <description>
+    ''' <para>11/28/2019</para>
+    ''' <para>Implemented Coding Standards</para>
+    ''' </description>
+    ''' </item> 
+    ''' </list>
+    ''' </remarks>
+    Private Sub AddSAPTreadWearToTRACSData(ByVal p_oTable As System.Data.DataTable, ByRef p_stTRACS As ICS.Datasets.TRACStoICSDataset)
+        Dim rowCount As Int16
+        Dim nLowestTreadwearInd As Single = 10
+        Const WearbarHeightText As String = "WearbarHeight"
+        Const LowestWearbarText As String = "LowestWearbar"
+
+        Try
+            '   Add TreadWear Indicators Header to Result Set
+            If p_oTable.TableName = TreadWearHdrText Then
+                ConvertNulls(p_oTable)
+                For rowCount = 0 To CShort(p_oTable.Rows.Count - 1)
+                    Dim sTRACSHdrRow As ICS.Datasets.TRACStoICSDataset.TreadWearHdrRow = p_stTRACS.TreadWearHdr.NewTreadWearHdrRow
+                    sTRACSHdrRow.ProjectNum = CStr(p_oTable.Rows(rowCount).Item(ProjectNumText))
+                    sTRACSHdrRow.TireNum = ConvertToShort(CStr(p_oTable.Rows(rowCount).Item(TireNumText)))
+                    sTRACSHdrRow.TestSpec = CStr(p_oTable.Rows(rowCount).Item(TestSpecText))
+                    sTRACSHdrRow.TestSKU = CStr(p_oTable.Rows(rowCount).Item(TestSKUText))
+                    sTRACSHdrRow.CompletionDate = CStr(ConvertToDate(CStr(p_oTable.Rows(rowCount).Item(CompletionDateText))))
+                    sTRACSHdrRow.DOTSerialNumber = CStr(p_oTable.Rows(rowCount).Item(DOTSerialNumberText))
+                    sTRACSHdrRow.SerialDate = CStr(p_oTable.Rows(rowCount).Item(TextSerialDate))
+                    sTRACSHdrRow.LowestWearbar = ConvertToSingle(CStr(p_oTable.Rows(rowCount).Item(LowestWearbarText)))
+                    sTRACSHdrRow.PassYN = CStr(p_oTable.Rows(rowCount).Item(PassYNText))
+                    sTRACSHdrRow.Operation = CStr(p_oTable.Rows(rowCount).Item(OperationDescriptionText))
+                    sTRACSHdrRow.MFGWWYY = CStr(p_oTable.Rows(rowCount).Item(SERIALDATEText))
+                    'sTRACSHdrRow.GTSPEC = oTable.Rows(rowCount).Item(GTSpecText)
+                    sTRACSHdrRow.GTSPEC = ""
+                    p_stTRACS.TreadWearHdr.AddTreadWearHdrRow(sTRACSHdrRow)
+                Next
+            End If
+
+            '   Add TreadWear Indicators Detail to Result Set
+            If p_oTable.TableName = TreadWearDtlText Then
+                ConvertNulls(p_oTable)
+                For rowCount = 0 To CShort(p_oTable.Rows.Count - 1)
+                    Dim sTRACSDtlRow As ICS.Datasets.TRACStoICSDataset.TreadWearDtlRow = p_stTRACS.TreadWearDtl.NewTreadWearDtlRow
+                    sTRACSDtlRow.ITERATION = ConvertToShort(CStr(p_oTable.Rows(rowCount).Item(ITERATIONText)))
+                    sTRACSDtlRow.WearbarHeight = ConvertToSingle(CStr(p_oTable.Rows(rowCount).Item(WearbarHeightText)))
+                    If CDbl(p_oTable.Rows(rowCount).Item(WearbarHeightText)) < nLowestTreadwearInd Then
+                        nLowestTreadwearInd = ConvertToSingle(CStr(p_oTable.Rows(rowCount).Item(WearbarHeightText)))
+                    End If
+                    p_stTRACS.TreadWearDtl.AddTreadWearDtlRow(sTRACSDtlRow)
+                Next
+            End If
+            p_stTRACS.TreadWearHdr(0).LowestWearbar = nLowestTreadwearInd
+        Catch ex As Exception
+
+        End Try
+    End Sub
+
+    ''' <summary>
+    '''  Method to add SAP Plunger To TRACS Data
+    ''' </summary>
+    ''' <param name="p_oTable">DataTable Object</param>
+    ''' <param name="p_stTRACS">TRACStoICSDataset Object</param>
+    ''' <exception cref="Exception">
+    ''' Throws the exception if any error occurs.
+    ''' </exception>
+    ''' <remarks>
+    ''' <list type="table">
+    ''' <listheader>
+    ''' <term>Author</term>
+    ''' <description>Description</description>
+    ''' </listheader>
+    ''' <item>
+    ''' <term>N/A</term>
+    ''' <description>
+    ''' <para>N/A</para>
+    ''' <para>Original Code.</para>
+    ''' </description>
+    ''' </item>
+    ''' <item>
+    ''' <term>Srinivas S</term>
+    ''' <description>
+    ''' <para>11/28/2019</para>
+    ''' <para>Implemented Coding Standards</para>
+    ''' </description>
+    ''' </item> 
+    ''' </list>
+    ''' </remarks>
+    Private Sub AddSAPPlungerToTRACSData(ByVal p_oTable As System.Data.DataTable, ByRef p_stTRACS As ICS.Datasets.TRACStoICSDataset)
+        Dim rowCount As Int16
+        Const BreakingEnergyText As String = "BreakingEnergy"
+        Const MinPlungerText As String = "MinPlunger"
+        Const AvgBreakingEnergyText As String = "AvgBreakingEnergy"
+
+        Try
+            '   Add Plunger Header to Result Set
+            If p_oTable.TableName = PlungerHdrText Then
+                ConvertNulls(p_oTable)
+                For rowCount = 0 To CShort(p_oTable.Rows.Count - 1)
+                    Dim sTRACSHdrRow As ICS.Datasets.TRACStoICSDataset.PlungerHdrRow = p_stTRACS.PlungerHdr.NewPlungerHdrRow
+                    sTRACSHdrRow.ProjectNum = CStr(p_oTable.Rows(rowCount).Item(ProjectNumText))
+                    sTRACSHdrRow.TireNum = ConvertToShort(CStr(p_oTable.Rows(rowCount).Item(TireNumText)))
+                    sTRACSHdrRow.TestSpec = CStr(p_oTable.Rows(rowCount).Item(TestSpecText))
+                    sTRACSHdrRow.TestSKU = CStr(p_oTable.Rows(rowCount).Item(TestSKUText))
+                    sTRACSHdrRow.CompletionDate = CStr(ConvertToDate(CStr(p_oTable.Rows(rowCount).Item(CompletionDateText))))
+                    sTRACSHdrRow.DOTSerialNumber = CStr(p_oTable.Rows(rowCount).Item(DOTSerialNumberText))
+                    sTRACSHdrRow.SerialDate = CStr(p_oTable.Rows(rowCount).Item(TextSerialDate))
+                    sTRACSHdrRow.AvgBreakingEnergy = ConvertToInt(CStr(p_oTable.Rows(rowCount).Item(AvgBreakingEnergyText)))
+                    sTRACSHdrRow.PassYN = CStr(p_oTable.Rows(rowCount).Item(PassYNText))
+                    sTRACSHdrRow.MinPlunger = ConvertToLong(CStr(p_oTable.Rows(rowCount).Item(MinPlungerText)))
+                    sTRACSHdrRow.Operation = CStr(p_oTable.Rows(rowCount).Item(OperationDescriptionText))
+                    sTRACSHdrRow.MFGWWYY = CStr(p_oTable.Rows(rowCount).Item(SERIALDATEText))
+                    sTRACSHdrRow.GTSPEC = CStr(p_oTable.Rows(rowCount).Item(GTSpecText))
+                    p_stTRACS.PlungerHdr.AddPlungerHdrRow(sTRACSHdrRow)
+                Next
+            End If
+
+            '   Add Plunger Detail to Result Set
+            If p_oTable.TableName = PlungerDtlText Then
+                ConvertNulls(p_oTable)
+                For rowCount = 0 To CShort(p_oTable.Rows.Count - 1)
+                    Dim sTRACSDtlRow As ICS.Datasets.TRACStoICSDataset.PlungerDtlRow = p_stTRACS.PlungerDtl.NewPlungerDtlRow
+                    sTRACSDtlRow.ITERATION = ConvertToShort(CStr(p_oTable.Rows(rowCount).Item(ITERATIONText)))
+                    sTRACSDtlRow.BreakingEnergy = ConvertToInt(CStr(p_oTable.Rows(rowCount).Item(BreakingEnergyText)))
+                    p_stTRACS.PlungerDtl.AddPlungerDtlRow(sTRACSDtlRow)
+                Next
+            End If
+        Catch
+            Throw
+        End Try
+    End Sub
+
+    ''' <summary>
+    '''  Method to add SAP Bead Unseat To TRACS Data
+    ''' </summary>
+    ''' <param name="p_oTable">DataTable Object</param>
+    ''' <param name="p_stTRACS">TRACStoICSDataset Object</param>
+    ''' <exception cref="Exception">
+    ''' Throws the exception if any error occurs.
+    ''' </exception>
+    ''' <remarks>
+    ''' <list type="table">
+    ''' <listheader>
+    ''' <term>Author</term>
+    ''' <description>Description</description>
+    ''' </listheader>
+    ''' <item>
+    ''' <term>N/A</term>
+    ''' <description>
+    ''' <para>N/A</para>
+    ''' <para>Original Code.</para>
+    ''' </description>
+    ''' </item>
+    ''' <item>
+    ''' <term>Srinivas S</term>
+    ''' <description>
+    ''' <para>11/28/2019</para>
+    ''' <para>Implemented Coding Standards</para>
+    ''' </description>
+    ''' </item> 
+    ''' </list>
+    ''' </remarks>
+    Private Sub AddSAPBeadUnseatToTRACSData(ByVal p_oTable As System.Data.DataTable, ByRef p_stTRACS As ICS.Datasets.TRACStoICSDataset)
+        Dim rowCount As Int16
+        Const UnseatForceText As String = "UnseatForce"
+        Const MinBeadUnseatText As String = "MinBeadUnseat"
+        Const LowestUnseatValueText As String = "LowestUnseatValue"
+
+        '   Add Bead Unseat Header to Result Set
+        If p_oTable.TableName = BeadUnseatHdrText Then
+            ConvertNulls(p_oTable)
+            For rowCount = 0 To CShort(p_oTable.Rows.Count - 1)
+                Dim sTRACSHdrRow As ICS.Datasets.TRACStoICSDataset.BeadUnseatHdrRow = p_stTRACS.BeadUnseatHdr.NewBeadUnseatHdrRow
+                sTRACSHdrRow.ProjectNum = CStr(p_oTable.Rows(rowCount).Item(ProjectNumText))
+                sTRACSHdrRow.TireNum = CShort(p_oTable.Rows(rowCount).Item(TireNumText))
+                sTRACSHdrRow.TestSpec = CStr(p_oTable.Rows(rowCount).Item(TestSpecText))
+                sTRACSHdrRow.TestSKU = CStr(p_oTable.Rows(rowCount).Item(TestSKUText))
+                sTRACSHdrRow.CompletionDate = CStr(ConvertToDate(CStr(p_oTable.Rows(rowCount).Item(CompletionDateText))))
+                sTRACSHdrRow.DOTSerialNumber = CStr(p_oTable.Rows(rowCount).Item(DOTSerialNumberText))
+                sTRACSHdrRow.SerialDate = CStr(p_oTable.Rows(rowCount).Item(TextSerialDate))
+                sTRACSHdrRow.LowestUnseatValue = ConvertToInt(CStr(p_oTable.Rows(rowCount).Item(LowestUnseatValueText)))
+                sTRACSHdrRow.PassYN = CStr(p_oTable.Rows(rowCount).Item(PassYNText))
+                sTRACSHdrRow.MinBeadUnseat = ConvertToInt(CStr(p_oTable.Rows(rowCount).Item(MinBeadUnseatText)))
+                sTRACSHdrRow.Operation = CStr(p_oTable.Rows(rowCount).Item(OperationDescriptionText))
+                sTRACSHdrRow.MFGWWYY = CStr(p_oTable.Rows(rowCount).Item(SERIALDATEText))
+                sTRACSHdrRow.GTSPEC = CStr(p_oTable.Rows(rowCount).Item(GTSpecText))
+                p_stTRACS.BeadUnseatHdr.AddBeadUnseatHdrRow(sTRACSHdrRow)
+            Next
+        End If
+
+        '   Add Bead Detail to Result Set
+        If p_oTable.TableName = BeadUnseatDtlText Then
+            ConvertNulls(p_oTable)
+            For rowCount = 0 To CShort(p_oTable.Rows.Count - 1)
+                Dim sTRACSDtlRow As ICS.Datasets.TRACStoICSDataset.BeadUnseatDtlRow = p_stTRACS.BeadUnseatDtl.NewBeadUnseatDtlRow
+                sTRACSDtlRow.ITERATION = ConvertToShort(CStr(p_oTable.Rows(rowCount).Item(ITERATIONText)))
+                sTRACSDtlRow.UnseatForce = CInt(ConvertToSingle(CStr(p_oTable.Rows(rowCount).Item(UnseatForceText)))) 'changed to ConvertToSingle instead of ConvertToInt -value is being passed from SAP with decimal places.
+                p_stTRACS.BeadUnseatDtl.AddBeadUnseatDtlRow(sTRACSDtlRow)
+            Next
+        End If
+    End Sub
+
+    '*********************************************************************
+    '*  This routine is used to insure that no nulls are included in the
+    '*  data set.  It replaces all nulls in a table with empty strings.
+    '*********************************************************************
+    ''' <summary>
+    '''  Method is used to replaces all nulls in a table with empty strings.
+    ''' </summary>
+    ''' <param name="p_oTable">DataTable Object</param>
+    ''' <exception cref="Exception">
+    ''' Throws the exception if any error occurs.
+    ''' </exception>
+    ''' <remarks>
+    ''' <list type="table">
+    ''' <listheader>
+    ''' <term>Author</term>
+    ''' <description>Description</description>
+    ''' </listheader>
+    ''' <item>
+    ''' <term>N/A</term>
+    ''' <description>
+    ''' <para>N/A</para>
+    ''' <para>Original Code.</para>
+    ''' </description>
+    ''' </item>
+    ''' <item>
+    ''' <term>Srinivas S</term>
+    ''' <description>
+    ''' <para>11/28/2019</para>
+    ''' <para>Implemented Coding Standards</para>
+    ''' </description>
+    ''' </item> 
+    ''' </list>
+    ''' </remarks>
+    Private Sub ConvertNulls(ByRef p_oTable As System.Data.DataTable)
+        Dim nRowIndex As Integer
+        Dim nColIndex As Integer
+        Try
+            For nRowIndex = 0 To p_oTable.Rows.Count - 1
+                For nColIndex = 0 To p_oTable.Columns.Count - 1
+                    If (p_oTable.Rows(nRowIndex).Item(nColIndex) Is System.DBNull.Value) Then
+                        p_oTable.Rows(nRowIndex).Item(nColIndex) = ""
+                    End If
+                Next
+            Next
+        Catch
+            Throw
+        End Try
+    End Sub
+
+    ''' <summary>
+    '''  Converts string value to Short
+    ''' </summary>
+    ''' <param name="p_value">String Value</param>
+    ''' <returns>Returns converted value</returns>
+    ''' <exception cref="Exception">
+    ''' Throws the exception if any error occurs.
+    ''' </exception>
+    ''' <remarks>
+    ''' <list type="table">
+    ''' <listheader>
+    ''' <term>Author</term>
+    ''' <description>Description</description>
+    ''' </listheader>
+    ''' <item>
+    ''' <term>N/A</term>
+    ''' <description>
+    ''' <para>N/A</para>
+    ''' <para>Original Code.</para>
+    ''' </description>
+    ''' </item>
+    ''' <item>
+    ''' <term>Srinivas S</term>
+    ''' <description>
+    ''' <para>11/28/2019</para>
+    ''' <para>Implemented Coding Standards</para>
+    ''' </description>
+    ''' </item> 
+    ''' </list>
+    ''' </remarks>
+    Private Function ConvertToShort(ByVal p_value As String) As Short
+        Dim convertedValue As Short
+
+        Try
+            Short.TryParse(p_value, convertedValue)
+            Return convertedValue
+        Catch
+            Throw
+        End Try
+    End Function
+
+    ''' <summary>
+    '''  Converts string value to Int
+    ''' </summary>
+    ''' <param name="p_value">String Value</param>
+    ''' <returns>Returns converted integer value</returns>
+    ''' <exception cref="Exception">
+    ''' Throws the exception if any error occurs.
+    ''' </exception>
+    ''' <remarks>
+    ''' <list type="table">
+    ''' <listheader>
+    ''' <term>Author</term>
+    ''' <description>Description</description>
+    ''' </listheader>
+    ''' <item>
+    ''' <term>N/A</term>
+    ''' <description>
+    ''' <para>N/A</para>
+    ''' <para>Original Code.</para>
+    ''' </description>
+    ''' </item>
+    ''' <item>
+    ''' <term>Srinivas S</term>
+    ''' <description>
+    ''' <para>11/28/2019</para>
+    ''' <para>Implemented Coding Standards</para>
+    ''' </description>
+    ''' </item> 
+    ''' </list>
+    ''' </remarks>
+    Private Function ConvertToInt(ByVal p_value As String) As Integer
+        Dim convertedValue As Integer
+        Try
+            Integer.TryParse(p_value, convertedValue)
+            Return convertedValue
+        Catch
+            Throw
+        End Try
+    End Function
+
+    ''' <summary>
+    '''  Converts string value to Long
+    ''' </summary>
+    ''' <param name="p_value">String Value</param>
+    ''' <returns>Returns converted long value</returns>
+    ''' <exception cref="Exception">
+    ''' Throws the exception if any error occurs.
+    ''' </exception>
+    ''' <remarks>
+    ''' <list type="table">
+    ''' <listheader>
+    ''' <term>Author</term>
+    ''' <description>Description</description>
+    ''' </listheader>
+    ''' <item>
+    ''' <term>N/A</term>
+    ''' <description>
+    ''' <para>N/A</para>
+    ''' <para>Original Code.</para>
+    ''' </description>
+    ''' </item>
+    ''' <item>
+    ''' <term>Srinivas S</term>
+    ''' <description>
+    ''' <para>11/28/2019</para>
+    ''' <para>Implemented Coding Standards</para>
+    ''' </description>
+    ''' </item> 
+    ''' </list>
+    ''' </remarks>
+    Private Function ConvertToLong(ByVal p_value As String) As Long
+        Dim convertedValue As Long
+        Try
+            Long.TryParse(p_value, convertedValue)
+            Return convertedValue
+        Catch
+            Throw
+        End Try
+    End Function
+
+    ''' <summary>
+    '''  Converts string value to Single.
+    ''' </summary>
+    ''' <param name="p_value">String Value</param>
+    ''' <returns>Returns converted single value</returns>
+    ''' <exception cref="Exception">
+    ''' Throws the exception if any error occurs.
+    ''' </exception>
+    ''' <remarks>
+    ''' <list type="table">
+    ''' <listheader>
+    ''' <term>Author</term>
+    ''' <description>Description</description>
+    ''' </listheader>
+    ''' <item>
+    ''' <term>N/A</term>
+    ''' <description>
+    ''' <para>N/A</para>
+    ''' <para>Original Code.</para>
+    ''' </description>
+    ''' </item>
+    ''' <item>
+    ''' <term>Srinivas S</term>
+    ''' <description>
+    ''' <para>11/28/2019</para>
+    ''' <para>Implemented Coding Standards</para>
+    ''' </description>
+    ''' </item> 
+    ''' </list>
+    ''' </remarks>
+    Private Function ConvertToSingle(ByVal p_value As String) As Single
+        Dim convertedValue As Single
+        Try
+            Single.TryParse(p_value, convertedValue)
+            Return convertedValue
+        Catch
+            Throw
+        End Try
+    End Function
+
+    ''' <summary>
+    '''  Converts string value to Date.
+    ''' </summary>
+    ''' <param name="p_value">String Value</param>
+    ''' <returns>Returns converted date value</returns>
+    ''' <exception cref="Exception">
+    ''' Throws the exception if any error occurs.
+    ''' </exception>
+    ''' <remarks>
+    ''' <list type="table">
+    ''' <listheader>
+    ''' <term>Author</term>
+    ''' <description>Description</description>
+    ''' </listheader>
+    ''' <item>
+    ''' <term>N/A</term>
+    ''' <description>
+    ''' <para>N/A</para>
+    ''' <para>Original Code.</para>
+    ''' </description>
+    ''' </item>
+    ''' <item>
+    ''' <term>Srinivas S</term>
+    ''' <description>
+    ''' <para>11/28/2019</para>
+    ''' <para>Implemented Coding Standards</para>
+    ''' </description>
+    ''' </item> 
+    ''' </list>
+    ''' </remarks>
+    Private Function ConvertToDate(ByVal p_value As String) As Date
+        Dim convertedValue As Date
+        Const YYMMDDText As String = "yyyyMMdd"
+        Const MMDDYYText As String = "MM/dd/yyyy"
+        Const YYMMDDHHText As String = "yyyyMMddHHmmss"
+        Try
+            If (Not String.IsNullOrEmpty(p_value)) Then
+
+                Select Case p_value.Trim().Length
+                    Case 8
+                        convertedValue = CDate(Format(DateTime.ParseExact(p_value, YYMMDDText, System.Globalization.CultureInfo.InvariantCulture), MMDDYYText))
+                    Case 14
+                        convertedValue = CDate(Format(DateTime.ParseExact(p_value, YYMMDDHHText, System.Globalization.CultureInfo.InvariantCulture), MMDDYYText))
+                End Select
+            End If
+        Catch
+            Throw
+        End Try
+
+        Return convertedValue
+    End Function
+
+    ''' <summary>
+    '''  Splits into 2 separate datasets for Sap And Tracs
+    ''' </summary>
+    ''' <param name="p_oSet">ClientRequest Object</param>
+    ''' <param name="p_oSap">DataSet Object</param>
+    ''' <exception cref="Exception">
+    ''' Throws the exception if any error occurs.
+    ''' </exception>
+    ''' <remarks>
+    ''' <list type="table">
+    ''' <listheader>
+    ''' <term>Author</term>
+    ''' <description>Description</description>
+    ''' </listheader>
+    ''' <item>
+    ''' <term>N/A</term>
+    ''' <description>
+    ''' <para>N/A</para>
+    ''' <para>Original Code.</para>
+    ''' </description>
+    ''' </item>
+    ''' <item>
+    ''' <term>Srinivas S</term>
+    ''' <description>
+    ''' <para>11/28/2019</para>
+    ''' <para>Implemented Coding Standards</para>
+    ''' </description>
+    ''' </item> 
+    ''' </list>
+    ''' </remarks>
+    Private Sub SplitSapAndTracsDataset(ByRef p_oSet As ICS.Datasets.ClientRequest, ByRef p_oSap As DataSet)
+
+        Dim index As Integer = 0
+        Dim dtSap As New DataTable
+        Dim deleteSapItems As New Stack
+        Const LotNumberText As String = "LotNumber"
+        Const OperationText As String = "Operation"
+        Const TireNumberText As String = "TireNumber"
+
+        dtSap.Columns.Add(New DataColumn(LotNumberText))
+        dtSap.Columns.Add(New DataColumn(OperationText))
+        dtSap.Columns.Add(New DataColumn(OperationDescriptionText))
+        dtSap.Columns.Add(New DataColumn(TireNumberText))
+
+        If ((Not p_oSet Is Nothing) AndAlso (p_oSet.Tables.Count > 0)) Then
+            For index = 0 To p_oSet.Tables(0).Rows.Count - 1
+
+                If (p_oSet.Tables(0).Rows(index).Item(ProjectNumText).ToString().Length = 12 And Not p_oSet.Tables(0).Rows(index).Item(OperationText) Is DBNull.Value) Then
+                    Dim drSapNewRow As DataRow = dtSap.NewRow()
+                    drSapNewRow.Item(LotNumberText) = p_oSet.Tables(0).Rows(index).Item(ProjectNumText)
+                    drSapNewRow.Item(TireNumberText) = p_oSet.Tables(0).Rows(index).Item(TireNumText)
+                    drSapNewRow.Item(OperationText) = p_oSet.Tables(0).Rows(index).Item(OperationText)
+                    drSapNewRow.Item(OperationDescriptionText) = p_oSet.Tables(0).Rows(index).Item(TestSpecText)
+                    dtSap.Rows.Add(drSapNewRow)
+                    'Add Sap rowindex
+                    deleteSapItems.Push(index)
+                End If
+            Next
+            'Delete Sap rowindexes from the dataset
+            While deleteSapItems.Count > 0
+                p_oSet.Tables(0).Rows.RemoveAt(CInt(deleteSapItems.Pop()))
+            End While
+            p_oSet.AcceptChanges()
+            p_oSap.Tables.Add(dtSap)
+        End If
+    End Sub
+
+#End Region
+
+    ''' <summary>
+    '''  Finalize the resources
+    ''' </summary>
+    ''' <remarks>
+    ''' <list type="table">
+    ''' <listheader>
+    ''' <term>Author</term>
+    ''' <description>Description</description>
+    ''' </listheader>
+    ''' <item>
+    ''' <term>N/A</term>
+    ''' <description>
+    ''' <para>N/A</para>
+    ''' <para>Original Code.</para>
+    ''' </description>
+    ''' </item>
+    ''' <item>
+    ''' <term>Srinivas S</term>
+    ''' <description>
+    ''' <para>11/28/2019</para>
+    ''' <para>Implemented Coding Standards</para>
+    ''' </description>
+    ''' </item> 
+    ''' </list>
+    ''' </remarks>
+    Protected Overrides Sub Finalize()
+        MyBase.Finalize()
+    End Sub
+End Class

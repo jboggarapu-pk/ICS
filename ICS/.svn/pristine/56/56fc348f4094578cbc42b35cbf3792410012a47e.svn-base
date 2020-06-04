@@ -1,0 +1,95 @@
+<%@ Control Language="vb" AutoEventWireup="false" Codebehind="DupCorrectCertificationUC.ascx.vb"
+    Inherits="CooperTire.ICS.Web.DupCorrectCertificationUC" %>
+<%@ Register Assembly="Microsoft.Practices.EnterpriseLibrary.Validation.Integration.AspNet"
+    Namespace="Microsoft.Practices.EnterpriseLibrary.Validation.Integration.AspNet"
+    TagPrefix="validation" %>
+<%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="ajaxToolkit" %>
+<asp:Panel ID="pnlDupCorrectCertification" runat="server" CssClass="UCActionPanel" meta:resourcekey="pnlDupCorrectCertificationResource1">
+    <asp:Label ID="lblFormTitle" runat="server" meta:resourcekey="lblFormTitleResource1"></asp:Label><br />
+    <asp:Label ID="lblSuccessText" runat="server" SkinID="SuccessText" Text="&nbsp;" meta:resourcekey="lblSuccessTextResource1"></asp:Label><br />
+    <asp:Label ID="lblErrorText" runat="server" SkinID="ErrorText" meta:resourcekey="lblErrorTextResource1"></asp:Label>
+    <table border="0" width="70%">
+        <tr>
+            <td colspan="3">
+                <table border="0" width="70%">
+                    <tr>
+                        <td>
+                            <asp:Label ID="lblMatlNumber" runat="server" Text="Material" meta:resourcekey="lblMatlNumberResource1" /></td>
+                        <td>
+                            <asp:Label ID="lblSpeedRating" runat="server" Text="Speed Rating" meta:resourcekey="lblSpeedRatingResource1" /></td>
+                        <td>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <asp:TextBox ID="txtMatlNumber" runat="server" MaxLength="18"
+                                Width="150px" meta:resourcekey="txtMatlNumberResource1" /></td>
+                        <td>
+                            <asp:TextBox ID="txtSpeedRating" runat="server" MaxLength="10"
+                                Width="100px" meta:resourcekey="txtSpeedRatingResource1" /></td>
+                        <td>
+                            <asp:Button ID="btnView" runat="server" Text="View" OnClick="Click_btnView" Width="60px" meta:resourcekey="btnViewResource1" /></td>
+                    </tr>
+                    <tr>
+                        <td colspan="3" style="height: 20px">
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="3" align="center">
+                <asp:GridView ID="gvDuplicateCertificates" runat="server" SkinID="Professional" AutoGenerateColumns="False"
+                    Font-Size="X-Small" AllowPaging="True" EnableModelValidation="True" meta:resourcekey="gvDuplicateCertificatesResource1">
+                    <Columns>
+                        <asp:BoundField DataField="ID" HeaderText="ID" meta:resourcekey="BoundFieldResource1">
+                            <ItemStyle HorizontalAlign="Left" />
+                        </asp:BoundField>
+                        <asp:BoundField DataField="MATL_NUM" HeaderText="MATL_NUM" meta:resourcekey="BoundFieldResource2">
+                            <ItemStyle HorizontalAlign="Left" />
+                        </asp:BoundField>
+                        <asp:BoundField DataField="SPEEDRATING" HeaderText="SPEEDRATING" meta:resourcekey="BoundFieldResource3">
+                            <ItemStyle HorizontalAlign="Left" />
+                        </asp:BoundField>
+                        <asp:BoundField DataField="CERTIFICATIONTYPENAME" HeaderText="TYPE" meta:resourcekey="BoundFieldResource4">
+                            <ItemStyle HorizontalAlign="Left" />
+                        </asp:BoundField>
+                        <asp:BoundField DataField="CERTIFICATENUMBER" HeaderText="CERTIFICATENUMBER" meta:resourcekey="BoundFieldResource5">
+                            <ItemStyle HorizontalAlign="Left" />
+                        </asp:BoundField>
+                        <asp:TemplateField meta:resourcekey="TemplateFieldResource1">
+                            <ItemTemplate>
+                                <asp:Button ID="btnDelete" runat="server" OnClick="btnDelete_Click" Width="60px" Text="Delete" meta:resourcekey="btnDeleteResource1" />
+                            </ItemTemplate>
+                        </asp:TemplateField>
+                    </Columns>
+                    <PagerStyle HorizontalAlign="Left" />
+                </asp:GridView>
+            </td>
+        </tr>
+    </table>
+    <ajaxToolkit:ModalPopupExtender ID="CancelAlertPopUp" runat="server" PopupControlID="pnlCancelAlert"
+        TargetControlID="hidCancel" BackgroundCssClass="modalBackground" DynamicServicePath="" Enabled="True" />
+    <asp:HiddenField ID="hidCancel" runat="server" />
+    <asp:Panel ID="pnlCancelAlert" runat="server" CssClass="modalPopup" Style="display: none"
+        Width="300px" meta:resourcekey="pnlCancelAlertResource1">
+        <table>
+            <tr>
+                <td colspan="2">
+                    <label>
+                        Are you sure you permanenty want to<br />
+                        delete this duplicate material record and<br />
+                        remove it from all certificates ?</label>
+                </td>
+            </tr>
+            <tr>
+                <td align="center">
+                    <asp:Button ID="Button_OK" runat="server" Text="OK" OnClick="Click_Confirm" meta:resourcekey="Button_OKResource1" />
+                </td>
+                <td align="center">
+                    <asp:Button ID="Button_Cancel" runat="server" Text="Cancel" OnClick="Click_Cancel" meta:resourcekey="Button_CancelResource1" />
+                </td>
+            </tr>
+        </table>
+    </asp:Panel>
+</asp:Panel>

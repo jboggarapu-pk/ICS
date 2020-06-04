@@ -1,0 +1,83 @@
+<%@ Control Language="vb" AutoEventWireup="false" Codebehind="AttachCertificationUC.ascx.vb"
+    Inherits="CooperTire.ICS.Web.AttachCertificationUC" %>
+<%@ Register Assembly="Microsoft.Practices.EnterpriseLibrary.Validation.Integration.AspNet"
+    Namespace="Microsoft.Practices.EnterpriseLibrary.Validation.Integration.AspNet"
+    TagPrefix="validation" %>
+<%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="ajaxToolkit" %>
+<asp:Panel ID="pnlArchiveCertification" runat="server" CssClass="UCActionPanel" meta:resourcekey="pnlArchiveCertificationResource1">
+    <asp:Label ID="lblFormTitle" runat="server" meta:resourcekey="lblFormTitleResource1"></asp:Label><br />
+    <asp:Label ID="lblSuccessText" runat="server" SkinID="SuccessText" Text="&nbsp;" meta:resourcekey="lblSuccessTextResource1"></asp:Label>
+    <asp:Label ID="lblErrorText" runat="server" SkinID="ErrorText" meta:resourcekey="lblErrorTextResource1"></asp:Label>
+    <table border="0" width="70%">
+        <tr>
+            <td colspan="3">
+                <table border="0" width="70%">
+                    <tr>
+                        <td align="right">
+                            <asp:Label ID="lblSkuId" runat="server" Text="SKU ID. :" Width="150px" meta:resourcekey="lblSkuIdResource1"></asp:Label></td>
+                        <td>
+                            <asp:TextBox ID="txtSkuId" runat="server" MaxLength="20" Width="150px" meta:resourcekey="txtSkuIdResource1"></asp:TextBox></td>
+                        <td>
+                            <asp:Label ID="lblErrSkuId" runat="server" Text="The SKU ID is not valid." Visible="False"
+                                SkinID="ErrorText" meta:resourcekey="lblErrSkuIdResource1"></asp:Label></td>
+                    </tr>
+                    <tr>
+                        <td align="right">
+                            <asp:Label ID="lblCertificateNo" runat="server" Text="CERTIFICATE No. :" Width="150px" meta:resourcekey="lblCertificateNoResource1"></asp:Label></td>
+                        <td>
+                            <asp:TextBox ID="TxtCertificateNo" runat="server" MaxLength="20"
+                                Width="150px" meta:resourcekey="TxtCertificateNoResource1"></asp:TextBox></td>
+                        <td>
+                            <asp:Label ID="lblErrCertificateNo" runat="server" Text="The Certificate Number is not valid."
+                                Visible="False" SkinID="ErrorText" Width="150px" meta:resourcekey="lblErrCertificateNoResource1"></asp:Label></td>
+                    </tr>
+                    <tr>
+                        <td align="right">
+                            <asp:Label ID="lblExtensionNo" runat="server" Text="Extension No. :" Width="150px" meta:resourcekey="lblExtensionNoResource1"></asp:Label></td>
+                        <td>
+                            <asp:TextBox ID="txtExtensionNo" runat="server" MaxLength="20"
+                                Width="150px" meta:resourcekey="txtExtensionNoResource1"></asp:TextBox></td>
+                        <td>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="right">
+                            <asp:Label ID="lblCertificationTypeId" runat="server" Text="Certification Type Id :" Width="150px" meta:resourcekey="lblCertificationTypeIdResource1"></asp:Label></td>
+                        <td>
+                            <asp:TextBox ID="txtCertificationTypeId" runat="server" MaxLength="20"
+                                Width="150px" meta:resourcekey="txtCertificationTypeIdResource1"></asp:TextBox></td>
+                        <td>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="1" style="height: 27px" align="center">
+                <asp:Button ID="btnAttachCertification" runat="server" Text="Attach" meta:resourcekey="btnAttachCertificationResource1" />
+            </td>
+        </tr>
+    </table>
+    <ajaxToolkit:ModalPopupExtender ID="ConfirmPopUp" runat="server" PopupControlID="pnlConfirm"
+        TargetControlID="lblFormTitle" BackgroundCssClass="modalBackground" DynamicServicePath="" Enabled="True" />
+    <asp:Panel ID="pnlConfirm" runat="server" CssClass="modalPopup" Style="display: none"
+        Width="300px" meta:resourcekey="pnlConfirmResource1">
+        <table>
+            <tr>
+                <td colspan="2">
+                    <label>
+                        Are you sure you want to Attach this certification?</label>
+                    <br />
+                </td>
+            </tr>
+            <tr>
+                <td align="center">
+                    <asp:Button ID="Button1" runat="server" Text="OK" OnClick="Click_Confirm" meta:resourcekey="Button1Resource1" />&nbsp;
+                </td>
+                <td align="center">
+                    <asp:Button ID="Button2" runat="server" Text="Cancel" OnClick="Click_Cancel" meta:resourcekey="Button2Resource1" />&nbsp;
+                </td>
+            </tr>
+        </table>
+    </asp:Panel>
+</asp:Panel>

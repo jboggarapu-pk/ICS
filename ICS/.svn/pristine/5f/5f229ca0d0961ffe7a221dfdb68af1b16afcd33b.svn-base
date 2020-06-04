@@ -1,0 +1,333 @@
+Imports CooperTire.ICS.Model
+Imports CooperTire.ICS.Common
+Imports CooperTire.ICS.DomainEntities
+
+''' <summary>
+''' Archive certification presenter
+''' </summary>
+''' <remarks>
+''' <list type="table">
+''' <listheader>
+''' <term>Author</term>
+''' <description>Description</description>
+''' </listheader>
+''' <item>
+''' <term>N/A</term>
+''' <description>
+''' <para>N/A</para>
+''' <para>Original Code.</para>
+''' </description>
+''' </item>
+''' <item>
+''' <term>Jhansi</term>
+''' <description>
+''' <para>15/10/2019</para>
+''' <para>Implemented Coding Standards.</para>
+''' </description>
+''' </item>
+''' </list>
+''' </remarks>
+Public Class ArchiveCertificationPresenter
+
+#Region "Members"
+    ''' <summary>
+    '''  Interface to the Archive certification user control view.
+    ''' </summary>
+    Private m_view As IArchiveCertificationView
+
+#End Region
+
+#Region "Constructors"
+    ''' <summary>
+    '''  Custom Constructor to initialize class members.
+    ''' </summary>
+    ''' <remarks>
+    ''' <list type="table">
+    ''' <listheader>
+    ''' <term>Author</term>
+    ''' <description>Description</description>
+    ''' </listheader>
+    ''' <item>
+    ''' <term>N/A</term>
+    ''' <description>
+    ''' <para>N/A</para>
+    ''' <para>Original Code.</para>
+    ''' </description>
+    ''' </item>
+    ''' <item>
+    ''' <term>Jhansi</term>
+    ''' <description>
+    ''' <para>15/10/2019</para>
+    ''' <para>Implemented Coding Standards.</para>
+    ''' </description>
+    ''' </item>
+    ''' </list>
+    ''' </remarks>
+    Public Sub New(ByVal p_view As IArchiveCertificationView)
+
+        Try
+            m_view = p_view
+            SubscribeToEvents()
+        Catch exp As Exception
+            EventLogger.Enter(exp)
+            Throw New Exception("Error creating " + Me.ToString())
+        End Try
+
+    End Sub
+
+#End Region
+
+#Region "Methods"
+
+    ''' <summary>
+    ''' Attach presenter to view’s events.
+    ''' </summary>
+    ''' <remarks>
+    ''' <list type="table">
+    ''' <listheader>
+    ''' <term>Author</term>
+    ''' <description>Description</description>
+    ''' </listheader>
+    ''' <item>
+    ''' <term>N/A</term>
+    ''' <description>
+    ''' <para>N/A</para>
+    ''' <para>Original Code.</para>
+    ''' </description>
+    ''' </item>
+    ''' <item>
+    ''' <term>Jhansi</term>
+    ''' <description>
+    ''' <para>15/10/2019</para>
+    ''' <para>Implemented Coding Standards.</para>
+    ''' </description>
+    ''' </item>
+    ''' </list>
+    ''' </remarks>
+    Private Sub SubscribeToEvents()
+        Try
+            AddHandler m_view.ReloadViewData, AddressOf OnReloadViewData
+            AddHandler m_view.Save, AddressOf OnSave
+            AddHandler m_view.LoadView, AddressOf OnLoadView
+        Catch
+            Throw
+        End Try
+    End Sub
+
+    ''' <summary>
+    ''' Load data from business process.
+    ''' </summary>
+    ''' <remarks>
+    ''' <list type="table">
+    ''' <listheader>
+    ''' <term>Author</term>
+    ''' <description>Description</description>
+    ''' </listheader>
+    ''' <item>
+    ''' <term>N/A</term>
+    ''' <description>
+    ''' <para>N/A</para>
+    ''' <para>Original Code.</para>
+    ''' </description>
+    ''' </item>
+    ''' <item>
+    ''' <term>Jhansi</term>
+    ''' <description>
+    ''' <para>15/10/2019</para>
+    ''' <para>Implemented Coding Standards.</para>
+    ''' </description>
+    ''' </item>
+    ''' </list>
+    ''' </remarks>
+    Private Sub LoadViewData()
+        Try
+            m_view.ArchiveCertificationTitle = "Archive Certificate"
+
+        Catch
+            Throw
+        End Try
+    End Sub
+
+    ''' <summary>
+    ''' Load data for the view.
+    ''' </summary>
+    ''' <param name="sender"></param>
+    ''' <param name="e"></param>
+    ''' <remarks>
+    ''' <list type="table">
+    ''' <listheader>
+    ''' <term>Author</term>
+    ''' <description>Description</description>
+    ''' </listheader>
+    ''' <item>
+    ''' <term>N/A</term>
+    ''' <description>
+    ''' <para>N/A</para>
+    ''' <para>Original Code.</para>
+    ''' </description>
+    ''' </item>
+    ''' <item>
+    ''' <term>Jhansi</term>
+    ''' <description>
+    ''' <para>15/10/2019</para>
+    ''' <para>Implemented Coding Standards.</para>
+    ''' </description>
+    ''' </item>
+    ''' </list>
+    ''' </remarks>
+    Private Sub OnLoadView(ByVal sender As Object, ByVal e As EventArgs)
+
+        Try
+            LoadViewData()
+        Catch exp As Exception
+            EventLogger.Enter(exp)
+            m_view.ErrorText = "Error loading form data."
+        End Try
+
+    End Sub
+
+    ''' <summary>
+    ''' Reoad data for the view - start anew.
+    ''' </summary>
+    ''' <remarks>
+    ''' <list type="table">
+    ''' <listheader>
+    ''' <term>Author</term>
+    ''' <description>Description</description>
+    ''' </listheader>
+    ''' <item>
+    ''' <term>N/A</term>
+    ''' <description>
+    ''' <para>N/A</para>
+    ''' <para>Original Code.</para>
+    ''' </description>
+    ''' </item>
+    ''' <item>
+    ''' <term>Jhansi</term>
+    ''' <description>
+    ''' <para>15/10/2019</para>
+    ''' <para>Implemented Coding Standards.</para>
+    ''' </description>
+    ''' </item>
+    ''' </list>
+    ''' </remarks>
+    Private Sub OnReloadViewData()
+        Try
+            ' Flush all properties:
+            m_view.CertificateNumber = String.Empty
+            m_view.ErrorText = String.Empty
+            m_view.SuccessText = String.Empty
+            m_view.CertNumErrMsgFlag = False
+        Catch
+            Throw
+        End Try
+    End Sub
+
+    ''' <summary>
+    ''' Archives the certificate.
+    ''' </summary>
+    ''' <remarks>
+    ''' <list type="table">
+    ''' <listheader>
+    ''' <term>Author</term>
+    ''' <description>Description</description>
+    ''' </listheader>
+    ''' <item>
+    ''' <term>N/A</term>
+    ''' <description>
+    ''' <para>N/A</para>
+    ''' <para>Original Code.</para>
+    ''' </description>
+    ''' </item>
+    ''' <item>
+    ''' <term>Jhansi</term>
+    ''' <description>
+    ''' <para>15/10/2019</para>
+    ''' <para>Implemented Coding Standards.</para>
+    ''' </description>
+    ''' </item>
+    ''' </list>
+    ''' </remarks>
+    Private Sub OnSave()
+
+        Dim blnSaveSuccess As Boolean
+        Dim objArchiveCertificationModel As New ArchiveCertificationModel
+
+        Try
+            If String.IsNullOrEmpty(m_view.CertificateNumber) Then
+                m_view.ErrorText = "Certificate Number can not be empty."
+                Return
+            End If
+
+            blnSaveSuccess = objArchiveCertificationModel.ArchiveCertification(m_view.CertificateNumber)
+
+            If blnSaveSuccess Then
+                m_view.SuccessText = "Saved."
+            Else
+                m_view.ErrorText = "Save Failed."
+            End If
+        Catch exc As Exception
+            EventLogger.Enter(exc)
+            m_view.ErrorText = "Error archiving certification."
+        End Try
+
+    End Sub
+
+    ''' <summary>
+    ''' Check certificate number exists.
+    ''' </summary>
+    ''' <remarks>
+    ''' <list type="table">
+    ''' <listheader>
+    ''' <term>Author</term>
+    ''' <description>Description</description>
+    ''' </listheader>
+    ''' <item>
+    ''' <term>N/A</term>
+    ''' <description>
+    ''' <para>N/A</para>
+    ''' <para>Original Code.</para>
+    ''' </description>
+    ''' </item>
+    ''' <item>
+    ''' <term>Jhansi</term>
+    ''' <description>
+    ''' <para>15/10/2019</para>
+    ''' <para>Implemented Coding Standards.</para>
+    ''' </description>
+    ''' </item>
+    ''' </list>
+    ''' </remarks>
+    Public Function CheckCertificateNumberExists() As String
+
+        Dim strErrorMessage = String.Empty
+
+        Try
+            Dim blnCertNumExists As Boolean = False
+            Dim objArchiveCertificationModel As New ArchiveCertificationModel
+
+            If String.IsNullOrEmpty(m_view.CertificateNumber.Trim) Then
+                strErrorMessage = "Certificate number cannot be null"
+                Return strErrorMessage
+            ElseIf m_view.CertificateNumber.Trim.Length < 4 Or m_view.CertificateNumber.Trim.Length > 20 Then
+                strErrorMessage = "Invalid certificate number length"
+                Return strErrorMessage
+            End If
+
+            blnCertNumExists = objArchiveCertificationModel.CheckCertificateNumberExists(m_view.CertificateNumber)
+            If Not blnCertNumExists Then
+                strErrorMessage = "Certificate number not found"
+                Return strErrorMessage
+            End If
+        Catch exc As Exception
+            EventLogger.Enter(exc)
+            strErrorMessage = "Error validating certificate number."
+            Return strErrorMessage
+        End Try
+
+        Return strErrorMessage
+    End Function
+
+#End Region
+
+End Class

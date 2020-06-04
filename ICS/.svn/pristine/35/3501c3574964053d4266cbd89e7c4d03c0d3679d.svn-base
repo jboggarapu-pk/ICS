@@ -1,0 +1,162 @@
+Imports CooperTire.ICS.Model
+Imports CooperTire.ICS.Common
+
+''' <summary>
+''' View Presenters common base 
+''' </summary>
+''' <remarks>
+''' <list type="table">
+''' <listheader>
+''' <term>Author</term>
+''' <description>Description</description>
+''' </listheader>
+''' <item>
+''' <term>N/A</term>
+''' <description>
+''' <para>N/A</para>
+''' <para>Original Code.</para>
+''' </description>
+''' </item>
+''' <item>
+''' <term>Jhansi</term>
+''' <description>
+''' <para>25/10/2019</para>
+''' <para>Implemented Coding Standards.</para>
+''' </description>
+''' </item>
+''' </list>
+''' </remarks>
+Public Class ViewPresenterBase
+
+#Region "Members"
+    ''' <summary>
+    ''' Interface common to all views.
+    ''' </summary>
+    ''' <remarks></remarks>
+    Private m_view As IView
+
+#End Region
+
+#Region "Constructors / Destructors"
+    ''' <summary>
+    ''' Interface common to all views.
+    ''' </summary>
+    ''' <remarks></remarks>
+    Public Sub New(ByVal p_view As IView)
+
+        Try
+            m_view = p_view
+            SubscribeToEvents()
+        Catch exp As Exception
+            EventLogger.Enter(exp)
+            Throw New Exception("Error creating " + Me.ToString())
+        End Try
+
+    End Sub
+
+#End Region
+
+#Region "Methods"
+
+    ''' <summary>
+    ''' Attach presenter to view’s events.
+    ''' </summary>
+    ''' <remarks>
+    ''' <list type="table">
+    ''' <listheader>
+    ''' <term>Author</term>
+    ''' <description>Description</description>
+    ''' </listheader>
+    ''' <item>
+    ''' <term>N/A</term>
+    ''' <description>
+    ''' <para>N/A</para>
+    ''' <para>Original Code.</para>
+    ''' </description>
+    ''' </item>
+    ''' <item>
+    ''' <term>Jhansi</term>
+    ''' <description>
+    ''' <para>25/10/2019</para>
+    ''' <para>Implemented Coding Standards.</para>
+    ''' </description>
+    ''' </item>
+    ''' </list>
+    ''' </remarks>
+    Private Sub SubscribeToEvents()
+
+        AddHandler m_view.InitView, AddressOf OnInitView
+
+    End Sub
+    ''' <summary>
+    ''' On Init view.
+    ''' </summary>
+    ''' <remarks>
+    ''' <list type="table">
+    ''' <listheader>
+    ''' <term>Author</term>
+    ''' <description>Description</description>
+    ''' </listheader>
+    ''' <item>
+    ''' <term>N/A</term>
+    ''' <description>
+    ''' <para>N/A</para>
+    ''' <para>Original Code.</para>
+    ''' </description>
+    ''' </item>
+    ''' <item>
+    ''' <term>Jhansi</term>
+    ''' <description>
+    ''' <para>25/10/2019</para>
+    ''' <para>Implemented Coding Standards.</para>
+    ''' </description>
+    ''' </item>
+    ''' </list>
+    ''' </remarks>
+    Protected Sub OnInitView()
+
+        AuthorizeUser()
+
+    End Sub
+
+    ''' <summary>
+    ''' Authorize User to proceed with the view and menu items
+    ''' </summary>
+    ''' <remarks>
+    ''' <list type="table">
+    ''' <listheader>
+    ''' <term>Author</term>
+    ''' <description>Description</description>
+    ''' </listheader>
+    ''' <item>
+    ''' <term>N/A</term>
+    ''' <description>
+    ''' <para>N/A</para>
+    ''' <para>Original Code.</para>
+    ''' </description>
+    ''' </item>
+    ''' <item>
+    ''' <term>Jhansi</term>
+    ''' <description>
+    ''' <para>25/10/2019</para>
+    ''' <para>Implemented Coding Standards.</para>
+    ''' </description>
+    ''' </item>
+    ''' </list>
+    ''' </remarks>
+    Private Sub AuthorizeUser()
+
+        Dim strViewTypeName As String = DirectCast(m_view, Object).GetType().BaseType.Name
+
+        'If Not SecurityModel.IsUserAuthorized(strViewTypeName) Then
+        m_view.ShowMainView()
+        Return
+        'End If
+
+        m_view.HideUserMenuItems(SecurityModel.GetUnauthorizedMenuItems())
+
+    End Sub
+
+#End Region
+
+End Class

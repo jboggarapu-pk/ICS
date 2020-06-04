@@ -1,0 +1,442 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="12.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{E76DA3FC-7F43-4FD1-B9BA-2C18FE117792}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>CooperTire.ICS.Datasets</RootNamespace>
+    <AssemblyName>ICS.Datasets</AssemblyName>
+    <MyType>Windows</MyType>
+    <SccProjectName>%24/Serena/DEV</SccProjectName>
+    <SccLocalPath>..\..</SccLocalPath>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccProvider>MSSCCI:Team Foundation Server MSSCCI Provider</SccProvider>
+    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>2.0</OldToolsVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DocumentationFile>ICS.Datasets.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022,42353,42354,42355</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DocumentationFile>ICS.Datasets.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022,42353,42354,42355</NoWarn>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.OracleClient" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Data" />
+    <Import Include="System.Diagnostics" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CCCSequentialDataSet.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CCCSequentialDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="CCCSequentialDataSet.vb">
+      <DependentUpon>CCCSequentialDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="CertificateReport.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CertificateReport.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="CCCProductDescriptionDataSet.Designer.vb">
+      <DependentUpon>CCCProductDescriptionDataSet.xsd</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="CCCProductDescriptionDataSet.vb">
+      <DependentUpon>CCCProductDescriptionDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="ClientRequest.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ClientRequest.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="EmarkCertificationTypeDataset.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>EmarkCertificationTypeDataset.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="EmarkECE117DataSet.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>EmarkECE117DataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="EmarkPassengerDataSet.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>EmarkPassengerDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="EmarkPassengerWithTR.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>EmarkPassengerWithTR.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="EmarkPassengerWithTR.vb">
+      <DependentUpon>EmarkPassengerWithTR.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="ExceptionReport_DataSet.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ExceptionReport_DataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="GSOCertificateDataSet.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>GSOCertificateDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="ICSDataSet.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ICSDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="ICSDataSet.vb">
+      <DependentUpon>ICSDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="ImarkCertificationDataSet.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ImarkCertificationDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="ImarkPassengerDataSet.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ImarkPassengerDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="ImarkSamplingAndTestDataSet.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ImarkSamplingAndTestDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="ImarkSamplingAndTestDataSet.vb">
+      <DependentUpon>ImarkSamplingAndTestDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="My Project\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="SKUtoICSDataset.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SKUtoICSDataset.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Traceability.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Traceability.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="TRACStoICSDataset.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TRACStoICSDataset.xsd</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="CCCSequentialDataSet.xsc">
+      <DependentUpon>CCCSequentialDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="CCCSequentialDataSet.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>CCCSequentialDataSet.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="CCCSequentialDataSet.xss">
+      <DependentUpon>CCCSequentialDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="CertificateReport.xsc">
+      <DependentUpon>CertificateReport.xsd</DependentUpon>
+    </None>
+    <None Include="CertificateReport.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>CertificateReport.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="CertificateReport.xss">
+      <DependentUpon>CertificateReport.xsd</DependentUpon>
+    </None>
+    <None Include="CCCProductDescriptionDataSet.xsc">
+      <DependentUpon>CCCProductDescriptionDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="CCCProductDescriptionDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>CCCProductDescriptionDataSet.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="CCCProductDescriptionDataSet.xss">
+      <DependentUpon>CCCProductDescriptionDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="CertificateReport1.xsc">
+      <DependentUpon>CertificateReport1.XSD</DependentUpon>
+    </None>
+    <None Include="CertificateReport1.xss">
+      <DependentUpon>CertificateReport1.XSD</DependentUpon>
+    </None>
+    <None Include="ClientRequest.xsc">
+      <DependentUpon>ClientRequest.xsd</DependentUpon>
+    </None>
+    <None Include="ClientRequest.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ClientRequest.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ClientRequest.xss">
+      <DependentUpon>ClientRequest.xsd</DependentUpon>
+    </None>
+    <None Include="EmarkAppDataset3.xsc">
+      <DependentUpon>EmarkAppDataset3.XSD</DependentUpon>
+    </None>
+    <None Include="EmarkAppDataset3.xss">
+      <DependentUpon>EmarkAppDataset3.XSD</DependentUpon>
+    </None>
+    <None Include="EmarkCertificationReport5.xsc">
+      <DependentUpon>EmarkCertificationReport5.XSD</DependentUpon>
+    </None>
+    <None Include="EmarkCertificationReport5.xss">
+      <DependentUpon>EmarkCertificationReport5.XSD</DependentUpon>
+    </None>
+    <None Include="EmarkCertificationTypeDataset.xsc">
+      <DependentUpon>EmarkCertificationTypeDataset.xsd</DependentUpon>
+    </None>
+    <None Include="EmarkCertificationTypeDataset.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>EmarkCertificationTypeDataset.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="EmarkCertificationTypeDataset.xss">
+      <DependentUpon>EmarkCertificationTypeDataset.xsd</DependentUpon>
+    </None>
+    <None Include="EmarkECE117DataSet.xsc">
+      <DependentUpon>EmarkECE117DataSet.xsd</DependentUpon>
+    </None>
+    <None Include="EmarkECE117DataSet.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>EmarkECE117DataSet.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="EmarkECE117DataSet.xss">
+      <DependentUpon>EmarkECE117DataSet.xsd</DependentUpon>
+    </None>
+    <None Include="EmarkPassengerDataSet.xsc">
+      <DependentUpon>EmarkPassengerDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="EmarkPassengerDataSet.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>EmarkPassengerDataSet.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="EmarkPassengerDataSet.xss">
+      <DependentUpon>EmarkPassengerDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="EmarkPassengerWithTR.xsc">
+      <DependentUpon>EmarkPassengerWithTR.xsd</DependentUpon>
+    </None>
+    <None Include="EmarkPassengerWithTR.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>EmarkPassengerWithTR.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="EmarkPassengerWithTR.xss">
+      <DependentUpon>EmarkPassengerWithTR.xsd</DependentUpon>
+    </None>
+    <None Include="EmarkSimilarCertificatesDataset3.xsc">
+      <DependentUpon>EmarkSimilarCertificatesDataset3.XSD</DependentUpon>
+    </None>
+    <None Include="EmarkSimilarCertificatesDataset3.xss">
+      <DependentUpon>EmarkSimilarCertificatesDataset3.XSD</DependentUpon>
+    </None>
+    <None Include="EmarkTestReportInfo9.xsc">
+      <DependentUpon>EmarkTestReportInfo9.XSD</DependentUpon>
+    </None>
+    <None Include="EmarkTestReportInfo9.xss">
+      <DependentUpon>EmarkTestReportInfo9.XSD</DependentUpon>
+    </None>
+    <None Include="ExceptionReport_DataSet.xsc">
+      <DependentUpon>ExceptionReport_DataSet.xsd</DependentUpon>
+    </None>
+    <None Include="ExceptionReport_DataSet.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ExceptionReport_DataSet.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="ExceptionReport_DataSet.xss">
+      <DependentUpon>ExceptionReport_DataSet.xsd</DependentUpon>
+    </None>
+    <None Include="ExceptionReport_DataSet1.xsc">
+      <DependentUpon>ExceptionReport_DataSet1.XSD</DependentUpon>
+    </None>
+    <None Include="ExceptionReport_DataSet1.XSD">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ExceptionReport_DataSet1.xss">
+      <DependentUpon>ExceptionReport_DataSet1.XSD</DependentUpon>
+    </None>
+    <None Include="GSOCertificateDataSet.xsc">
+      <DependentUpon>GSOCertificateDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="GSOCertificateDataSet.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>GSOCertificateDataSet.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="GSOCertificateDataSet.xss">
+      <DependentUpon>GSOCertificateDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="ICSDataSet.xsc">
+      <DependentUpon>ICSDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="ICSDataSet.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ICSDataSet.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="ICSDataSet.xss">
+      <DependentUpon>ICSDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="ImarkCertificationDataSet.xsc">
+      <DependentUpon>ImarkCertificationDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="ImarkCertificationDataSet.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ImarkCertificationDataSet.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="ImarkCertificationDataSet.xss">
+      <DependentUpon>ImarkCertificationDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="ImarkCertificationDataSet3.xsc">
+      <DependentUpon>ImarkCertificationDataSet3.XSD</DependentUpon>
+    </None>
+    <None Include="ImarkCertificationDataSet3.xss">
+      <DependentUpon>ImarkCertificationDataSet3.XSD</DependentUpon>
+    </None>
+    <None Include="ImarkPassengerDataSet.xsc">
+      <DependentUpon>ImarkPassengerDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="ImarkPassengerDataSet.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ImarkPassengerDataSet.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="ImarkPassengerDataSet.xss">
+      <DependentUpon>ImarkPassengerDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="ImarkSamplingAndTestDataSet.xsc">
+      <DependentUpon>ImarkSamplingAndTestDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="ImarkSamplingAndTestDataSet.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ImarkSamplingAndTestDataSet.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="ImarkSamplingAndTestDataSet.xss">
+      <DependentUpon>ImarkSamplingAndTestDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="NOMCertificationDataset7.xsc">
+      <DependentUpon>NOMCertificationDataset7.XSD</DependentUpon>
+    </None>
+    <None Include="NOMCertificationDataset7.xss">
+      <DependentUpon>NOMCertificationDataset7.XSD</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+    <None Include="SKUtoICSDataset.xsc">
+      <DependentUpon>SKUtoICSDataset.xsd</DependentUpon>
+    </None>
+    <None Include="SKUtoICSDataset.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>SKUtoICSDataset.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="SKUtoICSDataset.xss">
+      <DependentUpon>SKUtoICSDataset.xsd</DependentUpon>
+    </None>
+    <None Include="Traceability.xsc">
+      <DependentUpon>Traceability.xsd</DependentUpon>
+    </None>
+    <None Include="Traceability.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Traceability.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="Traceability.xss">
+      <DependentUpon>Traceability.xsd</DependentUpon>
+    </None>
+    <None Include="TRACStoICSDataset.xsc">
+      <DependentUpon>TRACStoICSDataset.xsd</DependentUpon>
+    </None>
+    <None Include="TRACStoICSDataset.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>TRACStoICSDataset.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="TRACStoICSDataset.xss">
+      <DependentUpon>TRACStoICSDataset.xsd</DependentUpon>
+    </None>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.VisualBasic.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

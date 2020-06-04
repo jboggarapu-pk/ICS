@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="ClientRequest" targetNamespace="http://tempuri.org/ClientRequest.xsd" xmlns:mstns="http://tempuri.org/ClientRequest.xsd" xmlns="http://tempuri.org/ClientRequest.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+        </Connections>
+        <Tables>
+        </Tables>
+        <Sources>
+        </Sources>
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="ClientRequest" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:Generator_UserDSName="ClientRequest" msprop:Generator_DataSetName="ClientRequest">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="TestRequest" msprop:Generator_UserTableName="TestRequest" msprop:Generator_RowDeletedName="TestRequestRowDeleted" msprop:Generator_RowChangedName="TestRequestRowChanged" msprop:Generator_RowClassName="TestRequestRow" msprop:Generator_RowChangingName="TestRequestRowChanging" msprop:Generator_RowEvArgName="TestRequestRowChangeEvent" msprop:Generator_RowEvHandlerName="TestRequestRowChangeEventHandler" msprop:Generator_TableClassName="TestRequestDataTable" msprop:Generator_TableVarName="tableTestRequest" msprop:Generator_RowDeletingName="TestRequestRowDeleting" msprop:Generator_TablePropName="TestRequest">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ProjectNum" msprop:Generator_UserColumnName="ProjectNum" msprop:Generator_ColumnPropNameInRow="ProjectNum" msprop:Generator_ColumnVarNameInTable="columnProjectNum" msprop:Generator_ColumnPropNameInTable="ProjectNumColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="12" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="TireNum" msprop:Generator_UserColumnName="TireNum" msprop:Generator_ColumnPropNameInRow="TireNum" msprop:Generator_ColumnVarNameInTable="columnTireNum" msprop:Generator_ColumnPropNameInTable="TireNumColumn" type="xs:short" minOccurs="0" />
+              <xs:element name="TestSpec" msprop:Generator_UserColumnName="TestSpec" msprop:Generator_ColumnPropNameInRow="TestSpec" msprop:Generator_ColumnVarNameInTable="columnTestSpec" msprop:Generator_ColumnPropNameInTable="TestSpecColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="7" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="TestSequence" msprop:Generator_UserColumnName="TestSequence" msprop:Generator_ColumnPropNameInRow="TestSequence" msprop:Generator_ColumnVarNameInTable="columnTestSequence" msprop:Generator_ColumnPropNameInTable="TestSequenceColumn" type="xs:short" minOccurs="0" />
+              <xs:element name="TestType" msprop:Generator_UserColumnName="TestType" msprop:Generator_ColumnPropNameInRow="TestType" msprop:Generator_ColumnVarNameInTable="columnTestType" msprop:Generator_ColumnPropNameInTable="TestTypeColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="4" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Operation" msprop:Generator_UserColumnName="Operation" msprop:Generator_ColumnPropNameInRow="Operation" msprop:Generator_ColumnVarNameInTable="columnOperation" msprop:Generator_ColumnPropNameInTable="OperationColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="4" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

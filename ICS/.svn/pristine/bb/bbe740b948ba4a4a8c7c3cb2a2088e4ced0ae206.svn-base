@@ -1,0 +1,126 @@
+<%@ Control Language="vb" AutoEventWireup="false" CodeBehind="QueryUC.ascx.vb" Inherits="CooperTire.ICS.Web.QueryUC" %>
+<%@ Register Assembly="Microsoft.Practices.EnterpriseLibrary.Validation.Integration.AspNet"
+    Namespace="Microsoft.Practices.EnterpriseLibrary.Validation.Integration.AspNet"
+    TagPrefix="validation" %>
+<%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="ajaxToolkit" %>
+<asp:Panel ID="pnlArchiveCertification" runat="server" CssClass="UCPanel" meta:resourcekey="pnlArchiveCertificationResource1">
+    <asp:Label ID="lblFormTitle" Text="Query Database" runat="server" meta:resourcekey="lblFormTitleResource1"></asp:Label><br />
+    <asp:Label ID="lblErrorText" runat="server" SkinID="ErrorText" meta:resourcekey="lblErrorTextResource1"></asp:Label>
+    <table>
+        <tr>
+            <td>
+                <asp:DropDownList ID="ddlFilterColumn1" runat="server" meta:resourcekey="ddlFilterColumn1Resource1"></asp:DropDownList>  
+            </td>
+            <td>
+                <asp:DropDownList ID="ddlFilter1" runat="server" meta:resourcekey="ddlFilter1Resource1"></asp:DropDownList>
+            </td>
+            <td>
+                <asp:TextBox ID="txtFilter1" runat="server" meta:resourcekey="txtFilter1Resource1"></asp:TextBox>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <asp:DropDownList ID="ddlFilterColumn2" runat="server" meta:resourcekey="ddlFilterColumn2Resource1"></asp:DropDownList>  
+            </td>
+            <td>
+                <asp:DropDownList ID="ddlFilter2" runat="server" meta:resourcekey="ddlFilter2Resource1"></asp:DropDownList>
+            </td>
+            <td>
+                <asp:TextBox ID="txtFilter2" runat="server" meta:resourcekey="txtFilter2Resource1"></asp:TextBox>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <asp:DropDownList ID="ddlFilterColumn3" runat="server" meta:resourcekey="ddlFilterColumn3Resource1"></asp:DropDownList>  
+            </td>
+            <td>
+                <asp:DropDownList ID="ddlFilter3" runat="server" meta:resourcekey="ddlFilter3Resource1"></asp:DropDownList>
+            </td>
+            <td>
+                <asp:TextBox ID="txtFilter3" runat="server" meta:resourcekey="txtFilter3Resource1"></asp:TextBox>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <asp:DropDownList ID="ddlFilterColumn4" runat="server" meta:resourcekey="ddlFilterColumn4Resource1"></asp:DropDownList>  
+            </td>
+            <td>
+                <asp:DropDownList ID="ddlFilter4" runat="server" meta:resourcekey="ddlFilter4Resource1"></asp:DropDownList>
+            </td>
+            <td>
+                <asp:TextBox ID="txtFilter4" runat="server" meta:resourcekey="txtFilter4Resource1"></asp:TextBox>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <asp:DropDownList ID="ddlFilterColumn5" runat="server" meta:resourcekey="ddlFilterColumn5Resource1"></asp:DropDownList>  
+            </td>
+            <td>
+                <asp:DropDownList ID="ddlFilter5" runat="server" meta:resourcekey="ddlFilter5Resource1"></asp:DropDownList>
+            </td>
+            <td>
+                <asp:TextBox ID="txtFilter5" runat="server" meta:resourcekey="txtFilter5Resource1"></asp:TextBox>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <asp:DropDownList ID="ddlFilterColumn6" runat="server" meta:resourcekey="ddlFilterColumn6Resource1"></asp:DropDownList>  
+            </td>
+            <td>
+                <asp:DropDownList ID="ddlFilter6" runat="server" meta:resourcekey="ddlFilter6Resource1"></asp:DropDownList>
+            </td>
+            <td>
+                <asp:TextBox ID="txtFilter6" runat="server" meta:resourcekey="txtFilter6Resource1"></asp:TextBox>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <asp:DropDownList ID="ddlFilterColumn7" runat="server" meta:resourcekey="ddlFilterColumn7Resource1"></asp:DropDownList>  
+            </td>
+            <td>
+                <asp:DropDownList ID="ddlFilter7" runat="server" meta:resourcekey="ddlFilter7Resource1"></asp:DropDownList>
+            </td>
+            <td>
+                <asp:TextBox ID="txtFilter7" runat="server" meta:resourcekey="txtFilter7Resource1"></asp:TextBox>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <asp:Button ID="btnFilter" runat="server" Text="Filter" meta:resourcekey="btnFilterResource1" />
+            </td>
+        </tr>
+    </table>
+    
+    <asp:GridView ID="gvQuery" CellPadding="5" AutoGenerateColumns="False" AllowPaging="True" AllowSorting="True" PageSize="20" runat="server" Font-Size="Small" Width="1100px" EnableModelValidation="True" meta:resourcekey="gvQueryResource1">
+        <Columns>
+            <asp:BoundField DataField="SKU" HeaderText="SKU"  ReadOnly="True"
+                 SortExpression="SKU" meta:resourcekey="BoundFieldResource1" >
+            <HeaderStyle BackColor="#E3EAEB" HorizontalAlign="Center" />
+            </asp:BoundField>
+            <asp:BoundField DataField="Brand" HeaderText="Brand" ReadOnly="True"
+                 SortExpression="Brand" meta:resourcekey="BoundFieldResource2">
+            <HeaderStyle BackColor="#E3EAEB" HorizontalAlign="Center" />
+            </asp:BoundField>
+            <asp:BoundField DataField="SizeStamp" HeaderText="Size" ReadOnly="True"
+                 SortExpression="SizeStamp" meta:resourcekey="BoundFieldResource3">
+            <HeaderStyle BackColor="#E3EAEB" />
+            </asp:BoundField>
+            <asp:BoundField DataField="Reg3054Number" HeaderText="Reg 30/54 Number" ReadOnly="True"
+                 SortExpression="Reg3054Number" meta:resourcekey="BoundFieldResource4">
+            <HeaderStyle BackColor="#E3EAEB" HorizontalAlign="Center" />
+            </asp:BoundField>
+            <asp:BoundField DataField="Reg3054Approval" HeaderText="Reg 30/54 Approval" ReadOnly="True"
+                 SortExpression="Reg3054Approval" meta:resourcekey="BoundFieldResource5">
+            <HeaderStyle BackColor="#E3EAEB" HorizontalAlign="Center" />
+            </asp:BoundField>
+            <asp:BoundField DataField="Reg117Number" HeaderText="Reg 117 Number" ReadOnly="True"
+                 SortExpression="Reg117Number" meta:resourcekey="BoundFieldResource6">
+            <HeaderStyle BackColor="#E3EAEB" HorizontalAlign="Center" />
+            </asp:BoundField>
+            <asp:BoundField DataField="Reg117Approval" HeaderText="Reg 117 Approval" ReadOnly="True"
+                 SortExpression="Reg117Approval" meta:resourcekey="BoundFieldResource7">
+            <HeaderStyle BackColor="#E3EAEB" HorizontalAlign="Center" />
+            </asp:BoundField>
+        </Columns>
+    </asp:GridView>
+</asp:Panel>

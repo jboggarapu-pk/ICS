@@ -1,0 +1,32 @@
+Imports CooperTire.ICS.Presenter
+Imports CooperTire.ICS.DomainEntities
+
+''' <summary>
+''' Base control for ICS Certification controls
+''' </summary>
+''' <remarks>
+''' <list type="table">
+''' <listheader>
+''' <term>Author</term>
+''' <description>Description</description>
+''' </listheader>
+''' <item>
+''' <term>N/A</term>
+''' <description>
+''' <para>N/A</para>
+''' <para>Original Code.</para>
+''' </description>
+''' </item>
+''' <item>
+''' <term>Jhansi</term>
+''' <description>
+''' <para>01/21/2020</para>
+''' <para>Implemented Coding Standards.</para>
+''' </description>
+''' </item>
+''' </list>
+''' </remarks>
+Public Class BaseCertificationControl
+    Inherits BaseUserControl
+
+End Class

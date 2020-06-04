@@ -1,0 +1,248 @@
+<%@ Control Language="vb" AutoEventWireup="false" Codebehind="FamilyMaintenanceUC.ascx.vb"
+    Inherits="CooperTire.ICS.Web.FamilyMaintenanceUC" %>
+<%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="ajaxToolkit" %>
+<asp:Panel ID="pnlIFamilyMaintenance" runat="server" CssClass="UCPanel" meta:resourcekey="pnlIFamilyMaintenanceResource1">
+    <asp:Label ID="lblFormTitle" runat="server" meta:resourcekey="lblFormTitleResource1"></asp:Label><br />
+    <asp:Label ID="lblSuccessText" runat="server" SkinID="SuccessText" Text="&nbsp;"
+        Font-Size="Smaller" meta:resourcekey="lblSuccessTextResource1"></asp:Label>
+    <asp:Label ID="lblImark" runat="server" Text="Certificate" meta:resourcekey="lblImarkResource1"></asp:Label>
+    <asp:DropDownList ID="ddImark" runat="server" AutoPostBack="True" meta:resourcekey="ddImarkResource1">
+    </asp:DropDownList><br />
+    <asp:Label ID="lblErrorText" runat="server" SkinID="ErrorText" meta:resourcekey="lblErrorTextResource1"></asp:Label>
+    <table style="border-style: solid; border-width: medium; border-color: #E3EAEB; height: auto;
+        width: 292px;">
+        <tr>
+            <td>
+                <div id="divFamilies" runat="server" style="width: 790px; height: 400px; overflow: scroll; 
+                    float: left;padding: 10px; ">
+                    <asp:GridView ID="gvFamilyMaintenance" runat="server" AutoGenerateColumns="False"
+                        BackColor="White" BorderColor="#839FAF" BorderStyle="None" BorderWidth="1px"
+                        CellPadding="4" ShowFooter="True"
+                        Font-Size="X-Small" DataKeyNames="Family_Id" OnRowCommand="Grid_RowCommand" SkinID="Professional" EnableModelValidation="True" meta:resourcekey="gvFamilyMaintenanceResource1">
+                        <AlternatingRowStyle BackColor="#CFDFE9" />
+                        <Columns>
+                            <asp:TemplateField HeaderText="EDIT" meta:resourcekey="TemplateFieldResource1">
+                                <ItemTemplate>
+                                    <asp:LinkButton ID="lbEdit" runat="server" CommandArgument='<%# Bind("FAMILY_ID") %>' CommandName="EditFamily" meta:resourcekey="lbEditResource1" Text="Edit"></asp:LinkButton>
+                                </ItemTemplate>
+                                <HeaderStyle HorizontalAlign="Left" Width="150px" />
+                                <ItemStyle HorizontalAlign="Left" Width="100px" />
+                            </asp:TemplateField>
+                            <asp:TemplateField HeaderText="DELETE" meta:resourcekey="TemplateFieldResource2">
+                                <ItemTemplate>
+                                    <asp:LinkButton ID="lbDelete" runat="server" CommandArgument='<%# Bind("FAMILY_ID") %>' CommandName="DeleteFamily" meta:resourcekey="lbDeleteResource1" Text="Delete"></asp:LinkButton>
+                                </ItemTemplate>
+                                <HeaderStyle HorizontalAlign="Left" Width="150px" />
+                                <ItemStyle HorizontalAlign="Left" Width="100px" />
+                            </asp:TemplateField>
+                            <asp:TemplateField HeaderText="Family ID" meta:resourcekey="TemplateFieldResource3">
+                                <ItemTemplate>
+                                    <asp:Label ID="lblFamilyId" runat="server" meta:resourcekey="lblFamilyIdResource1" Text='<%# Bind("FAMILY_ID") %>'></asp:Label>
+                                </ItemTemplate>
+                                <HeaderStyle HorizontalAlign="Left" Width="150px" />
+                                <ItemStyle HorizontalAlign="Left" Width="100px" />
+                            </asp:TemplateField>
+                            <asp:TemplateField HeaderText="Family Code" meta:resourcekey="TemplateFieldResource4">
+                                <ItemTemplate>
+                                    <asp:Label ID="lblFamilyCode" runat="server" meta:resourcekey="lblFamilyCodeResource1" Text='<%# Bind("FAMILY_CODE") %>'></asp:Label>
+                                </ItemTemplate>
+                                <HeaderStyle HorizontalAlign="Left" Width="150px" />
+                                <ItemStyle HorizontalAlign="Left" Width="100px" />
+                            </asp:TemplateField>
+                            <asp:TemplateField HeaderText="Mold Stamping" meta:resourcekey="TemplateFieldResource5">
+                                <ItemTemplate>
+                                    <asp:Label ID="lblFamilyDesc" runat="server" meta:resourcekey="lblFamilyDescResource1" Text='<%# Bind("FAMILY_DESC") %>'></asp:Label>
+                                </ItemTemplate>
+                                <HeaderStyle HorizontalAlign="Left" Width="150px" />
+                                <ItemStyle HorizontalAlign="Left" Width="100px" />
+                            </asp:TemplateField>
+                            <asp:TemplateField HeaderText="Application Cat" meta:resourcekey="TemplateFieldResource6">
+                                <ItemTemplate>
+                                    <asp:Label ID="lblApplicationCat" runat="server" meta:resourcekey="lblApplicationCatResource1" Text='<%# Bind("APPLICATION_CAT") %>'></asp:Label>
+                                </ItemTemplate>
+                                <HeaderStyle HorizontalAlign="Left" Width="150px" />
+                                <ItemStyle HorizontalAlign="Left" Width="100px" />
+                            </asp:TemplateField>
+                            <asp:TemplateField HeaderText="Structure Type" meta:resourcekey="TemplateFieldResource7">
+                                <ItemTemplate>
+                                    <asp:Label ID="lblConstructionType" runat="server" meta:resourcekey="lblConstructionTypeResource1" Text='<%# Bind("CONSTRUCTION_TYPE") %>'></asp:Label>
+                                </ItemTemplate>
+                                <HeaderStyle HorizontalAlign="Left" Width="150px" />
+                                <ItemStyle HorizontalAlign="Left" Width="100px" />
+                            </asp:TemplateField>
+                            <asp:TemplateField HeaderText="Use Category" meta:resourcekey="TemplateFieldResource8">
+                                <ItemTemplate>
+                                    <asp:Label ID="lblStructureType" runat="server" meta:resourcekey="lblStructureTypeResource1" Text='<%# Bind("STRUCTURE_TYPE") %>'></asp:Label>
+                                </ItemTemplate>
+                                <HeaderStyle HorizontalAlign="Left" Width="150px" />
+                                <ItemStyle HorizontalAlign="Left" Width="100px" />
+                            </asp:TemplateField>
+                            <asp:TemplateField HeaderText="Mounting Type" meta:resourcekey="TemplateFieldResource9">
+                                <ItemTemplate>
+                                    <asp:Label ID="lblMountingType" runat="server" meta:resourcekey="lblMountingTypeResource1" Text='<%# Bind("MOUNTING_TYPE") %>'></asp:Label>
+                                </ItemTemplate>
+                                <HeaderStyle HorizontalAlign="Left" Width="150px" />
+                                <ItemStyle HorizontalAlign="Left" Width="100px" />
+                            </asp:TemplateField>
+                            <asp:TemplateField HeaderText="Aspect Ratio Cat" meta:resourcekey="TemplateFieldResource10">
+                                <ItemTemplate>
+                                    <asp:Label ID="lblAspectRatioCat" runat="server" meta:resourcekey="lblAspectRatioCatResource1" Text='<%# Bind("ASPECT_RATIO_CAT") %>'></asp:Label>
+                                </ItemTemplate>
+                                <HeaderStyle HorizontalAlign="Left" Width="150px" />
+                                <ItemStyle HorizontalAlign="Left" Width="100px" />
+                            </asp:TemplateField>
+                            <asp:TemplateField HeaderText="Speed Rating Cat" meta:resourcekey="TemplateFieldResource11">
+                                <ItemTemplate>
+                                    <asp:Label ID="lblSpeedRatingCat" runat="server" meta:resourcekey="lblSpeedRatingCatResource1" Text='<%# Bind("SPEED_RATING_CAT") %>'></asp:Label>
+                                </ItemTemplate>
+                                <HeaderStyle HorizontalAlign="Left" Width="150px" />
+                                <ItemStyle HorizontalAlign="Left" Width="100px" />
+                            </asp:TemplateField>
+                            <asp:TemplateField HeaderText="Load Index Cat" meta:resourcekey="TemplateFieldResource12">
+                                <ItemTemplate>
+                                    <asp:Label ID="lblLoadIndexCat" runat="server" meta:resourcekey="lblLoadIndexCatResource1" Text='<%# Bind("LOAD_INDEX_CAT") %>'></asp:Label>
+                                </ItemTemplate>
+                                <HeaderStyle HorizontalAlign="Left" Width="150px" />
+                                <ItemStyle HorizontalAlign="Left" Width="100px" />
+                            </asp:TemplateField>
+                        </Columns>
+                        <HeaderStyle BackColor="#CFDFE9" Font-Bold="True" Font-Size="X-Small" ForeColor="Black" />               
+                    </asp:GridView>
+                    <ajaxToolkit:ModalPopupExtender ID="DeleteConfirmPopUp" runat="server" PopupControlID="pnlDeleteConfirm"
+                        TargetControlID="hidConfirm" BackgroundCssClass="modalBackground" DynamicServicePath="" Enabled="True" />
+                    <asp:HiddenField ID="hidConfirm" runat="server" />
+                    <asp:Panel ID="pnlDeleteConfirm" runat="server" CssClass="modalPopup" Style="display: none"
+                        Width="280px" meta:resourcekey="pnlDeleteConfirmResource1">
+                        <table>
+                            <tr>
+                                <td colspan="2">
+                                    <label>
+                                        This would delete Family. Would you like to continue?</label>
+                                    <br />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td align="center">
+                                    <asp:Button ID="btnDeleteConfirm" runat="server" Text="Confirm" OnClick="Click_DeleteConfirm" meta:resourcekey="btnDeleteConfirmResource1" />&nbsp;
+                                </td>
+                                <td align="center">
+                                    <asp:Button ID="btnDeleteCancel" runat="server" Text="Cancel" OnClick="Click_DeleteCancel" meta:resourcekey="btnDeleteCancelResource1" />
+                                </td>
+                            </tr>
+                        </table>
+                    </asp:Panel>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <div style="float: left; padding-top: 20px;">
+                    <asp:Button ID="btnAdd" Text="Add" runat="server" OnClick="Click_AddFamily" meta:resourcekey="btnAddResource1" />
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td>
+            
+            </td>
+        </tr>
+    </table>
+    <div id="divFamilyDetails" visible="False" runat="server" style="float: left; padding-top: 20px;
+        width: 820px;">
+        <table style="border-style: solid; border-width: medium; border-color: #E3EAEB; height: auto;
+            width: 820px;"  class="contentArea" >
+            <tr>
+                <td align="right"style="font-weight: bold; width: 180px;">
+                    <span style="display: inline-block; font-family: Verdana; color: darkslategray; font-size: x-small; font-weight: bold;">
+                    Family ID:</span></td>
+                <td style="width: 220px;">
+                    <asp:TextBox ID="txtftrFamilyId" runat="server" MaxLength="3" meta:resourcekey="txtftrFamilyIdResource1" />                    
+                    <asp:RequiredFieldValidator ID="rfvFamilyId"  ControlToValidate="txtftrFamilyId"
+                        ErrorMessage="Please enter family Id." ValidationGroup="vgFamily" Display="None" runat="server" meta:resourcekey="rfvFamilyIdResource1"/>
+                    <asp:RegularExpressionValidator ID="revFamilyId" ControlToValidate="txtftrFamilyId" ValidationGroup="vgFamily" 
+                        ErrorMessage="Only numbers allowed for family Id." ValidationExpression="\d+" Display="None"  runat="server" meta:resourcekey="revFamilyIdResource1"></asp:RegularExpressionValidator>
+                        </td>
+                <td style="width: 20px;">
+                </td>
+                <td align="right" style="font-weight: bold; width: 180px;">
+                    <span style="display: inline-block; font-family: Verdana; color: darkslategray; font-size: x-small; font-weight: bold;">Family Code:</span> </td>
+                <td style="width: 220px;">
+                    <asp:TextBox ID="txtftrFamilyCode"  runat="server" MaxLength="10" meta:resourcekey="txtftrFamilyCodeResource1" />                    
+                    <asp:RequiredFieldValidator ID="rfvFamilyCode" runat="server" ControlToValidate="txtftrFamilyCode"
+                        ErrorMessage="Please enter family code." ValidationGroup="vgFamily" Display="None" meta:resourcekey="rfvFamilyCodeResource1" />
+                </td>
+            </tr>
+            <tr>
+                <td align="right" style="font-weight: bold;">
+                    <span style="display: inline-block; font-family: Verdana; color: darkslategray; font-size: x-small; font-weight: bold;">Mold Stamping:</span> </td>
+                <td>                    
+                    <asp:TextBox ID="txtftrFamilyDesc" runat="server" MaxLength="50" meta:resourcekey="txtftrFamilyDescResource1" />                    
+                </td>
+                <td>
+                </td>
+                <td align="right" style="font-weight: bold;">
+                    <span style="display: inline-block; font-family: Verdana; color: darkslategray; font-size: x-small; font-weight: bold;">Application Category:</span> </td>
+                <td>
+                    <asp:TextBox ID="txtftrApplicationCat" runat="server" MaxLength="2" meta:resourcekey="txtftrApplicationCatResource1" />
+                </td>
+            </tr>
+            <tr>
+                <td align="right" style="font-weight: bold;">
+                   <span style="display: inline-block; font-family: Verdana; color: darkslategray; font-size: x-small; font-weight: bold;"> Structure Type:</span> </td>
+                <td>
+                    <asp:TextBox ID="txtftrConstructionType" runat="server" MaxLength="2" meta:resourcekey="txtftrConstructionTypeResource1" />
+                </td>
+                <td>
+                </td>
+                <td align="right" style="font-weight: bold;">
+                    <span style="display: inline-block; font-family: Verdana; color: darkslategray; font-size: x-small; font-weight: bold;">Use Category:</span> </td>
+                <td>
+                    <asp:TextBox ID="txtftrStructureType" runat="server" MaxLength="2" meta:resourcekey="txtftrStructureTypeResource1" />
+                </td>
+            </tr>
+            <tr>
+                <td align="right" style="font-weight: bold;">
+                   <span style="display: inline-block; font-family: Verdana; color: darkslategray; font-size: x-small; font-weight: bold;"> Mounting Type: </span> </td>
+                <td>
+                    <asp:TextBox ID="txtftrMountingType" runat="server" MaxLength="2" meta:resourcekey="txtftrMountingTypeResource1" />
+                </td>
+                <td>
+                </td>
+                <td align="right" style="font-weight: bold;">
+                    <span style="display: inline-block; font-family: Verdana; color: darkslategray; font-size: x-small; font-weight: bold;">Aspect Ratio Category:</span></td>
+                <td>
+                    <asp:TextBox ID="txtftrAspectRatioCat" runat="server" MaxLength="2" meta:resourcekey="txtftrAspectRatioCatResource1" />
+                </td>
+            </tr>
+            <tr>
+                <td align="right" style="font-weight: bold;">
+                    <span style="display: inline-block; font-family: Verdana; color: darkslategray; font-size: x-small; font-weight: bold;">Speed Rating Category:</span></td>
+                <td>
+                    <asp:TextBox ID="txtftrSpeedRatingCat" runat="server" MaxLength="2" meta:resourcekey="txtftrSpeedRatingCatResource1" />
+                </td>
+                <td>
+                </td>
+                <td align="right" style="font-weight: bold;">
+                    <span style="display: inline-block; font-family: Verdana; color: darkslategray; font-size: x-small; font-weight: bold;">Load Index Category:</span></td>
+                <td>
+                    <asp:TextBox ID="txtftrLoadIndexCat" runat="server" MaxLength="2" meta:resourcekey="txtftrLoadIndexCatResource1" />
+                </td>
+            </tr>            
+            <tr>                
+                <td colspan="6">
+                <center>
+                    <span style="display: inline-block; font-family: Verdana; color: darkslategray; font-size: x-small; font-weight: bold;"><asp:ValidationSummary ID="vsFamilyValidations"
+                        runat="server" ValidationGroup ="vgFamily" meta:resourcekey="vsFamilyValidationsResource1" /></span> </center>
+                </td>                
+            </tr>
+            <tr>
+                <td align="right" colspan="2">
+                    <asp:Button ID="btnSave" runat="server" Text="Save" ValidationGroup="vgFamily" OnClick="Click_SaveFamily" meta:resourcekey="btnSaveResource1" /></td>
+                <td align="center" colspan="2">
+                    <asp:Button ID="btnCancel" runat="server" Text="Cancel" OnClick="Click_CancelFamily" meta:resourcekey="btnCancelResource1" />
+                </td>
+            </tr>
+        </table>
+    </div>
+    
+</asp:Panel>

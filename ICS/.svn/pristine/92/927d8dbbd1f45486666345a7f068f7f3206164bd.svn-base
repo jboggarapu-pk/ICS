@@ -1,0 +1,349 @@
+<%@ Control Language="vb" AutoEventWireup="false" Codebehind="ImarkCertificationUC.ascx.vb"
+    Inherits="CooperTire.ICS.Web.ImarkCertificationUC" %>
+<%@ Register Src="TestResultsUC.ascx" TagName="TestResultsUC" TagPrefix="uc1" %>
+<%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="ajaxToolkit" %>
+<%@ Register Assembly="Microsoft.Practices.EnterpriseLibrary.Validation.Integration.AspNet"
+    Namespace="Microsoft.Practices.EnterpriseLibrary.Validation.Integration.AspNet"
+    TagPrefix="validation" %>
+<asp:Panel ID="pnlImark" runat="server" meta:resourcekey="pnlImarkResource1">
+    <asp:Panel ID="pnlImarkCertificate" runat="server" CssClass="UCPanel" meta:resourcekey="pnlImarkCertificateResource1">
+        <table>
+            <tr>
+                <td align="right">
+                    <asp:Label ID="lblFormTitle" runat="server" Text="IMARK" meta:resourcekey="lblFormTitleResource1"></asp:Label>
+                    <asp:Label ID="lblPopupTarget" runat="server" Width="0px" meta:resourcekey="lblPopupTargetResource1"></asp:Label>
+                </td>
+                <td>
+                </td>
+                <td>
+                    <asp:LinkButton ID="lbtnDefaultValues" runat="server" Width="350px" meta:resourcekey="lbtnDefaultValuesResource1">View and modify Certificate user-specified values</asp:LinkButton>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                </td>
+                <td colspan="2" align="left">
+                    <asp:Label ID="lblInfoText" runat="server" SkinID="SuccessText" Text="&nbsp;" meta:resourcekey="lblInfoTextResource1"></asp:Label>
+                    <asp:Label ID="lblErrorText" runat="server" SkinID="ErrorText" meta:resourcekey="lblErrorTextResource1"></asp:Label>
+                </td>
+                <td>
+                </td>
+            </tr>
+            <tr>
+                <td align="right">
+                    <asp:Label ID="lblCertificationNo" runat="server" Text="Certification No. :" meta:resourcekey="lblCertificationNoResource1"></asp:Label></td>
+                <td>
+                    <asp:TextBox ID="txtCertificationNo" runat="server" ReadOnly="True" Enabled="False" meta:resourcekey="txtCertificationNoResource1"></asp:TextBox></td>
+                <td align="left">
+                    <validation:PropertyProxyValidator ID="ppvCertificationNUmber" runat="server" ControlToValidate="txtCertificationNo"
+                        PropertyName="CertificateNumber" SetFocusOnError="True" SourceTypeName="CooperTire.ICS.DomainEntities.Certificate" DisplayMode="List" meta:resourcekey="ppvCertificationNUmberResource1"></validation:PropertyProxyValidator></td>
+            </tr>
+            <tr>
+                <td align="right">
+                    <asp:Label ID="lblExtension" runat="server" Text="Extension :" Visible="False" meta:resourcekey="lblExtensionResource1" ></asp:Label></td>
+                <td>
+                    <asp:TextBox ID="txtExtension" runat="server" Visible="False" Enabled="False" meta:resourcekey="txtExtensionResource1"></asp:TextBox></td>
+                <td colspan="3" align="left">
+                    <validation:PropertyProxyValidator ID="ppvExtension" runat="server" ControlToValidate="txtExtension"
+                        PropertyName="Extension_EN" RulesetName="Emark" SourceTypeName="CooperTire.ICS.DomainEntities.Certificate" DisplayMode="List" meta:resourcekey="ppvExtensionResource1"></validation:PropertyProxyValidator></td>
+            </tr>
+            <tr>
+                <td align="right">
+                    <asp:Label ID="lblCertDateSubmitted" runat="server" Text="Date Submitted :" meta:resourcekey="lblCertDateSubmittedResource1"></asp:Label></td>
+                <td>
+                    <asp:TextBox ID="txtCertDateSubmitted" runat="server" meta:resourcekey="txtCertDateSubmittedResource1"></asp:TextBox><br />
+                    <ajaxToolkit:CalendarExtender ID="CalExtCertdateSubmitted" runat="server" TargetControlID="txtCertDateSubmitted" Enabled="True">
+                    </ajaxToolkit:CalendarExtender>
+                </td>
+                <td colspan="3" align="left">
+                    <validation:PropertyProxyValidator ID="ppvCertDateSubmitted" runat="server" ControlToValidate="txtCertDateSubmitted"
+                        PropertyName="CertDateSubmitted" SetFocusOnError="True" SourceTypeName="CooperTire.ICS.DomainEntities.Certificate" DisplayMode="List" meta:resourcekey="ppvCertDateSubmittedResource1"></validation:PropertyProxyValidator></td>
+            </tr>
+            <tr>
+                <td align="right">
+                    <asp:Label ID="lblCertDateApproved" runat="server" Text="Date Approved :" meta:resourcekey="lblCertDateApprovedResource1"></asp:Label></td>
+                <td>
+                    <asp:TextBox ID="txtCertDateApproved" runat="server" meta:resourcekey="txtCertDateApprovedResource1"></asp:TextBox><br />
+                    <ajaxToolkit:CalendarExtender ID="calextCertDateApproved" runat="server" TargetControlID="txtCertDateApproved" Enabled="True">
+                    </ajaxToolkit:CalendarExtender>
+                </td>
+                <td colspan="3" align="left">
+                    <validation:PropertyProxyValidator ID="ppvCertDateApproved" runat="server" ControlToValidate="txtCertDateApproved"
+                        PropertyName="CertDateApproved_CEGI" SetFocusOnError="True" SourceTypeName="CooperTire.ICS.DomainEntities.Certificate" RulesetName="CCC" DisplayMode="List" meta:resourcekey="ppvCertDateApprovedResource1"></validation:PropertyProxyValidator></td>
+            </tr>
+            <tr>
+                <td align="right">
+                    <asp:Label ID="lblDateExpiry" runat="server" Text="Date of Expiration :" meta:resourcekey="lblDateExpiryResource1"></asp:Label></td>
+                <td>
+                    <asp:TextBox ID="txtDateExpiry" runat="server" meta:resourcekey="txtDateExpiryResource1"></asp:TextBox><br />
+                    <ajaxToolkit:CalendarExtender ID="calextDateExpiry" runat="server" TargetControlID="txtDateExpiry" Enabled="True">
+                    </ajaxToolkit:CalendarExtender>
+                </td>
+                <td align="left">
+                    <validation:PropertyProxyValidator ID="ppvImarkExpirydate" runat="server" ControlToValidate="txtDateExpiry"
+                        PropertyName="ExpiryDate_I" SetFocusOnError="True" SourceTypeName="CooperTire.ICS.DomainEntities.Certificate"
+                        RulesetName="Imark" DisplayMode="List" meta:resourcekey="ppvImarkExpirydateResource1"></validation:PropertyProxyValidator></td>
+            </tr>
+            <tr>
+                <td align="right">
+                    <asp:Label ID="lblRenewalRequired" runat="server" Text="Renewal Required" meta:resourcekey="lblRenewalRequiredResource1"></asp:Label></td>
+                <td>
+                    <asp:RadioButtonList ID="rbtnLstrenealRequired" runat="server" RepeatDirection="Horizontal" meta:resourcekey="rbtnLstrenealRequiredResource1">
+                        <asp:ListItem Selected="True" meta:resourcekey="ListItemResource1">Yes</asp:ListItem>
+                        <asp:ListItem meta:resourcekey="ListItemResource2">No</asp:ListItem>
+                    </asp:RadioButtonList></td>
+                <td align="left">
+                    <validation:PropertyProxyValidator ID="ppvRenewalRequired" runat="server" ControlToValidate="rbtnLstrenealRequired"
+                        PropertyName="RenewalRequired_CGIN" SetFocusOnError="True" SourceTypeName="CooperTire.ICS.DomainEntities.Certificate" DisplayMode="List" meta:resourcekey="ppvRenewalRequiredResource1"></validation:PropertyProxyValidator></td>
+            </tr>
+            <tr>
+                <td align="right">
+                    <asp:Label ID="lblActiveStatus" runat="server" Text="Active Status :" meta:resourcekey="lblActiveStatusResource1"></asp:Label></td>
+                <td>
+                    <asp:RadioButtonList ID="rbtnlstActiveStatus" runat="server" RepeatDirection="Horizontal" meta:resourcekey="rbtnlstActiveStatusResource1">
+                        <asp:ListItem Selected="True" meta:resourcekey="ListItemResource3">Yes</asp:ListItem>
+                        <asp:ListItem meta:resourcekey="ListItemResource4">No</asp:ListItem>
+                    </asp:RadioButtonList></td>
+                <td align="left">
+                    <validation:PropertyProxyValidator ID="ppvActiveStatus" runat="server" ControlToValidate="rbtnlstActiveStatus"
+                        PropertyName="ActiveStatus" SetFocusOnError="True" SourceTypeName="CooperTire.ICS.DomainEntities.Certificate" DisplayMode="List" meta:resourcekey="ppvActiveStatusResource1"></validation:PropertyProxyValidator></td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <hr />
+                </td>
+                <td>
+                    &nbsp;
+                </td>
+            </tr>
+            <tr>
+                <td align="right">
+                    <asp:Label ID="lblMaterialNo" runat="server" Text="Material:" meta:resourcekey="lblMaterialNoResource1"></asp:Label></td>
+                <td>
+                    <asp:TextBox ID="txtMaterialNo" runat="server" ReadOnly="True" Width="128px" meta:resourcekey="txtMaterialNoResource1"></asp:TextBox></td>
+                <td align="left">
+                    <validation:PropertyProxyValidator ID="ppvMaterialNo" runat="server" ControlToValidate="txtMaterialNo"
+                        PropertyName="MaterialNumber" SourceTypeName="CooperTire.ICS.DomainEntities.Certificate" DisplayMode="List" meta:resourcekey="ppvMaterialNoResource1"></validation:PropertyProxyValidator></td>
+            </tr>
+            <tr>
+                <td align="left" colspan="3">
+                    <asp:Label ID="lblProductData" runat="server" meta:resourcekey="lblProductDataResource1"></asp:Label>
+                </td>
+            </tr>
+            <tr>
+                <td align="right">
+                    <asp:Label ID="lblRemoveMatlNum" runat="server" Text="Remove Material:" meta:resourcekey="lblRemoveMatlNumResource1"></asp:Label>
+                </td>
+                <td>
+                    <asp:CheckBox ID="cbxRemoveMatlNum" runat="server" meta:resourcekey="cbxRemoveMatlNumResource1" />
+                </td>
+            </tr>
+            <tr>
+                <td align="right">
+                    <asp:Label ID="lblDiscDateTitle" runat="server" Text="Disc Date :" meta:resourcekey="lblDiscDateTitleResource1"></asp:Label>
+                </td>
+                <td>
+                    <asp:Label ID="lblDiscDate" runat="server" meta:resourcekey="lblDiscDateResource1"></asp:Label>
+                </td>                          
+            </tr>
+            <tr>
+                <td align="right">
+                    <asp:Label ID="lblAddInfo" runat="server" Text="Additional Information :" meta:resourcekey="lblAddInfoResource1"></asp:Label>
+                </td>
+                <td>
+                     <asp:TextBox ID="txtAddInfo" runat="server" meta:resourcekey="txtAddInfoResource1"></asp:TextBox><br />
+                </td>                          
+            </tr>
+            <tr>
+                <td align="right">
+                    <asp:Label ID="lblEmarkReference" runat="server" Text="Emark Reference:" meta:resourcekey="lblEmarkReferenceResource1"></asp:Label></td>
+                <td>
+                    <asp:TextBox ID="txtEmarkReference" runat="server" meta:resourcekey="txtEmarkReferenceResource1"></asp:TextBox></td>
+                <td align="left">
+                    <validation:PropertyProxyValidator ID="ppvEmarkReference" runat="server" ControlToValidate="txtEmarkReference"
+                        PropertyName="EmarkReference_I" SetFocusOnError="True" SourceTypeName="CooperTire.ICS.DomainEntities.Certificate"
+                        RulesetName="Imark" DisplayMode="List" meta:resourcekey="ppvEmarkReferenceResource1"></validation:PropertyProxyValidator></td>
+            </tr>
+            <tr>
+                <td align="right">
+                    <asp:Label ID="lblImarkFamily" runat="server" Text="Imark Family:" meta:resourcekey="lblImarkFamilyResource1"></asp:Label></td>
+                <td>
+                    <asp:TextBox ID="txtImarkFamily" runat="server" meta:resourcekey="txtImarkFamilyResource1" ></asp:TextBox></td>
+                   
+                <td align="left">
+                    <validation:PropertyProxyValidator ID="ppvImarkFamily" runat="server" ControlToValidate="txtImarkFamily"
+                        PropertyName="Family_I" SetFocusOnError="True" SourceTypeName="CooperTire.ICS.DomainEntities.Certificate"
+                        RulesetName="Imark" DisplayMode="List" meta:resourcekey="ppvImarkFamilyResource1"></validation:PropertyProxyValidator></td>
+            </tr>
+            <tr>
+                <td align="right">
+                    <asp:Label ID="lblIMarkStamping" runat="server" Text="Mold Stamping:" meta:resourcekey="lblIMarkStampingResource1"></asp:Label></td>
+                <td>
+                    <asp:TextBox ID="txtIMarkStamping" runat="server" meta:resourcekey="txtIMarkStampingResource1"></asp:TextBox></td>
+                     <td align="left"><asp:ImageButton ID="btnRefresh" runat="server" ToolTip="Click to refresh Mold Stamping" ImageUrl="~/Images/Refresh.jpg" meta:resourcekey="btnRefreshResource1"/>
+                     </td>
+            </tr>
+            <tr>
+                <td align="right">
+                    <asp:Label ID="lblDateAssigned" runat="server" Text="Material Date Assigned :" meta:resourcekey="lblDateAssignedResource1"></asp:Label></td>
+                <td>
+                    <asp:TextBox ID="txtDateAssigned" runat="server" meta:resourcekey="txtDateAssignedResource1"></asp:TextBox><br />
+                    <ajaxToolkit:CalendarExtender ID="calExtDateAssigned" runat="server" TargetControlID="txtDateAssigned" Enabled="True">
+                    </ajaxToolkit:CalendarExtender>
+                </td>
+                <td align="left">
+                    <validation:PropertyProxyValidator ID="ppvDateAssigned" runat="server" ControlToValidate="txtDateAssigned"
+                        PropertyName="DateAssigned_EGI" SetFocusOnError="True" SourceTypeName="CooperTire.ICS.DomainEntities.Certificate" RulesetName="Imark" DisplayMode="List" meta:resourcekey="ppvDateAssignedResource1"></validation:PropertyProxyValidator></td>
+            </tr>
+            <tr>
+                <td align="right">
+                    <asp:Label ID="lblDateSubmitted" runat="server" Text="Material Date Submitted: " meta:resourcekey="lblDateSubmittedResource1"></asp:Label></td>
+                <td>
+                    <asp:TextBox ID="txtDateSubmitted" runat="server" meta:resourcekey="txtDateSubmittedResource1"></asp:TextBox>
+                    <ajaxToolkit:CalendarExtender ID="CalExtdateSubmitted" runat="server" TargetControlID="txtDateSubmitted" Enabled="True">
+                    </ajaxToolkit:CalendarExtender>
+                </td>
+                <td align="left">
+                    <validation:PropertyProxyValidator ID="ppvDateSubmited" runat="server" ControlToValidate="txtDateSubmitted"
+                        PropertyName="DateSubmitted" SetFocusOnError="True" SourceTypeName="CooperTire.ICS.DomainEntities.Certificate" DisplayMode="List" meta:resourcekey="ppvDateSubmitedResource1"></validation:PropertyProxyValidator></td>
+            </tr>
+            <tr>
+                <td align="right">
+                    <asp:Label ID="lblDateApproved" runat="server" Text="Material Date Approved :" meta:resourcekey="lblDateApprovedResource1"></asp:Label></td>
+                <td>
+                    <asp:TextBox ID="txtDateApproved" runat="server" meta:resourcekey="txtDateApprovedResource1"></asp:TextBox>
+                    <ajaxToolkit:CalendarExtender ID="calExtDateApproved" runat="server" TargetControlID="txtDateApproved" Enabled="True">
+                    </ajaxToolkit:CalendarExtender>
+                </td>
+                <td align="left">
+                    <validation:PropertyProxyValidator ID="ppvDateApproved" runat="server" ControlToValidate="txtDateApproved"
+                        PropertyName="DateApproved_CEGI" RulesetName="Imark" SetFocusOnError="True" SourceTypeName="CooperTire.ICS.DomainEntities.Certificate" DisplayMode="List" meta:resourcekey="ppvDateApprovedResource1"></validation:PropertyProxyValidator></td>
+            </tr>
+            <tr>
+                <td align="right">
+                    <asp:Label ID="lblMoldChgRequired" runat="server" Text="Mold Change Required:" meta:resourcekey="lblMoldChgRequiredResource1"></asp:Label>
+                </td>
+                <td>
+                    <asp:CheckBox ID="cbxMoldChgRequired" runat="server" meta:resourcekey="cbxMoldChgRequiredResource1" />
+                </td>
+            </tr>
+            <tr>
+                <td align="right">
+                    <asp:Label ID="lblOperDateApproved" runat="server" Text="Operations Date Approved :" meta:resourcekey="lblOperDateApprovedResource1"></asp:Label></td>
+                <td>
+                    <asp:TextBox ID="txtOperDateApproved" runat="server" meta:resourcekey="txtOperDateApprovedResource1"></asp:TextBox><br />
+                    <ajaxToolkit:CalendarExtender ID="calextOperDateApproved" runat="server" TargetControlID="txtOperDateApproved" Enabled="True">
+                    </ajaxToolkit:CalendarExtender>
+                </td>
+                <td colspan="3" align="left">
+                    <validation:PropertyProxyValidator ID="ppvOperDateApproved" runat="server" ControlToValidate="txtOperDateApproved"
+                        PropertyName="OperDateApproved" SetFocusOnError="True" SourceTypeName="CooperTire.ICS.DomainEntities.Certificate" RulesetName="Imark" DisplayMode="List" meta:resourcekey="ppvOperDateApprovedResource1"></validation:PropertyProxyValidator></td>
+            </tr>
+            <tr>                 
+                <td colspan="3" align="left">
+                    <asp:Button ID="btnGetTestResult" runat="server" Text="Get Results" meta:resourcekey="btnGetTestResultResource1" />
+                    <asp:Button ID="btnBlankResult" runat="server" Text="Blank Results" meta:resourcekey="btnBlankResultResource1" />
+                    <asp:Button ID="btnRenew" runat="server" Text="Renew" Visible="False" meta:resourcekey="btnRenewResource1"/>
+                    <asp:Button ID="btnSave" runat="server" Text="Save" meta:resourcekey="btnSaveResource1" /></td>
+            </tr>
+        </table>
+        <ajaxToolkit:ModalPopupExtender ID="SimilarTirePopUp" runat="server" PopupControlID="pnlSimilarTireFound"
+            TargetControlID="lblPopupTarget" BackgroundCssClass="modalBackground" DynamicServicePath="" Enabled="True" />
+        <asp:Panel ID="pnlSimilarTireFound" runat="server" CssClass="modalPopup" Style="display: none"
+            Width="350px" meta:resourcekey="pnlSimilarTireFoundResource1">
+            <table>
+                <tr>
+                    <td colspan="2">
+                        <asp:Label ID="lblSimilarTireMessage" runat="server" meta:resourcekey="lblSimilarTireMessageResource1"></asp:Label>
+                        <br />
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2" align="center">
+                        <asp:DropDownList ID="ddlSimilarCertificate" runat="server" DataSource="<%# SimilarCertificateDS %>" DataTextField="CERTIFICATENUMBER" DataValueField="CERTIFICATEID" Width="200px" meta:resourcekey="ddlSimilarCertificateResource1"></asp:DropDownList>
+                        <asp:Label ID="lblSimilarSKUID" runat="server" Visible="False" Width="0px" meta:resourcekey="lblSimilarSKUIDResource1"></asp:Label>
+                        <asp:Label ID="lblSimilarMaterial" runat="server" Visible="False" Width="0px" meta:resourcekey="lblSimilarMaterialResource1"></asp:Label>
+                    </td>
+                </tr>
+                <tr>
+                    <td align="center">
+                        <asp:Button ID="btnYes" runat="server" Text="Yes" OnClick="Click_Yes" meta:resourcekey="btnYesResource1" />&nbsp;
+                    </td>
+                    <td align="center">
+                        <asp:Button ID="btnNo" runat="server" Text="No" OnClick="Click_No" meta:resourcekey="btnNoResource1" />&nbsp;
+                    </td>
+                </tr>
+            </table>
+        </asp:Panel>
+    </asp:Panel>
+    <ajaxtoolkit:ModalPopupExtender ID="ChangedFieldsPopup" runat="server" PopupControlID="pnlChangedFields"
+             TargetControlID="lblInfoText" BackgroundCssClass="modalBackground" DynamicServicePath="" Enabled="True" /> 
+        <asp:Panel ID="pnlChangedFields" runat="server" CssClass="modalPopup" Style="display: none"
+            Width="1175px" meta:resourcekey="pnlChangedFieldsResource1">
+            <table>
+                <tr>
+                    <td>
+                        <div style="height: 150px; overflow:auto;">
+                        <asp:GridView ID="gvChangedFields" SkinID="Professional" runat="server" AutoGenerateColumns="False" Font-Size="X-Small" BorderStyle="Solid" EnableModelValidation="True" meta:resourcekey="gvChangedFieldsResource1">
+                            <Columns>
+                                <asp:TemplateField HeaderText="Reason For Change" meta:resourcekey="TemplateFieldResource1">
+                                    <ItemTemplate>
+                                        <asp:DropDownList ID="ddlReasonList" DataSource="<%# ReasonDS %>" DataTextField="REASON" DataValueField="REASONID" runat="server" Width="250px" meta:resourcekey="ddlReasonListResource1"></asp:DropDownList>
+                                    </ItemTemplate>
+                                    <HeaderStyle HorizontalAlign="Left" Width="250px" />
+                                    <ItemStyle HorizontalAlign="Left" />
+                                </asp:TemplateField>
+                                <asp:TemplateField HeaderText="Note" meta:resourcekey="TemplateFieldResource2">
+                                    <ItemTemplate>
+                                        <asp:TextBox ID="txtNote" runat="server" MaxLength="50" Width="275px" meta:resourcekey="txtNoteResource1"></asp:TextBox>
+                                    </ItemTemplate>
+                                    <HeaderStyle HorizontalAlign="Left" Width="275px" />
+                                    <ItemStyle HorizontalAlign="Left" />
+                                </asp:TemplateField>
+                                <asp:BoundField DataField="Area" HeaderText="Area" meta:resourcekey="BoundFieldResource1" >
+                                    <HeaderStyle HorizontalAlign="Left" Width="300px" />
+                                    <ItemStyle HorizontalAlign="Left" />
+                                </asp:BoundField>
+                                <asp:BoundField DataField="ChangeDateTime" HeaderText="Change Date" meta:resourcekey="BoundFieldResource2" >
+                                    <HeaderStyle HorizontalAlign="Left" Width="150px" />
+                                    <ItemStyle HorizontalAlign="Left" />
+                                </asp:BoundField>
+                                <asp:BoundField DataField="ChangedFieldElement" HeaderText="Changed Field" meta:resourcekey="BoundFieldResource3" >
+                                    <HeaderStyle HorizontalAlign="Left" Width="200px" />
+                                    <ItemStyle HorizontalAlign="Left" />
+                                </asp:BoundField>
+                                <asp:BoundField DataField="ChangeLogID" HeaderText="ChangeLogID" meta:resourcekey="BoundFieldResource4">
+                                    <HeaderStyle HorizontalAlign="Left"/>
+                                    <ItemStyle HorizontalAlign="Left" />
+                                </asp:BoundField>
+                                <asp:BoundField DataField="ChangedBy" HeaderText="ChangedBy" meta:resourcekey="BoundFieldResource5">
+                                    <HeaderStyle HorizontalAlign="Left"/>
+                                    <ItemStyle HorizontalAlign="Left" />
+                                </asp:BoundField>
+                                <asp:BoundField DataField="OldValue" HeaderText="OldValue" meta:resourcekey="BoundFieldResource6">
+                                    <HeaderStyle HorizontalAlign="Left"/>
+                                    <ItemStyle HorizontalAlign="Left" />
+                                </asp:BoundField>
+                                <asp:BoundField DataField="NewValue" HeaderText="NewValue" meta:resourcekey="BoundFieldResource7">
+                                    <HeaderStyle HorizontalAlign="Left"/>
+                                    <ItemStyle HorizontalAlign="Left" />
+                                </asp:BoundField>
+                                <asp:BoundField DataField="Approver" HeaderText="Approver" meta:resourcekey="BoundFieldResource8">
+                                    <HeaderStyle HorizontalAlign="Left"/>
+                                    <ItemStyle HorizontalAlign="Left" />
+                                </asp:BoundField>
+                            </Columns>
+                        </asp:GridView> 
+                        </div>                      
+                    </td>
+                </tr>
+                <tr>
+                    <td align="center">
+                        <asp:Button ID="btnSaveReasons" runat="server" Text="Save" OnClick="Click_SaveReasons" meta:resourcekey="btnSaveReasonsResource1" />&nbsp;
+                        <asp:Button ID="btnCancelReasons" runat="server" Text="Cancel" OnClick="Click_CancelReasons" meta:resourcekey="btnCancelReasonsResource1" />&nbsp;
+                    </td>
+                </tr>
+            </table>
+        </asp:Panel> 
+    <uc1:TestResultsUC ID="ucTestResults" Visible="False" runat="server" />
+</asp:Panel>

@@ -1,0 +1,4 @@
+-- LMAT_PROCS execution order
+
+\LMAT_PROCS\Packages.sql
+\LMAT_PROCS\Procedures.sql

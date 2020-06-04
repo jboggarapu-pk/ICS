@@ -1,0 +1,4 @@
+-- ICS_PROCS execution order
+
+\ICS_PROCS\Procedures.sql
+\ICS_PROCS\Packages.sql

@@ -1,0 +1,140 @@
+<%@ Control Language="vb" AutoEventWireup="false" Codebehind="EditCertificationUC.ascx.vb"
+    Inherits="CooperTire.ICS.Web.EditCertificationUC" %>
+<%@ Register Assembly="Microsoft.Practices.EnterpriseLibrary.Validation.Integration.AspNet"
+    Namespace="Microsoft.Practices.EnterpriseLibrary.Validation.Integration.AspNet"
+    TagPrefix="validation" %>
+<%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="ajaxToolkit" %>
+<asp:Panel ID="pnlArchiveCertification" runat="server" CssClass="UCActionPanel" meta:resourcekey="pnlArchiveCertificationResource1">
+    <asp:Label ID="lblFormTitle" runat="server" Text="Material Maint" meta:resourcekey="lblFormTitleResource1"></asp:Label><br />
+    <asp:Label ID="lblSuccessText" runat="server" SkinID="SuccessText" Text="&nbsp;" meta:resourcekey="lblSuccessTextResource1"></asp:Label>
+    <asp:Label ID="lblErrorText" runat="server" SkinID="ErrorText" meta:resourcekey="lblErrorTextResource1"></asp:Label>
+    <table style="margin-left: 30px;">
+        <tr>
+            <td>
+                 <asp:Label ID="lblMateNumber" runat="server" Text="Material No. :" Width="77px" meta:resourcekey="lblMateNumberResource1"></asp:Label></td>
+            </td>
+            <td>
+                <asp:TextBox ID="txtMatNo" runat="server" meta:resourcekey="txtMatNoResource1"></asp:TextBox></td>
+            <td>
+                <asp:Button ID="btnShowMatNo" runat="server" Text="Show Details" OnClick="btnShowMatNo_Click" meta:resourcekey="btnShowMatNoResource1" /></td>
+        </tr>
+    </table>
+    <table id="tblMain" style="border-style: solid; border-width: medium; border-color: #E3EAEB;
+        height: auto; width: 618px;" runat="server" visible="False">
+        <tr runat="server">
+            <td runat="server">
+                <div id="divMaterialMaint" runat="server" style="width: 618px; height: 200px; float: left;
+                    padding: 10px;" visible="False">
+                    <asp:GridView ID="gvMaterialMaint" runat="server" AutoGenerateColumns="False" BackColor="White"
+                        BorderColor="#CCCCCC" BorderStyle="None" BorderWidth="1px" CellPadding="4" Font-Size="X-Small"
+                        DataKeyNames="skuid" SkinID="Professional" OnRowCommand="Grid_RowCommand" EnableModelValidation="True">
+                        <AlternatingRowStyle BackColor="#CFDFE9" />
+                        <Columns>
+                            <asp:TemplateField HeaderText="EDIT">
+                                <ItemTemplate>
+                                    <asp:LinkButton ID="lbEdit" runat="server" CommandArgument='<%#Bind("SKUID") %>' CommandName="EditMaterialMaint" Text="Edit"></asp:LinkButton>
+                                </ItemTemplate>
+                                <HeaderStyle HorizontalAlign="Left" Width="150px" />
+                                <ItemStyle HorizontalAlign="Left" Width="100px" />
+                            </asp:TemplateField>
+                            <asp:TemplateField HeaderText="SKU ID">
+                                <ItemTemplate>
+                                    <asp:Label ID="lblSkuId" runat="server" Text='<%#Bind("SKUID") %>'></asp:Label>
+                                </ItemTemplate>
+                                <HeaderStyle HorizontalAlign="Left" Width="150px" />
+                                <ItemStyle HorizontalAlign="Left" Width="100px" />
+                            </asp:TemplateField>
+                            <asp:TemplateField HeaderText="SKU">
+                                <ItemTemplate>
+                                    <asp:Label ID="lblSku" runat="server" Text='<%#Bind("SKU") %>'></asp:Label>
+                                </ItemTemplate>
+                                <HeaderStyle HorizontalAlign="Left" Width="150px" />
+                                <ItemStyle HorizontalAlign="Left" Width="100px" />
+                            </asp:TemplateField>
+                            <asp:TemplateField HeaderText="SPEEDRATING">
+                                <ItemTemplate>
+                                    <asp:Label ID="lblSpeedrating" runat="server" Text='<%#Bind("SPEEDRATING") %>'></asp:Label>
+                                </ItemTemplate>
+                                <HeaderStyle HorizontalAlign="Left" Width="150px" />
+                                <ItemStyle HorizontalAlign="Left" Width="100px" />
+                            </asp:TemplateField>
+                            <asp:TemplateField HeaderText="MATERIAL NUMBER">
+                                <ItemTemplate>
+                                    <asp:Label ID="lblMatlNum" runat="server" Text='<%#Bind("MATL_NUM") %>'></asp:Label>
+                                </ItemTemplate>
+                                <HeaderStyle HorizontalAlign="Left" Width="150px" />
+                                <ItemStyle HorizontalAlign="Left" Width="100px" />
+                            </asp:TemplateField>
+                        </Columns>
+                        <HeaderStyle BackColor="#CFDFE9" Font-Bold="True" Font-Size="X-Small" ForeColor="Black" />
+                    </asp:GridView>
+                </div>
+            </td>
+        </tr>
+    </table>
+    <div align="left">
+        <asp:Label Text="Product record with the highest SKUID is the most recent" runat="server"
+            ID="lblMessage" Visible="False" meta:resourcekey="lblMessageResource1"></asp:Label>
+    </div>
+    <div id="divEditMatMaintDetails" visible="False" runat="server" style="float: left;
+        padding-top: 20px; width: 650px;">
+        <table style="border-style: solid; border-width: medium; border-color: #E3EAEB; height: auto;
+            width: 650px; padding: 10px;">
+            <tr>
+                <td align="right">
+                    <span style="display: inline-block; font-family: Verdana; color: darkslategray; font-size: x-small;
+                        font-weight: bold;">SKU ID :</span>
+                </td>
+                <td style="width: 20px;">
+                </td>
+                <td align="left">
+                    <asp:TextBox ID="txtSKUId" runat="server" ReadOnly="True" Enabled="False" Width="140px" meta:resourcekey="txtSKUIdResource1"></asp:TextBox>
+                </td>
+            </tr>
+            <tr>
+                <td align="right">
+                    <span style="display: inline-block; font-family: Verdana; color: darkslategray; font-size: x-small;
+                        font-weight: bold;">SKU :</span></td>
+                <td style="width: 20px;">
+                </td>
+                <td align="left">
+                    <asp:TextBox ID="txtSKU" runat="server" ReadOnly="True" Enabled="False" Width="140px" meta:resourcekey="txtSKUResource1"></asp:TextBox>
+                </td>
+            </tr>
+            <tr>
+                <td align="right">
+                    <span style="display: inline-block; font-family: Verdana; color: darkslategray; font-size: x-small;
+                        font-weight: bold;">SPEEDRATING :</span></td>
+                <td style="width: 20px;">
+                </td>
+                <td align="left">
+                    <asp:TextBox ID="txtSpeedrating" runat="server" Width="140px" MaxLength="10" meta:resourcekey="txtSpeedratingResource1"></asp:TextBox>
+                </td>
+            </tr>
+            <tr>
+                <td align="right">
+                    <span style="display: inline-block; font-family: Verdana; color: darkslategray; font-size: x-small;
+                        font-weight: bold;">MATERIAL NUMBER:</span></td>
+                <td style="width: 20px;">
+                </td>
+                <td align="left">
+                    <asp:TextBox ID="txtMaterialNumber" runat="server" ReadOnly="True" Enabled="False"
+                        Width="140px" meta:resourcekey="txtMaterialNumberResource1"></asp:TextBox>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    &nbsp;
+                </td>
+            </tr>
+            <tr>
+                <td align="right">
+                    <asp:Button ID="btnUpdateMaterialNo" Text="Update" runat="server" OnClick="btnUpdateMaterialNo_Click" meta:resourcekey="btnUpdateMaterialNoResource1" /></td>
+                <td style="width: 20px;">
+                </td>
+                <td align="left">
+                    <asp:Button ID="btnCancel" Text="Cancel" runat="server" OnClick="btnCancel_Click" meta:resourcekey="btnCancelResource1" /></td>
+            </tr>
+        </table>
+    </div>
+</asp:Panel>

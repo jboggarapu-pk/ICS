@@ -1,0 +1,161 @@
+<%@ Control Language="vb" AutoEventWireup="false" Codebehind="DetachOrMoveCertificationUC.ascx.vb"
+    Inherits="CooperTire.ICS.Web.DetachOrMoveCertificationUC" %>
+<%@ Register Assembly="Microsoft.Practices.EnterpriseLibrary.Validation.Integration.AspNet"
+    Namespace="Microsoft.Practices.EnterpriseLibrary.Validation.Integration.AspNet"
+    TagPrefix="validation" %>
+<%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="ajaxToolkit" %>
+<asp:Panel ID="pnlDetachOrMoveCertification" runat="server" CssClass="UCActionPanel" meta:resourcekey="pnlDetachOrMoveCertificationResource1">
+    <asp:Label ID="lblFormTitle" runat="server" meta:resourcekey="lblFormTitleResource1"></asp:Label><br />
+    <asp:Label ID="lblSuccessText" runat="server" SkinID="SuccessText" Text="&nbsp;" meta:resourcekey="lblSuccessTextResource1"></asp:Label><br />
+    <asp:Label ID="lblErrorText" runat="server" SkinID="ErrorText" meta:resourcekey="lblErrorTextResource1"></asp:Label>     
+    <table border="0" width="70%">
+        <tr>
+            <td colspan="3">
+                <table border="0" width="70%">                  
+                    <tr>
+                        <td>
+                            <asp:Label ID="lblCertNumber" runat="server" Text="Certificate" meta:resourcekey="lblCertNumberResource1" /></td>
+                        <td>
+                            <asp:Label ID="lblExtension" runat="server" Text="Extension" Visible="False" meta:resourcekey="lblExtensionResource1" /></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <asp:TextBox ID="txtCertNumber" runat="server" MaxLength="20" Width="150px" meta:resourcekey="txtCertNumberResource1" /></td>
+                        <td>
+                            <asp:TextBox ID="txtExtension" runat="server" MaxLength="30" Width="100px" Visible="False" meta:resourcekey="txtExtensionResource1" /></td>   
+                            <ajaxToolkit:FilteredTextBoxExtender ID="FTBExtension" runat="server" 
+                                                                 TargetControlID="txtExtension" FilterType="Numbers" Enabled="True" />                            
+                        
+                        <td>
+                            <asp:Button ID="btnList" runat="server" Text="List" OnClick="Click_btnList" Width="60px" meta:resourcekey="btnListResource1" /></td>                    
+                    </tr>
+                    <tr>
+                        <td>                       
+                            <asp:Label ID="lblErrCertNumber" runat="server" Text="The Certificate Number is not valid."
+                                       Visible="False" SkinID="ErrorText" meta:resourcekey="lblErrCertNumberResource1" /></td>
+                        <td>
+                            <asp:Label ID="lblErrExtension" runat="server" Text="The Extesnion is not valid."
+                                       Visible="False" SkinID="ErrorText" meta:resourcekey="lblErrExtensionResource1" /></td>    
+                        <td></td>                   
+                    </tr>
+                    <tr>
+                        <td colspan="3" style="height: 20px"></td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="3" align="center">
+                <asp:GridView ID="gvCertMaterials" SkinID="Professional" runat="server" 
+                              AutoGenerateColumns="False" Font-Size="X-Small" BorderStyle="Solid"
+                              AllowPaging="True" 
+                              OnPageIndexChanging="gvCertMaterials_PageIndexChanging" EnableModelValidation="True" meta:resourcekey="gvCertMaterialsResource1">
+                    <Columns>                               
+                        <asp:BoundField DataField="CertificationTypeName" HeaderText="Type" meta:resourcekey="BoundFieldResource1">
+                            <HeaderStyle HorizontalAlign="Left" />
+                            <ItemStyle HorizontalAlign="Left" />
+                        </asp:BoundField>
+                        <asp:BoundField DataField="CertificateNumber" HeaderText="Certificate" meta:resourcekey="BoundFieldResource2">
+                            <HeaderStyle HorizontalAlign="Left" />
+                            <ItemStyle HorizontalAlign="Left" />
+                        </asp:BoundField>
+                        <asp:BoundField DataField="Extension_En" HeaderText="Ext" meta:resourcekey="BoundFieldResource3" >
+                            <HeaderStyle HorizontalAlign="Left" />
+                            <ItemStyle HorizontalAlign="Left" />
+                        </asp:BoundField>
+                        <asp:BoundField DataField="Matl_Num" HeaderText="Matl_Num" meta:resourcekey="BoundFieldResource4">
+                            <HeaderStyle HorizontalAlign="Left"/>
+                            <ItemStyle HorizontalAlign="Left" />
+                        </asp:BoundField>
+                        <asp:BoundField DataField="SpeedRating" HeaderText="SpeedRating" meta:resourcekey="BoundFieldResource5">
+                            <HeaderStyle HorizontalAlign="Left"/>
+                            <ItemStyle HorizontalAlign="Left" />
+                        </asp:BoundField>
+                        <asp:BoundField DataField="CertificateId" Visible="False" meta:resourcekey="BoundFieldResource6">                                      
+                        </asp:BoundField>
+                        <asp:BoundField DataField="SkuId" Visible="False" meta:resourcekey="BoundFieldResource7">                                                                            
+                        </asp:BoundField>                                    
+                        <asp:TemplateField meta:resourcekey="TemplateFieldResource1">
+                            <ItemTemplate>
+                                <asp:Button ID="btnDetach" runat="server" OnClick="Click_btnDetach" Width="60px" Text="Detach" meta:resourcekey="btnDetachResource1" />
+                            </ItemTemplate>
+                            <HeaderStyle HorizontalAlign="Left" />
+                            <ItemStyle HorizontalAlign="Left" />
+                        </asp:TemplateField>
+                        <asp:TemplateField meta:resourcekey="TemplateFieldResource2">
+                            <ItemTemplate>
+                                <asp:Button ID="btnMove" runat="server" OnClick="Click_btnMove" Width="60px" Text="Move" meta:resourcekey="btnMoveResource1"  />
+                            </ItemTemplate>
+                            <HeaderStyle HorizontalAlign="Left" />
+                            <ItemStyle HorizontalAlign="Left" />
+                        </asp:TemplateField>
+                    </Columns>
+                    <PagerStyle HorizontalAlign="Left" />
+                </asp:GridView>
+            </td>
+        </tr>         
+    </table>  
+    <asp:HiddenField ID="hidSkuId" runat="server" Value="0" />
+    <asp:HiddenField ID="hidCertificateId" runat="server" Value="0" />  
+    <ajaxToolkit:ModalPopupExtender ID="DetachAlertPopUp" runat="server" PopupControlID="pnlDetachAlert"
+        TargetControlID="hidDetachAlert" BackgroundCssClass="modalBackground" DynamicServicePath="" Enabled="True" />
+    <asp:HiddenField ID="hidDetachAlert" runat="server" />
+    <asp:Panel ID="pnlDetachAlert" runat="server" CssClass="modalPopup" Style="display: none"
+        Width="280px" meta:resourcekey="pnlDetachAlertResource1">
+        <table>
+            <tr>
+                <td colspan="2">
+                    <label>
+                        This would delete the productcertificate record for this certificate/material. Would you like to continue?</label>
+                    <br />
+                </td>
+            </tr>
+            <tr>
+                <td align="center">
+                    <asp:Button ID="btnDetachOk" runat="server" Text="OK" OnClick="Click_DetachConfirm" meta:resourcekey="btnDetachOkResource1" />&nbsp;
+                </td>
+                <td align="center">
+                    <asp:Button ID="btnDetachCancel" runat="server" Text="Cancel" OnClick="Click_DetachCancel" meta:resourcekey="btnDetachCancelResource1" />
+                </td>
+            </tr>           
+        </table>
+    </asp:Panel>   
+    <ajaxToolkit:ModalPopupExtender ID="MoveAlertPopUp" runat="server" PopupControlID="pnlMoveAlert"
+        TargetControlID="hidMove" BackgroundCssClass="modalBackground" DynamicServicePath="" Enabled="True" />
+    <asp:HiddenField ID="hidMove" runat="server" />
+    <asp:Panel ID="pnlMoveAlert" runat="server" CssClass="modalPopup" Style="display: none"
+        Width="350px" meta:resourcekey="pnlMoveAlertResource1"> 
+        <table>
+            <tr>
+                <td>
+                    <asp:Label ID="lblNewCertificate" runat="server" Text="New Certificate" meta:resourcekey="lblNewCertificateResource1" /></td>
+                <td>
+                    <asp:Label ID="lblNewExtension" runat="server" Text="New Extension" Visible="False" meta:resourcekey="lblNewExtensionResource1" /></td>                
+            </tr>
+            <tr>
+                <td>
+                    <asp:TextBox ID="txtNewCertNumber" runat="server" MaxLength="20" Width="150px" meta:resourcekey="txtNewCertNumberResource1" /></td>
+                <td>
+                    <asp:TextBox ID="txtNewExtension" runat="server" MaxLength="30" Width="100px" Visible="False" meta:resourcekey="txtNewExtensionResource1" /></td>   
+                    <ajaxToolkit:FilteredTextBoxExtender ID="FTBNewExtension" runat="server" 
+                                                         TargetControlID="txtNewExtension" FilterType="Numbers" Enabled="True" />                                   
+            </tr>
+            <tr>
+                <td>                       
+                    <asp:Label ID="lblErrNewCertNumber" runat="server" Text="The New Certificate Number is not valid."
+                               Visible="False" SkinID="ErrorText" meta:resourcekey="lblErrNewCertNumberResource1" /></td>
+                <td>
+                <asp:Label ID="lblErrNewExtension" runat="server" Text="The New Extesnion is not valid."
+                               Visible="False" SkinID="ErrorText" meta:resourcekey="lblErrNewExtensionResource1" /></td>    
+                <td></td>                   
+            </tr>
+            <tr>
+                <td colspan="2" align="center">
+                    <asp:Button ID="btnMoveConfirm" runat="server" Text="Move" OnClick="Click_MoveConfirm" meta:resourcekey="btnMoveConfirmResource1" />&nbsp;
+                    <asp:Button ID="btnMoveCancel" runat="server" Text="Cancel" OnClick="Click_MoveCancel" meta:resourcekey="btnMoveCancelResource1" />
+                </td>
+            </tr>
+        </table>
+    </asp:Panel>    
+</asp:Panel>

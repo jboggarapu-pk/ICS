@@ -1,0 +1,9 @@
+-- ICS_PROCS execution order
+
+\ICS_PROCS\Packages.sql
+\ICS_PROCS\Procedures.sql
+
+
+-- ICS execution order
+
+\ICS\Views.sql

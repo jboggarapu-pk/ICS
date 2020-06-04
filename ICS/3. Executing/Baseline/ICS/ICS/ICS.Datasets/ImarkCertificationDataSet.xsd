@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="ImarkCertificationDataSet" targetNamespace="http://tempuri.org/ImarkCertificationDataSet.xsd" xmlns:mstns="http://tempuri.org/ImarkCertificationDataSet.xsd" xmlns="http://tempuri.org/ImarkCertificationDataSet.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="1" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="MySettings" AppSettingsPropertyName="ConnectionString" ConnectionStringObject="" IsAppSettingsProperty="True" Modifier="Assembly" Name="ConnectionString (MySettings)" PropertyReference="ApplicationSettings.CooperTire.ICS.Datasets.My.MySettings.GlobalReference.Default.ConnectionString" Provider="System.Data.OracleClient">
+          </Connection>
+          <Connection AppSettingsObjectName="MySettings" AppSettingsPropertyName="ConnectionString1" IsAppSettingsProperty="True" Modifier="Assembly" Name="ConnectionString1 (MySettings)" PropertyReference="ApplicationSettings.CooperTire.ICS.Datasets.My.MySettings.GlobalReference.Default.ConnectionString1" Provider="System.Data.OracleClient">
+          </Connection>
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="IMARKCERTIFICATE_VIEWTableAdapter" GeneratorDataComponentClassName="IMARKCERTIFICATE_VIEWTableAdapter" Name="IMARKCERTIFICATE_VIEW" UserDataComponentName="IMARKCERTIFICATE_VIEWTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="ConnectionString (MySettings)" DbObjectName="ICS.IMARKCERTIFICATE_VIEW" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="False" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="True" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="False">
+                    <CommandText>SELECT FAMILY, SKU, EMARKREFERENCE, SIZESTAMP, BRANDNAME, SINGLOADINDEX, DUALLOADINDEX, SPEEDRATING, DATESUBMITTED, DATEAPPROVED, DISCONTINUEDDATE, DATEASSIGNED  FROM ICS.IMARKCERTIFICATE_VIEW</CommandText>
+                    <Parameters>
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="FAMILY" DataSetColumn="FAMILY" />
+              <Mapping SourceColumn="SKU" DataSetColumn="SKU" />
+              <Mapping SourceColumn="EMARKREFERENCE" DataSetColumn="EMARKREFERENCE" />
+              <Mapping SourceColumn="SIZESTAMP" DataSetColumn="SIZESTAMP" />
+              <Mapping SourceColumn="BRANDNAME" DataSetColumn="BRANDNAME" />
+              <Mapping SourceColumn="SINGLOADINDEX" DataSetColumn="SINGLOADINDEX" />
+              <Mapping SourceColumn="DUALLOADINDEX" DataSetColumn="DUALLOADINDEX" />
+              <Mapping SourceColumn="SPEEDRATING" DataSetColumn="SPEEDRATING" />
+              <Mapping SourceColumn="DATESUBMITED" DataSetColumn="DATESUBMITTED" />
+              <Mapping SourceColumn="DATEAPPROVED" DataSetColumn="DATEAPPROVED" />
+              <Mapping SourceColumn="DISCONTINUEDDATE" DataSetColumn="DISCONTINUEDDATE" />
+              <Mapping SourceColumn="DATESUBMITTED" DataSetColumn="DATESUBMITTED" />
+              <Mapping SourceColumn="DATEASSIGNED" DataSetColumn="DATEASSIGNED" />
+            </Mappings>
+            <Sources>
+            </Sources>
+          </TableAdapter>
+        </Tables>
+        <Sources>
+        </Sources>
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="ImarkCertificationDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:Generator_UserDSName="ImarkCertificationDataSet" msprop:Generator_DataSetName="ImarkCertificationDataSet">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="IMARKCERTIFICATE_VIEW" msprop:Generator_UserTableName="IMARKCERTIFICATE_VIEW" msprop:Generator_RowDeletedName="IMARKCERTIFICATE_VIEWRowDeleted" msprop:Generator_RowChangedName="IMARKCERTIFICATE_VIEWRowChanged" msprop:Generator_RowClassName="IMARKCERTIFICATE_VIEWRow" msprop:Generator_RowChangingName="IMARKCERTIFICATE_VIEWRowChanging" msprop:Generator_RowEvArgName="IMARKCERTIFICATE_VIEWRowChangeEvent" msprop:Generator_RowEvHandlerName="IMARKCERTIFICATE_VIEWRowChangeEventHandler" msprop:Generator_TableClassName="IMARKCERTIFICATE_VIEWDataTable" msprop:Generator_TableVarName="tableIMARKCERTIFICATE_VIEW" msprop:Generator_RowDeletingName="IMARKCERTIFICATE_VIEWRowDeleting" msprop:Generator_TablePropName="IMARKCERTIFICATE_VIEW">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="FAMILY" msprop:Generator_UserColumnName="FAMILY" msprop:Generator_ColumnVarNameInTable="columnFAMILY" msprop:Generator_ColumnPropNameInRow="FAMILY" msprop:Generator_ColumnPropNameInTable="FAMILYColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="120" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="SKU" msprop:Generator_UserColumnName="SKU" msprop:Generator_ColumnVarNameInTable="columnSKU" msprop:Generator_ColumnPropNameInRow="SKU" msprop:Generator_ColumnPropNameInTable="SKUColumn">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="EMARKREFERENCE" msprop:Generator_UserColumnName="EMARKREFERENCE" msprop:Generator_ColumnVarNameInTable="columnEMARKREFERENCE" msprop:Generator_ColumnPropNameInRow="EMARKREFERENCE" msprop:Generator_ColumnPropNameInTable="EMARKREFERENCEColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="120" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="SIZESTAMP" msprop:Generator_UserColumnName="SIZESTAMP" msprop:Generator_ColumnVarNameInTable="columnSIZESTAMP" msprop:Generator_ColumnPropNameInRow="SIZESTAMP" msprop:Generator_ColumnPropNameInTable="SIZESTAMPColumn">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="BRANDNAME" msprop:Generator_UserColumnName="BRANDNAME" msprop:Generator_ColumnVarNameInTable="columnBRANDNAME" msprop:Generator_ColumnPropNameInRow="BRANDNAME" msprop:Generator_ColumnPropNameInTable="BRANDNAMEColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="SINGLOADINDEX" msprop:Generator_UserColumnName="SINGLOADINDEX" msprop:Generator_ColumnVarNameInTable="columnSINGLOADINDEX" msprop:Generator_ColumnPropNameInRow="SINGLOADINDEX" msprop:Generator_ColumnPropNameInTable="SINGLOADINDEXColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="40" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="DUALLOADINDEX" msprop:Generator_UserColumnName="DUALLOADINDEX" msprop:Generator_ColumnVarNameInTable="columnDUALLOADINDEX" msprop:Generator_ColumnPropNameInRow="DUALLOADINDEX" msprop:Generator_ColumnPropNameInTable="DUALLOADINDEXColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="40" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="SPEEDRATING" msprop:Generator_UserColumnName="SPEEDRATING" msprop:Generator_ColumnVarNameInTable="columnSPEEDRATING" msprop:Generator_ColumnPropNameInRow="SPEEDRATING" msprop:Generator_ColumnPropNameInTable="SPEEDRATINGColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="40" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="DATESUBMITTED" msprop:Generator_UserColumnName="DATESUBMITTED" msprop:Generator_ColumnVarNameInTable="columnDATESUBMITTED" msprop:Generator_ColumnPropNameInRow="DATESUBMITTED" msprop:Generator_ColumnPropNameInTable="DATESUBMITTEDColumn" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="DATEAPPROVED" msprop:Generator_UserColumnName="DATEAPPROVED" msprop:Generator_ColumnVarNameInTable="columnDATEAPPROVED" msprop:Generator_ColumnPropNameInRow="DATEAPPROVED" msprop:Generator_ColumnPropNameInTable="DATEAPPROVEDColumn" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="DISCONTINUEDDATE" msprop:Generator_UserColumnName="DISCONTINUEDDATE" msprop:Generator_ColumnVarNameInTable="columnDISCONTINUEDDATE" msprop:Generator_ColumnPropNameInRow="DISCONTINUEDDATE" msprop:Generator_ColumnPropNameInTable="DISCONTINUEDDATEColumn" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="DATEASSIGNED" msprop:Generator_UserColumnName="DATEASSIGNED" msprop:Generator_ColumnPropNameInRow="DATEASSIGNED" msprop:Generator_ColumnVarNameInTable="columnDATEASSIGNED" msprop:Generator_ColumnPropNameInTable="DATEASSIGNEDColumn" type="xs:dateTime" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

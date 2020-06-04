@@ -1,0 +1,92 @@
+<%@ Control Language="vb" AutoEventWireup="false" CodeBehind="CertificationDefaultsUC.ascx.vb" Inherits="CooperTire.ICS.Web.CertificationDefaultsUC" %>
+<%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="cc1" %>
+
+<asp:Panel ID="Panel1" runat="server" Width="930px" meta:resourcekey="Panel1Resource1">
+<asp:UpdatePanel ID="upnlApprovalUpdatePanel" runat="server">
+  <ContentTemplate>
+<asp:Label ID="lblErrorText" SkinID="ErrorText" runat="server" EnableViewState="False" meta:resourcekey="lblErrorTextResource1"></asp:Label>
+<table border="0" cellpadding="0" cellspacing="0" style="width: 824px">
+<tr>
+<td colspan="2" style="height: 4px"></td>
+</tr>
+
+<tr>
+   <td colspan="2" align="left"><asp:Label ID="lblInfo" runat="server" Text="Certification Type default values" Width="561px" meta:resourcekey="lblInfoResource1"></asp:Label><br />
+   </td>
+</tr>
+<tr>
+<td colspan="2" style="height: 4px">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" style="height: 2px" align="left"><asp:Label ID="lblInfoText" runat="server" SkinID="SuccessText" Text="&nbsp;" meta:resourcekey="lblInfoTextResource1"></asp:Label></td>
+</tr>
+<tr>
+<td colspan="2" style="height: 2px">&nbsp;</td>
+</tr>
+<tr>
+<td align="left" colspan="2">
+<table border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td align="right"><asp:Label ID="Label1" runat="server" Text="Certificate Type  :" meta:resourcekey="Label1Resource1"></asp:Label></td>
+<td align="left">&nbsp;<asp:DropDownList ID="ddlCertNames" runat="server" Width="111px" AutoPostBack="True" meta:resourcekey="ddlCertNamesResource1">
+    </asp:DropDownList></td>
+</tr>
+<tr>
+<td colspan="2" style="height: 4px"></td>
+</tr>
+
+<tr>
+<td align="right"><asp:Label ID="lblCertNo" runat="server" Text="Certificate No :" meta:resourcekey="lblCertNoResource1"></asp:Label></td>
+<td align="left">&nbsp;<asp:TextBox ID="txtCertificateNo" runat="server" Width="108px" meta:resourcekey="txtCertificateNoResource1"></asp:TextBox></td>
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td colspan="2" style="height: 4px"></td>
+</tr>
+<tr>
+<td colspan="2" align="center">
+    <asp:GridView ID="gvCertificateFields" SkinID="Professional" runat="server" AutoGenerateColumns="False" Font-Size="X-Small" Width="811px" EnableModelValidation="True" meta:resourcekey="gvCertificateFieldsResource1">
+    <Columns>
+    <asp:BoundField DataField="Report" HeaderText="Report" meta:resourcekey="BoundFieldResource1" >
+        <HeaderStyle HorizontalAlign="Left" Width="300px" />
+        <ItemStyle HorizontalAlign="Left" />
+    </asp:BoundField>
+    <asp:BoundField DataField="Text" HeaderText="Field Label" meta:resourcekey="BoundFieldResource2" >
+        <HeaderStyle HorizontalAlign="Left" Width="300px" />
+        <ItemStyle HorizontalAlign="Left" />
+    </asp:BoundField>
+     <asp:TemplateField HeaderText="Field Value" meta:resourcekey="TemplateFieldResource1">
+          <ItemTemplate>
+               <asp:TextBox ID="FieldValue" Columns="100" Width="500px" MaxLength="395" Text='<%# Eval("Value") %>' runat="server" meta:resourcekey="FieldValueResource1" />
+               <asp:RadioButtonList ID="FieldRad" Runat="server" Visible="False" meta:resourcekey="FieldRadResource1"></asp:RadioButtonList>
+          </ItemTemplate>
+         <HeaderStyle HorizontalAlign="Left" Width="400px" />
+         <ItemStyle HorizontalAlign="Left" />
+    </asp:TemplateField>
+    </Columns>
+    </asp:GridView>
+</td>
+</tr>
+<tr>
+<td colspan="2" style="height: 5px">&nbsp;</td>
+</tr>
+<tr>
+<td align="left">
+    <asp:Button ID="btnSaveDefault" runat="server" Text="Save Default Value" Width="206px" meta:resourcekey="btnSaveDefaultResource1" /></td>
+<td align="right" style="width: 243px">
+    <asp:Button ID="btnSaveCert" runat="server" Text="Save Certificate value" Width="210px" meta:resourcekey="btnSaveCertResource1" /></td>
+</tr>
+</table>
+
+   </ContentTemplate>
+</asp:UpdatePanel>
+    <asp:UpdateProgress ID="updProgress" AssociatedUpdatePanelID="upnlApprovalUpdatePanel"
+        runat="server">
+        <ProgressTemplate>
+            <img alt="progress" src="Images/ajax-loader.gif" />
+            Processing...
+        </ProgressTemplate>
+    </asp:UpdateProgress>
+    </asp:Panel>
