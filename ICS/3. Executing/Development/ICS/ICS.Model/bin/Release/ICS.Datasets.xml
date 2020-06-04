@@ -1,0 +1,1504 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+ICS.Datasets
+</name>
+</assembly>
+<members>
+<member name="T:CooperTire.ICS.Datasets.EmarkECE117DataSet.BRAND_VIEWDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:CooperTire.ICS.Datasets.EmarkECE117DataSet.DEFAULTVALUES_VIEWDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:CooperTire.ICS.Datasets.EmarkECE117DataSet.PRODUCTDATA_REPORT_VIEWDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:CooperTire.ICS.Datasets.EmarkECE117DataSet.CERTIFICATEDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:CooperTire.ICS.Datasets.EmarkECE117DataSet.BRAND_VIEWRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:CooperTire.ICS.Datasets.EmarkECE117DataSet.DEFAULTVALUES_VIEWRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:CooperTire.ICS.Datasets.EmarkECE117DataSet.PRODUCTDATA_REPORT_VIEWRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:CooperTire.ICS.Datasets.EmarkECE117DataSet.CERTIFICATERow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:CooperTire.ICS.Datasets.EmarkECE117DataSet.BRAND_VIEWRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:CooperTire.ICS.Datasets.EmarkECE117DataSet.DEFAULTVALUES_VIEWRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:CooperTire.ICS.Datasets.EmarkECE117DataSet.PRODUCTDATA_REPORT_VIEWRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:CooperTire.ICS.Datasets.EmarkECE117DataSet.CERTIFICATERowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:CooperTire.ICS.Datasets.EmarkECE117DataSet">
+	<summary>
+Represents a strongly typed in-memory cache of data.
+</summary>
+</member><member name="T:CooperTire.ICS.Datasets.EmarkECE117DataSetTableAdapters.BRAND_VIEWTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:CooperTire.ICS.Datasets.EmarkECE117DataSetTableAdapters.DEFAULTVALUES_VIEWTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:CooperTire.ICS.Datasets.EmarkECE117DataSetTableAdapters.PRODUCTDATA_REPORT_VIEWTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:CooperTire.ICS.Datasets.EmarkPassengerWithTR.CERTIFICATE_VIEWDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:CooperTire.ICS.Datasets.EmarkPassengerWithTR.PRODUCTDATA_REPORT_VIEWDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:CooperTire.ICS.Datasets.EmarkPassengerWithTR.BEADUNSEATHDRDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:CooperTire.ICS.Datasets.EmarkPassengerWithTR.BEADUNSEATDTLDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:CooperTire.ICS.Datasets.EmarkPassengerWithTR.ENDURANCEDTLDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:CooperTire.ICS.Datasets.EmarkPassengerWithTR.ENDURANCEHDRDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:CooperTire.ICS.Datasets.EmarkPassengerWithTR.HIGHSPEEDDTLDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:CooperTire.ICS.Datasets.EmarkPassengerWithTR.HIGHSPEEDHDRDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:CooperTire.ICS.Datasets.EmarkPassengerWithTR.MEASUREDTLDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:CooperTire.ICS.Datasets.EmarkPassengerWithTR.MEASUREHDRDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:CooperTire.ICS.Datasets.EmarkPassengerWithTR.PLUNGERDTLDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:CooperTire.ICS.Datasets.EmarkPassengerWithTR.PLUNGERHDRDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:CooperTire.ICS.Datasets.EmarkPassengerWithTR.TREADWEARHDRDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:CooperTire.ICS.Datasets.EmarkPassengerWithTR.TREADWEARDTLDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:CooperTire.ICS.Datasets.EmarkPassengerWithTR.SPEEDTESTDETAILDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:CooperTire.ICS.Datasets.EmarkPassengerWithTR.BRAND_VIEWDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:CooperTire.ICS.Datasets.EmarkPassengerWithTR.DEFAULTVALUES_VIEWDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:CooperTire.ICS.Datasets.EmarkPassengerWithTR.CERTIFICATE_VIEWRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:CooperTire.ICS.Datasets.EmarkPassengerWithTR.PRODUCTDATA_REPORT_VIEWRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:CooperTire.ICS.Datasets.EmarkPassengerWithTR.BEADUNSEATHDRRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:CooperTire.ICS.Datasets.EmarkPassengerWithTR.BEADUNSEATDTLRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:CooperTire.ICS.Datasets.EmarkPassengerWithTR.ENDURANCEDTLRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:CooperTire.ICS.Datasets.EmarkPassengerWithTR.ENDURANCEHDRRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:CooperTire.ICS.Datasets.EmarkPassengerWithTR.HIGHSPEEDDTLRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:CooperTire.ICS.Datasets.EmarkPassengerWithTR.HIGHSPEEDHDRRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:CooperTire.ICS.Datasets.EmarkPassengerWithTR.MEASUREDTLRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:CooperTire.ICS.Datasets.EmarkPassengerWithTR.MEASUREHDRRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:CooperTire.ICS.Datasets.EmarkPassengerWithTR.PLUNGERDTLRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:CooperTire.ICS.Datasets.EmarkPassengerWithTR.PLUNGERHDRRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:CooperTire.ICS.Datasets.EmarkPassengerWithTR.TREADWEARHDRRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:CooperTire.ICS.Datasets.EmarkPassengerWithTR.TREADWEARDTLRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:CooperTire.ICS.Datasets.EmarkPassengerWithTR.SPEEDTESTDETAILRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:CooperTire.ICS.Datasets.EmarkPassengerWithTR.BRAND_VIEWRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:CooperTire.ICS.Datasets.EmarkPassengerWithTR.DEFAULTVALUES_VIEWRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:CooperTire.ICS.Datasets.EmarkPassengerWithTR.CERTIFICATE_VIEWRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:CooperTire.ICS.Datasets.EmarkPassengerWithTR.PRODUCTDATA_REPORT_VIEWRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:CooperTire.ICS.Datasets.EmarkPassengerWithTR.BEADUNSEATHDRRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:CooperTire.ICS.Datasets.EmarkPassengerWithTR.BEADUNSEATDTLRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:CooperTire.ICS.Datasets.EmarkPassengerWithTR.ENDURANCEDTLRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:CooperTire.ICS.Datasets.EmarkPassengerWithTR.ENDURANCEHDRRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:CooperTire.ICS.Datasets.EmarkPassengerWithTR.HIGHSPEEDDTLRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:CooperTire.ICS.Datasets.EmarkPassengerWithTR.HIGHSPEEDHDRRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:CooperTire.ICS.Datasets.EmarkPassengerWithTR.MEASUREDTLRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:CooperTire.ICS.Datasets.EmarkPassengerWithTR.MEASUREHDRRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:CooperTire.ICS.Datasets.EmarkPassengerWithTR.PLUNGERDTLRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:CooperTire.ICS.Datasets.EmarkPassengerWithTR.PLUNGERHDRRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:CooperTire.ICS.Datasets.EmarkPassengerWithTR.TREADWEARHDRRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:CooperTire.ICS.Datasets.EmarkPassengerWithTR.TREADWEARDTLRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:CooperTire.ICS.Datasets.EmarkPassengerWithTR.SPEEDTESTDETAILRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:CooperTire.ICS.Datasets.EmarkPassengerWithTR.BRAND_VIEWRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:CooperTire.ICS.Datasets.EmarkPassengerWithTR.DEFAULTVALUES_VIEWRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:CooperTire.ICS.Datasets.EmarkPassengerWithTR">
+	<summary>
+Represents a strongly typed in-memory cache of data.
+</summary>
+</member><member name="T:CooperTire.ICS.Datasets.EmarkPassengerWithTRTableAdapters.CERTIFICATE_VIEWTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:CooperTire.ICS.Datasets.EmarkPassengerWithTRTableAdapters.PRODUCTDATA_REPORT_VIEWTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:CooperTire.ICS.Datasets.EmarkPassengerWithTRTableAdapters.BEADUNSEATHDRTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:CooperTire.ICS.Datasets.EmarkPassengerWithTRTableAdapters.BEADUNSEATDTLTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:CooperTire.ICS.Datasets.EmarkPassengerWithTRTableAdapters.ENDURANCEDTLTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:CooperTire.ICS.Datasets.EmarkPassengerWithTRTableAdapters.ENDURANCEHDRTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:CooperTire.ICS.Datasets.EmarkPassengerWithTRTableAdapters.HIGHSPEEDDTLTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:CooperTire.ICS.Datasets.EmarkPassengerWithTRTableAdapters.HIGHSPEEDHDRTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:CooperTire.ICS.Datasets.EmarkPassengerWithTRTableAdapters.MEASUREDTLTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:CooperTire.ICS.Datasets.EmarkPassengerWithTRTableAdapters.MEASUREHDRTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:CooperTire.ICS.Datasets.EmarkPassengerWithTRTableAdapters.PLUNGERDTLTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:CooperTire.ICS.Datasets.EmarkPassengerWithTRTableAdapters.PLUNGERHDRTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:CooperTire.ICS.Datasets.EmarkPassengerWithTRTableAdapters.TREADWEARHDRTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:CooperTire.ICS.Datasets.EmarkPassengerWithTRTableAdapters.TREADWEARDTLTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:CooperTire.ICS.Datasets.EmarkPassengerWithTRTableAdapters.SPEEDTESTDETAILTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:CooperTire.ICS.Datasets.EmarkPassengerWithTRTableAdapters.BRAND_VIEWTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:CooperTire.ICS.Datasets.EmarkPassengerWithTRTableAdapters.DEFAULTVALUES_VIEWTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:CooperTire.ICS.Datasets.CCCSequentialDataSet.DEFAULTVALUES_VIEWDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:CooperTire.ICS.Datasets.CCCSequentialDataSet.BRAND_VIEWDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:CooperTire.ICS.Datasets.CCCSequentialDataSet.PRODUCTDATA_REPORT_VIEWDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:CooperTire.ICS.Datasets.CCCSequentialDataSet.CERTIFICATEDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:CooperTire.ICS.Datasets.CCCSequentialDataSet.DEFAULTVALUES_VIEWRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:CooperTire.ICS.Datasets.CCCSequentialDataSet.BRAND_VIEWRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:CooperTire.ICS.Datasets.CCCSequentialDataSet.PRODUCTDATA_REPORT_VIEWRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:CooperTire.ICS.Datasets.CCCSequentialDataSet.CERTIFICATERow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:CooperTire.ICS.Datasets.CCCSequentialDataSet.DEFAULTVALUES_VIEWRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:CooperTire.ICS.Datasets.CCCSequentialDataSet.BRAND_VIEWRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:CooperTire.ICS.Datasets.CCCSequentialDataSet.PRODUCTDATA_REPORT_VIEWRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:CooperTire.ICS.Datasets.CCCSequentialDataSet.CERTIFICATERowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:CooperTire.ICS.Datasets.CCCSequentialDataSet">
+	<summary>
+Represents a strongly typed in-memory cache of data.
+</summary>
+</member><member name="T:CooperTire.ICS.Datasets.CCCSequentialDataSetTableAdapters.DEFAULTVALUES_VIEWTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:CooperTire.ICS.Datasets.CCCSequentialDataSetTableAdapters.BRAND_VIEWTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:CooperTire.ICS.Datasets.CCCSequentialDataSetTableAdapters.PRODUCTDATA_REPORT_VIEWTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="P:CooperTire.ICS.Datasets.My.Resources.Resources.ResourceManager">
+	<summary>
+  Returns the cached ResourceManager instance used by this class.
+</summary>
+</member><member name="P:CooperTire.ICS.Datasets.My.Resources.Resources.Culture">
+	<summary>
+  Overrides the current thread's CurrentUICulture property for all
+  resource lookups using this strongly typed resource class.
+</summary>
+</member><member name="T:CooperTire.ICS.Datasets.My.Resources.Resources">
+	<summary>
+  A strongly-typed resource class, for looking up localized strings, etc.
+</summary>
+</member><member name="T:CooperTire.ICS.Datasets.ImarkPassengerDataSet.BRAND_VIEWDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:CooperTire.ICS.Datasets.ImarkPassengerDataSet.DEFAULTVALUES_VIEWDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:CooperTire.ICS.Datasets.ImarkPassengerDataSet.PRODUCTDATA_REPORT_VIEWDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:CooperTire.ICS.Datasets.ImarkPassengerDataSet.PRODBRANDLIST_VIEWDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:CooperTire.ICS.Datasets.ImarkPassengerDataSet.CertificateDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:CooperTire.ICS.Datasets.ImarkPassengerDataSet.BRAND_VIEWRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:CooperTire.ICS.Datasets.ImarkPassengerDataSet.DEFAULTVALUES_VIEWRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:CooperTire.ICS.Datasets.ImarkPassengerDataSet.PRODUCTDATA_REPORT_VIEWRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:CooperTire.ICS.Datasets.ImarkPassengerDataSet.PRODBRANDLIST_VIEWRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:CooperTire.ICS.Datasets.ImarkPassengerDataSet.CertificateRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:CooperTire.ICS.Datasets.ImarkPassengerDataSet.BRAND_VIEWRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:CooperTire.ICS.Datasets.ImarkPassengerDataSet.DEFAULTVALUES_VIEWRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:CooperTire.ICS.Datasets.ImarkPassengerDataSet.PRODUCTDATA_REPORT_VIEWRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:CooperTire.ICS.Datasets.ImarkPassengerDataSet.PRODBRANDLIST_VIEWRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:CooperTire.ICS.Datasets.ImarkPassengerDataSet.CertificateRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:CooperTire.ICS.Datasets.ImarkPassengerDataSet">
+	<summary>
+Represents a strongly typed in-memory cache of data.
+</summary>
+</member><member name="T:CooperTire.ICS.Datasets.ImarkPassengerDataSetTableAdapters.BRAND_VIEWTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:CooperTire.ICS.Datasets.ImarkPassengerDataSetTableAdapters.DEFAULTVALUES_VIEWTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:CooperTire.ICS.Datasets.ImarkPassengerDataSetTableAdapters.PRODUCTDATA_REPORT_VIEWTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:CooperTire.ICS.Datasets.ImarkPassengerDataSetTableAdapters.PRODBRANDLIST_VIEWTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:CooperTire.ICS.Datasets.ClientRequest.TestRequestDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:CooperTire.ICS.Datasets.ClientRequest.TestRequestRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:CooperTire.ICS.Datasets.ClientRequest.TestRequestRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:CooperTire.ICS.Datasets.ClientRequest">
+	<summary>
+Represents a strongly typed in-memory cache of data.
+</summary>
+</member><member name="T:CooperTire.ICS.Datasets.GSOCertificateDataSet.BRAND_VIEWDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:CooperTire.ICS.Datasets.GSOCertificateDataSet.DEFAULTVALUES_VIEWDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:CooperTire.ICS.Datasets.GSOCertificateDataSet.PRODUCTDATA_REPORT_VIEWDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:CooperTire.ICS.Datasets.GSOCertificateDataSet.MEASUREHDRDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:CooperTire.ICS.Datasets.GSOCertificateDataSet.PLUNGERHDRDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:CooperTire.ICS.Datasets.GSOCertificateDataSet.TREADWEARHDRDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:CooperTire.ICS.Datasets.GSOCertificateDataSet.BEADUNSEATHDRDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:CooperTire.ICS.Datasets.GSOCertificateDataSet.ENDURANCEHDRDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:CooperTire.ICS.Datasets.GSOCertificateDataSet.HIGHSPEEDHDRDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:CooperTire.ICS.Datasets.GSOCertificateDataSet.SKULIST_VIEWDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:CooperTire.ICS.Datasets.GSOCertificateDataSet.CertificateDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:CooperTire.ICS.Datasets.GSOCertificateDataSet.BRAND_VIEWRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:CooperTire.ICS.Datasets.GSOCertificateDataSet.DEFAULTVALUES_VIEWRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:CooperTire.ICS.Datasets.GSOCertificateDataSet.PRODUCTDATA_REPORT_VIEWRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:CooperTire.ICS.Datasets.GSOCertificateDataSet.MEASUREHDRRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:CooperTire.ICS.Datasets.GSOCertificateDataSet.PLUNGERHDRRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:CooperTire.ICS.Datasets.GSOCertificateDataSet.TREADWEARHDRRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:CooperTire.ICS.Datasets.GSOCertificateDataSet.BEADUNSEATHDRRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:CooperTire.ICS.Datasets.GSOCertificateDataSet.ENDURANCEHDRRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:CooperTire.ICS.Datasets.GSOCertificateDataSet.HIGHSPEEDHDRRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:CooperTire.ICS.Datasets.GSOCertificateDataSet.SKULIST_VIEWRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:CooperTire.ICS.Datasets.GSOCertificateDataSet.CertificateRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:CooperTire.ICS.Datasets.GSOCertificateDataSet.BRAND_VIEWRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:CooperTire.ICS.Datasets.GSOCertificateDataSet.DEFAULTVALUES_VIEWRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:CooperTire.ICS.Datasets.GSOCertificateDataSet.PRODUCTDATA_REPORT_VIEWRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:CooperTire.ICS.Datasets.GSOCertificateDataSet.MEASUREHDRRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:CooperTire.ICS.Datasets.GSOCertificateDataSet.PLUNGERHDRRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:CooperTire.ICS.Datasets.GSOCertificateDataSet.TREADWEARHDRRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:CooperTire.ICS.Datasets.GSOCertificateDataSet.BEADUNSEATHDRRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:CooperTire.ICS.Datasets.GSOCertificateDataSet.ENDURANCEHDRRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:CooperTire.ICS.Datasets.GSOCertificateDataSet.HIGHSPEEDHDRRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:CooperTire.ICS.Datasets.GSOCertificateDataSet.SKULIST_VIEWRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:CooperTire.ICS.Datasets.GSOCertificateDataSet.CertificateRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:CooperTire.ICS.Datasets.GSOCertificateDataSet">
+	<summary>
+Represents a strongly typed in-memory cache of data.
+</summary>
+</member><member name="T:CooperTire.ICS.Datasets.GSOCertificateDataSetTableAdapters.BRAND_VIEWTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:CooperTire.ICS.Datasets.GSOCertificateDataSetTableAdapters.DEFAULTVALUES_VIEWTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:CooperTire.ICS.Datasets.GSOCertificateDataSetTableAdapters.PRODUCTDATA_REPORT_VIEWTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:CooperTire.ICS.Datasets.GSOCertificateDataSetTableAdapters.MEASUREHDRTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:CooperTire.ICS.Datasets.GSOCertificateDataSetTableAdapters.PLUNGERHDRTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:CooperTire.ICS.Datasets.GSOCertificateDataSetTableAdapters.TREADWEARHDRTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:CooperTire.ICS.Datasets.GSOCertificateDataSetTableAdapters.BEADUNSEATHDRTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:CooperTire.ICS.Datasets.GSOCertificateDataSetTableAdapters.ENDURANCEHDRTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:CooperTire.ICS.Datasets.GSOCertificateDataSetTableAdapters.HIGHSPEEDHDRTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:CooperTire.ICS.Datasets.GSOCertificateDataSetTableAdapters.SKULIST_VIEWTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:CooperTire.ICS.Datasets.ImarkCertificationDataSet.IMARKCERTIFICATE_VIEWDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:CooperTire.ICS.Datasets.ImarkCertificationDataSet.IMARKCERTIFICATE_VIEWRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:CooperTire.ICS.Datasets.ImarkCertificationDataSet.IMARKCERTIFICATE_VIEWRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:CooperTire.ICS.Datasets.ImarkCertificationDataSet">
+	<summary>
+Represents a strongly typed in-memory cache of data.
+</summary>
+</member><member name="T:CooperTire.ICS.Datasets.ImarkCertificationDataSetTableAdapters.IMARKCERTIFICATE_VIEWTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:CooperTire.ICS.Datasets.ImarkSamplingAndTestDataSet.DEFAULTVALUES_VIEWDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:CooperTire.ICS.Datasets.ImarkSamplingAndTestDataSet.PRODUCTDATA_REPORT_VIEWDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:CooperTire.ICS.Datasets.ImarkSamplingAndTestDataSet.CertificateDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:CooperTire.ICS.Datasets.ImarkSamplingAndTestDataSet.MeasureHdrDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:CooperTire.ICS.Datasets.ImarkSamplingAndTestDataSet.MeasureDtlDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:CooperTire.ICS.Datasets.ImarkSamplingAndTestDataSet.TreadWearHdrDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:CooperTire.ICS.Datasets.ImarkSamplingAndTestDataSet.TreadWearDtlDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:CooperTire.ICS.Datasets.ImarkSamplingAndTestDataSet.HighSpeedHdrDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:CooperTire.ICS.Datasets.ImarkSamplingAndTestDataSet.HighSpeedDtlDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:CooperTire.ICS.Datasets.ImarkSamplingAndTestDataSet.DEFAULTVALUES_VIEWRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:CooperTire.ICS.Datasets.ImarkSamplingAndTestDataSet.PRODUCTDATA_REPORT_VIEWRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:CooperTire.ICS.Datasets.ImarkSamplingAndTestDataSet.CertificateRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:CooperTire.ICS.Datasets.ImarkSamplingAndTestDataSet.MeasureHdrRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:CooperTire.ICS.Datasets.ImarkSamplingAndTestDataSet.MeasureDtlRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:CooperTire.ICS.Datasets.ImarkSamplingAndTestDataSet.TreadWearHdrRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:CooperTire.ICS.Datasets.ImarkSamplingAndTestDataSet.TreadWearDtlRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:CooperTire.ICS.Datasets.ImarkSamplingAndTestDataSet.HighSpeedHdrRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:CooperTire.ICS.Datasets.ImarkSamplingAndTestDataSet.HighSpeedDtlRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:CooperTire.ICS.Datasets.ImarkSamplingAndTestDataSet.DEFAULTVALUES_VIEWRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:CooperTire.ICS.Datasets.ImarkSamplingAndTestDataSet.PRODUCTDATA_REPORT_VIEWRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:CooperTire.ICS.Datasets.ImarkSamplingAndTestDataSet.CertificateRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:CooperTire.ICS.Datasets.ImarkSamplingAndTestDataSet.MeasureHdrRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:CooperTire.ICS.Datasets.ImarkSamplingAndTestDataSet.MeasureDtlRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:CooperTire.ICS.Datasets.ImarkSamplingAndTestDataSet.TreadWearHdrRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:CooperTire.ICS.Datasets.ImarkSamplingAndTestDataSet.TreadWearDtlRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:CooperTire.ICS.Datasets.ImarkSamplingAndTestDataSet.HighSpeedHdrRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:CooperTire.ICS.Datasets.ImarkSamplingAndTestDataSet.HighSpeedDtlRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:CooperTire.ICS.Datasets.ImarkSamplingAndTestDataSet">
+	<summary>
+Represents a strongly typed in-memory cache of data.
+</summary>
+</member><member name="T:CooperTire.ICS.Datasets.ImarkSamplingAndTestDataSetTableAdapters.DEFAULTVALUES_VIEWTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:CooperTire.ICS.Datasets.ImarkSamplingAndTestDataSetTableAdapters.PRODUCTDATA_REPORT_VIEWTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:CooperTire.ICS.Datasets.EmarkCertificationTypeDataset.PRODUCTDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:CooperTire.ICS.Datasets.EmarkCertificationTypeDataset.EMARKCERTIFICATIONREPORT_VIEWDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:CooperTire.ICS.Datasets.EmarkCertificationTypeDataset.PRODUCTRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:CooperTire.ICS.Datasets.EmarkCertificationTypeDataset.EMARKCERTIFICATIONREPORT_VIEWRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:CooperTire.ICS.Datasets.EmarkCertificationTypeDataset.PRODUCTRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:CooperTire.ICS.Datasets.EmarkCertificationTypeDataset.EMARKCERTIFICATIONREPORT_VIEWRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:CooperTire.ICS.Datasets.EmarkCertificationTypeDataset">
+	<summary>
+Represents a strongly typed in-memory cache of data.
+</summary>
+</member><member name="T:CooperTire.ICS.Datasets.EmarkCertificationTypeDatasetTableAdapters.PRODUCTTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:CooperTire.ICS.Datasets.EmarkCertificationTypeDatasetTableAdapters.EMARKCERTIFICATIONREPORT_VIEWTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:CooperTire.ICS.Datasets.CCCProductDescriptionDataSet.DEFAULTVALUES_VIEWDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:CooperTire.ICS.Datasets.CCCProductDescriptionDataSet.BRAND_VIEWDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:CooperTire.ICS.Datasets.CCCProductDescriptionDataSet.CCCPRODUCTDESC_REPORT_VIEWDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:CooperTire.ICS.Datasets.CCCProductDescriptionDataSet.CERTIFICATEDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:CooperTire.ICS.Datasets.CCCProductDescriptionDataSet.DEFAULTVALUES_VIEWRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:CooperTire.ICS.Datasets.CCCProductDescriptionDataSet.BRAND_VIEWRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:CooperTire.ICS.Datasets.CCCProductDescriptionDataSet.CCCPRODUCTDESC_REPORT_VIEWRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:CooperTire.ICS.Datasets.CCCProductDescriptionDataSet.CERTIFICATERow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:CooperTire.ICS.Datasets.CCCProductDescriptionDataSet.DEFAULTVALUES_VIEWRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:CooperTire.ICS.Datasets.CCCProductDescriptionDataSet.BRAND_VIEWRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:CooperTire.ICS.Datasets.CCCProductDescriptionDataSet.CCCPRODUCTDESC_REPORT_VIEWRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:CooperTire.ICS.Datasets.CCCProductDescriptionDataSet.CERTIFICATERowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:CooperTire.ICS.Datasets.CCCProductDescriptionDataSet">
+	<summary>
+Represents a strongly typed in-memory cache of data.
+</summary>
+</member><member name="T:CooperTire.ICS.Datasets.CCCProductDescriptionDataSetTableAdapters.DEFAULTVALUES_VIEWTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:CooperTire.ICS.Datasets.CCCProductDescriptionDataSetTableAdapters.BRAND_VIEWTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:CooperTire.ICS.Datasets.CCCProductDescriptionDataSetTableAdapters.CCCPRODUCTDESC_REPORT_VIEWTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:CooperTire.ICS.Datasets.EmarkPassengerDataSet.BRAND_VIEWDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:CooperTire.ICS.Datasets.EmarkPassengerDataSet.DEFAULTVALUES_VIEWDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:CooperTire.ICS.Datasets.EmarkPassengerDataSet.PRODUCTDATA_REPORT_VIEWDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:CooperTire.ICS.Datasets.EmarkPassengerDataSet.CertificateDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:CooperTire.ICS.Datasets.EmarkPassengerDataSet.BRAND_VIEWRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:CooperTire.ICS.Datasets.EmarkPassengerDataSet.DEFAULTVALUES_VIEWRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:CooperTire.ICS.Datasets.EmarkPassengerDataSet.PRODUCTDATA_REPORT_VIEWRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:CooperTire.ICS.Datasets.EmarkPassengerDataSet.CertificateRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:CooperTire.ICS.Datasets.EmarkPassengerDataSet.BRAND_VIEWRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:CooperTire.ICS.Datasets.EmarkPassengerDataSet.DEFAULTVALUES_VIEWRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:CooperTire.ICS.Datasets.EmarkPassengerDataSet.PRODUCTDATA_REPORT_VIEWRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:CooperTire.ICS.Datasets.EmarkPassengerDataSet.CertificateRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:CooperTire.ICS.Datasets.EmarkPassengerDataSet">
+	<summary>
+Represents a strongly typed in-memory cache of data.
+</summary>
+</member><member name="T:CooperTire.ICS.Datasets.EmarkPassengerDataSetTableAdapters.BRAND_VIEWTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:CooperTire.ICS.Datasets.EmarkPassengerDataSetTableAdapters.DEFAULTVALUES_VIEWTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:CooperTire.ICS.Datasets.EmarkPassengerDataSetTableAdapters.PRODUCTDATA_REPORT_VIEWTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:CooperTire.ICS.Datasets.ExceptionReport_DataSet.EXCEPTIONREPORTDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:CooperTire.ICS.Datasets.ExceptionReport_DataSet.EXCEPTIONREPORTRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:CooperTire.ICS.Datasets.ExceptionReport_DataSet.EXCEPTIONREPORTRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:CooperTire.ICS.Datasets.ExceptionReport_DataSet">
+	<summary>
+Represents a strongly typed in-memory cache of data.
+</summary>
+</member><member name="T:CooperTire.ICS.Datasets.ExceptionReport_DataSetTableAdapters.EXCEPTIONREPORTTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:CooperTire.ICS.Datasets.SKUtoICSDataset.ProductDataDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:CooperTire.ICS.Datasets.SKUtoICSDataset.ProductDataRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:CooperTire.ICS.Datasets.SKUtoICSDataset.ProductDataRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:CooperTire.ICS.Datasets.SKUtoICSDataset">
+	<summary>
+Represents a strongly typed in-memory cache of data.
+</summary>
+</member><member name="T:CooperTire.ICS.Datasets.Traceability.TRACEABILITY_VIEWDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:CooperTire.ICS.Datasets.Traceability.TRACEABILITY_VIEWRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:CooperTire.ICS.Datasets.Traceability.TRACEABILITY_VIEWRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:CooperTire.ICS.Datasets.Traceability">
+	<summary>
+Represents a strongly typed in-memory cache of data.
+</summary>
+</member><member name="T:CooperTire.ICS.Datasets.TraceabilityTableAdapters.TRACEABILITY_VIEWTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:CooperTire.ICS.Datasets.TRACStoICSDataset.MeasureHdrDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:CooperTire.ICS.Datasets.TRACStoICSDataset.MeasureDtlDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:CooperTire.ICS.Datasets.TRACStoICSDataset.TreadWearHdrDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:CooperTire.ICS.Datasets.TRACStoICSDataset.TreadWearDtlDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:CooperTire.ICS.Datasets.TRACStoICSDataset.HighSpeedHdrDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:CooperTire.ICS.Datasets.TRACStoICSDataset.HighSpeedDtlDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:CooperTire.ICS.Datasets.TRACStoICSDataset.EnduranceHdrDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:CooperTire.ICS.Datasets.TRACStoICSDataset.EnduranceDtlDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:CooperTire.ICS.Datasets.TRACStoICSDataset.PlungerHdrDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:CooperTire.ICS.Datasets.TRACStoICSDataset.PlungerDtlDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:CooperTire.ICS.Datasets.TRACStoICSDataset.BeadUnseatHdrDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:CooperTire.ICS.Datasets.TRACStoICSDataset.BeadUnseatDtlDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:CooperTire.ICS.Datasets.TRACStoICSDataset.EndLowInfDtlDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:CooperTire.ICS.Datasets.TRACStoICSDataset.RecentTestDataDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:CooperTire.ICS.Datasets.TRACStoICSDataset.MeasureHdrRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:CooperTire.ICS.Datasets.TRACStoICSDataset.MeasureDtlRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:CooperTire.ICS.Datasets.TRACStoICSDataset.TreadWearHdrRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:CooperTire.ICS.Datasets.TRACStoICSDataset.TreadWearDtlRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:CooperTire.ICS.Datasets.TRACStoICSDataset.HighSpeedHdrRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:CooperTire.ICS.Datasets.TRACStoICSDataset.HighSpeedDtlRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:CooperTire.ICS.Datasets.TRACStoICSDataset.EnduranceHdrRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:CooperTire.ICS.Datasets.TRACStoICSDataset.EnduranceDtlRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:CooperTire.ICS.Datasets.TRACStoICSDataset.PlungerHdrRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:CooperTire.ICS.Datasets.TRACStoICSDataset.PlungerDtlRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:CooperTire.ICS.Datasets.TRACStoICSDataset.BeadUnseatHdrRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:CooperTire.ICS.Datasets.TRACStoICSDataset.BeadUnseatDtlRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:CooperTire.ICS.Datasets.TRACStoICSDataset.EndLowInfDtlRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:CooperTire.ICS.Datasets.TRACStoICSDataset.RecentTestDataRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:CooperTire.ICS.Datasets.TRACStoICSDataset.MeasureHdrRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:CooperTire.ICS.Datasets.TRACStoICSDataset.MeasureDtlRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:CooperTire.ICS.Datasets.TRACStoICSDataset.TreadWearHdrRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:CooperTire.ICS.Datasets.TRACStoICSDataset.TreadWearDtlRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:CooperTire.ICS.Datasets.TRACStoICSDataset.HighSpeedHdrRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:CooperTire.ICS.Datasets.TRACStoICSDataset.HighSpeedDtlRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:CooperTire.ICS.Datasets.TRACStoICSDataset.EnduranceHdrRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:CooperTire.ICS.Datasets.TRACStoICSDataset.EnduranceDtlRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:CooperTire.ICS.Datasets.TRACStoICSDataset.PlungerHdrRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:CooperTire.ICS.Datasets.TRACStoICSDataset.PlungerDtlRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:CooperTire.ICS.Datasets.TRACStoICSDataset.BeadUnseatHdrRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:CooperTire.ICS.Datasets.TRACStoICSDataset.BeadUnseatDtlRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:CooperTire.ICS.Datasets.TRACStoICSDataset.EndLowInfDtlRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:CooperTire.ICS.Datasets.TRACStoICSDataset.RecentTestDataRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:CooperTire.ICS.Datasets.TRACStoICSDataset">
+	<summary>
+Represents a strongly typed in-memory cache of data.
+</summary>
+</member><member name="T:CooperTire.ICS.Datasets.ICSDataSet.ProductDataDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:CooperTire.ICS.Datasets.ICSDataSet.MeasureHdrDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:CooperTire.ICS.Datasets.ICSDataSet.MeasureDtlDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:CooperTire.ICS.Datasets.ICSDataSet.PlungerDtlDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:CooperTire.ICS.Datasets.ICSDataSet.PlungerHdrDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:CooperTire.ICS.Datasets.ICSDataSet.TreadWearDtlDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:CooperTire.ICS.Datasets.ICSDataSet.TreadWearHdrDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:CooperTire.ICS.Datasets.ICSDataSet.BeadUnseatHdrDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:CooperTire.ICS.Datasets.ICSDataSet.BeadUnseatDtlDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:CooperTire.ICS.Datasets.ICSDataSet.HighSpeedHdrDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:CooperTire.ICS.Datasets.ICSDataSet.HighSpeedDtlDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:CooperTire.ICS.Datasets.ICSDataSet.EnduranceHdrDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:CooperTire.ICS.Datasets.ICSDataSet.EnduranceDtlDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:CooperTire.ICS.Datasets.ICSDataSet.SpeedTestDetailDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:CooperTire.ICS.Datasets.ICSDataSet.SoundHdrDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:CooperTire.ICS.Datasets.ICSDataSet.WetGripHdrDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:CooperTire.ICS.Datasets.ICSDataSet.SoundDetailDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:CooperTire.ICS.Datasets.ICSDataSet.WetGripDetailDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:CooperTire.ICS.Datasets.ICSDataSet.ProductDataRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:CooperTire.ICS.Datasets.ICSDataSet.MeasureHdrRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:CooperTire.ICS.Datasets.ICSDataSet.MeasureDtlRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:CooperTire.ICS.Datasets.ICSDataSet.PlungerDtlRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:CooperTire.ICS.Datasets.ICSDataSet.PlungerHdrRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:CooperTire.ICS.Datasets.ICSDataSet.TreadWearDtlRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:CooperTire.ICS.Datasets.ICSDataSet.TreadWearHdrRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:CooperTire.ICS.Datasets.ICSDataSet.BeadUnseatHdrRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:CooperTire.ICS.Datasets.ICSDataSet.BeadUnseatDtlRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:CooperTire.ICS.Datasets.ICSDataSet.HighSpeedHdrRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:CooperTire.ICS.Datasets.ICSDataSet.HighSpeedDtlRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:CooperTire.ICS.Datasets.ICSDataSet.EnduranceHdrRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:CooperTire.ICS.Datasets.ICSDataSet.EnduranceDtlRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:CooperTire.ICS.Datasets.ICSDataSet.SpeedTestDetailRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:CooperTire.ICS.Datasets.ICSDataSet.SoundHdrRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:CooperTire.ICS.Datasets.ICSDataSet.WetGripHdrRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:CooperTire.ICS.Datasets.ICSDataSet.SoundDetailRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:CooperTire.ICS.Datasets.ICSDataSet.WetGripDetailRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:CooperTire.ICS.Datasets.ICSDataSet.ProductDataRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:CooperTire.ICS.Datasets.ICSDataSet.MeasureHdrRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:CooperTire.ICS.Datasets.ICSDataSet.MeasureDtlRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:CooperTire.ICS.Datasets.ICSDataSet.PlungerDtlRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:CooperTire.ICS.Datasets.ICSDataSet.PlungerHdrRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:CooperTire.ICS.Datasets.ICSDataSet.TreadWearDtlRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:CooperTire.ICS.Datasets.ICSDataSet.TreadWearHdrRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:CooperTire.ICS.Datasets.ICSDataSet.BeadUnseatHdrRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:CooperTire.ICS.Datasets.ICSDataSet.BeadUnseatDtlRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:CooperTire.ICS.Datasets.ICSDataSet.HighSpeedHdrRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:CooperTire.ICS.Datasets.ICSDataSet.HighSpeedDtlRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:CooperTire.ICS.Datasets.ICSDataSet.EnduranceHdrRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:CooperTire.ICS.Datasets.ICSDataSet.EnduranceDtlRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:CooperTire.ICS.Datasets.ICSDataSet.SpeedTestDetailRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:CooperTire.ICS.Datasets.ICSDataSet.SoundHdrRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:CooperTire.ICS.Datasets.ICSDataSet.WetGripHdrRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:CooperTire.ICS.Datasets.ICSDataSet.SoundDetailRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:CooperTire.ICS.Datasets.ICSDataSet.WetGripDetailRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:CooperTire.ICS.Datasets.ICSDataSet">
+	<summary>
+Represents a strongly typed in-memory cache of data.
+</summary>
+</member><member name="T:CooperTire.ICS.Datasets.CertificateReport.PRODUCTDATA_REPORT_VIEWDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:CooperTire.ICS.Datasets.CertificateReport.CERTIFICATE_VIEWDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:CooperTire.ICS.Datasets.CertificateReport.TESTREFERENCE_VIEWDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:CooperTire.ICS.Datasets.CertificateReport.PRODUCTDATA_REPORT_VIEWRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:CooperTire.ICS.Datasets.CertificateReport.CERTIFICATE_VIEWRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:CooperTire.ICS.Datasets.CertificateReport.TESTREFERENCE_VIEWRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:CooperTire.ICS.Datasets.CertificateReport.PRODUCTDATA_REPORT_VIEWRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:CooperTire.ICS.Datasets.CertificateReport.CERTIFICATE_VIEWRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:CooperTire.ICS.Datasets.CertificateReport.TESTREFERENCE_VIEWRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:CooperTire.ICS.Datasets.CertificateReport">
+	<summary>
+Represents a strongly typed in-memory cache of data.
+</summary>
+</member><member name="T:CooperTire.ICS.Datasets.CertificateReportTableAdapters.PRODUCTDATA_REPORT_VIEWTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:CooperTire.ICS.Datasets.CertificateReportTableAdapters.CERTIFICATE_VIEWTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:CooperTire.ICS.Datasets.CertificateReportTableAdapters.TESTREFERENCE_VIEWTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+</members>
+</doc>

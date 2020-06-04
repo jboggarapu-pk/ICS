@@ -1,0 +1,115 @@
+<%@ Master Language="VB" AutoEventWireup="false" Codebehind="ICS.master.vb" Inherits="CooperTire.ICS.Web.ICS" %>
+<%@ Register Src="~/UserControls/SessionTimeOutMonitorUC.ascx" TagName="SessionTimeOutMonitorUC"
+    TagPrefix="uc1" %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>International Certification System</title>
+    <style type="text/css">
+    .modalBackground
+    {
+        filter: Alpha(Opacity=40);
+        -moz-opacity:0.4; 
+        opacity: 0.4;
+        width: 100%; height: 100%; background-color: #999999;
+        position: absolute;
+        z-index: 500;
+        top: 0px; left: 0px;
+    }
+    .AddCertificationSKULable
+    {
+	    font-weight: bold;
+	    font-size: small;
+	    color: darkslategray;
+	    font-family: Verdana;
+    }
+</style>
+</head>
+<body>
+<center>
+    <form id="frmICS" runat="server">
+        <asp:ScriptManager ID="smgrScriptManager" runat="server" />
+        <script type="text/javascript">
+            var prm = Sys.WebForms.PageRequestManager.getInstance();
+            prm.add_initializeRequest(InitializeRequest);
+            function InitializeRequest(sender, args)
+            {
+                if (prm.get_isInAsyncPostBack())
+                {
+                    args.set_cancel(true);
+                }
+            }
+        </script>
+        <div id="divMaster" style="width: 960px;">
+            <table style="width: 960px;" id="tblMaster">
+                <tr>
+                    <td align="left" colspan="2" valign="top" class="headerArea">
+                        <asp:Image ID="imgCooperTires" runat="server" Height="63px" ImageUrl="~/Images/cooper-tires.png"
+                            Width="254px" BackColor="Transparent" />
+                        &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                        &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp;
+&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                        &nbsp; &nbsp;
+                    </td>
+                </tr>
+                <tr>
+                    <td align="left" colspan="2" valign="top">
+                        <asp:Menu ID="menuQuality" Visible="false" runat="server" BackColor="#E3EAEB" DynamicHorizontalOffset="2"
+                            Font-Names="Verdana" Font-Size="X-Small" ForeColor="#666666" Orientation="Horizontal"
+                            StaticSubMenuIndent="10px" Width="428px" Font-Bold="True">
+                            <StaticSelectedStyle BackColor="#1C5E55" />
+                            <StaticMenuItemStyle HorizontalPadding="20px" VerticalPadding="2px" />
+                            <DynamicHoverStyle BackColor="#666666" ForeColor="White" />
+                            <DynamicMenuStyle BackColor="#E3EAEB" />
+                            <DynamicSelectedStyle BackColor="#1C5E55" />
+                            <DynamicMenuItemStyle HorizontalPadding="155px" VerticalPadding="2px" />
+                            <StaticHoverStyle BackColor="#666666" ForeColor="White" />
+                            <Items>
+                                <asp:MenuItem NavigateUrl="~/Home.aspx" Text="Home" Value="Home"></asp:MenuItem>
+                                <asp:MenuItem NavigateUrl="~/CertificationSearchEx.aspx" Text="Certifications" Value="Certifications">
+                                </asp:MenuItem>
+                                <asp:MenuItem NavigateUrl="~/CertificationDefaults.aspx" Text="Certification Defaults"
+                                    Value="Certification Defaults"></asp:MenuItem>
+                                <asp:MenuItem NavigateUrl="~/Approval.aspx" Text="Approvals" Value="Approvals"></asp:MenuItem>
+<asp:MenuItem NavigateUrl="~/ReportSelectorView.aspx" Text="Reports" Value="Reports"></asp:MenuItem>
+                                <asp:MenuItem NavigateUrl="~/ArchiveCertification.aspx" Text="Archive" Value="Archive"></asp:MenuItem>
+                            </Items>
+                        </asp:Menu>
+                        <asp:Menu ID="menuMarketing" Visible="false" runat="server" BackColor="#E3EAEB" DynamicHorizontalOffset="2"
+                            Font-Names="Verdana" Font-Size="X-Small" ForeColor="#666666" Orientation="Horizontal"
+                            StaticSubMenuIndent="10px" Width="327px" Font-Bold="True">
+                            <StaticSelectedStyle BackColor="#1C5E55" />
+                            <StaticMenuItemStyle HorizontalPadding="50px" VerticalPadding="2px" />
+                            <DynamicHoverStyle BackColor="#666666" ForeColor="White" />
+                            <DynamicMenuStyle BackColor="#E3EAEB" />
+                            <DynamicSelectedStyle BackColor="#1C5E55" />
+                            <DynamicMenuItemStyle HorizontalPadding="5px" VerticalPadding="2px" />
+                            <StaticHoverStyle BackColor="#666666" ForeColor="White" />
+                            <Items>
+                                <asp:MenuItem NavigateUrl="~/Home.aspx" Text="Home" Value="Home"></asp:MenuItem>
+                                 <asp:MenuItem NavigateUrl="~/MarketingNew.aspx" Text="Marketing" Value="MarketingNew"></asp:MenuItem>
+                            </Items>
+                        </asp:Menu>
+                                <!--<asp:MenuItem NavigateUrl="~/Marketing.aspx" Text="Marketing" Value="Marketing"></asp:MenuItem>-->
+                    </td>
+                </tr>
+                <tr>
+                    <td align="left" valign="top" colspan="2" class="contentArea">
+                        <asp:ContentPlaceHolder ID="cphICSContentHolder" runat="server">
+                        </asp:ContentPlaceHolder>
+                    </td>
+                </tr>
+                <tr>
+                    <td id="footer" align="left" colspan="2" valign="top" class="footerArea">
+                        <span>
+<br />
+<asp:Label ID="lblVersion" runat="server" ForeColor="MidnightBlue">Cooper Tire & Rubber Company, International Certification System</asp:Label></span></td>
+                </tr>
+            </table>
+        </div>
+        <uc1:SessionTimeOutMonitorUC ID="SessionTimeOutMonitorUC1" Visible="true" runat="server" />
+    </form>
+</center>
+</body>
+</html>
+

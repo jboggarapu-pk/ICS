@@ -1,0 +1,307 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+This file is used by the publish/package process of your Web project. You can customize the behavior of this process
+by editing this MSBuild file. In order to learn more about this please visit http://go.microsoft.com/fwlink/?LinkID=208121. 
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+    <_PublishTargetUrl>D:\ICS_Publish</_PublishTargetUrl>
+  </PropertyGroup>
+  <ItemGroup>
+    <File Include="Approval.aspx">
+      <publishTime>09/24/2019 17:03:17</publishTime>
+    </File>
+    <File Include="App_Themes/ICS/ICS.css">
+      <publishTime>09/24/2019 17:03:17</publishTime>
+    </File>
+    <File Include="App_Themes/ICS/ICS.skin">
+      <publishTime>09/24/2019 17:03:17</publishTime>
+    </File>
+    <File Include="ArchiveCertification.aspx">
+      <publishTime>09/24/2019 17:03:21</publishTime>
+    </File>
+    <File Include="bin/AjaxControlToolkit.dll">
+      <publishTime>09/25/2019 10:27:29</publishTime>
+    </File>
+    <File Include="bin/AJAXExtensionsToolbox.dll">
+      <publishTime>09/25/2019 10:26:46</publishTime>
+    </File>
+    <File Include="bin/CooperTire.Security.dll">
+      <publishTime>09/25/2019 10:27:29</publishTime>
+    </File>
+    <File Include="bin/CrystalDecisions.CrystalReports.Engine.dll">
+      <publishTime>09/25/2019 10:27:34</publishTime>
+    </File>
+    <File Include="bin/CrystalDecisions.Enterprise.Framework.dll">
+      <publishTime>09/25/2019 10:27:34</publishTime>
+    </File>
+    <File Include="bin/CrystalDecisions.Enterprise.InfoStore.dll">
+      <publishTime>09/25/2019 10:27:34</publishTime>
+    </File>
+    <File Include="bin/CrystalDecisions.ReportSource.dll">
+      <publishTime>09/25/2019 10:28:06</publishTime>
+    </File>
+    <File Include="bin/CrystalDecisions.Shared.dll">
+      <publishTime>09/25/2019 10:28:06</publishTime>
+    </File>
+    <File Include="bin/CrystalDecisions.Web.dll">
+      <publishTime>09/25/2019 10:28:06</publishTime>
+    </File>
+    <File Include="bin/CrystalDecisions.Windows.Forms.dll">
+      <publishTime>09/25/2019 10:26:46</publishTime>
+    </File>
+    <File Include="bin/ICS.Common.dll">
+      <publishTime>01/08/2020 11:04:22</publishTime>
+    </File>
+    <File Include="bin/ICS.CTS.DALC.dll">
+      <publishTime>01/08/2020 11:04:21</publishTime>
+    </File>
+    <File Include="bin/ICS.DataAccess.dll">
+      <publishTime>01/08/2020 11:04:25</publishTime>
+    </File>
+    <File Include="bin/ICS.DataAccess.XmlSerializers.dll">
+      <publishTime>01/08/2020 11:04:25</publishTime>
+    </File>
+    <File Include="bin/ICS.Datasets.dll">
+      <publishTime>01/06/2020 16:42:03</publishTime>
+    </File>
+    <File Include="bin/ICS.Depository.dll">
+      <publishTime>01/08/2020 11:04:27</publishTime>
+    </File>
+    <File Include="bin/ICS.DomainEntities.dll">
+      <publishTime>01/08/2020 11:04:23</publishTime>
+    </File>
+    <File Include="bin/ICS.Model.dll">
+      <publishTime>01/08/2020 11:04:29</publishTime>
+    </File>
+    <File Include="bin/ICS.Presenter.dll">
+      <publishTime>01/08/2020 11:04:30</publishTime>
+    </File>
+    <File Include="bin/ICS.Web.dll">
+      <publishTime>01/08/2020 11:04:32</publishTime>
+    </File>
+    <File Include="bin/ICS.xml">
+      <publishTime>01/08/2020 11:04:32</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Practices.EnterpriseLibrary.Common.dll">
+      <publishTime>09/25/2019 10:28:06</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Practices.EnterpriseLibrary.ExceptionHandling.dll">
+      <publishTime>09/25/2019 10:28:06</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Practices.EnterpriseLibrary.ExceptionHandling.Logging.dll">
+      <publishTime>09/25/2019 10:28:06</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Practices.EnterpriseLibrary.Logging.dll">
+      <publishTime>09/25/2019 10:28:06</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Practices.EnterpriseLibrary.Validation.dll">
+      <publishTime>09/25/2019 10:28:06</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Practices.EnterpriseLibrary.Validation.Integration.AspNet.dll">
+      <publishTime>09/25/2019 10:28:06</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Practices.ObjectBuilder.dll">
+      <publishTime>09/25/2019 10:28:06</publishTime>
+    </File>
+    <File Include="bin/System.Web.Extensions.Design.dll">
+      <publishTime>09/25/2019 10:26:46</publishTime>
+    </File>
+    <File Include="bin/System.Web.Extensions.dll">
+      <publishTime>09/25/2019 10:26:46</publishTime>
+    </File>
+    <File Include="CertificationDefaults.aspx">
+      <publishTime>09/24/2019 17:05:41</publishTime>
+    </File>
+    <File Include="CertificationSearchEx.aspx">
+      <publishTime>09/24/2019 17:03:17</publishTime>
+    </File>
+    <File Include="Error.aspx">
+      <publishTime>09/24/2019 17:05:24</publishTime>
+    </File>
+    <File Include="ExcelExport.aspx">
+      <publishTime>09/24/2019 17:03:17</publishTime>
+    </File>
+    <File Include="Global.asax">
+      <publishTime>09/24/2019 17:05:41</publishTime>
+    </File>
+    <File Include="Home.aspx">
+      <publishTime>09/24/2019 17:05:24</publishTime>
+    </File>
+    <File Include="ICS.Master">
+      <publishTime>09/24/2019 17:03:17</publishTime>
+    </File>
+    <File Include="Images/ajax-loader.gif">
+      <publishTime>09/24/2019 17:03:17</publishTime>
+    </File>
+    <File Include="Images/bg-menu-main.png">
+      <publishTime>09/24/2019 17:05:41</publishTime>
+    </File>
+    <File Include="Images/body-bg.png">
+      <publishTime>09/24/2019 17:03:17</publishTime>
+    </File>
+    <File Include="Images/checked.png">
+      <publishTime>09/24/2019 17:05:24</publishTime>
+    </File>
+    <File Include="Images/collapse.jpg">
+      <publishTime>09/24/2019 17:03:17</publishTime>
+    </File>
+    <File Include="Images/cooper-tires.png">
+      <publishTime>09/24/2019 17:05:41</publishTime>
+    </File>
+    <File Include="Images/CooperTires.bmp">
+      <publishTime>09/24/2019 17:03:17</publishTime>
+    </File>
+    <File Include="Images/expand.jpg">
+      <publishTime>09/24/2019 17:03:17</publishTime>
+    </File>
+    <File Include="Images/Refresh.jpg">
+      <publishTime>09/24/2019 17:05:24</publishTime>
+    </File>
+    <File Include="Images/unchecked.png">
+      <publishTime>09/24/2019 17:05:24</publishTime>
+    </File>
+    <File Include="Marketing.aspx">
+      <publishTime>09/24/2019 17:03:17</publishTime>
+    </File>
+    <File Include="MarketingNew.aspx">
+      <publishTime>09/24/2019 17:05:24</publishTime>
+    </File>
+    <File Include="packages.config">
+      <publishTime>12/18/2019 10:00:52</publishTime>
+    </File>
+    <File Include="Query.aspx">
+      <publishTime>09/24/2019 17:03:17</publishTime>
+    </File>
+    <File Include="Report.aspx">
+      <publishTime>09/24/2019 17:05:51</publishTime>
+    </File>
+    <File Include="ReportSelectorView.aspx">
+      <publishTime>09/24/2019 17:03:17</publishTime>
+    </File>
+    <File Include="TreeLineImages/dash.gif">
+      <publishTime>09/24/2019 17:05:24</publishTime>
+    </File>
+    <File Include="TreeLineImages/dashminus.gif">
+      <publishTime>09/24/2019 17:03:17</publishTime>
+    </File>
+    <File Include="TreeLineImages/dashplus.gif">
+      <publishTime>09/24/2019 17:05:51</publishTime>
+    </File>
+    <File Include="TreeLineImages/i.gif">
+      <publishTime>09/24/2019 17:03:17</publishTime>
+    </File>
+    <File Include="TreeLineImages/l.gif">
+      <publishTime>09/24/2019 17:05:24</publishTime>
+    </File>
+    <File Include="TreeLineImages/lminus.gif">
+      <publishTime>09/24/2019 17:03:17</publishTime>
+    </File>
+    <File Include="TreeLineImages/lplus.gif">
+      <publishTime>09/24/2019 17:05:51</publishTime>
+    </File>
+    <File Include="TreeLineImages/minus.gif">
+      <publishTime>09/24/2019 17:03:17</publishTime>
+    </File>
+    <File Include="TreeLineImages/noexpand.gif">
+      <publishTime>09/24/2019 17:05:24</publishTime>
+    </File>
+    <File Include="TreeLineImages/plus.gif">
+      <publishTime>09/24/2019 17:03:21</publishTime>
+    </File>
+    <File Include="TreeLineImages/r.gif">
+      <publishTime>09/24/2019 17:05:51</publishTime>
+    </File>
+    <File Include="TreeLineImages/rminus.gif">
+      <publishTime>09/24/2019 17:03:21</publishTime>
+    </File>
+    <File Include="TreeLineImages/rplus.gif">
+      <publishTime>09/24/2019 17:05:24</publishTime>
+    </File>
+    <File Include="TreeLineImages/t.gif">
+      <publishTime>09/24/2019 17:03:21</publishTime>
+    </File>
+    <File Include="TreeLineImages/tminus.gif">
+      <publishTime>09/24/2019 17:05:51</publishTime>
+    </File>
+    <File Include="TreeLineImages/tplus.gif">
+      <publishTime>09/24/2019 17:05:24</publishTime>
+    </File>
+    <File Include="UserControls/AddCertificationUC.ascx">
+      <publishTime>09/24/2019 17:05:24</publishTime>
+    </File>
+    <File Include="UserControls/ArchiveCertificationUC.ascx">
+      <publishTime>09/24/2019 17:05:24</publishTime>
+    </File>
+    <File Include="UserControls/AttachCertificationUC.ascx">
+      <publishTime>09/24/2019 17:06:13</publishTime>
+    </File>
+    <File Include="UserControls/CCCCertificationUC.ascx">
+      <publishTime>09/24/2019 17:05:24</publishTime>
+    </File>
+    <File Include="UserControls/CertificationDefaultsUC.ascx">
+      <publishTime>09/24/2019 17:05:24</publishTime>
+    </File>
+    <File Include="UserControls/CopyCertificationUC.ascx">
+      <publishTime>09/24/2019 17:05:24</publishTime>
+    </File>
+    <File Include="UserControls/DeleteCertificationUC.ascx">
+      <publishTime>09/24/2019 17:06:13</publishTime>
+    </File>
+    <File Include="UserControls/DetachOrMoveCertificationUC.ascx">
+      <publishTime>09/24/2019 17:05:24</publishTime>
+    </File>
+    <File Include="UserControls/DupCorrectCertificationUC.ascx">
+      <publishTime>09/24/2019 17:05:24</publishTime>
+    </File>
+    <File Include="UserControls/EditCertificationUC.ascx">
+      <publishTime>09/24/2019 17:05:24</publishTime>
+    </File>
+    <File Include="UserControls/Emark117CertificationUC.ascx">
+      <publishTime>09/24/2019 17:06:13</publishTime>
+    </File>
+    <File Include="UserControls/EmarkCertificationUC.ascx">
+      <publishTime>09/24/2019 17:05:24</publishTime>
+    </File>
+    <File Include="UserControls/FamilyMaintenanceUC.ascx">
+      <publishTime>09/24/2019 17:05:24</publishTime>
+    </File>
+    <File Include="UserControls/GeneralCertificationUC.ascx">
+      <publishTime>09/24/2019 17:06:13</publishTime>
+    </File>
+    <File Include="UserControls/GSOCertificationUC.ascx">
+      <publishTime>09/24/2019 17:05:24</publishTime>
+    </File>
+    <File Include="UserControls/ImarkCertificationUC.ascx">
+      <publishTime>09/24/2019 17:05:24</publishTime>
+    </File>
+    <File Include="UserControls/IndiaMarkCertificationUC.ascx">
+      <publishTime>09/24/2019 17:05:24</publishTime>
+    </File>
+    <File Include="UserControls/NOMCertificationUC.ascx">
+      <publishTime>09/24/2019 17:05:24</publishTime>
+    </File>
+    <File Include="UserControls/QueryUC.ascx">
+      <publishTime>09/24/2019 17:06:13</publishTime>
+    </File>
+    <File Include="UserControls/RefreshProductUC.ascx">
+      <publishTime>09/24/2019 17:05:24</publishTime>
+    </File>
+    <File Include="UserControls/RenameCertificationUC.ascx">
+      <publishTime>09/24/2019 17:05:24</publishTime>
+    </File>
+    <File Include="UserControls/SessionTimeOutMonitorUC.ascx">
+      <publishTime>09/24/2019 17:05:24</publishTime>
+    </File>
+    <File Include="UserControls/TestResultsUC.ascx">
+      <publishTime>09/24/2019 17:06:13</publishTime>
+    </File>
+    <File Include="Web.config">
+      <publishTime>01/07/2020 11:20:19</publishTime>
+    </File>
+    <File Include="Web.sitemap">
+      <publishTime>09/24/2019 17:05:24</publishTime>
+    </File>
+  </ItemGroup>
+</Project>

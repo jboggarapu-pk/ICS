@@ -1,0 +1,1064 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+ICS.Common
+</name>
+</assembly>
+<members>
+<member name="T:CooperTire.ICS.Common.Emailer.SendResult">
+	<summary>
+ Result of the e-mail notification
+ </summary>
+	<remarks></remarks>
+</member><member name="F:CooperTire.ICS.Common.Emailer.m_strSmtpServerName">
+	<summary>
+ Smtp Server name to hold empty string
+ </summary>
+	<remarks></remarks>
+</member><member name="F:CooperTire.ICS.Common.Emailer.m_strFrom">
+	<summary>
+ From address name to hold empty string
+ </summary>
+	<remarks></remarks>
+</member><member name="F:CooperTire.ICS.Common.Emailer.m_strTo">
+	<summary>
+ From to name to hold empty string
+ </summary>
+	<remarks></remarks>
+</member><member name="M:CooperTire.ICS.Common.Emailer.#cctor">
+	<summary>
+ Constructor to initialize the class members.
+ </summary>
+	<remarks>
+		<list type="table">
+			<listheader>
+				<term>Author</term>
+				<description>Description</description>
+			</listheader>
+			<item>
+				<term>Srinivas S</term>
+				<description>
+					<para>09/18/2019</para>
+					<para>Original Code.</para>
+				</description>
+			</item>
+		</list>
+	</remarks>
+</member><member name="M:CooperTire.ICS.Common.Emailer.Send(System.String,System.String)">
+	<summary>
+ Send e-mail from current user to configurable address
+ </summary>
+	<param name="p_strSubject">Subject of the email.</param>
+	<param name="p_strBody">Body of the email.</param>
+	<returns>Returns SendResult type success.</returns>
+	<exception cref="T:System.Exception">
+ Returns Failure indicator and logs the event
+ </exception>
+	<remarks>
+		<list type="table">
+			<listheader>
+				<term>Author</term>
+				<description>Description</description>
+			</listheader>
+			<item>
+				<term>NA</term>
+				<description>
+					<para>NA</para>
+					<para>Original Code.</para>
+				</description>
+			</item>
+			<item>
+				<term>Srinivas S</term>
+				<description>
+					<para>09/18/2019</para>
+					<para>Implemented code standardization.</para>
+				</description>
+			</item>
+		</list>
+	</remarks>
+</member><member name="M:CooperTire.ICS.Common.Emailer.SendMarketing(System.String,System.String)">
+	<summary>
+ Send e-mail from current user to configurable address for marketing function
+ </summary>
+	<param name="p_strSubject">Subject of the email.</param>
+	<param name="p_strBody">Body of the email.</param>
+	<returns>Returns SendResult type success.</returns>
+	<exception cref="T:System.Exception">
+ Returns Failure indicator and logs the event
+ </exception>
+	<remarks>
+		<list type="table">
+			<listheader>
+				<term>Author</term>
+				<description>Description</description>
+			</listheader>
+			<item>
+				<term>NA</term>
+				<description>
+					<para>NA</para>
+					<para>Original Code.</para>
+				</description>
+			</item>
+			<item>
+				<term>Srinivas S</term>
+				<description>
+					<para>09/18/2019</para>
+					<para>Implemented code standardization.</para>
+				</description>
+			</item>
+		</list>
+	</remarks>
+</member><member name="T:CooperTire.ICS.Common.Emailer">
+	<summary>
+ Supports outgoing e-mails from pre-configured SMTP server
+ </summary>
+	<remarks>
+		<list type="table">
+			<listheader>
+				<term>Author</term>
+				<description>Description</description>
+			</listheader>
+			<item>
+				<term>NA</term>
+				<description>
+					<para>NA</para>
+					<para>Original Code.</para>
+				</description>
+			</item>
+			<item>
+				<term>Srinivas S</term>
+				<description>
+					<para>09/18/2019</para>
+					<para>Implemented code standardization.</para>
+				</description>
+			</item>
+		</list>
+	</remarks>
+</member><member name="F:CooperTire.ICS.Common.NameAid.TireType.Passenger">
+	<summary>
+ Passenger type
+ </summary>
+</member><member name="F:CooperTire.ICS.Common.NameAid.TireType.LightTruck">
+	<summary>
+ Light Truck
+ </summary>
+</member><member name="F:CooperTire.ICS.Common.NameAid.TireType.SpecialtyLightTruck">
+	<summary>
+ Specialty Light Truck
+ </summary>
+</member><member name="F:CooperTire.ICS.Common.NameAid.TireType.MediumTruck">
+	<summary>
+ Medium Truck
+ </summary>
+</member><member name="T:CooperTire.ICS.Common.NameAid.TireType">
+	<summary>
+ Enum to hold TireType Ids
+ </summary>
+	<remarks></remarks>
+</member><member name="T:CooperTire.ICS.Common.NameAid.Report">
+	<summary>
+ Enum to hold Report names
+ </summary>
+	<remarks></remarks>
+</member><member name="F:CooperTire.ICS.Common.NameAid.SaveResult.Sucess">
+	<summary>
+ All was well and info was saved
+ </summary>
+</member><member name="F:CooperTire.ICS.Common.NameAid.SaveResult.ValidationError">
+	<summary>
+ There was problems with validation
+ </summary>
+</member><member name="F:CooperTire.ICS.Common.NameAid.SaveResult.SaveError">
+	<summary>
+ There was problems with the saving operation
+ </summary>
+</member><member name="F:CooperTire.ICS.Common.NameAid.SaveResult.DuplicationError">
+	<summary>
+ Attempt to add duplicate entity
+ </summary>
+	<remarks></remarks>
+</member><member name="T:CooperTire.ICS.Common.NameAid.SaveResult">
+	<summary>
+ Enum that indicates the result of the saving operation
+ </summary>
+	<remarks></remarks>
+</member><member name="T:CooperTire.ICS.Common.NameAid.Column">
+	<summary>
+ Holding Column names with constants
+ </summary>
+	<remarks>
+		<list type="table">
+			<listheader>
+				<term>Author</term>
+				<description>Description</description>
+			</listheader>
+			<item>
+				<term>NA</term>
+				<description>
+					<para>NA</para>
+					<para>Original Code.</para>
+				</description>
+			</item>
+			<item>
+				<term>Srinivas S</term>
+				<description>
+					<para>09/18/2019</para>
+					<para>Implemented code standardization.</para>
+				</description>
+			</item>
+		</list>
+	</remarks>
+</member><member name="T:CooperTire.ICS.Common.NameAid.MarketingStatus">
+	<summary>
+ Marketing request status for certification
+ </summary>
+	<remarks>
+		<list type="table">
+			<listheader>
+				<term>Author</term>
+				<description>Description</description>
+			</listheader>
+			<item>
+				<term>NA</term>
+				<description>
+					<para>NA</para>
+					<para>Original Code.</para>
+				</description>
+			</item>
+			<item>
+				<term>Srinivas S</term>
+				<description>
+					<para>09/18/2019</para>
+					<para>Implemented code standardization.</para>
+				</description>
+			</item>
+		</list>
+	</remarks>
+</member><member name="T:CooperTire.ICS.Common.NameAid">
+	<summary>
+ Constants definitions
+ </summary>
+	<remarks>
+		<list type="table">
+			<listheader>
+				<term>Author</term>
+				<description>Description</description>
+			</listheader>
+			<item>
+				<term>NA</term>
+				<description>
+					<para>NA</para>
+					<para>Original Code.</para>
+				</description>
+			</item>
+			<item>
+				<term>Srinivas S</term>
+				<description>
+					<para>09/18/2019</para>
+					<para>Implemented code standardization.</para>
+				</description>
+			</item>
+		</list>
+	</remarks>
+</member><member name="P:CooperTire.ICS.Common.My.Resources.Resources.ResourceManager">
+	<summary>
+  Returns the cached ResourceManager instance used by this class.
+</summary>
+</member><member name="P:CooperTire.ICS.Common.My.Resources.Resources.Culture">
+	<summary>
+  Overrides the current thread's CurrentUICulture property for all
+  resource lookups using this strongly typed resource class.
+</summary>
+</member><member name="T:CooperTire.ICS.Common.My.Resources.Resources">
+	<summary>
+  A strongly-typed resource class, for looking up localized strings, etc.
+</summary>
+</member><member name="M:CooperTire.ICS.Common.EventLogger.Enter(System.Exception)">
+	<summary>
+ Enter record to ICS DB log or Windows Event Log
+ </summary>
+	<param name="exp">Exception object.</param>
+	<remarks>
+		<list type="table">
+			<listheader>
+				<term>Author</term>
+				<description>Description</description>
+			</listheader>
+			<item>
+				<term>NA</term>
+				<description>
+					<para>NA</para>
+					<para>Original Code.</para>
+				</description>
+			</item>
+			<item>
+				<term>Srinivas S</term>
+				<description>
+					<para>09/18/2019</para>
+					<para>Implemented code standardization.</para>
+				</description>
+			</item>
+		</list>
+	</remarks>
+</member><member name="T:CooperTire.ICS.Common.EventLogger">
+	<summary>
+ Log exception data to ICS log
+ </summary>
+	<remarks>
+		<list type="table">
+			<listheader>
+				<term>Author</term>
+				<description>Description</description>
+			</listheader>
+			<item>
+				<term>NA</term>
+				<description>
+					<para>NA</para>
+					<para>Original Code.</para>
+				</description>
+			</item>
+			<item>
+				<term>Srinivas S</term>
+				<description>
+					<para>09/18/2019</para>
+					<para>Implemented code standardization.</para>
+				</description>
+			</item>
+		</list>
+	</remarks>
+</member><member name="M:CooperTire.ICS.Common.EventLoggerDalc.LogToDB(System.Exception)">
+	<summary>
+ Insert record into ICS Log table
+ </summary>
+	<param name="exp">Exception object</param>
+	<returns>Success flag True or False.</returns>
+	<exception cref="T:System.Exception">
+ Returns False value
+ </exception>
+	<remarks>
+		<list type="table">
+			<listheader>
+				<term>Author</term>
+				<description>Description</description>
+			</listheader>
+			<item>
+				<term>NA</term>
+				<description>
+					<para>NA</para>
+					<para>Original Code.</para>
+				</description>
+			</item>
+			<item>
+				<term>Srinivas S</term>
+				<description>
+					<para>09/18/2019</para>
+					<para>Implemented code standardization.</para>
+				</description>
+			</item>
+		</list>
+	</remarks>
+</member><member name="T:CooperTire.ICS.Common.EventLoggerDalc">
+	<summary>
+ Log exception data to CTS compliant ICS DB
+ </summary>
+	<remarks>
+		<list type="table">
+			<listheader>
+				<term>Author</term>
+				<description>Description</description>
+			</listheader>
+			<item>
+				<term>NA</term>
+				<description>
+					<para>NA</para>
+					<para>Original Code.</para>
+				</description>
+			</item>
+			<item>
+				<term>Srinivas S</term>
+				<description>
+					<para>09/18/2019</para>
+					<para>Implemented code standardization.</para>
+				</description>
+			</item>
+		</list>
+	</remarks>
+</member><member name="F:CooperTire.ICS.Common.AppSettingsAid.QualityText">
+	<summary>
+ Constant to hold string Quality.
+ </summary>
+	<remarks></remarks>
+</member><member name="P:CooperTire.ICS.Common.AppSettingsAid.Environment">
+	<summary>
+ Gets the environment setting from the Web.Config
+ </summary>
+	<value>String</value>
+	<returns>String (Environment)</returns>
+	<remarks>
+		<list type="table">
+			<listheader>
+				<term>Author</term>
+				<description>Description</description>
+			</listheader>
+			<item>
+				<term>NA</term>
+				<description>
+					<para>NA</para>
+					<para>Original Code.</para>
+				</description>
+			</item>
+			<item>
+				<term>Srinivas S</term>
+				<description>
+					<para>09/17/2019</para>
+					<para>Implemented code standardization.</para>
+				</description>
+			</item>
+		</list>
+	</remarks>
+</member><member name="P:CooperTire.ICS.Common.AppSettingsAid.SmtpHost">
+	<summary>
+ Gets the SMTP host server name from the Web.Config to use for e-mail notification
+ </summary>
+	<value>String</value>
+	<returns>String (SMTP Host)</returns>
+	<remarks>
+		<list type="table">
+			<listheader>
+				<term>Author</term>
+				<description>Description</description>
+			</listheader>
+			<item>
+				<term>NA</term>
+				<description>
+					<para>NA</para>
+					<para>Original Code.</para>
+				</description>
+			</item>
+			<item>
+				<term>Srinivas S</term>
+				<description>
+					<para>09/17/2019</para>
+					<para>Implemented code standardization.</para>
+				</description>
+			</item>
+		</list>
+	</remarks>
+</member><member name="P:CooperTire.ICS.Common.AppSettingsAid.EmailFrom(System.String)">
+	<summary>
+ Gets the correct e-mail address from the Web.Config to use as the "From" address for email notification.
+ </summary>
+	<value>String</value>
+	<returns>String (E-mail address)</returns>
+	<remarks>
+		<list type="table">
+			<listheader>
+				<term>Author</term>
+				<description>Description</description>
+			</listheader>
+			<item>
+				<term>NA</term>
+				<description>
+					<para>NA</para>
+					<para>Original Code.</para>
+				</description>
+			</item>
+			<item>
+				<term>Srinivas S</term>
+				<description>
+					<para>09/17/2019</para>
+					<para>Implemented code standardization.</para>
+				</description>
+			</item>
+		</list>
+	</remarks>
+</member><member name="P:CooperTire.ICS.Common.AppSettingsAid.EmailTo(System.String)">
+	<summary>
+ Gets the correct e-mail address from the Web.Config to use for email notification.
+ </summary>
+	<value>String</value>
+	<returns>String (E-mail address)</returns>
+	<remarks>
+		<list type="table">
+			<listheader>
+				<term>Author</term>
+				<description>Description</description>
+			</listheader>
+			<item>
+				<term>NA</term>
+				<description>
+					<para>NA</para>
+					<para>Original Code.</para>
+				</description>
+			</item>
+			<item>
+				<term>Srinivas S</term>
+				<description>
+					<para>09/17/2019</para>
+					<para>Implemented code standardization.</para>
+				</description>
+			</item>
+		</list>
+	</remarks>
+</member><member name="P:CooperTire.ICS.Common.AppSettingsAid.GetReportFileName(CooperTire.ICS.Common.NameAid.Report)">
+	<summary>
+ Get report file name
+ </summary>
+	<value>String</value>
+	<returns>String (Report name)</returns>
+	<remarks>
+		<list type="table">
+			<listheader>
+				<term>Author</term>
+				<description>Description</description>
+			</listheader>
+			<item>
+				<term>NA</term>
+				<description>
+					<para>NA</para>
+					<para>Original Code.</para>
+				</description>
+			</item>
+			<item>
+				<term>Srinivas S</term>
+				<description>
+					<para>09/17/2019</para>
+					<para>Implemented code standardization.</para>
+				</description>
+			</item>
+		</list>
+	</remarks>
+</member><member name="P:CooperTire.ICS.Common.AppSettingsAid.GetSessionExpiredRedirectUrl">
+	<summary>
+ Gets the URL to re-direct to when the session expires from the Web.Config
+ </summary>
+	<value>String</value>
+	<returns>String (URL)</returns>
+	<remarks>
+		<list type="table">
+			<listheader>
+				<term>Author</term>
+				<description>Description</description>
+			</listheader>
+			<item>
+				<term>NA</term>
+				<description>
+					<para>NA</para>
+					<para>Original Code.</para>
+				</description>
+			</item>
+			<item>
+				<term>Srinivas S</term>
+				<description>
+					<para>09/17/2019</para>
+					<para>Implemented code standardization.</para>
+				</description>
+			</item>
+		</list>
+	</remarks>
+</member><member name="P:CooperTire.ICS.Common.AppSettingsAid.GetUseSAP">
+	<summary>
+ Gets UseSAP to pull SAP data from the Web.Config
+ </summary>
+	<value>String</value>
+	<returns>String (Y/N)</returns>
+	<remarks>
+		<list type="table">
+			<listheader>
+				<term>Author</term>
+				<description>Description</description>
+			</listheader>
+			<item>
+				<term>NA</term>
+				<description>
+					<para>NA</para>
+					<para>Original Code.</para>
+				</description>
+			</item>
+			<item>
+				<term>Srinivas S</term>
+				<description>
+					<para>09/17/2019</para>
+					<para>Implemented code standardization.</para>
+				</description>
+			</item>
+		</list>
+	</remarks>
+</member><member name="P:CooperTire.ICS.Common.AppSettingsAid.GetUseTracs">
+	<summary>
+ Gets UseSAP to pull Tracs data from the Web.Config
+ </summary>
+	<value>String</value>
+	<returns>String (Y/N)</returns>
+	<remarks>
+		<list type="table">
+			<listheader>
+				<term>Author</term>
+				<description>Description</description>
+			</listheader>
+			<item>
+				<term>NA</term>
+				<description>
+					<para>NA</para>
+					<para>Original Code.</para>
+				</description>
+			</item>
+			<item>
+				<term>Srinivas S</term>
+				<description>
+					<para>09/17/2019</para>
+					<para>Implemented code standardization.</para>
+				</description>
+			</item>
+		</list>
+	</remarks>
+</member><member name="P:CooperTire.ICS.Common.AppSettingsAid.MarketingUserGroup">
+	<summary>
+ Get Marketing User AD group name
+ </summary>
+	<value>String</value>
+	<returns>String (Marketing User Group)</returns>
+	<remarks>
+		<list type="table">
+			<listheader>
+				<term>Author</term>
+				<description>Description</description>
+			</listheader>
+			<item>
+				<term>NA</term>
+				<description>
+					<para>NA</para>
+					<para>Original Code.</para>
+				</description>
+			</item>
+			<item>
+				<term>Srinivas S</term>
+				<description>
+					<para>09/17/2019</para>
+					<para>Implemented code standardization.</para>
+				</description>
+			</item>
+		</list>
+	</remarks>
+</member><member name="P:CooperTire.ICS.Common.AppSettingsAid.QualityUserGroup">
+	<summary>
+  Get configured AD group name
+ </summary>
+	<value>String</value>
+	<returns>String (Quality User Group)</returns>
+	<remarks>
+		<list type="table">
+			<listheader>
+				<term>Author</term>
+				<description>Description</description>
+			</listheader>
+			<item>
+				<term>NA</term>
+				<description>
+					<para>NA</para>
+					<para>Original Code.</para>
+				</description>
+			</item>
+			<item>
+				<term>Srinivas S</term>
+				<description>
+					<para>09/17/2019</para>
+					<para>Implemented code standardization.</para>
+				</description>
+			</item>
+		</list>
+	</remarks>
+</member><member name="P:CooperTire.ICS.Common.AppSettingsAid.QualityManagerGroup">
+	<summary>
+  Get configured AD group name
+ </summary>
+	<value>String</value>
+	<returns>String (Quality Manager Group)</returns>
+	<remarks>
+		<list type="table">
+			<listheader>
+				<term>Author</term>
+				<description>Description</description>
+			</listheader>
+			<item>
+				<term>NA</term>
+				<description>
+					<para>NA</para>
+					<para>Original Code.</para>
+				</description>
+			</item>
+			<item>
+				<term>Srinivas S</term>
+				<description>
+					<para>09/17/2019</para>
+					<para>Implemented code standardization.</para>
+				</description>
+			</item>
+		</list>
+	</remarks>
+</member><member name="P:CooperTire.ICS.Common.AppSettingsAid.StrictlyInquiryGroup">
+	<summary>
+  Get configured AD group name
+ </summary>
+	<value>String</value>
+	<returns>String (Strictly Inquiry Group)</returns>
+	<remarks>
+		<list type="table">
+			<listheader>
+				<term>Author</term>
+				<description>Description</description>
+			</listheader>
+			<item>
+				<term>NA</term>
+				<description>
+					<para>NA</para>
+					<para>Original Code.</para>
+				</description>
+			</item>
+			<item>
+				<term>Srinivas S</term>
+				<description>
+					<para>09/17/2019</para>
+					<para>Implemented code standardization.</para>
+				</description>
+			</item>
+		</list>
+	</remarks>
+</member><member name="P:CooperTire.ICS.Common.AppSettingsAid.ITGroup">
+	<summary>
+  Get configured AD group name
+ </summary>
+	<value>String</value>
+	<returns>String (IT Group)</returns>
+	<remarks>
+		<list type="table">
+			<listheader>
+				<term>Author</term>
+				<description>Description</description>
+			</listheader>
+			<item>
+				<term>NA</term>
+				<description>
+					<para>NA</para>
+					<para>Original Code.</para>
+				</description>
+			</item>
+			<item>
+				<term>Srinivas S</term>
+				<description>
+					<para>09/17/2019</para>
+					<para>Implemented code standardization.</para>
+				</description>
+			</item>
+		</list>
+	</remarks>
+</member><member name="P:CooperTire.ICS.Common.AppSettingsAid.MarketingUserGroup_NoGoViews">
+	<summary>
+  Get configured marketing AD group views name
+ </summary>
+	<value>String</value>
+	<returns>String</returns>
+	<remarks>
+		<list type="table">
+			<listheader>
+				<term>Author</term>
+				<description>Description</description>
+			</listheader>
+			<item>
+				<term>NA</term>
+				<description>
+					<para>NA</para>
+					<para>Original Code.</para>
+				</description>
+			</item>
+			<item>
+				<term>Srinivas S</term>
+				<description>
+					<para>09/17/2019</para>
+					<para>Implemented code standardization.</para>
+				</description>
+			</item>
+		</list>
+	</remarks>
+</member><member name="P:CooperTire.ICS.Common.AppSettingsAid.MarketingUserGroup_NoGoMenus">
+	<summary>
+  Get configured marketing AD group menus name
+ </summary>
+	<value>String</value>
+	<returns>String</returns>
+	<remarks>
+		<list type="table">
+			<listheader>
+				<term>Author</term>
+				<description>Description</description>
+			</listheader>
+			<item>
+				<term>NA</term>
+				<description>
+					<para>NA</para>
+					<para>Original Code.</para>
+				</description>
+			</item>
+			<item>
+				<term>Srinivas S</term>
+				<description>
+					<para>09/17/2019</para>
+					<para>Implemented code standardization.</para>
+				</description>
+			</item>
+		</list>
+	</remarks>
+</member><member name="P:CooperTire.ICS.Common.AppSettingsAid.QualityUserGroup_NoGoViews">
+	<summary>
+  Get configured Quantity AD group views name
+ </summary>
+	<value>String</value>
+	<returns>String</returns>
+	<remarks>
+		<list type="table">
+			<listheader>
+				<term>Author</term>
+				<description>Description</description>
+			</listheader>
+			<item>
+				<term>NA</term>
+				<description>
+					<para>NA</para>
+					<para>Original Code.</para>
+				</description>
+			</item>
+			<item>
+				<term>Srinivas S</term>
+				<description>
+					<para>09/17/2019</para>
+					<para>Implemented code standardization.</para>
+				</description>
+			</item>
+		</list>
+	</remarks>
+</member><member name="P:CooperTire.ICS.Common.AppSettingsAid.QualityUserGroup_NoGoMenus">
+	<summary>
+  Get configured Quantity AD group menus name
+ </summary>
+	<value>String</value>
+	<returns>String</returns>
+	<remarks>
+		<list type="table">
+			<listheader>
+				<term>Author</term>
+				<description>Description</description>
+			</listheader>
+			<item>
+				<term>NA</term>
+				<description>
+					<para>NA</para>
+					<para>Original Code.</para>
+				</description>
+			</item>
+			<item>
+				<term>Srinivas S</term>
+				<description>
+					<para>09/17/2019</para>
+					<para>Implemented code standardization.</para>
+				</description>
+			</item>
+		</list>
+	</remarks>
+</member><member name="P:CooperTire.ICS.Common.AppSettingsAid.QualityManagerGroup_NoGoViews">
+	<summary>
+  Get configured Quantity manager AD group views name
+ </summary>
+	<value>String</value>
+	<returns>String</returns>
+	<remarks>
+		<list type="table">
+			<listheader>
+				<term>Author</term>
+				<description>Description</description>
+			</listheader>
+			<item>
+				<term>NA</term>
+				<description>
+					<para>NA</para>
+					<para>Original Code.</para>
+				</description>
+			</item>
+			<item>
+				<term>Srinivas S</term>
+				<description>
+					<para>09/17/2019</para>
+					<para>Implemented code standardization.</para>
+				</description>
+			</item>
+		</list>
+	</remarks>
+</member><member name="P:CooperTire.ICS.Common.AppSettingsAid.QualityManagerGroup_NoGoMenus">
+	<summary>
+  Get configured Quantity manager AD group menus name
+ </summary>
+	<value>String</value>
+	<returns>String</returns>
+	<remarks>
+		<list type="table">
+			<listheader>
+				<term>Author</term>
+				<description>Description</description>
+			</listheader>
+			<item>
+				<term>NA</term>
+				<description>
+					<para>NA</para>
+					<para>Original Code.</para>
+				</description>
+			</item>
+			<item>
+				<term>Srinivas S</term>
+				<description>
+					<para>09/17/2019</para>
+					<para>Implemented code standardization.</para>
+				</description>
+			</item>
+		</list>
+	</remarks>
+</member><member name="P:CooperTire.ICS.Common.AppSettingsAid.StrictlyInquiryGroup_NoGoViews">
+	<summary>
+  Get configured Strictly Inquiry AD group views name
+ </summary>
+	<value>String</value>
+	<returns>String</returns>
+	<remarks>
+		<list type="table">
+			<listheader>
+				<term>Author</term>
+				<description>Description</description>
+			</listheader>
+			<item>
+				<term>NA</term>
+				<description>
+					<para>NA</para>
+					<para>Original Code.</para>
+				</description>
+			</item>
+			<item>
+				<term>Srinivas S</term>
+				<description>
+					<para>09/17/2019</para>
+					<para>Implemented code standardization.</para>
+				</description>
+			</item>
+		</list>
+	</remarks>
+</member><member name="P:CooperTire.ICS.Common.AppSettingsAid.StrictlyInquiryGroup_NoGoMenus">
+	<summary>
+  Get configured Strictly Inquiry AD group menus name
+ </summary>
+	<value>String</value>
+	<returns>String</returns>
+	<remarks>
+		<list type="table">
+			<listheader>
+				<term>Author</term>
+				<description>Description</description>
+			</listheader>
+			<item>
+				<term>NA</term>
+				<description>
+					<para>NA</para>
+					<para>Original Code.</para>
+				</description>
+			</item>
+			<item>
+				<term>Srinivas S</term>
+				<description>
+					<para>09/17/2019</para>
+					<para>Implemented code standardization.</para>
+				</description>
+			</item>
+		</list>
+	</remarks>
+</member><member name="P:CooperTire.ICS.Common.AppSettingsAid.ITGroup_NoGoViews">
+	<summary>
+  Get configured IT AD group views name
+ </summary>
+	<value>String</value>
+	<returns>String</returns>
+	<remarks>
+		<list type="table">
+			<listheader>
+				<term>Author</term>
+				<description>Description</description>
+			</listheader>
+			<item>
+				<term>NA</term>
+				<description>
+					<para>NA</para>
+					<para>Original Code.</para>
+				</description>
+			</item>
+			<item>
+				<term>Srinivas S</term>
+				<description>
+					<para>09/17/2019</para>
+					<para>Implemented code standardization.</para>
+				</description>
+			</item>
+		</list>
+	</remarks>
+</member><member name="P:CooperTire.ICS.Common.AppSettingsAid.ITGroup_NoGoMenus">
+	<summary>
+  Get configured IT AD group menus name
+ </summary>
+	<value>String</value>
+	<returns>String</returns>
+	<remarks>
+		<list type="table">
+			<listheader>
+				<term>Author</term>
+				<description>Description</description>
+			</listheader>
+			<item>
+				<term>NA</term>
+				<description>
+					<para>NA</para>
+					<para>Original Code.</para>
+				</description>
+			</item>
+			<item>
+				<term>Srinivas S</term>
+				<description>
+					<para>09/17/2019</para>
+					<para>Implemented code standardization.</para>
+				</description>
+			</item>
+		</list>
+	</remarks>
+</member><member name="T:CooperTire.ICS.Common.AppSettingsAid">
+	<summary>
+ Contains getting configuration values.
+ </summary>
+	<remarks>
+		<list type="table">
+			<listheader>
+				<term>Author</term>
+				<description>Description</description>
+			</listheader>
+			<item>
+				<term>NA</term>
+				<description>
+					<para>NA</para>
+					<para>Original Code.</para>
+				</description>
+			</item>
+			<item>
+				<term>Srinivas S</term>
+				<description>
+					<para>09/17/2019</para>
+					<para>Implemented code standardization.</para>
+				</description>
+			</item>
+		</list>
+	</remarks>
+</member>
+</members>
+</doc>

@@ -1,0 +1,9 @@
+D:\trunk\ICS\3. Executing\Development\ICS\ICS.Datasets\bin\Debug\ICS.Datasets.dll.config
+D:\trunk\ICS\3. Executing\Development\ICS\ICS.Datasets\bin\Debug\ICS.Datasets.dll
+D:\trunk\ICS\3. Executing\Development\ICS\ICS.Datasets\bin\Debug\ICS.Datasets.pdb
+D:\trunk\ICS\3. Executing\Development\ICS\ICS.Datasets\bin\Debug\ICS.Datasets.xml
+D:\trunk\ICS\3. Executing\Development\ICS\ICS.Datasets\obj\Debug\CooperTire.ICS.Datasets.Resources.resources
+D:\trunk\ICS\3. Executing\Development\ICS\ICS.Datasets\obj\Debug\ICS.Datasets.vbproj.GenerateResource.Cache
+D:\trunk\ICS\3. Executing\Development\ICS\ICS.Datasets\obj\Debug\ICS.Datasets.dll
+D:\trunk\ICS\3. Executing\Development\ICS\ICS.Datasets\obj\Debug\ICS.Datasets.xml
+D:\trunk\ICS\3. Executing\Development\ICS\ICS.Datasets\obj\Debug\ICS.Datasets.pdb

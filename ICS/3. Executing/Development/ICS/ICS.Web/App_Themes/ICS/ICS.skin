@@ -1,0 +1,186 @@
+<%--
+Default skin template. The following skins are provided as examples only.
+
+1. Named control skin. The SkinId should be uniquely defined because
+   duplicate SkinId's per control type are not allowed in the same theme.
+
+<asp:GridView runat="server" SkinId="gridviewSkin" BackColor="White" >
+   <AlternatingRowStyle BackColor="Blue" />
+</asp:GridView>
+
+2. Default skin. The SkinId is not defined. Only one default 
+   control skin per control type is allowed in the same theme.
+
+<asp:Image runat="server" ImageUrl="~/images/image1.jpg" />
+--%>
+<%@ Register Assembly="Microsoft.Practices.EnterpriseLibrary.Validation.Integration.AspNet"
+    Namespace="Microsoft.Practices.EnterpriseLibrary.Validation.Integration.AspNet"
+    TagPrefix="validation" %>
+
+<%-- Default Theme --%>
+<asp:Label
+   ForeColor    = "DarkSlateGray"
+   Font-Bold    = "True"
+   Font-Name    = "Verdana"
+   Font-Size    = "x-small"
+   Runat        = "Server" 
+/>
+<asp:Button 
+   BorderColor  = "LightSlateGray"
+   BorderStyle  = "Inset"
+   BorderWidth  = "1px"
+   Font-Bold    = "True"
+   Font-Name    = "Verdana"
+   Font-Size    = "x-small"
+   ForeColor    = "Black"
+   Runat        = "Server"
+   Width        = "125px"
+/>
+<asp:DropDownList   
+   Font-Bold    = "True"
+   Font-Name    = "Verdana"
+   Font-Size    = "x-small"
+   ForeColor    = "Black"
+   Runat        = "Server" 
+/>
+<asp:TextBox 
+   Font-Name    = "Verdana"
+   Font-Size    = "x-small"
+   Runat        = "Server" 
+/>
+<validation:PropertyProxyValidator
+   ForeColor    = "Red"
+   Font-Bold    = "True"
+   Font-Name    = "Verdana"
+   Font-Size    = "x-small"
+   Runat        = "Server" 
+/>
+
+<%-- Label Skin --%>
+<asp:Label
+   SkinId       = "SuccessText" 
+   ForeColor    = "Green"
+   Font-Bold    = "True"
+   Font-Name    = "Verdana"
+   Font-Size    = "x-small"
+   Runat        = "Server" 
+/>
+
+<asp:Label
+   SkinId       = "ErrorText" 
+   ForeColor    = "Red"
+   Font-Bold    = "True"
+   Font-Name    = "Verdana"
+   Font-Size    = "x-small"
+   Runat        = "Server" 
+/>
+
+<asp:label 
+   SkinId       ="CompanyTitle" 
+   runat        ="server" 
+   Font-Bold    ="True"
+   ForeColor    ="SteelBlue" 
+   Font-Italic  ="True" 
+   Width        ="223px" 
+   Height       ="33px"
+/>
+
+<asp:label 
+   SkinId       ="NotificationText" 
+   runat        ="server" 
+   Font-Bold    ="True"
+   ForeColor    ="SteelBlue" 
+   Font-Italic  ="True" 
+   Font-Size    ="small"
+/>
+
+<asp:label 
+   SkinId       ="HomePageTitle" 
+   runat        ="server" 
+   Width        ="484px" 
+   ForeColor    ="RoyalBlue" 
+   Font-Size    ="XX-Large"
+/>
+                            
+<asp:label 
+   SkinId       ="SelectedRegion" 
+   runat        ="server" 
+   ForeColor    ="Black" 
+   Font-Bold    ="True" 
+   Font-Italic  ="True" 
+   Font-Family  ="Arial"
+   Font-Size    ="x-small"
+/>
+
+<%-- Button Skin --%>
+<asp:Button 
+   skinID       = "UCBtnTest"   
+   BorderColor  = "LightSlateGray"
+   BorderStyle  = "Inset"
+   BorderWidth  = "1px"
+   Font-Bold    = "True"
+   Font-Name    = "Verdana"
+   Font-Size    = "small"
+   ForeColor    = "Black"
+   Runat        = "Server"  
+/> 
+<asp:Button 
+   skinID       = "UCBtnSAVE"   
+   BorderColor  = "LightSlateGray"
+   BorderStyle  = "Inset"
+   BorderWidth  = "1px"
+   Font-Bold    = "True"
+   Font-Name    = "Verdana"
+   Font-Size    = "small"
+   ForeColor    = "Black"
+   Runat        = "Server"  
+/> 
+<asp:Button 
+   skinID       = "UCBtnSmall"   
+   BorderColor  = "LightSlateGray"
+   BorderStyle  = "Inset"
+   BorderWidth  = "1px"
+   Font-Bold    = "True"
+   Font-Name    = "Verdana"
+   Font-Size    = "small"
+   ForeColor    = "Black"
+   Runat        = "Server"  
+/> 
+
+<%-- GridView Skin --%>
+<asp:GridView 
+   runat        ="server" 
+   SkinID       ="Professional" 
+   Font-Name    ="Verdana"
+   Font-Size    ="10pt" 
+   Cellpadding  ="4"
+   HeaderStyle-BackColor="#5D7B9D"
+   HeaderStyle-ForeColor="White"
+   HeaderStyle-FontWeight = "Bold"
+   AlternatingRowStyle-BackColor="#dddddd" />
+                                
+<%-- TextBox Skin --%>
+<asp:TextBox 
+   SkinID       = "MediumTextBox"
+   Font-Name    = "Verdana"
+   Font-Size    = "x-small"
+   Width        = "100px"
+   Runat        = "Server" 
+/>
+<asp:TextBox 
+   SkinID       = "SmallTextBox"
+   Font-Name    = "Verdana"
+   Font-Size    = "x-small"
+   Width        = "30px"
+   Runat        = "Server" 
+/>
+<asp:Panel
+    SkinID      = "CollapsePanelHeader"
+    Width       = "100%"
+	Height      = "30px"
+	ForeColor   = "White"
+	Font-Bold   = "True"
+	BackColor   = "Blue"
+	Runat       = "Server"
+	BackImageUrl= "~/Images/bg-menu-main.png"
+/>
